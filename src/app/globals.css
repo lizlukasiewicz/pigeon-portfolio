@@ -16,7 +16,7 @@
     #00E2CB 307px, 
     rgba(51, 72, 80, 0.8) 310px, 
     rgba(7, 18, 43, 0.5) 410px,
-    rgba(7, 18, 43, 0.1) 460px
+    rgba(7, 18, 43, 0) 460px
     );
   /* conic-gradient(
     from 180deg at 50% 50%,
@@ -33,7 +33,7 @@
     #00E2CB 307px, 
     rgba(51, 72, 80, 0.8) 310px, 
     rgba(7, 18, 43, 0.5) 410px,
-    rgba(7, 18, 43, 0.2) 460px
+    rgba(7, 18, 43, 0) 460px
     );
 
   --tile-start-rgb: 23, 92, 120;
