@@ -2,10 +2,11 @@
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 225, 225, 225;
+  --foreground-emphasis-rbg: 0, 196, 132;
   --background-start-rgb:17, 24, 55;
   --background-end-rgb: 7, 14, 35;
 
@@ -18,14 +19,7 @@
     rgba(7, 18, 43, 0.5) 410px,
     rgba(7, 18, 43, 0) 460px
     );
-  /* conic-gradient(
-    from 180deg at 50% 50%,
-    #00E2CB 0deg,
-    #5DB9BC 55deg,
-    #175C78 120deg,
-    #111837 160deg,
-    transparent 360deg
-  ); */
+
   --secondary-glow: radial-gradient(
     circle 500px at center, 
     #112941 230px, 
@@ -104,7 +98,29 @@
     --card-border-rgb: 200, 200, 200;
   }
 }
+@media (max-width: 1023px) {
+ :root{
+  --primary-glow: radial-gradient(
+    circle 200px at center, 
+    #112941 92px, 
+    rgba(93, 185, 188, 0.52) 120px, 
+    #00E2CB 127px, 
+    rgba(51, 72, 80, 0.8) 130px, 
+    rgba(7, 18, 43, 0.5) 164px,
+    rgba(7, 18, 43, 0) 184px
+    );
+  --secondary-glow: radial-gradient(
+    circle 200px at center, 
+    #112941 92px, 
+    rgba(93, 185, 188, 0.52) 120px, 
+    #00E2CB 127px, 
+    rgba(51, 72, 80, 0.8) 130px, 
+    rgba(7, 18, 43, 0.5) 164px,
+    rgba(7, 18, 43, 0) 184px
+    );
+ }
 
+}
 * {
   box-sizing: border-box;
   padding: 0;

@@ -2,19 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+  align-items: space-between;
   min-height: 100vh;
   animation: gradient 4s ease infinite;
   background-image: linear-gradient(135deg, #112941, #020405);
 }
 
 .description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
+  padding: 1rem;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: space-between;
+  font-size: 0.9rem;
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
@@ -23,17 +23,18 @@
 .description a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  /* gap: 0.5rem; */
 }
 
 .description p {
-  position: relative;
+  justify-content: flex-end;
+  /* position: relative; */
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
+  /* background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius); */
 }
 
 .code {
@@ -79,8 +80,14 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: rgba(7, 18, 43, 0);
+  /* background-color: rgba(7, 18, 43, 0); */
   /* padding: 4rem 0; */
+}
+.center h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  z-index: 2;
+  font-family: var(--font-mono);
 }
 
 .center::before {
@@ -95,7 +102,7 @@
   background: var(--primary-glow);
   width: 1000px;
   height: 1000px;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .center::before,
@@ -103,7 +110,7 @@
   content: '';
   /* left: 50%; */
   position: absolute;
-  /* filter: blur(45px); */
+  filter: blur(2px);
   transform: translateZ(0);
 }
 
@@ -208,25 +215,10 @@
 
   .description {
     font-size: 0.8rem;
-  }
-
-  .description a {
     padding: 1rem;
-  }
-
-  .description p,
-  .description div {
     display: flex;
-    justify-content: center;
-    position: fixed;
+    justify-content: space-between;
     width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
     background: linear-gradient(
@@ -238,46 +230,19 @@
     backdrop-filter: blur(24px);
   }
 
-  .description div {
+
+
+  .description p {
     align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    inset: 0 0 auto;
+
+  }
+
+  .description div {
+    align-items: flex-start;
     z-index: 1;
   }
 }
-
-/* .container {
-  --bg-gradient-angle: 0deg;
-  --bg-gradient-hue-start: 299;
-  --bg-gradient-hue-end: 29;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-
-  inline-size: 100vw;
-  block-size: 100vh;
-  block-size: 100dvh;
-}
-
-.gradient-bg {
-  background-image: radial-gradient(
-      circle at center,
-      var(--primary-white-100),
-      var(--primary-black-200)
-    ),
-    linear-gradient(
-      var(--bg-gradient-angle),
-      hsl(var(--bg-gradient-hue-start), 54%, 19%),
-      hsl(var(--bg-gradient-hue-end), 56%, 19%)
-    );
-} */
 
 @media (prefers-color-scheme: dark) {
   /* .vercelLogo {
