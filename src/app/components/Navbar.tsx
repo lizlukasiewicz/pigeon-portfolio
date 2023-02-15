@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Navbar() {
     return(
         <div className={styles.navigation}>
-            <a>
-
+            <Link href="/">
                 <Image
                 src="/Frame_14.png"
                 alt="Pigeon Logo"
@@ -18,8 +17,8 @@ export default function Navbar() {
                 height={60}
                 priority
                 />
-            
-            </a>
+            </Link>
+
 
             
 
