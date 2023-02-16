@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './nav.module.css'
 import Link from 'next/link'
+// import Sidebar from './Sidebar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,8 +23,6 @@ export default function Navbar() {
             </Link>
 
 
-            
-
             <h2 className={inter.className}>
                 <span>About</span>
                 
@@ -37,6 +38,11 @@ export default function Navbar() {
                 
                 <span>Resume</span>
             </h2>
+            <button className={inter.className}>
+
+            <Image src='/sidebar.svg' alt='menu-icon' width={50} height={50} />
+            
+            </button>
 
 
 

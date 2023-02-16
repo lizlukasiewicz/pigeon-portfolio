@@ -7,6 +7,15 @@
     font-size: 0.9rem;
     width: 100%;
     z-index: 2;
+    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+    background: linear-gradient(
+        to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5)
+    );
+    background-clip: padding-box;
+    backdrop-filter: blur(24px);
+      
     
 }
 .logo {
@@ -33,6 +42,10 @@
     color: rgba(0, 196, 132, 1);
     padding: 1rem;
 }
+.navigation button {
+    visibility:collapse;
+
+  }
 
 
 @media (hover: hover) and (pointer: fine) {
@@ -65,9 +78,14 @@
     
     
     
-      .links {
-        align-items: flex-end;
-        inset: 0 0 auto;
+      .navigation h2 {
+        visibility: hidden;
+        /* align-items: flex-end;
+        inset: 0 0 auto; */
+      }
+      .navigation button {
+        visibility:visible;
+
       }
     
       .logo {
