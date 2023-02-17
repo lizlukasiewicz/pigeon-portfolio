@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navbar />
+      {/* TODO: MOVE THIS INTO NESTED COMPONENT -- ALONG WITH ABOUT, PROJECTS && CONTACT */}
       <div className={styles.center}>
         
         <h2 className={inter.className}>
@@ -17,7 +18,7 @@ export default function Home() {
         </h2>
 
       </div>
-
+      {/* TODO: RENDER ABOUT,, PROJECTS && CONTACT HERE*/}
       <div className={styles.grid}>
           <Image
             className={styles.logo}

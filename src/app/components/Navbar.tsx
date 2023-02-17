@@ -33,24 +33,53 @@ export default function Navbar() {
 
 
             <div className={styles.pages}>
-                <table className={inter.className}>
-                    MenuIcon
+                <button 
+                    type='button' 
+                    className={inter.className}
+                    onClick={() => setIsOpen(!isOpen)}
+                    >
+                    
                     {/* <Image src='/sidebar.svg' alt='menu-icon' width={50} height={50} /> */}
-                
-                </table>
+                    {isOpen ? (
+                        <p>X</p>
+                    ) : (
+                        <p>MenuIcon</p>
+                    )}
+                </button>
+                {isOpen ? (
+                    // TODO: FORMAT THIS TO DROP DOWN BELOW NAVBAR
+                    // TODO: ADD ROUTING LINKS
+                    <table className={inter.className}>
+                        <tr>
+                            <td>About</td>
+                        </tr>
+                        <tr>
+                            <td>Projects</td>
+                        </tr>
+                        <tr>
+                            <td>Blog</td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                        </tr>
+                    </table>
+                ) : (
+                    <div></div>
+                    
+                )}
                 <h2>About</h2>
-                
-                <Link href="/projects">
-                <h2>Projects</h2>
-                </Link>
-                
-                <Link href="/blog">
-                <h2>Blog</h2>
-                </Link>
-                
-                <h2>Contact</h2>
-                
-                <h2>Resume</h2>
+                    
+                    <Link href="/projects">
+                    <h2>Projects</h2>
+                    </Link>
+                    
+                    <Link href="/blog">
+                    <h2>Blog</h2>
+                    </Link>
+                    
+                    <h2>Contact</h2>
+                    
+                    <h2>Resume</h2>
             </div>
             
 

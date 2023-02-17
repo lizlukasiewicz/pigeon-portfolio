@@ -55,7 +55,7 @@
     --background-end-rgb: 7, 14, 35;
 
     --primary-glow: radial-gradient(
-      circle 500px at center, 
+      circle 375px at center, 
       #112941 46%, 
       rgba(93, 185, 188, 0.52) 60%, 
       #00E2CB 61.4%, 
@@ -65,7 +65,7 @@
       );
   
     --secondary-glow: radial-gradient(
-      circle 500px at center, 
+      circle 375px at center, 
       #112941 46%, 
       rgba(93, 185, 188, 0.52) 60%, 
       #00E2CB 61.4%, 
@@ -98,26 +98,26 @@
     --card-border-rgb: 200, 200, 200;
   }
 }
-/* TODO: percentages for screen size */
+
 @media (max-width: 1023px) {
  :root{
   --primary-glow: radial-gradient(
-    circle 200px at center, 
-    #112941 92px, 
-    rgba(93, 185, 188, 0.52) 120px, 
-    #00E2CB 127px, 
-    rgba(51, 72, 80, 0.8) 130px, 
-    rgba(7, 18, 43, 0.5) 164px,
-    rgba(7, 18, 43, 0) 184px
+    circle 300px at center, 
+    #112941 46%, 
+    rgba(93, 185, 188, 0.52) 60%, 
+    #00E2CB 61.4%, 
+    rgba(51, 72, 80, 0.8) 62%, 
+    rgba(7, 18, 43, 0.5) 82%,
+    rgba(7, 18, 43, 0.1) 92%
     );
   --secondary-glow: radial-gradient(
-    circle 200px at center, 
-    #112941 92px, 
-    rgba(93, 185, 188, 0.52) 120px, 
-    #00E2CB 127px, 
-    rgba(51, 72, 80, 0.8) 130px, 
-    rgba(7, 18, 43, 0.5) 164px,
-    rgba(7, 18, 43, 0) 184px
+    circle 300px at center, 
+    #112941 46%, 
+    rgba(93, 185, 188, 0.52) 60%, 
+    #00E2CB 61.4%, 
+    rgba(51, 72, 80, 0.8) 62%, 
+    rgba(7, 18, 43, 0.5) 82%,
+    rgba(7, 18, 43, 0.1) 92%
     );
   
  }

@@ -7,6 +7,7 @@
     font-size: 0.9rem;
     width: 100%;
     z-index: 2;
+    position: static;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
     background: linear-gradient(
         to bottom,
@@ -40,11 +41,15 @@
     padding: 0.5rem 1rem;
     font-family: var(--font-mono);
 }
-.pages table {
+.pages button {
     visibility: collapse;
 
   }
 
+.dropdown {
+  position: absolute;
+
+}
 
 @media (hover: hover) and (pointer: fine) {
     .logo:hover {
@@ -53,7 +58,7 @@
     .pages h2:hover {
         color: rgba(225, 225, 225, 0.9);
     }
-    .pages table:hover {
+    .pages button:hover {
         color: rgba(225, 225, 225, 0.9);
     }
 }
@@ -89,7 +94,7 @@
         /* align-items: flex-end;
         inset: 0 0 auto; */
       }
-      .pages table {
+      .pages button {
         visibility:visible;
         color: rgba(0, 196, 132, 1);
         font-weight: 700;
