@@ -128,6 +128,18 @@
   padding: 0;
   margin: 0;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  position: static;
+  margin: 6rem 0 0 0;
+  padding: 6rem 0 0 0;
+  min-height: 100vh;
+  animation: gradient 4s ease infinite;
+  background-image: linear-gradient(135deg, #112941, #020405);
+}
 
 html,
 body {
@@ -153,5 +165,16 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
   }
 }
