@@ -12,9 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
   /* position: absolute; */
-  position: relative;
+  position: fixed;
+  top: 10rem;
   width: 100%;
   padding: 4rem 0 0 0;
   /* background-color: rgba(7, 18, 43, 0); */
@@ -46,7 +46,7 @@
 .center::after {
   content: '';
   /* left: 50%; */
-  position: absolute;
+  /* position: absolute; */
   filter: blur(1px);
   transform: translateZ(0);
 }
