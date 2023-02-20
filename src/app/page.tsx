@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main >
-      {/* className={styles.main} */}
+    <div>
       
       {/* TODO: MOVE THIS INTO NESTED COMPONENT -- ALONG WITH ABOUT, PROJECTS && CONTACT */}
       <div className={styles.center}>
@@ -72,7 +71,7 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
+    </div>
   )
 }
 
