@@ -7,8 +7,10 @@ export type PageProps = {
 export type Compartment = {
   name: string;
   slug: string;
-  count: number;
-  items: Omit<Compartment, 'items'>[];
+  description: string;
+  active: string;
+  git: string;
+  items: Omit<Item, 'items'>[];
 };
 export type Item = {
     name: string;
@@ -17,7 +19,7 @@ export type Item = {
   };
 
   export const demos: { name: string; items: Item[] }[] = [
-{    name:'Layouts',
+{    name:'Home',
      items: [
             {
                 name: 'About',
@@ -51,33 +53,53 @@ export type Item = {
 
 export const getCompartment = cache((): Compartment[] => [
   {
-    name: 'Electronics',
-    slug: 'electronics',
-    count: 11,
+    name: 'Riders Guild',
+    slug: 'riders-guild',
+    description: "A Blog built with NextAuth for user authentication and database encryption, RESTful API functionality for posts and comments between users.",
+    active: '',
+    git: '',
     items: [
-      { name: 'Phones', slug: 'phones', count: 4 },
-      { name: 'Tablets', slug: 'tablets', count: 5 },
-      { name: 'Laptops', slug: 'laptops', count: 2 },
+      { name: 'Next.js', slug: 'phones', description: "4" },
+      { name: 'MongoDB', slug: 'tablets', description: "5" },
+      { name: 'Mongoose', slug: 'laptops', description: "2" },
+      { name: 'NextAuth', slug: 'laptops', description: "2" },
+      { name: 'React', slug: 'laptops', description: "2" },
     ],
   },
   {
     name: 'Clothing',
     slug: 'clothing',
-    count: 12,
+    description: "1",
+    active: '',
+    git: '',
     items: [
-      { name: 'Tops', slug: 'tops', count: 3 },
-      { name: 'Shorts', slug: 'shorts', count: 4 },
-      { name: 'Shoes', slug: 'shoes', count: 5 },
+      { name: 'Tops', slug: 'tops', description: "3" },
+      { name: 'Shorts', slug: 'shorts', description: "4" },
+      { name: 'Shoes', slug: 'shoes', description: "5" },
     ],
   },
   {
     name: 'Books',
     slug: 'books',
-    count: 10,
+    description: "1",
+    active: '',
+    git: '',
     items: [
-      { name: 'Fiction', slug: 'fiction', count: 5 },
-      { name: 'Biography', slug: 'biography', count: 2 },
-      { name: 'Education', slug: 'education', count: 3 },
+      { name: 'Fiction', slug: 'fiction', description: "5" },
+      { name: 'Biography', slug: 'biography', description: "2" },
+      { name: 'Education', slug: 'education', description: "3" },
+    ],
+  },
+  {
+    name: 'Books',
+    slug: 'books',
+    description: "1",
+    active: '',
+    git: '',
+    items: [
+      { name: 'Fiction', slug: 'fiction', description: "5" },
+      { name: 'Biography', slug: 'biography', description: "2" },
+      { name: 'Education', slug: 'education', description: "3" },
     ],
   },
 ]);
