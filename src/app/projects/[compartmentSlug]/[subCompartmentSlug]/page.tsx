@@ -1,6 +1,7 @@
-'use client';
+// 'use client';
 import { fetchSubCompartment, type PageProps } from "@/app/lib/routes";
-import CircularProgress from '@mui/material/CircularProgress';
+import Card from "@/app/components/Card"
+// import CircularProgress from '@mui/material/CircularProgress';
 
 export default async function Page({ params} : PageProps) {
     const project = await fetchSubCompartment(
@@ -15,7 +16,7 @@ export default async function Page({ params} : PageProps) {
                 <div>
                     <p>{project.alt}</p>
                     <p>{project.icon}</p>
-                    <CircularProgress key={i}/>
+                    <Card key={i}/>
                 </div>
             ))} 
         </div>
