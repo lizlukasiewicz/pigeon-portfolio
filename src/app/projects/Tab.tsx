@@ -18,7 +18,7 @@ export const Tab = ({ path, item }: { path: string; item: Item }) => {
   return (
     <Link
       href={href}
-      className={styles.linkItem}
+      className={styles.linkItem} 
     >
       {item.text}
     </Link>

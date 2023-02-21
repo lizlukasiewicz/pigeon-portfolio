@@ -1,0 +1,17 @@
+.tabGroup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.linkItem {
+    padding: 1rem;
+    color: rgba(0, 196, 132, 1);
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+.linkItem h2 {
+    padding: 1rem;
+    color: rgba(0, 196, 132, 1);
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
