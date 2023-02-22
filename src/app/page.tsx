@@ -40,7 +40,7 @@ export default function Home() {
                         return (
                           <div className={styles.card} key={item.name}>
                             <Link
-                              href={`/${item.slug}`}
+                              href={`${section.slug}/${item.slug}`}
                               key={item.name}
                               className={styles.thirteen}
                             >

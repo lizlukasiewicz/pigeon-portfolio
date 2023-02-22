@@ -13,6 +13,7 @@ import QuestionAnswerTwoToneIcon from '@mui/icons-material/QuestionAnswerTwoTone
 import FeedSharpIcon from '@mui/icons-material/FeedSharp';
 import Link from 'next/link'
 import styles from './side.module.css'
+// import { Slide } from '@mui/material';
 
 
 export default function Sidebar() {
@@ -36,70 +37,73 @@ export default function Sidebar() {
       >
         <MenuIcon fontSize="large" />
     </Button>
-      <Menu
-        id={styles.basicmenu}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>
-        <Link href="/"> 
-          <HomeSharpIcon />
-        </Link>
-        </MenuItem>
-        
-        <MenuItem onClick={handleClose}>
-          <Link href="/">
-            <TerminalIcon />
-            <h2>
-              About Me
-            </h2>
+
+
+        <Menu
+          id={styles.basicmenu}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <Link href="/" className={styles.option} > 
+            <MenuItem onClick={handleClose}>
+              <HomeSharpIcon />
+            </MenuItem>
           </Link>
-        </MenuItem>
-
-
-        <MenuItem onClick={handleClose}>
-          <Link href="/blog">
-          <QuestionAnswerTwoToneIcon />
-          <h2>
-            Blog
-          </h2>
+          
+          <Link href="/about" className={styles.option}>
+            <MenuItem onClick={handleClose}>
+                <TerminalIcon />
+                <h2>
+                  About Me
+                </h2>
+            </MenuItem>
           </Link>
-        </MenuItem>
 
 
-        <MenuItem onClick={handleClose}>
-          <Link href="/projects">
-          <ConstructionSharpIcon/>
-          <h2>
-            Projects
-          </h2>
+          <Link href="/blog" className={styles.option}>
+            <MenuItem onClick={handleClose}>
+              <QuestionAnswerTwoToneIcon />
+              <h2>
+                Blog
+              </h2>
+            </MenuItem>
           </Link>
-        </MenuItem>
 
 
-        <MenuItem onClick={handleClose}>
-          <Link href="/contact">
-          <ContactMailSharpIcon />
-          <h2>
-            Contact
-          </h2>
+          <Link href="/projects" className={styles.option}>
+            <MenuItem onClick={handleClose}>
+              <ConstructionSharpIcon/>
+              <h2>
+                Projects
+              </h2>
+            </MenuItem>
           </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link href="/resume">
-          <FeedSharpIcon />
-          <h2>
-            Resume
-          </h2>
-          </Link>
-        </MenuItem>
-        
 
-      </Menu>
+
+          <Link href="/contact" className={styles.option}>
+            <MenuItem onClick={handleClose}>
+              <ContactMailSharpIcon />
+              <h2>
+                Contact
+              </h2>
+            </MenuItem>
+          </Link>
+
+          <Link href="/resume" className={styles.option}>
+            <MenuItem onClick={handleClose}>
+              <FeedSharpIcon />
+              <h2>
+                Resume
+              </h2>
+            </MenuItem>
+          </Link>
+          
+
+        </Menu>
 
     
     </>
@@ -108,7 +112,7 @@ export default function Sidebar() {
 
 
 // import { styled, alpha } from '@mui/material/styles';
-// import { Slide } from '@mui/material';
+
 
 // TODO: FORMATTING
 // const StyledMenu = styled((props: MenuProps) => (
@@ -157,7 +161,7 @@ export default function Sidebar() {
 //     control={<Switch checked={checked} onChange={handleChange} />}
 //     label="Show"
 //   />
-//   <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
+//   <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
 //     {icon}
 //   </Slide>
 // </Box> 

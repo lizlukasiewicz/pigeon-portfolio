@@ -63,6 +63,20 @@ export type Item = {
           bullet2: "Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
           img: '',
         },
+        {
+          name: 'Falendar',
+          slug: 'falendar',
+          bullet1: "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
+          bullet2: "Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+          img: '',
+        },
+        {
+          name: 'Escape Noface',
+          slug: 'escape-noface',
+          bullet1: "A simple and fun game I created as an ode to my favorite director",
+          bullet2: "Single player online game utilizing vanilla JavaScipt and HTML Canvas for collision detection, gravitational elements, and randomized obstacle generation",
+          img: '',
+        },
 
 
       ],

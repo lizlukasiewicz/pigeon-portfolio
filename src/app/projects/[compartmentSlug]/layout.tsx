@@ -12,7 +12,7 @@ export default async function Layout({ children, params }: PageProps) {
                 path={`/projects/${projects.slug}`}
                 items={[
                     {
-                        text: 'All',
+                        text: 'Stack:',
                     },
                     ...projects.details.map((x) => ({
                         text: x.name,

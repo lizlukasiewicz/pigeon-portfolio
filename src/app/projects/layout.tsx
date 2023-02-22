@@ -20,7 +20,7 @@ export default async function Layout({
           path='/projects'
           items={[
             {
-              text: 'Home',
+              text: 'All',
             },
             ...projects.map((x) => ({
               text: x.name,
