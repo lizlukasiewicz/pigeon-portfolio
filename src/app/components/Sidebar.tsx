@@ -11,6 +11,7 @@ import ConstructionSharpIcon from '@mui/icons-material/ConstructionSharp';
 import ContactMailSharpIcon from '@mui/icons-material/ContactMailSharp';
 import QuestionAnswerTwoToneIcon from '@mui/icons-material/QuestionAnswerTwoTone';
 import FeedSharpIcon from '@mui/icons-material/FeedSharp';
+import { green } from '@mui/material/colors';
 import Link from 'next/link'
 import styles from './side.module.css'
 // import { Slide } from '@mui/material';
@@ -35,7 +36,7 @@ export default function Sidebar() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <MenuIcon fontSize="large" />
+        <MenuIcon fontSize="large" sx={{ color: green[500] }}/>
     </Button>
 
 
@@ -50,13 +51,13 @@ export default function Sidebar() {
         >
           <Link href="/" className={styles.option} > 
             <MenuItem onClick={handleClose}>
-              <HomeSharpIcon />
+              <HomeSharpIcon sx={{ color: green[500] }}/>
             </MenuItem>
           </Link>
           
           <Link href="/about" className={styles.option}>
             <MenuItem onClick={handleClose}>
-                <TerminalIcon />
+                <TerminalIcon sx={{ color: green[500] }}/>
                 <h2>
                   About Me
                 </h2>
@@ -66,7 +67,7 @@ export default function Sidebar() {
 
           <Link href="/blog" className={styles.option}>
             <MenuItem onClick={handleClose}>
-              <QuestionAnswerTwoToneIcon />
+              <QuestionAnswerTwoToneIcon sx={{ color: green[500] }}/>
               <h2>
                 Blog
               </h2>
@@ -76,7 +77,7 @@ export default function Sidebar() {
 
           <Link href="/projects" className={styles.option}>
             <MenuItem onClick={handleClose}>
-              <ConstructionSharpIcon/>
+              <ConstructionSharpIcon sx={{ color: green[500] }}/>
               <h2>
                 Projects
               </h2>
@@ -86,7 +87,7 @@ export default function Sidebar() {
 
           <Link href="/contact" className={styles.option}>
             <MenuItem onClick={handleClose}>
-              <ContactMailSharpIcon />
+              <ContactMailSharpIcon sx={{ color: green[500] }}/>
               <h2>
                 Contact
               </h2>
@@ -95,7 +96,7 @@ export default function Sidebar() {
 
           <Link href="/resume" className={styles.option}>
             <MenuItem onClick={handleClose}>
-              <FeedSharpIcon />
+              <FeedSharpIcon sx={{ color: green[500] }}/>
               <h2>
                 Resume
               </h2>
