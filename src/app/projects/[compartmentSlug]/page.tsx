@@ -1,6 +1,5 @@
 // 'use client';
 import { fetchCompartmentBySlug, type PageProps } from "@/app/lib/routes";
-import Card from "@/app/components/Card"
 // import CircularProgress from '@mui/material/CircularProgress';
 
 
@@ -15,11 +14,10 @@ export default async function Page({ params }: PageProps) {
             </h2>
 
             {Array.from({ length: 5 }).map((_, i) => (
-                <div>
+                <div key={i}>
                     <p>{project.description}</p>
                     <p>{project.active}</p>
                     <p>{project.git}</p>
-                        <Card key={i}/>
                 </div>
             ))} 
 

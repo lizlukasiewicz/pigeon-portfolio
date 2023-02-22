@@ -21,40 +21,95 @@ export type Detail = {
 export type Item = {
     name: string;
     slug: string;
-    description?: string;
+    bullet1?: string;
+    bullet2?: string;
+    img: string;
   };
 
 
-  export const demos: { name: string; items: Item[] }[] = [
-{    name:'Home',
+  export const demos: { name: string; slug: string; description: string; items?: Item[] }[] = [
+{    name: 'About Me',
+     slug: 'about',
+     description: 'I build things, because I can, because I feel like it',
      items: [
-            {
-                name: 'About',
-                slug: 'about',
-                description: 'I build things, because I can, because I feel like it'
-            },
-            {
-                name: 'Blog',
-                slug: 'blog',
-                description: 'Open Source, Openly Sourced'
-            },
-            {
-                name: 'Projects',
-                slug: 'projects',
-                description: 'Built by a Machine'
-            }, 
-            {
-                name: 'Contact',
-                slug: 'contact',
-                description: 'Spent some time? Drop a line'
-            },
-            {
-                name: 'Resume',
-                slug: 'resume',
-                description: "How I've spent my days"
-            },
+
+            // {
+            //     name: 'About',
+            //     slug: 'about',
+            //     description: 'I build things, because I can, because I feel like it'
+            // },
+            // {
+            //     name: 'Blog',
+            //     slug: 'blog',
+            //     description: 'Open Source, Openly Sourced'
+            // },
+            // {
+            //     name: 'Projects',
+            //     slug: 'projects',
+            //     description: 'Built by a Machine'
+            // }, 
+            // {
+            //     name: 'Contact',
+            //     slug: 'contact',
+            //     description: 'Spent some time? Drop a line'
+            // },
+            // {
+            //     name: 'Resume',
+            //     slug: 'resume',
+            //     description: "How I've spent my days"
+            // },
         ],
     },
+    {
+      name: 'Blog',
+      slug: 'blog',
+      description: 'Open Source, Openly Sourced',
+      items: [
+
+
+      ],
+    },
+    {
+      name: 'Projects',
+      slug: 'projects',
+      description: 'Built by a Machine',
+      items: [
+        {
+          name: 'Riders Guild',
+          slug: 'riders-guild',
+          bullet1: "A Blog built with NextAuth for user authentication and database encryption",
+          bullet2: "RESTful API functionality for posts and comments between users.",
+          img: '',
+        },
+        {
+          name: 'Dispatch',
+          slug: 'dispatch',
+          bullet1: "Full stack Express and Postgres app that uses Sequelize as an ORM to interact with protected customer data with full CRUD functionality for each user.",
+          bullet2: "Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+          img: '',
+        },
+
+
+      ],
+    },
+    {
+      name: 'Contact Me',
+      slug: 'contact',
+      description: 'Spent some time? Drop a line',
+      items: [
+
+
+      ],
+    },
+    {
+      name: 'Resume',
+      slug: 'resume',
+      description: "How I've spent my days",
+      items: [
+
+
+      ],
+  },
 ];
 
 

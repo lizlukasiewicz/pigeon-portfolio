@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import { demos } from './lib/routes'
+import Link from 'next/link';
+
 
 
 
@@ -20,59 +23,41 @@ export default function Home() {
       </div>
       {/* TODO: RENDER ABOUT,, PROJECTS && CONTACT HERE*/}
       <div className={styles.grid}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-          </div>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        
+        {demos.map((section) => {
+          return(
+            <div className={styles.card} key={section.name}>
+              <Link
+                href={section.slug}
+                key={section.name}
+                // className={}
+                >
+                  <h2>{section.name}</h2></Link>
+                  <br></br>
+                  <p>{section.description}</p>
+                  <div className={styles.subcard}>
+                      {section.items ? ( section.items.map((item) => {
+                        return (
+                          <div className={styles.card} key={item.name}>
+                            <Link
+                              href={`/${item.slug}`}
+                              key={item.name}
+                              className={styles.thirteen}
+                            >
+                              <h2 className={inter.className}>
+                                {item.name}
+                              </h2>
+                            
+                            </Link>
+                          </div>
+                          );
+                      })): null}
+                </div>
+            </div>
+          )
+        })}
       </div>
+
     </div>
   )
 }
-
-

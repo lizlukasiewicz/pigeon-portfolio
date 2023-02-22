@@ -28,22 +28,7 @@ export default async function Layout({
             })), 
           ]}
           />
-          {/* <Link
-            href="/projects/riderblog">
-              Riders Blog
-          </Link>
-          <Link
-            href="/projects/dispatch">
-              Dispatch App
-          </Link>
-          <Link
-            href="/projects/cal">
-              Family calandar 
-          </Link>
-          <Link
-            href="/projects/noface">
-              Escape Noface
-          </Link> */}
+
   
         </div>
   
@@ -51,4 +36,19 @@ export default async function Layout({
       </div>
     );
   }
-  
+//          <Link
+//            href="/projects/riderblog">
+//              Riders Blog
+//          </Link>
+//          <Link
+//            href="/projects/dispatch">
+//              Dispatch App
+//          </Link>
+//          <Link
+//            href="/projects/cal">
+//              Family calandar 
+//          </Link>
+//          <Link
+//            href="/projects/noface">
+//              Escape Noface
+//          </Link> 

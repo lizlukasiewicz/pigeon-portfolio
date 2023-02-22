@@ -15,3 +15,12 @@
     font-weight: 700;
     font-family: var(--font-mono);
 }
+.projectsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.title {
+    width: 100%;
+}
