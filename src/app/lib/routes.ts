@@ -33,31 +33,6 @@ export type Item = {
      description: 'I build things, because I can, because I feel like it',
      items: [
 
-            // {
-            //     name: 'About',
-            //     slug: 'about',
-            //     description: 'I build things, because I can, because I feel like it'
-            // },
-            // {
-            //     name: 'Blog',
-            //     slug: 'blog',
-            //     description: 'Open Source, Openly Sourced'
-            // },
-            // {
-            //     name: 'Projects',
-            //     slug: 'projects',
-            //     description: 'Built by a Machine'
-            // }, 
-            // {
-            //     name: 'Contact',
-            //     slug: 'contact',
-            //     description: 'Spent some time? Drop a line'
-            // },
-            // {
-            //     name: 'Resume',
-            //     slug: 'resume',
-            //     description: "How I've spent my days"
-            // },
         ],
     },
     {
