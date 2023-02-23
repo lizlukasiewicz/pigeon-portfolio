@@ -16,7 +16,7 @@ export type Compartment = {
 export type Detail = {
   name: string;
   alt: string;
-  icon?: string;
+  icon?: any;
 };
 export type Item = {
     name: string;
@@ -47,7 +47,7 @@ export type Item = {
     {
       name: 'Projects',
       slug: 'projects',
-      description: 'Built by a Machine',
+      description: ' ',
       items: [
         {
           name: 'Riders Guild',
