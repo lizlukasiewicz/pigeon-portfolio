@@ -1,9 +1,9 @@
-import Image from 'next/image'
+// import Image from 'next/image'
+'use client'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
-import Link from 'next/link';
-
+import { Link } from '@chakra-ui/next-js'
 
 
 
@@ -26,11 +26,11 @@ export default function Home() {
             / wu.kaˈɕɛ.vit͡ʂ /
         </h2>
         </div>
-        <div className={styles.altText}>
+        {/* <div className={styles.altText}>
         <h3 className={inter.className}>
           / Lukasiewicz /
         </h3>
-        </div>
+        </div> */}
 
       </div>
       

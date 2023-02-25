@@ -1,5 +1,14 @@
+'use client'
+
+import { CacheProvider } from '@chakra-ui/next-js'
+import { ChakraProvider } from '@chakra-ui/react'
+// import { extendTheme } from '@chakra-ui/react'
 import './globals.css';
 import Navbar from './components/Navbar';
+
+// const colors={
+
+// }
 
 
 export default function RootLayout({
@@ -15,8 +24,10 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <CacheProvider>
           <Navbar />
-          {children}
+          <ChakraProvider>{children}</ChakraProvider>
+        </CacheProvider>
       </body>
     </html>
   )

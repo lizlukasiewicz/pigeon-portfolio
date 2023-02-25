@@ -92,7 +92,7 @@
   visibility: inherit;
   font-family: var(--font-mono);
 }
-.altText {
+/* .altText {
   visibility: hidden;
   z-index: -1;
   margin-bottom: 0.5rem;
@@ -104,7 +104,7 @@
   visibility: inherit;
   font-weight: 600;
   font-family: var(--font-mono);
-}
+} */
 /* .alt {
   font-weight: 600;
   margin-bottom: 0.5rem;
