@@ -1,113 +1,109 @@
 'use client';
 
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu, { MenuProps} from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import MenuIcon from '@mui/icons-material/Menu';
-import HomeSharpIcon from '@mui/icons-material/HomeSharp';
-import ConstructionSharpIcon from '@mui/icons-material/ConstructionSharp';
-import ContactMailSharpIcon from '@mui/icons-material/ContactMailSharp';
-import QuestionAnswerTwoToneIcon from '@mui/icons-material/QuestionAnswerTwoTone';
-import FeedSharpIcon from '@mui/icons-material/FeedSharp';
-import { green } from '@mui/material/colors';
-import Link from 'next/link'
+import NextLink from 'next/link'
+import { Link } from '@chakra-ui/react'
 import styles from './side.module.css'
-// import { Slide } from '@mui/material';
+import { Icon } from '@chakra-ui/react'
+import { GrHomeRounded } from "react-icons/gr"
+import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme} from "react-icons/fa"
+import { HamburgerIcon } from '@chakra-ui/icons'
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 
 export default function Sidebar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return(
-    <>
-    <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        <MenuIcon fontSize="large" sx={{ color: green[500] }}/>
-    </Button>
-
-
-        <Menu
-          id={styles.basicmenu}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
-        >
-          <Link href="/" className={styles.option} > 
-            <MenuItem onClick={handleClose}>
-              <HomeSharpIcon sx={{ color: green[500] }}/>
-            </MenuItem>
+    <Popover
+    placement='bottom'
+    >
+      <PopoverTrigger>
+        <Button colorScheme='teal' variant='ghost'>
+          <HamburgerIcon  w={45} h={45} color='#00C484'/>
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent w={100} color='#00C484' bg='blue.800'>
+      
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverHeader pt={50} fontWeight='bold' >
+        <Link 
+            as={NextLink}
+            href="/" 
+            className={styles.option} > 
+            {/* <MenuItem onClick={handleClose}>
+            </MenuItem> */}
+              <Icon as={GrHomeRounded} w={30} h={30} color='#00C484'/>
           </Link>
+        </PopoverHeader>
           
-          <Link href="/about" className={styles.option}>
-            <MenuItem onClick={handleClose}>
-                <TerminalIcon sx={{ color: green[500] }}/>
+          <Link 
+            as={NextLink}
+            href="/about" 
+            className={styles.option}>
+            <Icon as={FaTerminal} w={30} h={30} color='#00C484'/>
                 <h2>
                   About Me
                 </h2>
-            </MenuItem>
           </Link>
 
 
-          <Link href="/blog" className={styles.option}>
-            <MenuItem onClick={handleClose}>
-              <QuestionAnswerTwoToneIcon sx={{ color: green[500] }}/>
+          <Link 
+            as={NextLink}
+            href="/blog" 
+            className={styles.option}>
+            <Icon as={FaBloggerB} w={30} h={30} color='#00C484'/>
               <h2>
                 Blog
               </h2>
-            </MenuItem>
           </Link>
 
 
-          <Link href="/projects" className={styles.option}>
-            <MenuItem onClick={handleClose}>
-              <ConstructionSharpIcon sx={{ color: green[500] }}/>
+          <Link 
+            as={NextLink}
+            href="/projects" 
+            className={styles.option}>
+              <Icon as={FaTools} w={30} h={30} color='#00C484'/>
               <h2>
                 Projects
               </h2>
-            </MenuItem>
           </Link>
 
 
-          <Link href="/contact" className={styles.option}>
-            <MenuItem onClick={handleClose}>
-              <ContactMailSharpIcon sx={{ color: green[500] }}/>
+          <Link 
+            as={NextLink}
+            href="/contact" 
+            className={styles.option}>
+              <Icon as={FaMailBulk} w={30} h={30} color='#00C484'/>
               <h2>
                 Contact
               </h2>
-            </MenuItem>
           </Link>
 
-          <Link href="/resume" className={styles.option}>
-            <MenuItem onClick={handleClose}>
-              <FeedSharpIcon sx={{ color: green[500] }}/>
+          <Link 
+            as={NextLink}
+            href="/resume" 
+            className={styles.option}>
+              <Icon as={FaReadme} w={30} h={30} color='#00C484'/>
               <h2>
                 Resume
               </h2>
-            </MenuItem>
           </Link>
           
 
-        </Menu>
+        </PopoverContent>
 
     
-    </>
+    </Popover>
   )
 }
 

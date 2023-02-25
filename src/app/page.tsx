@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
+import NextLink from 'next/link'
 
 
 
@@ -41,6 +42,7 @@ export default function Home() {
           return(
             <div className={styles.card} key={section.name}>
               <Link
+                as={NextLink}
                 href={section.slug}
                 key={section.name}
                 // className={}
@@ -53,6 +55,7 @@ export default function Home() {
                         return (
                           <div className={styles.subcard} key={item.name}>
                             <Link
+                              as={NextLink}
                               href={`${section.slug}/${item.slug}`}
                               key={item.name}
                               className={styles.thirteen}
