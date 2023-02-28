@@ -1,7 +1,9 @@
-import { fetchCompartment } from '../lib/routes';
-import { TabGroup  } from './TabGroup';
-import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+'use client'
+
+// import { fetchCompartment } from '../lib/routes';
+// import { TabGroup  } from './TabGroup';
+// import Link from 'next/link';
+// import { useSelectedLayoutSegment } from 'next/navigation';
 
 
 
@@ -10,13 +12,14 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  const projects= await fetchCompartment();
+  // const projects= await fetchCompartment();
 
     return (
 
       <div>
         <div >
-          <TabGroup
+          <p>This is from Projects/layout.tsx</p>
+          {/* <TabGroup
           path='/projects'
           items={[
             {
@@ -27,7 +30,7 @@ export default async function Layout({
               slug: x.slug,
             })), 
           ]}
-          />
+          /> */}
 
   
         </div>
@@ -36,19 +39,3 @@ export default async function Layout({
       </div>
     );
   }
-//          <Link
-//            href="/projects/riderblog">
-//              Riders Blog
-//          </Link>
-//          <Link
-//            href="/projects/dispatch">
-//              Dispatch App
-//          </Link>
-//          <Link
-//            href="/projects/cal">
-//              Family calandar 
-//          </Link>
-//          <Link
-//            href="/projects/noface">
-//              Escape Noface
-//          </Link> 

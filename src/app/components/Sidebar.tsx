@@ -1,8 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import NextLink from 'next/link'
-import { Link } from '@chakra-ui/react'
+import Link from 'next/link';
 import styles from './side.module.css'
 import { Icon } from '@chakra-ui/react'
 import { GrHomeRounded } from "react-icons/gr"
@@ -44,7 +43,6 @@ export default function Sidebar() {
           <DrawerHeader>
 
             <Link 
-              as={NextLink}
               href="/" 
               className={styles.option} > 
 
@@ -57,7 +55,6 @@ export default function Sidebar() {
 
             
             <Link 
-              as={NextLink}
               href="/about" 
               className={styles.option}>
               <Icon as={FaTerminal} w={30} h={30} color='#00C484'/>
@@ -68,7 +65,6 @@ export default function Sidebar() {
 
 
             <Link 
-              as={NextLink}
               href="/blog" 
               className={styles.option}>
               <Icon as={FaBloggerB} w={30} h={30} color='#00C484'/>
@@ -79,7 +75,6 @@ export default function Sidebar() {
 
 
             <Link 
-              as={NextLink}
               href="/projects" 
               className={styles.option}>
                 <Icon as={FaTools} w={30} h={30} color='#00C484'/>
@@ -90,7 +85,6 @@ export default function Sidebar() {
 
 
             <Link 
-              as={NextLink}
               href="/contact" 
               className={styles.option}>
                 <Icon as={FaMailBulk} w={30} h={30} color='#00C484'/>
@@ -100,7 +94,6 @@ export default function Sidebar() {
             </Link>
 
             <Link 
-              as={NextLink}
               href="/resume" 
               className={styles.option}>
                 <Icon as={FaReadme} w={30} h={30} color='#00C484'/>
