@@ -1,7 +1,7 @@
-
+/* 
 #basicmenu {
     visibility: hidden;
-}
+} */
 .option {
     background: linear-gradient(
             to bottom,
@@ -17,12 +17,12 @@
     font-weight: 600;
     margin-bottom: 0.7rem;
   }
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
     #basicmenu{
         visibility: visible;
         
 
     }
 
-}
+} */
 

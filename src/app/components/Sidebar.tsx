@@ -9,101 +9,112 @@ import { GrHomeRounded } from "react-icons/gr"
 import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme} from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button
 } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
-
 
 export default function Sidebar() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
+  
   return(
-    <Popover
-    placement='bottom'
-    >
-      <PopoverTrigger>
-        <Button colorScheme='teal' variant='ghost'>
-          <HamburgerIcon  w={45} h={45} color='#00C484'/>
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent w={100} color='#00C484' bg='blue.800'>
+    <>
+      <Button onClick={onOpen} >
+        <HamburgerIcon  w={45} h={45} color='#00C484'/>
+      </Button>
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        
+        
+      >
+        <DrawerOverlay />
       
-        <PopoverArrow />
-        <PopoverCloseButton />
-        <PopoverHeader pt={50} fontWeight='bold' >
-        <Link 
-            as={NextLink}
-            href="/" 
-            className={styles.option} > 
-            {/* <MenuItem onClick={handleClose}>
-            </MenuItem> */}
-              <Icon as={GrHomeRounded} w={30} h={30} color='#00C484'/>
-          </Link>
-        </PopoverHeader>
+        <DrawerContent>
           
-          <Link 
-            as={NextLink}
-            href="/about" 
-            className={styles.option}>
-            <Icon as={FaTerminal} w={30} h={30} color='#00C484'/>
+          <DrawerCloseButton />
+          
+          <DrawerHeader>
+
+            <Link 
+              as={NextLink}
+              href="/" 
+              className={styles.option} > 
+
+                <Icon as={GrHomeRounded} w={30} h={30} color='#00C484'/>
+            </Link>
+          
+          </DrawerHeader>
+
+          <DrawerBody>
+
+            
+            <Link 
+              as={NextLink}
+              href="/about" 
+              className={styles.option}>
+              <Icon as={FaTerminal} w={30} h={30} color='#00C484'/>
+                  <h2>
+                    About Me
+                  </h2>
+            </Link>
+
+
+            <Link 
+              as={NextLink}
+              href="/blog" 
+              className={styles.option}>
+              <Icon as={FaBloggerB} w={30} h={30} color='#00C484'/>
                 <h2>
-                  About Me
+                  Blog
                 </h2>
-          </Link>
+            </Link>
 
 
-          <Link 
-            as={NextLink}
-            href="/blog" 
-            className={styles.option}>
-            <Icon as={FaBloggerB} w={30} h={30} color='#00C484'/>
-              <h2>
-                Blog
-              </h2>
-          </Link>
+            <Link 
+              as={NextLink}
+              href="/projects" 
+              className={styles.option}>
+                <Icon as={FaTools} w={30} h={30} color='#00C484'/>
+                <h2>
+                  Projects
+                </h2>
+            </Link>
 
 
-          <Link 
-            as={NextLink}
-            href="/projects" 
-            className={styles.option}>
-              <Icon as={FaTools} w={30} h={30} color='#00C484'/>
-              <h2>
-                Projects
-              </h2>
-          </Link>
+            <Link 
+              as={NextLink}
+              href="/contact" 
+              className={styles.option}>
+                <Icon as={FaMailBulk} w={30} h={30} color='#00C484'/>
+                <h2>
+                  Contact
+                </h2>
+            </Link>
 
-
-          <Link 
-            as={NextLink}
-            href="/contact" 
-            className={styles.option}>
-              <Icon as={FaMailBulk} w={30} h={30} color='#00C484'/>
-              <h2>
-                Contact
-              </h2>
-          </Link>
-
-          <Link 
-            as={NextLink}
-            href="/resume" 
-            className={styles.option}>
-              <Icon as={FaReadme} w={30} h={30} color='#00C484'/>
-              <h2>
-                Resume
-              </h2>
-          </Link>
+            <Link 
+              as={NextLink}
+              href="/resume" 
+              className={styles.option}>
+                <Icon as={FaReadme} w={30} h={30} color='#00C484'/>
+                <h2>
+                  Resume
+                </h2>
+            </Link>
           
-
-        </PopoverContent>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
 
     
-    </Popover>
+    </>
   )
 }
 
