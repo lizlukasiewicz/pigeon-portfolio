@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './nav.module.css'
-import Link from 'next/link';
+import { Link } from '@chakra-ui/next-js'
 import Sidebar from './Sidebar';
 
 const inter = Inter({ subsets: ['latin'] })

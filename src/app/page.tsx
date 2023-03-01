@@ -3,18 +3,14 @@
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
-import Link from 'next/link';
+import { Link } from '@chakra-ui/next-js'
 
 
 
 const inter = Inter({ subsets: ['latin'] })
-//<h2 className={styles.alt}>
-//            / Lukasiewicz /
-//        </h2> 
-export default function Home() {
-  const handleMouse= () => {
 
-  }
+export default function Home() {
+  
   return (
     <div>
       
@@ -26,11 +22,7 @@ export default function Home() {
             / wu.kaˈɕɛ.vit͡ʂ /
         </h2>
         </div>
-        {/* <div className={styles.altText}>
-        <h3 className={inter.className}>
-          / Lukasiewicz /
-        </h3>
-        </div> */}
+
 
       </div>
       
@@ -43,7 +35,6 @@ export default function Home() {
                 
                 href={section.slug}
                 key={section.name}
-                // className={}
                 >
                   <h2 className={inter.className}>{section.name}</h2></Link>
                   <br></br>

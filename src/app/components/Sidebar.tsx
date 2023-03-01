@@ -1,59 +1,103 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
+import { Link } from '@chakra-ui/next-js'
 import styles from './side.module.css'
 import { Icon } from '@chakra-ui/react'
 import { GrHomeRounded } from "react-icons/gr"
 import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme} from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Button
+  Box,
+  VStack,
+  Button,
+  keyframes,
+  useMediaQuery
 } from '@chakra-ui/react'
 
-export default function Sidebar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+export const fadeDown: string = keyframes`
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  } to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
 
-  
+
+
+
+export default function Sidebar() {
+  const fadeDownAnim: string = `${fadeDown} 500ms`;
+  const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
+
+  React.useEffect((): void => {
+    isLargeScreen && setMenuOpen(false)
+  }, [isLargeScreen]);
+
   return(
     <>
-      <Button onClick={onOpen} >
+      <Button 
+        onClick={() => setMenuOpen(!menuOpen)} 
+        zIndex={4}
+        >
         <HamburgerIcon  w={45} h={45} color='#00C484'/>
       </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-        
-        
-      >
-        <DrawerOverlay />
       
-        <DrawerContent>
+       
+      {/* pos="absolute" spacing={3} zIndex={2} */}
+        <VStack 
+          backgroundColor={"rgba(2, 4, 5, 0.7)"}
+          opacity={1}
+          boxShadow={"dark-lg"}
+          fontSize={16}
+          height={600}
+          justifyContent={"center"}
+          position={"fixed"}
+          right={menuOpen ? 0 : "-50%"}
+          top={menuOpen? 100: 0}
+          spacing={25}
+          transition={"300ms ease-in-out"}
+          width={"30%"}
+          zIndex={2}>
           
-          <DrawerCloseButton />
-          
-          <DrawerHeader>
-
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/" 
               className={styles.option} > 
 
                 <Icon as={GrHomeRounded} w={30} h={30} color='#00C484'/>
             </Link>
-          
-          </DrawerHeader>
-
-          <DrawerBody>
+          </Box>
 
             
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/about" 
               className={styles.option}>
@@ -62,8 +106,22 @@ export default function Sidebar() {
                     About Me
                   </h2>
             </Link>
+          </Box>
 
 
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/blog" 
               className={styles.option}>
@@ -72,8 +130,22 @@ export default function Sidebar() {
                   Blog
                 </h2>
             </Link>
+          </Box>
 
 
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/projects" 
               className={styles.option}>
@@ -82,8 +154,22 @@ export default function Sidebar() {
                   Projects
                 </h2>
             </Link>
+          </Box>
 
 
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/contact" 
               className={styles.option}>
@@ -92,7 +178,23 @@ export default function Sidebar() {
                   Contact
                 </h2>
             </Link>
+          </Box>
 
+          <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            opacity={0}
+            padding={0}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
             <Link 
               href="/resume" 
               className={styles.option}>
@@ -101,68 +203,12 @@ export default function Sidebar() {
                   Resume
                 </h2>
             </Link>
+          </Box>
           
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+        </VStack>
+
 
     
     </>
   )
 }
-
-
-// import { styled, alpha } from '@mui/material/styles';
-
-
-// TODO: FORMATTING
-// const StyledMenu = styled((props: MenuProps) => (
-//   <Menu
-//     elevation={0}
-//     anchorOrigin={{
-//       vertical: 'bottom',
-//       horizontal: 'right',
-//     }}
-//     transformOrigin={{
-//       vertical: 'top',
-//       horizontal: 'right',
-//     }}
-//     {...props}
-//   />
-// ))(({ theme }) => ({
-//   '& .MuiPaper-root': {
-//     borderRadius: 6,
-//     marginTop: theme.spacing(1),
-//     minWidth: 180,
-//     color:
-//       theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
-//     boxShadow:
-//       'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
-//     '& .MuiMenu-list': {
-//       padding: '4px 0',
-//     },
-//     '& .MuiMenuItem-root': {
-//       '& .MuiSvgIcon-root': {
-//         fontSize: 18,
-//         color: theme.palette.text.secondary,
-//         marginRight: theme.spacing(1.5),
-//       },
-//       '&:active': {
-//         backgroundColor: alpha(
-//           theme.palette.primary.main,
-//           theme.palette.action.selectedOpacity,
-//         ),
-//       },
-//     },
-//   },
-// }));
-// TODO: ANIMATION
-//  <Box sx={{ width: `calc(100px + 16px)` }}>
-//   <FormControlLabel
-//     control={<Switch checked={checked} onChange={handleChange} />}
-//     label="Show"
-//   />
-//   <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
-//     {icon}
-//   </Slide>
-// </Box> 

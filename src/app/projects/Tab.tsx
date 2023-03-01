@@ -2,7 +2,7 @@
 
 import type { Item } from './TabGroup';
 import styles from './tab.module.css'
-import Link from 'next/link';
+import { Link } from '@chakra-ui/next-js'
 import { useSelectedLayoutSegment } from 'next/navigation';
 
 export const Tab = ({ path, item }: { path: string; item: Item }) => {
