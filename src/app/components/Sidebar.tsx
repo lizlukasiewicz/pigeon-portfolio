@@ -29,7 +29,7 @@ export const fadeDown: string = keyframes`
 
 
 export default function Sidebar() {
-  const fadeDownAnim: string = `${fadeDown} 500ms`;
+  const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
@@ -47,17 +47,17 @@ export default function Sidebar() {
       </Button>
       
        
-      {/* pos="absolute" spacing={3} zIndex={2} */}
         <VStack 
           backgroundColor={"rgba(2, 4, 5, 0.7)"}
           opacity={1}
+          paddingTop={90}
           boxShadow={"dark-lg"}
           fontSize={16}
-          height={600}
+          height={700}
           justifyContent={"center"}
           position={"fixed"}
           right={menuOpen ? 0 : "-50%"}
-          top={menuOpen? 100: 0}
+          top={menuOpen? 0: 0}
           spacing={25}
           transition={"300ms ease-in-out"}
           width={"30%"}
@@ -67,6 +67,7 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
@@ -89,6 +90,7 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
@@ -113,6 +115,7 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
@@ -137,6 +140,7 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
@@ -161,6 +165,7 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
@@ -184,9 +189,8 @@ export default function Sidebar() {
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
             fontFamily={"var(--chakra-fonts-mono)"}
-            opacity={0}
-            padding={0}
             position={"relative"}
             transition={"100ms ease-out"}
             _before={{
@@ -206,7 +210,16 @@ export default function Sidebar() {
           </Box>
           
         </VStack>
-
+        {/* <Box
+          backgroundColor={"black"}
+          height={"100%"}
+          onClick={() => setMenuOpen(!menuOpen)}
+          opacity={menuOpen ? .75 : 0}
+          position={"fixed"}
+          transition={"opacity 400ms ease-out, visibility 400ms ease-out"}
+          visibility={menuOpen ? "visible" : "hidden"}
+          width={"100%"}
+          zIndex={1} /> */}
 
     
     </>

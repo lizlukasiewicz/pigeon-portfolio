@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
+import Splash from './Splash'
 
 
 
@@ -14,17 +15,8 @@ export default function Home() {
   return (
     <div>
       
-      {/* TODO: MOVE THIS INTO NESTED COMPONENT -- ALONG WITH ABOUT, PROJECTS && CONTACT */}
-      <div className={styles.center}>
-        
-        <div className={styles.centerText}>
-        <h2 className={inter.className}>
-            / wu.kaˈɕɛ.vit͡ʂ /
-        </h2>
-        </div>
-
-
-      </div>
+      <Splash />
+      
       
       <div className={styles.grid}>
         
