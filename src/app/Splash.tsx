@@ -17,7 +17,7 @@ export const fadeDown: string = keyframes`
     opacity: 1;
   }
 `;
-
+// TODO: FIX TRANSITION ANIMATION 
 export default function Splash() {
     const [name, setName] = React.useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 500ms 20ms forwards`;
