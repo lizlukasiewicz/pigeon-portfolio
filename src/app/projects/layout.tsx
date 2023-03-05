@@ -1,10 +1,6 @@
-'use client'
-
-// import { fetchCompartment } from '../lib/routes';
-// import { TabGroup  } from './TabGroup';
-// import Link from 'next/link';
-// import { useSelectedLayoutSegment } from 'next/navigation';
-
+import React from 'react';
+import { fetchCompartment } from '../lib/routes';
+import { TabGroup  } from './TabGroup';
 
 
 export default async function Layout({
@@ -12,14 +8,14 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  // const projects= await fetchCompartment();
+  const projects= await fetchCompartment();
 
     return (
 
       <div>
         <div >
-          <p>This is from Projects/layout.tsx</p>
-          {/* <TabGroup
+         
+          <TabGroup
           path='/projects'
           items={[
             {
@@ -30,7 +26,7 @@ export default async function Layout({
               slug: x.slug,
             })), 
           ]}
-          /> */}
+          />
 
   
         </div>

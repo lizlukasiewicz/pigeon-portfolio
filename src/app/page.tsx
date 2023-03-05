@@ -46,6 +46,8 @@ export default function Home() {
                               </h2>
                             
                             </Link>
+                            <p>{item.bullet1}</p>
+                            {/* <p>{item.bullet2}</p> */}
                           </div>
                           );
                       })): null}

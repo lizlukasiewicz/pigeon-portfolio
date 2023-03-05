@@ -6,9 +6,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 import './globals.css';
 import Navbar from './components/Navbar';
 
-// const colors={
-
-// }
 
 
 export default function RootLayout({

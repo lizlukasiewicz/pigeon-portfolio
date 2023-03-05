@@ -53,22 +53,22 @@ export type Item = {
         {
           name: 'Riders Guild',
           slug: 'riders-guild',
-          bullet1: "A Blog built with NextAuth for user authentication and database encryption",
-          bullet2: "RESTful API functionality for posts and comments between users.",
+          bullet1: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
+          bullet2: "built with NextAuth and RESTful API functionality",
           img: '',
         },
         {
           name: 'Dispatch',
           slug: 'dispatch',
-          bullet1: "Full stack Express and Postgres app that uses Sequelize as an ORM to interact with protected customer data with full CRUD functionality for each user.",
-          bullet2: "Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+          bullet1: "WebApp created as a more customized solution for automating fleet dispatching and routing",
+          bullet2: "JavaScript, Express, Postgres, SQL, Mapbox API",
           img: '',
         },
         {
           name: 'Falendar',
           slug: 'falendar',
           bullet1: "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
-          bullet2: "Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+          bullet2: "",
           img: '',
         },
         {
@@ -83,15 +83,6 @@ export type Item = {
       ],
     },
     {
-      name: 'Contact Me',
-      slug: 'contact',
-      description: 'Spent some time? Drop a line',
-      items: [
-
-
-      ],
-    },
-    {
       name: 'Resume',
       slug: 'resume',
       description: "How I've spent my days",
@@ -100,6 +91,16 @@ export type Item = {
 
       ],
   },
+    {
+      name: 'Contact Me',
+      slug: 'contact',
+      description: 'Spent some time? Drop a line',
+      items: [
+
+
+      ],
+    },
+    
 ];
 
 
@@ -157,11 +158,12 @@ export const getCompartment = cache((): Compartment[] => [
 ]);
 
 
-export const projects: { name:string; slug:string; description:string; active:string; git:string; details:Detail[] }[] = [
+export const projects: { name:string; slug:string; description:string; bullet2:string; active:string; git:string; details:Detail[] }[] = [
   {
     name: 'Riders Guild',
     slug: 'riders-guild',
-    description: "A Blog built with NextAuth for user authentication and database encryption, RESTful API functionality for posts and comments between users.",
+    description: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
+    bullet2:"built with NextAuth for user authentication and database encryption, RESTful API functionality for posts and comments between users.",
     active: 'https://capstone-nine.vercel.app/',
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
@@ -175,7 +177,8 @@ export const projects: { name:string; slug:string; description:string; active:st
   {
     name: 'Dispatch',
     slug: 'dispatch',
-    description: "Full stack Express and Postgres app that uses Sequelize as an ORM to interact with protected customer data with full CRUD functionality for each user. Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+    description: "WebApp created as a more customized solution for automating fleet dispatching and routing",
+    bullet2: "JavaScript, Express, Postgres, SQL, Mapbox API. Users are able to chart out zones on the map and displays the corresponding zone the geocoded data is within.",
     active: '',
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
@@ -187,7 +190,8 @@ export const projects: { name:string; slug:string; description:string; active:st
   {
     name: 'Falendar',
     slug: 'falendar',
-    description: "1",
+    description:  "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
+    bullet2: '',
     active: 'https://60f1ef3a5668050007a6b11d--condescending-lamarr-3bcb2c.netlify.app/',
     git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
     details: [
@@ -199,7 +203,8 @@ export const projects: { name:string; slug:string; description:string; active:st
   {
     name: 'Escape Noface',
     slug: 'escape-noface',
-    description: "1",
+    description: "A simple and fun game I created as an ode to my favorite director",
+    bullet2: "Single player online game utilizing vanilla JavaScipt and HTML Canvas for collision detection, gravitational elements, and randomized obstacle generation",
     active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [

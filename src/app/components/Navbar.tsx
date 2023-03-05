@@ -27,33 +27,43 @@ export default function Navbar() {
       <div className={styles.pages}>
       
             <Link 
-  
+            className={styles.links}
             href="/about">
-            <h2>About</h2>
+            <h2 className={inter.className}>
+              About
+            </h2>
             </Link>
             
             <Link 
-  
+            className={styles.links}
             href="/projects">
-            <h2>Projects</h2>
+            <h2 className={inter.className}>
+              Projects
+            </h2>
             </Link>
             
             <Link 
-  
+            className={styles.links}
             href="/blog">
-            <h2>Blog</h2>
+            <h2 className={inter.className}>
+              Blog
+            </h2>
             </Link>
             
             <Link 
-  
+            className={styles.links}
             href="/contact">
-            <h2>Contact</h2>
+            <h2 className={inter.className}>
+              Contact
+            </h2>
             </Link>
 
             <Link 
-  
+            className={styles.links}
             href="/resume">
-            <h2>Resume</h2>
+            <h2 className={inter.className}>
+              Resume
+            </h2>
             </Link>
       </div>
 

@@ -2,7 +2,6 @@
 
 import styles from './page.module.css'
 import { Inter } from '@next/font/google'
-import Script from 'next/script'
 import { Text, Box, keyframes } from '@chakra-ui/react'
 import * as React from 'react';
 
@@ -32,25 +31,31 @@ export default function Splash() {
                 onMouseOver={ () => setName(!name)}
                 onMouseOut = { () => setName(!name)}
                 animation={fadeDownAnim}
-                transition={"300ms ease-in-out"}
+                transition={"300ms ease-out"}
             >
                 {name ?
                     <Text
                     //   animation={fadeDownAnim}
-                    //   transition={"300ms ease-in-out"}
+                      transition={"100ms ease-in-out"}
                       fontWeight={600}
                       fontFamily={"var(--chakra-fonts-mono)"}
                       fontSize='2xl'
+                    //   _before={{
+                    //     transition: "100ms ease-out"
+                    //   }}
                     > 
                         /. Lukasiewicz ./ 
                     </Text> 
                 :
                     <Text
                     //   animation={fadeDownAnim}
-                    //   transition={"300ms ease-in-out"}
+                      transition={"100ms ease-in-out"}
                       fontWeight={600}
                       fontFamily={"var(--chakra-fonts-mono)"}
                       fontSize='2xl'
+                    //   _before={{
+                    //     transition: "100ms ease-out"
+                    //   }}
                     >
                         / wu.kaˈɕɛ.vit͡ʂ /
                     </Text>
