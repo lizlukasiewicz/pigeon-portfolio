@@ -10,13 +10,11 @@ export default async function Page({ params }: PageProps) {
                 {project.name}
             </h2>
             
-            {/* {Array.from({ length: 1 }).map((_, i) => ( key={i}*/}
                 <div className={project.slug}>
                     <p>{project.description}</p>
                     <p>{project.active}</p>
                     <p>{project.git}</p>
                 </div>
-             {/* ))} */}
 
         </div>
     )
