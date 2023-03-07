@@ -108,7 +108,7 @@ export const getCompartment = cache((): Compartment[] => [
   {
     name: 'Riders Guild',
     slug: 'riders-guild',
-    description: "A Blog built with NextAuth for user authentication and database encryption, RESTful API functionality for posts and comments between users.",
+    description: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
     active: 'https://capstone-nine.vercel.app/',
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
@@ -122,7 +122,7 @@ export const getCompartment = cache((): Compartment[] => [
   {
     name: 'Dispatch',
     slug: 'dispatch',
-    description: "Full stack Express and Postgres app that uses Sequelize as an ORM to interact with protected customer data with full CRUD functionality for each user. Data is run through the Mapbox API which geocodes customer addresses and renders them on map. Users are able to chart out zones on the map and the app displays the corresponding zone the geocoded data is within.",
+    description: "WebApp created as a more customized solution for automating fleet dispatching and routing",
     active: '',
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
@@ -146,7 +146,7 @@ export const getCompartment = cache((): Compartment[] => [
   {
     name: 'Escape Noface',
     slug: 'escape-noface',
-    description: "1",
+    description: "A simple and fun game I created as an ode to my favorite director",
     active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [
@@ -167,10 +167,10 @@ export const projects: { name:string; slug:string; description:string; bullet2:s
     active: 'https://capstone-nine.vercel.app/',
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
-      { name: 'Next.js', alt: 'Next js logo', icon: "icon-logo" },
+      { name: 'Next.js', alt: 'Next JS logo', icon: "icon-logo" },
       { name: 'MongoDB', alt: 'Mongo DB logo', icon: "icon-logo" },
-      { name: 'Mongoose', alt: 'laptops', icon: "icon-logo" },
-      { name: 'NextAuth', alt: 'laptops', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'Javascript logo', icon: "icon-logo" },
+      { name: 'NextAuth', alt: 'Next Auth logo', icon: "icon-logo" },
       { name: 'React', alt: 'React logo', icon: "icon-logo" },
     ],
   },
@@ -182,21 +182,22 @@ export const projects: { name:string; slug:string; description:string; bullet2:s
     active: '',
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
-      { name: 'Tops', alt: 'tops', icon: "icon-logo" },
-      { name: 'Shorts', alt: 'shorts', icon: "icon-logo" },
-      { name: 'Shoes', alt: 'shoes', icon: "icon-logo" },
+      { name: 'Express', alt: 'Express logo', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'JavaScript logo', icon: "icon-logo" },
+      { name: 'SQL', alt: 'SQL logo', icon: "icon-logo" },
+      { name: 'PostgreSQL', alt: 'PostgreSQL logo', icon: "icon-logo" },
     ],
   },
   {
     name: 'Falendar',
     slug: 'falendar',
-    description:  "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
-    bullet2: '',
+    description:  "Github manager workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
+    bullet2: 'Utilized React Calendar Component to record and render Schedules stored within MongoDB',
     active: 'https://60f1ef3a5668050007a6b11d--condescending-lamarr-3bcb2c.netlify.app/',
     git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
     details: [
-      { name: 'Fiction', alt: 'fiction', icon: "icon-logo" },
-      { name: 'Biography', alt: 'biography', icon: "icon-logo" },
+      { name: 'MongoDB', alt: 'MongoDB logo', icon: "icon-logo" },
+      { name: 'React', alt: 'React logo', icon: "icon-logo" },
       { name: 'Education', alt: 'education', icon: "icon-logo" },
     ],
   },
@@ -208,9 +209,9 @@ export const projects: { name:string; slug:string; description:string; bullet2:s
     active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [
-      { name: 'Fiction', alt: 'fiction', icon: "icon-logo" },
-      { name: 'Biography', alt: 'biography', icon: "icon-logo" },
-      { name: 'Education', alt: 'education', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'JavaScript logo', icon: "icon-logo" },
+      { name: 'HTML', alt: 'HTML logo', icon: "icon-logo" },
+      { name: 'CSS', alt: 'CSS logo', icon: "icon-logo" },
     ],
   },
 ];

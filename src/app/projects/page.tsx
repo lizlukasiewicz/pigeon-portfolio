@@ -15,7 +15,8 @@ export default function Projects() {
     return(
         <div className={styles.projectsContainer}>
             <div className={styles.title}>
-            <h2>Built by a Machine</h2>
+            <h2>Built by a Machine ::</h2>
+            <p>Things I've Built</p>
             </div>
             <div className={styles.projectsList}>
                 {projects.map((project) => {
@@ -45,6 +46,13 @@ export default function Projects() {
 
                             </Button>
                                 <p>{project.description}</p>
+                                <div>
+                                {project.details.map((icon) => {
+                                    return(
+                                        <p>{icon.alt}</p>
+                                        )
+                                    })}
+                                </div>
                         </div>
                 )})}
             </div>
