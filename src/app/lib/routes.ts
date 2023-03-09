@@ -1,4 +1,20 @@
-import { cache } from 'react';
+'use client'
+import { cache, ReactNode } from 'react';
+import { Icon } from '@chakra-ui/react'
+import { SiNextdotjs, 
+         SiMongodb, 
+         SiJavascript, 
+         SiExpress, 
+         SiPostgresql, 
+         SiMysql, 
+         SiSqlite, 
+         SiHtml5,
+         SiTailwindcss,
+         SiCss3, 
+         SiMaterialdesignicons,
+         SiStyledcomponents} from 'react-icons/si'
+import { TbBrandNextjs, TbBrandBootstrap, TbBrandJavascript } from 'react-icons/tb'
+import { DiSqllite, DiMongodb, DiJavascript } from 'react-icons/di'
 
 
 export type PageProps = {
@@ -16,14 +32,14 @@ export type Compartment = {
 export type Detail = {
   name: string;
   alt: string;
-  icon?: any;
+  icon: string;//React.ReactNode;
 };
 export type Item = {
     name: string;
     slug: string;
     bullet1?: string;
     bullet2?: string;
-    img: string;
+    // img: string;
 };
 
 
@@ -55,28 +71,28 @@ export type Item = {
           slug: 'riders-guild',
           bullet1: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
           bullet2: "built with NextAuth and RESTful API functionality",
-          img: '',
+          // img: '',
         },
         {
           name: 'Dispatch',
           slug: 'dispatch',
           bullet1: "WebApp created as a more customized solution for automating fleet dispatching and routing",
           bullet2: "JavaScript, Express, Postgres, SQL, Mapbox API",
-          img: '',
+          // img: '',
         },
         {
           name: 'Falendar',
           slug: 'falendar',
           bullet1: "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
           bullet2: "",
-          img: '',
+          // img: '',
         },
         {
           name: 'Escape Noface',
           slug: 'escape-noface',
           bullet1: "A simple and fun game I created as an ode to my favorite director",
           bullet2: "Single player online game utilizing vanilla JavaScipt and HTML Canvas for collision detection, gravitational elements, and randomized obstacle generation",
-          img: '',
+          // img: '',
         },
 
 
@@ -112,10 +128,10 @@ export const getCompartment = cache((): Compartment[] => [
     active: 'https://capstone-nine.vercel.app/',
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
-      { name: 'Next.js', alt: 'Next js logo', icon: "icon-logo" },
+      { name: 'Next.js', alt: 'Next JS logo', icon: "icon-logo" },
       { name: 'MongoDB', alt: 'Mongo DB logo', icon: "icon-logo" },
-      { name: 'Mongoose', alt: 'laptops', icon: "icon-logo" },
-      { name: 'NextAuth', alt: 'laptops', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'Javascript logo', icon: "icon-logo" },
+      { name: 'NextAuth', alt: 'Next Auth logo', icon: "icon-logo" },
       { name: 'React', alt: 'React logo', icon: "icon-logo" },
     ],
   },
@@ -126,9 +142,11 @@ export const getCompartment = cache((): Compartment[] => [
     active: '',
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
-      { name: 'Tops', alt: 'tops', icon: "icon-logo" },
-      { name: 'Shorts', alt: 'shorts', icon: "icon-logo" },
-      { name: 'Shoes', alt: 'shoes', icon: "icon-logo" },
+      { name: 'Express', alt: 'Express logo', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'JavaScript logo', icon: "icon-logo" },
+      { name: 'SQL', alt: 'SQL logo', icon: "icon-logo" },
+      { name: 'SQLite', alt: 'SQLite logo', icon: "icon-logo" },
+      { name: 'PostgreSQL', alt: 'PostgreSQL logo', icon: "icon-logo" },
     ],
   },
   {
@@ -138,9 +156,11 @@ export const getCompartment = cache((): Compartment[] => [
     active: 'https://60f1ef3a5668050007a6b11d--condescending-lamarr-3bcb2c.netlify.app/',
     git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
     details: [
-      { name: 'Fiction', alt: 'fiction', icon: "icon-logo" },
-      { name: 'Biography', alt: 'biography', icon: "icon-logo" },
-      { name: 'Education', alt: 'education', icon: "icon-logo" },
+      { name: 'MongoDB', alt: 'MongoDB logo', icon: "icon-logo" },
+      { name: 'React', alt: 'React logo', icon: "icon-logo" },
+      { name: 'Styled-Components', alt: 'Styled Components logo', icon: "icon-logo" },
+      { name: 'Material-Icons', alt: 'Material Icons logo', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'JavaScript logo', icon: "icon-logo" },
     ],
   },
   {
@@ -150,9 +170,9 @@ export const getCompartment = cache((): Compartment[] => [
     active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [
-      { name: 'Fiction', alt: 'fiction', icon: "icon-logo" },
-      { name: 'Biography', alt: 'biography', icon: "icon-logo" },
-      { name: 'Education', alt: 'education', icon: "icon-logo" },
+      { name: 'JavaScript', alt: 'JavaScript logo', icon: "icon-logo" },
+      { name: 'HTML', alt: 'HTML logo', icon: "icon-logo" },
+      { name: 'CSS', alt: 'CSS logo', icon: "icon-logo" },
     ],
   },
 ]);

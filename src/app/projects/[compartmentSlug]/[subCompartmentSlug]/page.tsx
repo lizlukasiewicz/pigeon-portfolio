@@ -12,7 +12,7 @@ export default async function Page({ params }: PageProps) {
         <div>
             
             <h2>{project.name}</h2>
-            {Array.from({ length: 5 }).map((_, i) => (
+            {Array.from({ length: 1 }).map((_, i) => (
                 <div key={i}>
                     <p>{project.alt}</p>
                     <p>{project.icon}</p>
