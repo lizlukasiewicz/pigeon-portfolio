@@ -11,7 +11,7 @@ import Splash from './Splash'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  
+  console.log('hello world! 🍄')
   return (
     <div>
       

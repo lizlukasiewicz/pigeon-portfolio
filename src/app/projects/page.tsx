@@ -47,9 +47,9 @@ export default function Projects() {
                             </Button>
                                 <p>{project.description}</p>
                                 <div>
-                                {project.details.map((icon) => {
+                                {project.details.map((icons) => {
                                     return(
-                                        <p>{icon.alt}</p>
+                                        < icons.IconComponent as={icons.icon} />
                                         )
                                     })}
                                 </div>

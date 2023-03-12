@@ -8,7 +8,9 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  const projects= await fetchCompartment();
+  console.log(`children:: ${children?.toString}`)
+  console.log(`fetchCompartment::  ${fetchCompartment}`);
+  const projects = await fetchCompartment();
 
     return (
 
