@@ -111,10 +111,10 @@ export const getCompartment = cache((): Compartment[] => [
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
       { name: 'Next.js', alt: 'Next JS logo'},
-    //  { name: 'MongoDB', alt: 'Mongo DB logo'},
-    //  { name: 'JavaScript', alt: 'Javascript logo'},
-    //  { name: 'NextAuth', alt: 'Next Auth logo'},
-    //  { name: 'React', alt: 'React logo'},
+      { name: 'MongoDB', alt: 'Mongo DB logo'},
+      { name: 'JavaScript', alt: 'Javascript logo'},
+      { name: 'NextAuth', alt: 'Next Auth logo'},
+      { name: 'React', alt: 'React logo'},
     ],
   },
   {
@@ -125,10 +125,10 @@ export const getCompartment = cache((): Compartment[] => [
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
       { name: 'Express', alt: 'Express logo'},
-    //  { name: 'JavaScript', alt: 'JavaScript logo'},
-    //  { name: 'SQL', alt: 'SQL logo'},
-    //  { name: 'SQLite', alt: 'SQLite logo'},
-    //  { name: 'PostgreSQL', alt: 'PostgreSQL logo'},
+      { name: 'JavaScript', alt: 'JavaScript logo'},
+      { name: 'SQL', alt: 'SQL logo'},
+      { name: 'SQLite', alt: 'SQLite logo'},
+      { name: 'PostgreSQL', alt: 'PostgreSQL logo'},
     ],
   },
   {
@@ -139,10 +139,10 @@ export const getCompartment = cache((): Compartment[] => [
     git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
     details: [
       { name: 'MongoDB', alt: 'MongoDB logo'},
-    //  { name: 'React', alt: 'React logo'},
-    //  { name: 'Styled-Components', alt: 'Styled Components logo'},
-    //  { name: 'Material-Icons', alt: 'Material Icons logo'},
-    //  { name: 'JavaScript', alt: 'JavaScript logo'},
+      { name: 'React', alt: 'React logo'},
+      { name: 'Styled-Components', alt: 'Styled Components logo'},
+      { name: 'Material-Icons', alt: 'Material Icons logo'},
+      { name: 'JavaScript', alt: 'JavaScript logo'},
     ],
   },
   {
@@ -153,8 +153,8 @@ export const getCompartment = cache((): Compartment[] => [
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [
       { name: 'JavaScript', alt: 'JavaScript logo'},
-    //  { name: 'HTML', alt: 'HTML logo'},
-    //  { name: 'CSS', alt: 'CSS logo'},
+      { name: 'HTML', alt: 'HTML logo'},
+      { name: 'CSS', alt: 'CSS logo'},
     ],
   },
 ]);
@@ -228,16 +228,16 @@ export async function fetchCompartment(): Promise<Compartment[]> {
 }
 
 async function findSubCompartment(
-  Compartment: Compartment | undefined,
+  compartment: Compartment | undefined,
   subCompartmentSlug: string | undefined,
 ) {
-  return Compartment?.details.find((Compartment) => Compartment.alt === subCompartmentSlug);
+  return compartment?.details.find((compartment) => compartment.alt === subCompartmentSlug);
 }
 
 export async function fetchSubCompartment(
   compartmentSlug: string | undefined,
   subCompartmentSlug: string | undefined,
 ) {
-  const Compartment = await fetchCompartmentBySlug(compartmentSlug);
-  return findSubCompartment(Compartment, subCompartmentSlug);
+  const compartment = await fetchCompartmentBySlug(compartmentSlug);
+  return findSubCompartment(compartment, subCompartmentSlug);
 }
