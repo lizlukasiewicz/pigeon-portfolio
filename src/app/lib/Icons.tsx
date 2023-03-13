@@ -41,13 +41,12 @@ export type Icon = {
     IconComponent: React.ElementType;
   };
 
-
-  export const projects: { name:string; slug:string; description:string; bullet2:string; active:string; git:string; details:Icon[] }[] = [
+  export const projects: { name:string; slug:string; bullet1:string; bullet2:string; active:string; git:string; details:Icon[] }[] = [
     {
       name: 'Riders Guild',
       slug: 'riders-guild',
-      description: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
-      bullet2:"built with NextAuth for user authentication and database encryption, RESTful API functionality for posts and comments between users.",
+      bullet1: "A Blog built for cycling enthousiasts or beginners as a central place to trade parts, tips, and routes.",
+      bullet2: "built with NextAuth and RESTful API functionality",
       active: 'https://capstone-nine.vercel.app/',
       git: 'https://github.com/lizlukasiewicz/capstone',
       details: [
@@ -61,8 +60,8 @@ export type Icon = {
     {
       name: 'Dispatch',
       slug: 'dispatch',
-      description: "WebApp created as a more customized solution for automating fleet dispatching and routing",
-      bullet2: "JavaScript, Express, Postgres, SQL, Mapbox API. Users are able to chart out zones on the map and displays the corresponding zone the geocoded data is within.",
+      bullet1: "WebApp created as a more customized solution for automating fleet dispatching and routing",
+      bullet2: "JavaScript, Express, Postgres, SQL, Mapbox API",
       active: '',
       git: "https://github.com/lizlukasiewicz/dispatch",
       details: [
@@ -77,8 +76,8 @@ export type Icon = {
     {
       name: 'Falendar',
       slug: 'falendar',
-      description:  "Github manager workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
-      bullet2: 'Utilized React Calendar Component to record and render Schedules stored within MongoDB',
+      bullet1: "Github workflow project using React Calendar component to record and render synchronized schedules between user groups and clusters.",
+      bullet2: "",
       active: 'https://60f1ef3a5668050007a6b11d--condescending-lamarr-3bcb2c.netlify.app/',
       git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
       details: [
@@ -92,7 +91,7 @@ export type Icon = {
     {
       name: 'Escape Noface',
       slug: 'escape-noface',
-      description: "A simple and fun game I created as an ode to my favorite director",
+      bullet1: "A simple and fun game I created as an ode to my favorite director",
       bullet2: "Single player online game utilizing vanilla JavaScipt and HTML Canvas for collision detection, gravitational elements, and randomized obstacle generation",
       active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
       git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',

@@ -6,6 +6,7 @@ import { fetchCompartmentBySlug, type PageProps } from "@/app/lib/routes";
 export default async function Layout({ children, params }: PageProps) {
     const projects = await fetchCompartmentBySlug(params.compartmentSlug);
     if (!projects) return null
+    console.log(`🪬 compartmentSlug: ${params.compartmentSlug} projects: ${projects.slug}`)
     return (
         <div>
             <div>

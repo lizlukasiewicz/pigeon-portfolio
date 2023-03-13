@@ -15,7 +15,7 @@ export default async function Page({ params }: PageProps) {
             {Array.from({ length: 1 }).map((_, i) => (
                 <div key={i}>
                     <p>{project.alt}</p>
-                    <project.IconComponent as={project.icon} />
+                    {/* <project.IconComponent as={project.icon} /> */}
 
                 </div>
             ))} 

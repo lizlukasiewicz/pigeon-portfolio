@@ -33,7 +33,7 @@ export default function Projects() {
                                 href={`${project.git}`}
                                 backgroundColor={"transparent"}
                             >
-                                <Icon as={FiGithub} w={8} h={8} color='#00C484' />
+                                <Icon as={FiGithub} w={7} h={7} color='#00C484' />
 
                             </Button>
                             <Button
@@ -42,10 +42,11 @@ export default function Projects() {
                                 href={`${project.active}`}
                                 backgroundColor={"transparent"}
                             >
-                                <Icon as={FaExternalLinkAlt} w={8} h={8} color='#00C484' />
+                                <Icon as={FaExternalLinkAlt} w={7} h={7} color='#00C484' />
 
                             </Button>
-                                <p>{project.description}</p>
+                                <p>{project.bullet1}</p>
+                                <p>{project.bullet2}</p>
                                 <div>
                                 {project.details.map((icons) => {
                                     return(

@@ -2,10 +2,9 @@
 
 import * as React from 'react';
 import { Link } from '@chakra-ui/next-js'
-import styles from './side.module.css'
-import { Icon } from '@chakra-ui/react'
-import { GrHomeRounded } from "react-icons/gr"
-import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme} from "react-icons/fa"
+// import styles from './side.module.css'
+import { Icon, Text } from '@chakra-ui/react'
+import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme, FaHome} from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Box,
@@ -31,6 +30,7 @@ export const fadeDown: string = keyframes`
 export default function Sidebar() {
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
+  // const [isPhoneScreen]: boolean[] = useMediaQuery("(min-width: 500px)");
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect((): void => {
@@ -53,12 +53,14 @@ export default function Sidebar() {
           paddingTop={90}
           boxShadow={"dark-lg"}
           fontSize={16}
-          height={700}
-          justifyContent={"center"}
+          height={500}
+          justifyContent={"flex-start"}
+          alignItems={"flex-start"}
           position={"fixed"}
           right={menuOpen ? 0 : "-50%"}
           top={menuOpen? 0: 0}
-          spacing={25}
+          spacing={35}
+          pl={'3%'}
           transition={"300ms ease-in-out"}
           width={"30%"}
           zIndex={2}>
@@ -79,9 +81,18 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/" 
-              className={styles.option} > 
+              // className={styles.option}
+              >
+                <Text
+                    as='b'
+                    cursor={"pointer"}
+                    fontFamily={"var(--chakra-fonts-mono)"}
+                    fontSize='1.4rem'
+                    color='#00C484'
+                    _hover={{color:"#FFFFFF"}}>
 
-                <Icon as={GrHomeRounded} w={30} h={30} color='#00C484'/>
+                  <Icon as={FaHome} w={35} h={35} />
+                </Text>
             </Link>
           </Box>
 
@@ -102,11 +113,20 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/about" 
-              className={styles.option}>
-              <Icon as={FaTerminal} w={30} h={30} color='#00C484'/>
-                  <h2>
+              // className={styles.option}
+              >
+                  <Text
+                    as='b'
+                    cursor={"pointer"}
+                    fontFamily={"var(--chakra-fonts-mono)"}
+                    fontSize='1.1rem'
+                    color='#00C484'
+                    _hover={{color:"#FFFFFF"}}>
+
+                    <Icon as={FaTerminal} w={20} h={20} mr={20}/>
+
                     About Me
-                  </h2>
+                  </Text>
             </Link>
           </Box>
 
@@ -127,11 +147,19 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/blog" 
-              className={styles.option}>
-              <Icon as={FaBloggerB} w={30} h={30} color='#00C484'/>
-                <h2>
-                  Blog
-                </h2>
+              // className={styles.option}
+              >
+                <Text
+                    as='b'
+                    cursor={"pointer"}
+                    fontFamily={"var(--chakra-fonts-mono)"}
+                    fontSize='1.1rem'
+                    color='#00C484'
+                    _hover={{color:"#FFFFFF"}}>
+
+                    <Icon as={FaBloggerB} w={20} h={20} mr={20}/>
+                    Blog
+                </Text>
             </Link>
           </Box>
 
@@ -152,11 +180,18 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/projects" 
-              className={styles.option}>
-                <Icon as={FaTools} w={30} h={30} color='#00C484'/>
-                <h2>
+              // className={styles.option}
+              >
+                <Text
+                  as='b'
+                  cursor={"pointer"}
+                  fontFamily={"var(--chakra-fonts-mono)"}
+                  fontSize='1.1rem'
+                  color='#00C484'
+                  _hover={{color:"#FFFFFF"}}>
+                  <Icon as={FaTools} w={20} h={20} mr={20}/>
                   Projects
-                </h2>
+                </Text>
             </Link>
           </Box>
 
@@ -177,11 +212,18 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/contact" 
-              className={styles.option}>
-                <Icon as={FaMailBulk} w={30} h={30} color='#00C484'/>
-                <h2>
+              // className={styles.option}
+              >
+                <Text
+                  as='b'
+                  cursor={"pointer"}
+                  fontFamily={"var(--chakra-fonts-mono)"}
+                  fontSize='1.1rem'
+                  color='#00C484'
+                  _hover={{color:"#FFFFFF"}}>
+                  <Icon as={FaMailBulk} w={20} h={20} mr={20}/>
                   Contact
-                </h2>
+                </Text>
             </Link>
           </Box>
 
@@ -201,25 +243,23 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/resume" 
-              className={styles.option}>
-                <Icon as={FaReadme} w={30} h={30} color='#00C484'/>
-                <h2>
+              // className={styles.option}
+              >
+                <Text
+                  as='b'
+                  cursor={"pointer"}
+                  fontFamily={"var(--chakra-fonts-mono)"}
+                  fontSize='1.1rem'
+                  color='#00C484'
+                  _hover={{color:"#FFFFFF"}}>
+                  <Icon as={FaReadme} w={20} h={20} mr={20}/>
                   Resume
-                </h2>
+                </Text>
             </Link>
           </Box>
           
         </VStack>
-        {/* <Box
-          backgroundColor={"black"}
-          height={"100%"}
-          onClick={() => setMenuOpen(!menuOpen)}
-          opacity={menuOpen ? .75 : 0}
-          position={"fixed"}
-          transition={"opacity 400ms ease-out, visibility 400ms ease-out"}
-          visibility={menuOpen ? "visible" : "hidden"}
-          width={"100%"}
-          zIndex={1} /> */}
+
 
     
     </>

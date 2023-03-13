@@ -63,8 +63,9 @@
     .navigation {
         font-size: 0.8rem;
         padding: 1rem;
-        display: flex;
-        justify-content: space-between;
+        flex-direction:row;
+        justify-content: flex-start;
+        align-items: space-between;
         width: 100%;
         z-index: 2;
         border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
@@ -96,8 +97,13 @@
       }
     
       .logo {
+        position: absolute;
+        left: 0.5rem;
         align-items: flex-start;
         z-index: 1;
+        margin: 0 1rem 0 0;
+        border: 4px solid rgba(var(--foreground-rgb), 0.25);
+        border-radius: 40px;
       }
 
 
