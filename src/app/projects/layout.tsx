@@ -8,15 +8,12 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log(`children:: ${children?.toString}`)
-  console.log(`fetchCompartment::  ${fetchCompartment}`);
   const projects = await fetchCompartment();
-
+  console.log(`projects::  ${projects}`);
     return (
 
       <div>
         <div >
-         
           <TabGroup
           path='/projects'
           items={[

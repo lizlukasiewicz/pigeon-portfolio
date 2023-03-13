@@ -2,7 +2,7 @@
 
 import styles from './tab.module.css'
 import { Inter } from '@next/font/google'
-import { projects } from '../lib/routes' 
+import { projects } from '../lib/Icons' 
 import { Link } from '@chakra-ui/next-js'
 import { Icon, Button } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
