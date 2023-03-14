@@ -1,13 +1,15 @@
-'use client';
 import { fetchCompartmentBySlug, type PageProps } from "@/app/lib/routes";
-// import { Icon, Button } from '@chakra-ui/react'
-// import { FaExternalLinkAlt } from "react-icons/fa"
-// import { FiGithub } from "react-icons/fi"
+import { fetchProjectBySlug } from "@/app/lib/Icons";
+// import * as React from 'react';
+
 
 export default async function Page({ params }: PageProps) {
     const project = await fetchCompartmentBySlug(params.compartmentSlug)
+    // const [slug, setSlug] = React.useState<string>()
     if (!project) return null;
-    console.log(`🌺 compartmentSlug: ${params.compartmentSlug} project: ${project.name}`)
+    // setSlug(project.slug)
+    // const picons = await fetchProjectBySlug(slug)
+    console.log(`🌺 compartmentSlug: ${params.compartmentSlug} project: ${project.name} `)
     return(
         <div>
             <h2>

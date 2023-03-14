@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import { cache } from 'react';
 import { ColoredIcon } from './ColoredIcon';
 export const SiNextdotjs = require('react-icons/si').SiNextdotjs;
@@ -148,4 +148,7 @@ export const getProject = cache((): Project[] => [
       ],
     },
   ]);
-  
+
+  export async function fetchProjectBySlug(slug: string | undefined) {
+    return getProject().find((project) => project.slug === slug);
+  }

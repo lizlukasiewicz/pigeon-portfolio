@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { Link } from '@chakra-ui/next-js'
-// import styles from './side.module.css'
 import { Icon, Text } from '@chakra-ui/react'
 import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme, FaHome} from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
