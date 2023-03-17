@@ -29,7 +29,6 @@ export const fadeDown: string = keyframes`
 export default function Sidebar() {
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
-  // const [isPhoneScreen]: boolean[] = useMediaQuery("(min-width: 500px)");
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect((): void => {

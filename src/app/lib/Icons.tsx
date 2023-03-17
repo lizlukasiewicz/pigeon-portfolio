@@ -32,6 +32,8 @@ export const FaNode = require('react-icons/fa').FaNode
 export type Project = {
     name: string;
     slug: string;
+    active:string; 
+    git:string;
     icons: Omit<Icon, 'icons'>[];
   };
 export type Icon = {
@@ -107,6 +109,8 @@ export const getProject = cache((): Project[] => [
     {
       name: 'Riders Guild',
       slug: 'riders-guild',
+      active: 'https://capstone-nine.vercel.app/',
+      git: 'https://github.com/lizlukasiewicz/capstone',
       icons: [
         { name: 'Next.js', alt: 'Next JS logo', icon: SiNextdotjs, IconComponent: ColoredIcon},
         { name: 'MongoDB', alt: 'Mongo DB logo', icon: SiMongodb, IconComponent: ColoredIcon},
@@ -118,6 +122,8 @@ export const getProject = cache((): Project[] => [
     {
       name: 'Dispatch',
       slug: 'dispatch',
+      active: '',
+      git: "https://github.com/lizlukasiewicz/dispatch",
       icons: [
         { name: 'Express', alt: 'Express logo', icon: SiExpress, IconComponent: ColoredIcon },
         { name: 'JavaScript', alt: 'JavaScript logo', icon: TbBrandJavascript, IconComponent: ColoredIcon },
@@ -130,6 +136,8 @@ export const getProject = cache((): Project[] => [
     {
       name: 'Falendar',
       slug: 'falendar',
+      active: 'https://60f1ef3a5668050007a6b11d--condescending-lamarr-3bcb2c.netlify.app/',
+      git: 'https://github.com/lizlukasiewicz/Collab-MERN-Client',
       icons: [
         { name: 'MongoDB', alt: 'MongoDB logo', icon: DiMongodb, IconComponent: ColoredIcon },
         { name: 'React', alt: 'React logo', icon: GrReactjs, IconComponent: ColoredIcon },
@@ -141,6 +149,8 @@ export const getProject = cache((): Project[] => [
     {
       name: 'Escape Noface',
       slug: 'escape-noface',
+      active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
+      git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
       icons: [
         { name: 'JavaScript', alt: 'JavaScript logo', icon: TbBrandJavascript, IconComponent: ColoredIcon },
         { name: 'HTML', alt: 'HTML logo', icon: SiHtml5, IconComponent: ColoredIcon },
@@ -149,6 +159,6 @@ export const getProject = cache((): Project[] => [
     },
   ]);
 
-  export async function fetchProjectBySlug(slug: string | undefined) {
+  export async function fetchProjectBySlug(slug: string) {
     return getProject().find((project) => project.slug === slug);
   }
