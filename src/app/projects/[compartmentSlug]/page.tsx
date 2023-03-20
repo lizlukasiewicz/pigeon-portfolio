@@ -1,6 +1,5 @@
-
+'use client';
 import { fetchCompartmentBySlug, type PageProps } from "@/app/lib/routes";
-
 
 // import * as React from 'react';
 

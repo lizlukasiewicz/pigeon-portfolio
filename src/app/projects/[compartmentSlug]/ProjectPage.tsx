@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import { ProjectLayout } from './ProjectLayout'
 import { Icon, Button } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
@@ -30,7 +30,7 @@ export const ProjectPage = ({project}: {project: Project;}) => {
                 backgroundColor={"transparent"}
             >
                 GitHub Link
-                <Icon as={FiGithub} w={7} h={7} color='#00C484' />
+                {/* <Icon as={FiGithub} w={7} h={7} color='#00C484' /> */}
 
             </Button>
             <Button
@@ -40,7 +40,7 @@ export const ProjectPage = ({project}: {project: Project;}) => {
                 backgroundColor={"transparent"}
             >
                 Active Link
-                <Icon as={FaExternalLinkAlt} w={7} h={7} color='#00C484' />
+                {/* <Icon as={FaExternalLinkAlt} w={7} h={7} color='#00C484' /> */}
 
             </Button>
             {project.icons.map((icon) => {

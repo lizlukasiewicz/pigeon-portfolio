@@ -1,5 +1,6 @@
 // 'use client'
 import { cache } from 'react';
+import { IconType } from "react-icons";
 import { ColoredIcon } from './ColoredIcon';
 export const SiNextdotjs = require('react-icons/si').SiNextdotjs;
 export const SiMongodb = require('react-icons/si').SiMongodb;
