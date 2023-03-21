@@ -5,13 +5,13 @@ import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
 import Splash from './Splash'
-
+import { GitCalendar } from './components/GitCalendar'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  console.log('hello world! 🍄')
+  // console.log('hello world! 🍄')
   return (
     <div>
       
@@ -56,7 +56,7 @@ export default function Home() {
           )
         })}
       </div>
-
+      <GitCalendar />
     </div>
   )
 }

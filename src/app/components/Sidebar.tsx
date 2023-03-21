@@ -78,8 +78,7 @@ export default function Sidebar() {
                 transition: "100ms ease-out",
             }}>
             <Link 
-              href="/" 
-              // className={styles.option}
+              href="/"
               >
                 <Text
                     as='b'
@@ -111,7 +110,6 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/about" 
-              // className={styles.option}
               >
                   <Text
                     as='b'
@@ -145,7 +143,6 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/blog" 
-              // className={styles.option}
               >
                 <Text
                     as='b'
@@ -178,7 +175,6 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/projects" 
-              // className={styles.option}
               >
                 <Text
                   as='b'
@@ -210,7 +206,6 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/contact" 
-              // className={styles.option}
               >
                 <Text
                   as='b'
@@ -241,7 +236,6 @@ export default function Sidebar() {
             }}>
             <Link 
               href="/resume" 
-              // className={styles.option}
               >
                 <Text
                   as='b'

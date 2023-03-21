@@ -4,7 +4,7 @@ import styles from './tab.module.css'
 import { Inter } from '@next/font/google'
 import { projects } from '../lib/Icons' 
 import { Link } from '@chakra-ui/next-js'
-import { Icon, Button, List, ListItem, ListIcon } from '@chakra-ui/react'
+import { Icon, Button, List, ListItem, ListIcon, Tooltip } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { FiGithub } from "react-icons/fi"
 
@@ -48,9 +48,11 @@ export default function Projects() {
                                 <p>{project.bullet1}</p>
                                 <p>{project.bullet2}</p>
                                 <div>
-                                {project.details.map((icons) => {
+                                {project.details.map((icons, i) => {
                                     return(
+                                        <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
                                         < icons.IconComponent as={icons.icon} />
+                                        </Tooltip>
                                         )
                                     })}
                                 </div>

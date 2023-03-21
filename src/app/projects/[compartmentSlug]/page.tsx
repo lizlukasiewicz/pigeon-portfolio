@@ -1,6 +1,6 @@
 'use client';
 import { fetchCompartmentBySlug, Compartment, type PageProps } from "@/app/lib/routes";
-import { Icon, Button } from '@chakra-ui/react'
+import { Icon, Button, Tooltip } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { FiGithub } from "react-icons/fi"
 import React from "react";
@@ -18,7 +18,6 @@ export default function Page({ params }: PageProps) {
     }, []);
     
     if (!data) return null;
-    // console.log(`🌺 compartmentSlug: ${params.compartmentSlug} data: ${data.name}`)
     return(
         <div>
             
@@ -52,9 +51,11 @@ export default function Page({ params }: PageProps) {
 
             {data.details.map((icons, i) => {
                 return(
-                    <div key={i}>
-                    < icons.IconComponent as={icons.icon} />
-                    </div>
+                    <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
+
+                        < icons.IconComponent as={icons.icon} />
+
+                    </Tooltip>
                     )
                 })}
 

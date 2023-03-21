@@ -1,11 +1,8 @@
 'use client';
 
 import styles from './page.module.css'
-import { Inter } from '@next/font/google'
 import { Text, Box, keyframes } from '@chakra-ui/react'
 import * as React from 'react';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const fadeDown: string = keyframes`
   from {
