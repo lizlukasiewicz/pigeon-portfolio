@@ -8,11 +8,11 @@ export const GitCalendar = () => (
     <Stack paddingTop={20}>
         <Heading
             fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize={"lg"}
+            fontSize={"2xl"}
             color='#00C484'
             _hover={{color:"#FFFFFF"}}
             marginY={5}>
-            Git Commit To Something::
+            Git Commit, To Something ::
         </Heading>
         <GitHubCalendar
             blockRadius={7}

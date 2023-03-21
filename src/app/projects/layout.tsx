@@ -10,7 +10,7 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   const projects = await fetchCompartment();
-  console.log(`🌞 from projects/layout projects:${projects[0].slug}`)
+  console.log(`🌞 from projects/layout projects:${projects[1].slug}`)
     return (
 
       <div>
