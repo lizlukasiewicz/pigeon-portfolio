@@ -1,25 +1,62 @@
 'use client';
-import { fetchCompartmentBySlug, type PageProps } from "@/app/lib/routes";
+import { fetchCompartmentBySlug, Compartment, type PageProps } from "@/app/lib/routes";
+import { Icon, Button } from '@chakra-ui/react'
+import { FaExternalLinkAlt } from "react-icons/fa"
+import { FiGithub } from "react-icons/fi"
+import React from "react";
 
-// import * as React from 'react';
 
-
-export default async function Page({ params }: PageProps) {
-    const project = await fetchCompartmentBySlug(params.compartmentSlug)
-    if (!project) return null;
-    console.log(`🌺 compartmentSlug: ${params.compartmentSlug} project: ${project.name}`)
+// TODO: Make it pretty
+export default function Page({ params }: PageProps) {
+    const [data, setData] = React.useState(params.Compartment);
+    React.useEffect(() => {
+        const project = async () => {
+            const response = await fetchCompartmentBySlug(params.compartmentSlug)
+            setData(response);
+        }; 
+        project();
+    }, []);
+    
+    if (!data) return null;
+    // console.log(`🌺 compartmentSlug: ${params.compartmentSlug} data: ${data.name}`)
     return(
         <div>
             
             <h2>
-                {project.name}
+                {data.name}
             </h2>
-            <p>{project.active}</p>
-            <p>{project.git}</p>
+            <Button
+                as={"a"}
+                target={"_blank"}
+                href={`${data.git}`}
+                backgroundColor={"transparent"}
+            >
+                <Icon as={FiGithub} w={7} h={7} color='#00C484' />
+
+            </Button>
+            <Button
+                as={"a"}
+                target={"_blank"}
+                href={`${data.active}`}
+                backgroundColor={"transparent"}
+            >
+                <Icon as={FaExternalLinkAlt} w={7} h={7} color='#00C484' />
+
+            </Button>
             
-                <div className={project.slug}>
-                    <p>{project.description}</p>
+                <div className={data.slug}>
+                    <p>{data.description}</p>
                 </div>
+            
+            
+
+            {data.details.map((icons, i) => {
+                return(
+                    <div key={i}>
+                    < icons.IconComponent as={icons.icon} />
+                    </div>
+                    )
+                })}
 
         </div>
     )

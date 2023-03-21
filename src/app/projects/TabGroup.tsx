@@ -7,6 +7,7 @@ export type Item = {
   segment?: string;
 };
 
+// TODO: Style tabGroup or use chakra-ui
 export const TabGroup = ({ path, items }: { path: string; items: Item[] }) => {
   return (
     <div className={styles.tabGroup}>
