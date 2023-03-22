@@ -41,14 +41,20 @@ export default function Navbar() {
               Projects
             </h2>
             </Link>
-            
             <Link 
+            className={styles.links}
+            href="/experience">
+            <h2 className={inter.className}>
+              Experience
+            </h2>
+            </Link>
+            {/* <Link 
             className={styles.links}
             href="/blog">
             <h2 className={inter.className}>
               Blog
             </h2>
-            </Link>
+            </Link> */}
             
             <Link 
             className={styles.links}

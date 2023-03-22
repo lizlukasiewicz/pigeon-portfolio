@@ -125,9 +125,38 @@ export default function Sidebar() {
                   </Text>
             </Link>
           </Box>
-
-
           <Box
+            as='button' 
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            onClick={() => setMenuOpen(!menuOpen)}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out",
+            }}>
+            <Link 
+              href="/experience" 
+              >
+                <Text
+                    as='b'
+                    cursor={"pointer"}
+                    fontFamily={"var(--chakra-fonts-mono)"}
+                    fontSize='1.1rem'
+                    color='#00C484'
+                    _hover={{color:"#FFFFFF"}}>
+
+                    <Icon as={FaBloggerB} w={20} h={20} mr={20}/>
+                    Experience
+                </Text>
+            </Link>
+          </Box>
+
+          {/* <Box
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
@@ -156,7 +185,7 @@ export default function Sidebar() {
                     Blog
                 </Text>
             </Link>
-          </Box>
+          </Box> */}
 
 
           <Box

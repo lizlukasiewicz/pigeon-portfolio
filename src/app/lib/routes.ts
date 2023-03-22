@@ -75,15 +75,15 @@ export type Item = {
 
         ],
     },
-    {
-      name: 'Blog',
-      slug: 'blog',
-      description: 'Open Source, Openly Sourced',
-      items: [
+    // {
+    //   name: 'Blog',
+    //   slug: 'blog',
+    //   description: 'Open Source, Openly Sourced',
+    //   items: [
 
 
-      ],
-    },
+    //   ],
+    // },
     {
       name: 'Projects',
       slug: 'projects',
