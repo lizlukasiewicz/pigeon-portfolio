@@ -6,12 +6,26 @@ import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
 import Splash from './Splash'
 import { GitCalendar } from './components/GitCalendar'
+import * as React from "react";
+import { useOnScreen } from './lib/Loading';
 
 
 const inter = Inter({ subsets: ['latin'] })
+// type PageProps = {
+//   pageRefs: React.MutableRefObject<Record<string, Element>>,
+//   visible: boolean,
+//   visRef: React.RefObject<Element>
+//   params?: any;
+//   children?: React.ReactNode;
+// };
 
 export default function Home() {
-  // console.log('hello world! 🍄')
+  const pageRefs: React.MutableRefObject<{}> = React.useRef({});
+  // const [visRef, visible]: (boolean | React.MutableRefObject<undefined>)[] = useOnScreen();
+  // const [visRef1, visible1]: [React.MutableRefObject<undefined>, boolean][] = [
+  //   useOnScreen(),
+  //   useOnScreen(),
+  // ];
   return (
     <div>
       
