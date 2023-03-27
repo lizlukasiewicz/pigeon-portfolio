@@ -1,4 +1,3 @@
-
 import { Heading, Stack, Flex} from "@chakra-ui/react";
 import * as React from "react";
 //import { useOnScreen } from "../lib/Loading";//, PageProps} from "../lib/Loading";
