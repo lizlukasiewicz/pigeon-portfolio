@@ -32,6 +32,14 @@ export type PageProps = {
   params?: any;
   children?: React.ReactNode;
 };
+// type PageProps = {
+//   pageRefs: React.MutableRefObject<Record<string, Element>>,
+//   visible: boolean,
+//   visRef: React.RefObject<Element>
+//   params?: any;
+//   children?: React.ReactNode;
+// };
+
 export interface Compartment {
   name: string,
   slug: string,

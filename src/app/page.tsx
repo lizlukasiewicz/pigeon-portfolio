@@ -5,27 +5,18 @@ import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
 import Splash from './Splash'
-import { GitCalendar } from './components/GitCalendar'
+import GitCalendar from "./components/GitCalendar"
 import * as React from "react";
+
 import { useOnScreen } from './lib/Loading';
 
-
 const inter = Inter({ subsets: ['latin'] })
-// type PageProps = {
-//   pageRefs: React.MutableRefObject<Record<string, Element>>,
-//   visible: boolean,
-//   visRef: React.RefObject<Element>
-//   params?: any;
-//   children?: React.ReactNode;
-// };
 
-export default function Home() {
+
+export default function Home() { 
   const pageRefs: React.MutableRefObject<{}> = React.useRef({});
-  // const [visRef, visible]: (boolean | React.MutableRefObject<undefined>)[] = useOnScreen();
-  // const [visRef1, visible1]: [React.MutableRefObject<undefined>, boolean][] = [
-  //   useOnScreen(),
-  //   useOnScreen(),
-  // ];
+  const [visRef, visible] = useOnScreen();
+
   return (
     <div>
       
@@ -70,7 +61,11 @@ export default function Home() {
           )
         })}
       </div>
-      <GitCalendar />
+      <GitCalendar 
+        pageRefs={pageRefs}
+        visible={visible}
+        visRef={visRef}
+        />
     </div>
   )
 }

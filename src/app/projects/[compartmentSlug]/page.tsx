@@ -8,6 +8,7 @@ import React from "react";
 
 // TODO: Make it pretty
 export default function Page({ params }: PageProps) {
+    
     const [data, setData] = React.useState(params.Compartment);
     React.useEffect(() => {
         const project = async () => {
@@ -49,7 +50,7 @@ export default function Page({ params }: PageProps) {
             
             
 
-            {data.details.map((icons, i) => {
+            {data.details?.map((icons, i) => {
                 return(
                     <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
 

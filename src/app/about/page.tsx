@@ -6,6 +6,7 @@ import {
     Text
 } from "@chakra-ui/react"
 import { SkillTable, fadeDown, fadeRight } from "../lib/Icons"
+// import { useOnScreen, PageProps } from '../lib/Loading';
 
 export default function About() {
     const [loaded, setLoaded] = React.useState<boolean>(false);
