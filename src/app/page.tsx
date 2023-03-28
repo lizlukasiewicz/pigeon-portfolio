@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
 import { VStack } from "@chakra-ui/react";
-import Splash from './Splash'
+import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import * as React from "react";
 

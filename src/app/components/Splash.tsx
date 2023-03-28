@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import { Text, Box, keyframes } from '@chakra-ui/react'
 import * as React from 'react';
 
@@ -16,7 +16,7 @@ export const fadeDown: string = keyframes`
 // TODO: FIX TRANSITION ANIMATION 
 export default function Splash() {
     const [name, setName] = React.useState<boolean>(false);
-    const fadeDownAnim: string = `${fadeDown} 500ms 20ms forwards`;
+    const fadeDownAnim: string = `${fadeDown} 1000ms`;//500ms 20ms forwards`;
 
     return(
         <div className={styles.center}>
