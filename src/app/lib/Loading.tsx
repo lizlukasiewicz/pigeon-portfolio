@@ -1,9 +1,9 @@
 import * as React from "react";
 
 export type PageProps = {
-    pageRefs: React.MutableRefObject<{}>,//React.RefObject<HTMLDivElement>,//React.MutableRefObject<Record<string, Element>>,
-    visible: boolean,
-    visRef?: React.RefObject<Element>
+    pageRefs?: React.MutableRefObject<{}>,//React.RefObject<HTMLDivElement>,//React.MutableRefObject<Record<string, Element>>,
+    visible?: boolean,
+    visRef?: React.RefObject<Element>,
     params?: any;
     children?: React.ReactNode;
   };

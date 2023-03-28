@@ -1,7 +1,6 @@
-'use client';
+
 
 import type { Item } from './TabGroup';
-import styles from './tab.module.css'
 import { Link } from '@chakra-ui/next-js'
 import { useSelectedLayoutSegment } from 'next/navigation';
 
@@ -19,7 +18,13 @@ export const Tab = ({ path, item }: { path: string; item: Item }) => {
   return (
     <Link
       href={href}
-      className={styles.linkItem} 
+      fontFamily={"var(--chakra-fonts-mono)"}
+      fontSize={'xl'}
+      fontWeight={"bold"}
+      color={isActive ? "#FFFFFF" : '#00C484'}
+      _hover={{
+        color: "#F3BA40"
+      }}
     >
       {item.text}
     </Link>

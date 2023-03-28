@@ -1,9 +1,9 @@
-// import Image from 'next/image'
 'use client'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
+import { VStack } from "@chakra-ui/react";
 import Splash from './Splash'
 import GitCalendar from "./components/GitCalendar"
 import * as React from "react";
@@ -18,7 +18,7 @@ export default function Home() {
   const [visRef, visible] = useOnScreen();
 
   return (
-    <div>
+    <VStack spacing={0}>
       
       <Splash />
       
@@ -66,6 +66,6 @@ export default function Home() {
         visible={visible}
         visRef={visRef}
         />
-    </div>
+    </VStack>
   )
 }

@@ -1,5 +1,6 @@
+'use client';
 import { Tab } from './Tab';
-import styles from './tab.module.css'
+import { HStack } from '@chakra-ui/react'
 
 export type Item = {
   text: string;
@@ -10,10 +11,15 @@ export type Item = {
 // TODO: Style tabGroup or use chakra-ui
 export const TabGroup = ({ path, items }: { path: string; items: Item[] }) => {
   return (
-    <div className={styles.tabGroup}>
+    <HStack 
+      width={"100%"}
+      marginTop={5}
+      paddingX={5}
+      spacing={7}
+    >
       {items.map((item) => (
         <Tab key={path + item.slug} item={item} path={path} />
       ))}
-    </div>
+    </HStack>
   );
 };

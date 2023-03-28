@@ -1,6 +1,16 @@
 'use client';
 import { fetchCompartmentBySlug, Compartment, type PageProps } from "@/app/lib/routes";
-import { Icon, Button, Tooltip } from '@chakra-ui/react'
+//import { type PageProps } from '@/app/lib/Loading'
+import { 
+    Icon, 
+    Button, 
+    Tooltip,  
+    Flex,
+    Heading,
+    List,
+    ListItem,
+    HStack,
+    VStack } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { FiGithub } from "react-icons/fi"
 import React from "react";
@@ -8,7 +18,9 @@ import React from "react";
 
 // TODO: Make it pretty
 export default function Page({ params }: PageProps) {
-    
+    for ( let y in params ) {
+     console.log(`🍗 [compartmentSlug]/page.tsx params:: ${y}`)
+    };
     const [data, setData] = React.useState(params.Compartment);
     React.useEffect(() => {
         const project = async () => {
@@ -20,11 +32,18 @@ export default function Page({ params }: PageProps) {
     
     if (!data) return null;
     return(
-        <div>
+        <Flex
+          flexDir={"column"}
+          marginY={"5%"}
+          marginX={8}>
             
-            <h2>
+            <Heading
+               fontFamily={"var(--chakra-fonts-mono)"}
+               fontWeight={"bold"}
+               fontSize={'xl'}
+               color='#00C484'>
                 {data.name}
-            </h2>
+            </Heading>
             <Button
                 as={"a"}
                 target={"_blank"}
@@ -44,9 +63,24 @@ export default function Page({ params }: PageProps) {
 
             </Button>
             
-                <div className={data.slug}>
-                    <p>{data.description}</p>
-                </div>
+                <List 
+                bgColor={"rgb(48,48,48)"}
+                borderRadius={5}
+                boxShadow={"0 15px 10px -10px rgba(0,0,0,0.5)"}
+                fontFamily={"var(--chakra-fonts-nunito)"}
+                fontSize={{ base: "md", lg: "lg" }}
+                marginY={5}
+                minWidth={"30vw"}
+                padding={5}
+                spacing={2}
+                //className={data.slug}
+                >
+                    <ListItem
+                      alignItems={"left"}
+                      color='#00C484'>
+                        {data.description}
+                    </ListItem>
+                </List>
             
             
 
@@ -60,6 +94,6 @@ export default function Page({ params }: PageProps) {
                     )
                 })}
 
-        </div>
+        </Flex>
     )
 }

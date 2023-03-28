@@ -28,17 +28,17 @@ export const GrReactjs = require('react-icons/gr').GrReactjs
 
 export const FaNode = require('react-icons/fa').FaNode
 
-export type PageProps = {
-  params?: any;
-  children?: React.ReactNode;
-};
-// type PageProps = {
-//   pageRefs: React.MutableRefObject<Record<string, Element>>,
-//   visible: boolean,
-//   visRef: React.RefObject<Element>
+// export type PageProps = {
 //   params?: any;
 //   children?: React.ReactNode;
 // };
+export type PageProps = {
+  pageRefs?: React.MutableRefObject<{}>;
+  visible?: boolean;
+  visRef?: React.RefObject<Element>;
+  params?: any;
+  children?: React.ReactNode;
+};
 
 export interface Compartment {
   name: string,
