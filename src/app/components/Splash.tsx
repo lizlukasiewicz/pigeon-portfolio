@@ -19,12 +19,21 @@ export default function Splash() {
     const fadeDownAnim: string = `${fadeDown} 1000ms`;//500ms 20ms forwards`;
 
     return(
-        <Box w='100%' h='900px' bgGradient='radial(circle 375px at center, #112941 46%, 
-          rgba(93, 185, 188, 0.52) 60%, 
-          #00E2CB 61.4%, 
-          rgba(51, 72, 80, 0.8) 62%, 
-          rgba(7, 18, 43, 0.5) 82%,
-          rgba(7, 18, 43, 0) 92%)'>
+        <Box w='100%' 
+             h='900px' 
+             bgGradient='radial(circle 375px at center, 
+                                            #112941 46%, 
+                                            rgba(93, 185, 188, 0.52) 60%, 
+                                            #00E2CB 61.4%, 
+                                            rgba(51, 72, 80, 0.8) 62%, 
+                                            rgba(7, 18, 43, 0.5) 82%,
+                                            rgba(7, 18, 43, 0) 92%)'
+               display={'flex'}
+               justifyContent="center"
+               alignItems={"center"}
+               pos="relative"
+               minH={"400px"}
+               >
             <Box
                 mb="0.5rem"
                 pos="absolute"
