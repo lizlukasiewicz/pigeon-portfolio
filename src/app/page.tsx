@@ -3,7 +3,7 @@ import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
-import { VStack } from "@chakra-ui/react";
+import { VStack, Container } from "@chakra-ui/react";
 import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import * as React from "react";
@@ -16,11 +16,14 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() { 
   const pageRefs: React.MutableRefObject<{}> = React.useRef({});
   const [visRef, visible] = useOnScreen();
+  const [visRef2, visible2] = useOnScreen();
 
   return (
     <VStack spacing={0}>
       
-      <Splash />
+      <Splash pageRefs={pageRefs}
+        visible={visible2}
+        visRef={visRef2}/>
       
       
       <div className={styles.grid}>

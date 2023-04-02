@@ -1,28 +1,38 @@
 'use client';
 
-import styles from './tab.module.css'
-import { Inter } from '@next/font/google'
 import { projects } from '../lib/Icons' 
 import { Link } from '@chakra-ui/next-js'
-import { Icon, Button, List, ListItem, ListIcon, Tooltip, Heading, HStack } from '@chakra-ui/react'
+import { Icon, Button, List, ListItem, Tooltip, Heading, HStack, VStack, Container } from '@chakra-ui/react'
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { FiGithub } from "react-icons/fi"
 import { VscDebugStart } from "react-icons/vsc"
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Projects() {
     
     return(
-        <div className={styles.projectsContainer}>
-            <div className={styles.title}>
-            <h2>Built by a Machine ::</h2>
-            <p>Things I've Built</p>
-            </div>
-            <div className={styles.projectsList}>
+        <VStack spacing={4}>
+            <Container
+             marginTop={8}>
+              <Heading
+                fontFamily={"var(--chakra-fonts-mono)"}
+                fontWeight={"bold"}
+                fontSize={"4xl"}
+                color='#00C484'>
+                   Built by a Machine
+              </Heading>
+              <Heading
+                fontFamily={"var(--chakra-fonts-mono)"}
+                fontWeight={"bold"}
+                fontSize={"3xl"}
+                color='#00C484'>
+                  The things I've Built
+              </Heading>
+            </Container>
+            <VStack spacing={10}>
                 {projects.map((project) => {
                     return(
-                        <div className={styles.listItem}> 
+                        <Container> 
                         <HStack
                             justifyContent={"space-between"}>
 
@@ -80,11 +90,11 @@ export default function Projects() {
                                         )
                                     })}
                                 </HStack>
-                        </div>
+                        </Container>
                 )})}
-            </div>
+            </VStack>
 
             
-        </div>
+        </VStack>
     )
 }

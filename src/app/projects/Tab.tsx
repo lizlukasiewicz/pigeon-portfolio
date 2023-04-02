@@ -4,7 +4,7 @@ import type { Item } from './TabGroup';
 import { Link } from '@chakra-ui/next-js'
 import { useSelectedLayoutSegment } from 'next/navigation';
 
-// TODO: isActive make text white or highlight
+
 export const Tab = ({ path, item }: { path: string; item: Item }) => {
   const segment = useSelectedLayoutSegment();
   const href = item.slug ? path + '/' + item.slug : path;
