@@ -6,10 +6,19 @@ import {
     Text
 } from "@chakra-ui/react"
 import { SkillTable, fadeDown, fadeRight } from "../lib/Icons"
-// import { useOnScreen, PageProps } from '../lib/Loading';
+//import {  PageProps } from '../lib/Loading';
+type PageProps = {
+    pageRefs?: React.MutableRefObject<{}>;
+    visRef?: any;
+    visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+};
 
-export default function About() {
+export default function About({ pageRefs, visRef, visible }: PageProps) {
     const [loaded, setLoaded] = React.useState<boolean>(false);
+    React.useEffect(() => {
+        visible && setLoaded(true)
+    }, [visible]);
+    const [name, setName] = React.useState<boolean>(false);
     const fadeDownText: string = `${fadeDown} 200ms 180ms forwards`;
     const fadeRightFirst: string = `${fadeRight} 800ms 800ms forwards`;
     const fadeRightSecond: string = `${fadeRight} 800ms 1200ms forwards`;
@@ -22,19 +31,19 @@ export default function About() {
                 flexDir={"row"}
                 justifyContent={"space-around"}
                 minHeight={"70vh"}
-                //ref={visRef}
+                ref={visRef}
                 >
             <Stack
                 color={"rgb(0,0,0,0.65)"}
                 fontFamily={"var(--chakra-fonts-mono)"}
                 // fontSize={{ base: "sm", lg: "md" }}
                 textAlign={"justify"}>
-                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "md" }} color='#00C484'>
-                    Hey there! My name is Elizabeth
+                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "md" }} color='#00C484' onMouseOver={ () => setName(!name)}>
+                    Hey there! My name is {name? <Text as='b' fontSize={{ base: "sm", lg: "md" }} color='#00C484'>Elizabeth</Text>:<Text as='b' fontSize={{ base: "sm", lg: "md" }} color='#00C484'>E</Text>    }
                 </Text>
 
                 <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "md" }} color='#00C484'>
-                I like to build things,
+                And I like to build things,
                 </Text>
 
                 <Text animation={fadeRightFirst} align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#00C484'>

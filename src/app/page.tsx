@@ -6,6 +6,7 @@ import { Link } from '@chakra-ui/next-js'
 import { VStack, Container } from "@chakra-ui/react";
 import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
+import About from './about/About'
 import * as React from "react";
 
 import { useOnScreen } from './lib/Loading';
@@ -17,6 +18,7 @@ export default function Home() {
   const pageRefs: React.MutableRefObject<{}> = React.useRef({});
   const [visRef, visible] = useOnScreen();
   const [visRef2, visible2] = useOnScreen();
+  const [visRef3, visible3] = useOnScreen();
 
   return (
     <VStack spacing={0}>
@@ -27,7 +29,9 @@ export default function Home() {
       
       
       <div className={styles.grid}>
-        
+        <About pageRefs={pageRefs}
+        visible={visible3}
+        visRef={visRef3}/>
         {demos.map((section) => {
           return(
             <div className={styles.card} key={section.name}>
