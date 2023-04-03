@@ -12,9 +12,8 @@ export default async function Layout({
 
   const projects = await fetchCompartment();
     return (
-
-      <div>
-        <div >
+      <>
+       
           <TabGroup
           path='/projects'
           items={[
@@ -29,9 +28,9 @@ export default async function Layout({
           />
 
   
-        </div>
+        
   
-        <div>{children}</div>
-      </div>
+        <>{children}</>
+      </>
     );
   }

@@ -25,7 +25,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
     React.useEffect(() => {
         visible && setLoaded(true)
     }, [visible]);
-    const fadeDownAnim: string = `${fadeDown} 500ms 20ms forwards`;//1000ms`;//
+    const fadeDownAnim: string = `${fadeDown} 1000ms`;//1000ms`;//
 
     return(
         <Box w='100%' 
@@ -46,41 +46,45 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                minH={"400px"}
                >
             <Box
-                mb="0.5rem"
+                m="0.5rem"
+                padding={7}
                 pos="absolute"
-                top="300"
+                top="260"
                 zIndex={2}
                 onMouseOver={ () => setName(!name)}
-                //onMouseOut = { () => setName(!name)}
-                animation={fadeDownAnim}
-                transition={"500ms ease-in-out"}
-            >
+                // onMouseOut = { () => setName(!name)}
+                _hover={{
+                  cursor: "pointer"
+                }}
+                //animation={fadeDownAnim}
+                //transition={"500ms ease-out"}
+              >
                 {name ?
+                  // <Box
+                  // //animation={fadeDownAnim}
+                  // //transition={"500ms ease-out"}
+                  // >
                     <Text
-                      // animation={fadeDownAnim}
-                      // transition={"100ms ease-in-out"}
+                     as='b'
                       fontWeight={600}
                       fontFamily={"var(--chakra-fonts-mono)"}
-                      fontSize='2xl'
-                      // _before={{
-                      //   transition: "100ms ease-out"
-                      // }}
-                    > 
-                        /. Lukasiewicz ./ 
+                      fontSize='3xl'> 
+                          /. Lukasiewicz ./ 
                     </Text> 
+                  // </Box>
                 :
-                    <Text
-                      // animation={fadeDownAnim}
-                      // transition={"100ms ease-in-out"}
+                  // <Box
+                  //  //animation={fadeDownAnim}
+                  //  //transition={"500ms ease-out"}
+                  //  >
+                     <Text
+                      as='b'
                       fontWeight={600}
                       fontFamily={"var(--chakra-fonts-mono)"}
-                      fontSize='2xl'
-                      // _before={{
-                      //   transition: "100ms ease-out"
-                      // }}
-                    >
+                      fontSize='3xl'>
                         / wu.kaˈɕɛ.vit͡ʂ /
-                    </Text>
+                     </Text>
+                  // </Box>
                 }
                  
 

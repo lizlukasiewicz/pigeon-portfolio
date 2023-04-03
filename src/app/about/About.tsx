@@ -38,12 +38,12 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                 fontFamily={"var(--chakra-fonts-mono)"}
                 // fontSize={{ base: "sm", lg: "md" }}
                 textAlign={"justify"}>
-                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "md" }} color='#00C484' onMouseOver={ () => setName(!name)}>
-                    Hey there! My name is {name? <Text as='b' fontSize={{ base: "sm", lg: "md" }} color='#00C484'>Elizabeth</Text>:<Text as='b' fontSize={{ base: "sm", lg: "md" }} color='#00C484'>E</Text>    }
+                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#00C484' onMouseOver={ () => setName(!name)}>
+                    Hey there! My name is {name? <Text as='b' fontSize={{ base: "sm", lg: "lg" }} color='#00C484'>Elizabeth,</Text>:<Text as='b' fontSize={{ base: "sm", lg: "lg" }} color='#00C484' >E,</Text>}
                 </Text>
 
-                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "md" }} color='#00C484'>
-                And I like to build things,
+                <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#00C484'>
+                And I like to build things-
                 </Text>
 
                 <Text animation={fadeRightFirst} align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#00C484'>
