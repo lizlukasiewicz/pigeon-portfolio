@@ -45,7 +45,7 @@ export default function About() {
                     fontFamily={"var(--chakra-fonts-mono)"}
                     // fontSize={{ base: "sm", lg: "md" }}
                     textAlign={"justify"}>
-                    <Text animation={fadeDownText} align={'center'} fontSize={{ base: "md", lg: "lg" }} color='#00C484' onMouseOver={ () => setName(!name)}>
+                    <Text animation={fadeDownText} align={'left'} fontSize={{ base: "md", lg: "lg" }} color='#00C484' onMouseOver={ () => setName(!name)} >
                         Hey there! My name is {name? <Text as='b' fontSize={{ base: "md", lg: "lg" }} color='#00C484'>Elizabeth,</Text>:<Text as='b' fontSize={{ base: "md", lg: "lg" }} color='#00C484' >E,</Text>}
                     </Text>
                     <Text animation={fadeDownText} align={'center'} fontSize={{ base: "md", lg: "lg" }} color='#00C484'>

@@ -21,17 +21,25 @@ export default function Home() {
   const [visRef3, visible3] = useOnScreen();
 
   return (
-    <VStack spacing={0}>
+    <VStack spacing={0}
+    // 💥 REMOVE WHEN DONE FORMATTING
+    border={"1px solid rgb(243,186,64)"} //YELLOW
+    >
       
       <Splash pageRefs={pageRefs}
         visible={visible2}
         visRef={visRef2}/>
       
-      
-      <div className={styles.grid}>
-        <About pageRefs={pageRefs}
+      <About pageRefs={pageRefs}
         visible={visible3}
         visRef={visRef3}/>
+        <GitCalendar 
+        pageRefs={pageRefs}
+        visible={visible}
+        visRef={visRef}
+        />
+      <div className={styles.grid}>
+        
         {demos.map((section) => {
           return(
             <div className={styles.card} key={section.name}>
@@ -68,11 +76,7 @@ export default function Home() {
           )
         })}
       </div>
-      <GitCalendar 
-        pageRefs={pageRefs}
-        visible={visible}
-        visRef={visRef}
-        />
+      
     </VStack>
   )
 }

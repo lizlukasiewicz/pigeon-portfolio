@@ -1,13 +1,13 @@
-import { Heading, Stack, Flex} from "@chakra-ui/react";
+import { Heading, Stack, Flex, Text} from "@chakra-ui/react";
 import * as React from "react";
 //import { useOnScreen } from "../lib/Loading";//, PageProps} from "../lib/Loading";
 import GitHubCalendar from 'react-github-calendar';
 import ReactTooltip from "react-tooltip";
 
 type PageProps = {
-    pageRefs?: React.MutableRefObject<{}>;
-    visRef?: any;
-    visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+    pageRefs: React.MutableRefObject<{}>;
+    visRef: any;
+    visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
 export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
@@ -22,25 +22,27 @@ export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
         alignItems={"center"}
         boxSizing={"border-box"}
         flexDirection={{ base: "column", md: "row" }}
-        height={"100vh"}
+        height={"30vh"}
+        // 💥 REMOVE WHEN DONE FORMATTING
+        border={"1px solid rgb(172,35,244)"} // PURPLE  
         opacity={visible ? 1 : 0.25}
         position={"relative"}
         ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
         transition={"1s ease-out"}
-        width={"75%"}>
+        >
         <Stack
             align={"center"}
             ref={visRef}
             width={{ base: "85vw", lg: "65vw" }}>
 
-                <Heading
+                <Text
                     fontFamily={"var(--chakra-fonts-mono)"}
                     fontSize={"2xl"}
                     color='#00C484'
-                    _hover={{color:"#FFFFFF"}}
+                    // _hover={{color:"#FFFFFF"}}
                     marginY={5}>
-                    Git Commit, To Something ::
-                </Heading>
+                    Git Commit, To <Text as='b' color='#00C484'_hover={{color:"#F3BA40"}}>Something </Text>::
+                </Text>
                 <GitHubCalendar
                     blockRadius={7}
                     color={"#00C484"}

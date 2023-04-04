@@ -1,5 +1,5 @@
 
-import { Text, Box, keyframes } from '@chakra-ui/react'
+import { Text, Box, keyframes} from '@chakra-ui/react'
 import * as React from 'react';
 
 type PageProps = {
@@ -51,8 +51,8 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                 pos="absolute"
                 top="260"
                 zIndex={2}
-                onMouseOver={ () => setName(!name)}
-                // onMouseOut = { () => setName(!name)}
+                onMouseOver={() => setName(!name)}
+               
                 _hover={{
                   cursor: "pointer"
                 }}
@@ -60,23 +60,18 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                 //transition={"500ms ease-out"}
               >
                 {name ?
-                  // <Box
-                  // //animation={fadeDownAnim}
-                  // //transition={"500ms ease-out"}
-                  // >
+
                     <Text
                      as='b'
-                      fontWeight={600}
-                      fontFamily={"var(--chakra-fonts-mono)"}
-                      fontSize='3xl'> 
+                     fontWeight={600}
+                     fontFamily={"var(--chakra-fonts-mono)"}
+                     fontSize='3xl'> 
                           /. Lukasiewicz ./ 
                     </Text> 
-                  // </Box>
+
+
                 :
-                  // <Box
-                  //  //animation={fadeDownAnim}
-                  //  //transition={"500ms ease-out"}
-                  //  >
+
                      <Text
                       as='b'
                       fontWeight={600}
@@ -84,8 +79,8 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                       fontSize='3xl'>
                         / wu.kaˈɕɛ.vit͡ʂ /
                      </Text>
-                  // </Box>
-                }
+
+                 }
                  
 
                     

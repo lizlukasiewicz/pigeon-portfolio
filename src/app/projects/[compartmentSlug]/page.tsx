@@ -106,7 +106,8 @@ export default function Page({ params }: PageProps) {
                 
             
                     <HStack>
-                        {data.details?.map((icons, i) => {
+                        {/* TODO: EDIT THIS FOR NEW ICONS FORMAT */}
+                        {/* {data.details?.map((icons, i) => {
                             return(
                                 <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
 
@@ -114,7 +115,7 @@ export default function Page({ params }: PageProps) {
 
                                 </Tooltip>
                                 )
-                            })}
+                            })} */}
                     </HStack>
                 </VStack>
 
