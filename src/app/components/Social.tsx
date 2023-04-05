@@ -34,7 +34,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         }
                 transition={"200ms ease-out"}
                 zIndex={3}>
-                {socialList.map((e, i) => (
+                {socialList.map((e, i) => ( 
                     <SocialIcon
                         icon={e.icon}
                         delay={e.delay}
