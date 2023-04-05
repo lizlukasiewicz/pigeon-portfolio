@@ -1,4 +1,4 @@
-
+import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box, keyframes} from '@chakra-ui/react'
 import * as React from 'react';
 
@@ -8,15 +8,6 @@ type PageProps = {
   visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
-export const fadeDown: string = keyframes`
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  } to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
 // TODO: FIX TRANSITION ANIMATION 
 export default function Splash({ pageRefs, visRef, visible }: PageProps) {
     const [name, setName] = React.useState<boolean>(false);

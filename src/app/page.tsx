@@ -6,10 +6,11 @@ import { Link } from '@chakra-ui/next-js'
 import { VStack, Container } from "@chakra-ui/react";
 import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
+import Social from "./components/Social"
 import About from './about/About'
 import * as React from "react";
 
-import { useOnScreen } from './lib/Loading';
+import { useOnScreen, useNavigation } from './lib/Loading';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,12 +20,14 @@ export default function Home() {
   const [visRef, visible] = useOnScreen();
   const [visRef2, visible2] = useOnScreen();
   const [visRef3, visible3] = useOnScreen();
-
+  const [y, scrollDir]: [number, string] = useNavigation();
   return (
     <VStack spacing={0}
     // 💥 REMOVE WHEN DONE FORMATTING
     border={"1px solid rgb(243,186,64)"} //YELLOW
     >
+      <Social scrollDir={scrollDir}
+                y={y}/>
       
       <Splash pageRefs={pageRefs}
         visible={visible2}

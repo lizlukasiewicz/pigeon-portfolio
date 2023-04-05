@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { Link } from '@chakra-ui/next-js'
+import { fadeDown } from '../lib/helpers/animation';
 import { Icon, Text } from '@chakra-ui/react'
 import { FaTerminal, FaBloggerB, FaTools, FaMailBulk, FaReadme, FaHome} from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
@@ -12,19 +13,6 @@ import {
   keyframes,
   useMediaQuery
 } from '@chakra-ui/react'
-
-export const fadeDown: string = keyframes`
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  } to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
-
-
-
 
 export default function Sidebar() {
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;

@@ -5,7 +5,8 @@ import {
     Box,
     Text
 } from "@chakra-ui/react"
-import { SkillTable, fadeDown, fadeRight } from "../lib/Icons"
+import { SkillTable } from "../lib/Icons"
+import { fadeDown, fadeRight} from '../lib/helpers/animation'
 //import {  PageProps } from '../lib/Loading';
 type PageProps = {
     pageRefs?: React.MutableRefObject<{}>;
