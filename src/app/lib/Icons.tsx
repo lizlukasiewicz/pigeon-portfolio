@@ -1,6 +1,5 @@
 //import { cache } from 'react';
 import { IconType } from "react-icons";
-import { ColoredIcon } from './ColoredIcon';
 import {
     Box,
     Tooltip,
