@@ -15,42 +15,47 @@ export default function Projects() {
     return(
         <Flex
           flexDir={"column"}
-        //   marginY={"5%"}
-        //   marginX={8}
-        //🔥 REMOVE WHEN DONE FORMATTING
-          border={"1px solid rgb(98,202,243)"}>
+          //marginY={"5%"}
+          //marginX={8}
+          //🔥 REMOVE WHEN DONE FORMATTING border={"1px solid rgb(98,202,243)"}
+          >
+
             <Box
-            //🔥 REMOVE WHEN DONE FORMATTING
-            border={"1px solid rgb(0,226,203)"}
-            //  padding={8}
-             minWidth={"lg"}>
-              <Heading
-                fontFamily={"var(--chakra-fonts-mono)"}
-                fontWeight={"bold"}
-                fontSize={"4xl"}
-                color='#00C484'>
-                    <Icon as={ImCogs} w={10} color='#00C484' />
-                   Built by a Machine
-              </Heading>
-              <Heading
-                // fontFamily={"var(--chakra-fonts-mono)"}
-                fontSize={"xl"}
-                color='#00C484'>
-                  The things I've Built
-              </Heading>
+              //🔥 REMOVE WHEN DONE FORMATTING
+              border={"1px solid rgb(0,226,203)"}
+              borderRadius={50}
+              padding={5}
+              minWidth={"lg"}>
+                <Heading
+                  fontFamily={"var(--chakra-fonts-mono)"}
+                  fontWeight={"bold"}
+                  fontSize={"4xl"}
+                  color='#00C484'>
+                      <Icon as={ImCogs} w={10} color='#00C484' />
+                    Built by a Machine
+                </Heading>
+                <Heading
+                  // fontFamily={"var(--chakra-fonts-mono)"}
+                  fontSize={"xl"}
+                  color='#00C484'>
+                    The things I've Built
+                </Heading>
             </Box>
+
             <VStack
               spacing={0} 
-              //🔥 REMOVE WHEN DONE FORMATTING
-              border={"1px solid rgb(172,35,244)"}             
+              //🔥 REMOVE WHEN DONE FORMATTING border={"1px solid rgb(172,35,244)"}
               >
+
                 {projects.map((project, j) => {
                     return(
-                        <Container padding={5} key={j} maxW='4xl' border={"1px solid rgb(243,186,64)"} centerContent> 
+                        <Container padding={5} key={j} maxW='4xl' border={"1px solid rgb(23,92,120)"} borderRadius={50} centerContent> 
                                                         {/*🔥  REMOVE WHEN DONE FORMATTING */}
-                            <Box padding={4} maxW='3xl' border={"1px solid rgb(0,226,203)"}> 
+                                                        {/* border={"1px solid rgb(0,226,203)"} */}
+                            <Box padding={4} maxW='3xl' > 
                                 <HStack
-                                    justifyContent={"space-between"}>
+                                  marginBottom={6}
+                                  justifyContent={"space-between"}>
 
                                     <Link
                                         href={`projects/${project.slug}`}
@@ -62,7 +67,7 @@ export default function Projects() {
                                             color='#00C484'
                                             _hover={{color:"#FFFFFF"}}>{project.name}</Heading> 
                                     </Link>
-                                    <HStack spacing={2}>
+                                    <HStack spacing={2} >
                                         <Button
                                             as={"a"}
                                             target={"_blank"}
@@ -70,9 +75,11 @@ export default function Projects() {
                                             backgroundColor={"transparent"}
                                             _hover={{backgroundColor:"#112941"}}
                                         >
-                                            {/* <Tooltip hasArrow label={"Github Repo"} aria-label={"Github Repo Link"}> */}
+                                            <Tooltip hasArrow label={"Github Repo"} aria-label={"Github Repo Link"}>
+                                              <Center animation={fadeDownAnim} opacity={0}>
                                                 <Icon as={FiGithub} w={7} h={7} color='#B3DDC1' />
-                                            {/* </Tooltip> */}
+                                              </Center>
+                                            </Tooltip>
 
                                         </Button>
                                         <Button
@@ -82,10 +89,11 @@ export default function Projects() {
                                             backgroundColor={"transparent"}
                                             _hover={{backgroundColor:"#112941"}}
                                         >
-                                        {/* <Tooltip hasArrow label={"Link to Project"} aria-label={"Link to Project"}> */}
-
-                                            <Icon as={FaExternalLinkAlt} w={7} h={7} color='#B3DDC1' />
-                                        {/* </Tooltip> */}
+                                          <Tooltip hasArrow label={"Link to Project"} aria-label={"Link to Project"}>
+                                            <Center animation={fadeDownAnim} opacity={0}>
+                                              <Icon as={FaExternalLinkAlt} w={7} h={7} color='#B3DDC1' />
+                                            </Center>
+                                          </Tooltip>
                                         </Button>
                                     </HStack>
                                 </HStack>
@@ -98,7 +106,6 @@ export default function Projects() {
                                     ))}
                                 </List>
                                 <HStack spacing={3} marginTop={3}>
-                                    {/* TODO: EDIT THIS FOR NEW ICONS FORMAT */}
                                     {project.details.map((icons, i) => {
                                         
                                         return(

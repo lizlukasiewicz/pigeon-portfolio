@@ -2,6 +2,7 @@
 import React from 'react';
 import { fetchCompartment } from '../lib/routes';
 import { TabGroup  } from './TabGroup';
+// import { useOnScreen } from '../lib/Loading';
 
 
 export default async function Layout({
@@ -9,7 +10,8 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-
+  // const pageRefs: React.MutableRefObject<{}> = React.useRef({});
+  // const [visRef, visible] = useOnScreen();
   const projects = await fetchCompartment();
     return (
       <>

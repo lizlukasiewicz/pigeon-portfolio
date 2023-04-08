@@ -5,37 +5,30 @@ export const SiMongodb = require('react-icons/si').SiMongodb;
 export const SiJavascript = require('react-icons/si').SiJavascript;
 export const SiExpress = require('react-icons/si').SiExpress 
 export const SiPostgresql = require('react-icons/si').SiPostgresql 
-export const SiMysql = require('react-icons/si').SiMysql 
 export const SiSqlite = require('react-icons/si').SiSqlite 
 export const SiHtml5= require('react-icons/si').SiHtml5
-export const SiTailwindcss= require('react-icons/si').SiTailwindcss
 export const SiCss3 = require('react-icons/si').SiCss3 
 export const SiMaterialdesignicons= require('react-icons/si').SiMaterialdesignicons
 export const SiStyledcomponents = require('react-icons/si').SiStyledcomponents
 export const SiNodemon = require('react-icons/si').SiNodemon
-
 export const TbBrandNextjs = require('react-icons/tb').TbBrandNextjs;
-export const TbBrandBootstrap = require('react-icons/tb').TbBrandBootstrap 
-export const TbBrandJavascript = require('react-icons/tb').TbBrandJavascript 
-
-export const DiReact = require('react-icons/di').DiReact;
-export const DiSqllite = require('react-icons/di').DiSqllite 
 export const DiMongodb = require('react-icons/di').DiMongodb 
-export const DiJavascript = require('react-icons/di').DiJavascript 
-
 export const GrReactjs = require('react-icons/gr').GrReactjs
-
 export const FaNode = require('react-icons/fa').FaNode
 
-// export type PageProps = {
-//   params?: any;
-//   children?: React.ReactNode;
-// };
+//export const TbBrandJavascript = require('react-icons/tb').TbBrandJavascript 
+//export const DiJavascript = require('react-icons/di').DiJavascript 
+//export const DiReact = require('react-icons/di').DiReact;
+//export const SiMysql = require('react-icons/si').SiMysql 
+//export const SiTailwindcss= require('react-icons/si').SiTailwindcss
+//export const TbBrandBootstrap = require('react-icons/tb').TbBrandBootstrap 
+// export const DiSqllite = require('react-icons/di').DiSqllite 
+
 export type PageProps = {
   pageRefs?: React.MutableRefObject<{}>;
   visible?: boolean;
   visRef?: React.RefObject<Element>;
-  params?: any;
+  params: any;
   children?: React.ReactNode;
 };
 
@@ -53,10 +46,6 @@ export interface Compartment {
   }[],
 };
 
-export type Detail = {
-  name: string;
-  alt: string;
-};
 export type Item = {
     name: string;
     slug: string;
@@ -154,11 +143,11 @@ export const getCompartment = cache((): Compartment[] => [
     active: 'https://capstone-nine.vercel.app/',
     git: 'https://github.com/lizlukasiewicz/capstone',
     details: [
-        { name: 'Next.js', alt: 'Next JS logo', icon: SiNextdotjs, hoverColor: ''},
-        { name: 'MongoDB', alt: 'Mongo DB logo', icon: SiMongodb, hoverColor: ''},
-        { name: 'JavaScript', alt: 'Javascript logo', icon: SiJavascript, hoverColor: ''},
-        { name: 'NextAuth', alt: 'Next Auth logo', icon: TbBrandNextjs, hoverColor: ''},
-        { name: 'React', alt: 'React logo', icon: DiReact, hoverColor: ''},
+        { name: 'Next.js', alt: 'Next JS logo', icon: SiNextdotjs, hoverColor: "rgb(50,109,170)"},
+        { name: 'MongoDB', alt: 'Mongo DB logo', icon: SiMongodb, hoverColor: "rgb(89,188,125)"},
+        { name: 'JavaScript', alt: 'Javascript logo', icon: SiJavascript, hoverColor: "rgb(229,212,88)"},
+        { name: 'NextAuth', alt: 'Next Auth logo', icon: TbBrandNextjs, hoverColor: "rgb(110,149,99)"},
+        { name: 'React', alt: 'React logo', icon: GrReactjs, hoverColor: "rgb(114,183,208)"},
     ],
   },
   {
@@ -168,12 +157,12 @@ export const getCompartment = cache((): Compartment[] => [
     active: '',
     git: "https://github.com/lizlukasiewicz/dispatch",
     details: [
-        { name: 'Express', alt: 'Express logo', icon: SiExpress, hoverColor: '' },
-        { name: 'JavaScript', alt: 'JavaScript logo', icon: TbBrandJavascript, hoverColor: '' },
-        { name: 'Node', alt: 'Node logo', icon: FaNode, hoverColor: '' },
-        { name: 'Nodemon', alt: 'Nodemon logo', icon: SiNodemon, hoverColor: '' },
-        { name: 'SQLite', alt: 'SQLite logo', icon: SiSqlite, hoverColor: '' },
-        { name: 'PostgreSQL', alt: 'PostgreSQL logo', icon: SiPostgresql, hoverColor: '' },
+        { name: 'Express', alt: 'Express logo', icon: SiExpress, hoverColor: "rgb(182,103,144)" },
+        { name: 'JavaScript', alt: 'JavaScript logo', icon: SiJavascript, hoverColor: "rgb(229,212,88)" },
+        { name: 'Node', alt: 'Node logo', icon: FaNode, hoverColor: "rgb(110,149,99)" },
+        { name: 'Nodemon', alt: 'Nodemon logo', icon: SiNodemon, hoverColor: "rgb(110,149,99)" },
+        { name: 'SQLite', alt: 'SQLite logo', icon: SiSqlite, hoverColor: "rgb(43,97,157)" },
+        { name: 'PostgreSQL', alt: 'PostgreSQL logo', icon: SiPostgresql, hoverColor: "rgb(43,97,157)" },
     ],
   },
   {
@@ -185,9 +174,9 @@ export const getCompartment = cache((): Compartment[] => [
     details: [
         { name: 'MongoDB', alt: 'MongoDB logo', icon: DiMongodb, hoverColor:"rgb(89,188,125)" },
         { name: 'React', alt: 'React logo', icon: GrReactjs, hoverColor:"rgb(114,183,208)" },
-        { name: 'Styled-Components', alt: 'Styled Components logo', icon: SiStyledcomponents, hoverColor:"rgb(25,214,100)" },
+        { name: 'Styled-Components', alt: 'Styled Components logo', icon: SiStyledcomponents, hoverColor:"rgb(206,133,195)" },
         { name: 'Material-Icons', alt: 'Material Icons logo', icon: SiMaterialdesignicons, hoverColor:"rgb(0,127,255)" },
-        { name: 'JavaScript', alt: 'JavaScript logo', icon: DiJavascript, hoverColor:"rgb(229,212,88)" },
+        { name: 'JavaScript', alt: 'JavaScript logo', icon: SiJavascript, hoverColor:"rgb(229,212,88)" },
     ],
   },
   {
@@ -197,7 +186,7 @@ export const getCompartment = cache((): Compartment[] => [
     active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
     git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
     details: [
-        { name: 'JavaScript', alt: 'JavaScript logo', icon: TbBrandJavascript, hoverColor:"rgb(229,212,88)" },
+        { name: 'JavaScript', alt: 'JavaScript logo', icon: SiJavascript, hoverColor:"rgb(229,212,88)" },
         { name: 'HTML', alt: 'HTML logo', icon: SiHtml5, hoverColor:"rgb(200,85,51)" },
         { name: 'CSS', alt: 'CSS logo', icon: SiCss3, hoverColor:"rgb(69,98,226)" },
     ],
@@ -239,17 +228,17 @@ export async function fetchCompartment(): Promise<Compartment[]> {
   return getCompartment();
 }
 
-async function findSubCompartment(
-  compartment: Compartment | undefined,
-  subCompartmentSlug: string | undefined,
-) {
-  return compartment?.details.find((compartment) => compartment.alt === subCompartmentSlug);
-}
+// async function findSubCompartment(
+//   compartment: Compartment | undefined,
+//   subCompartmentSlug: string | undefined,
+// ) {
+//   return compartment?.details.find((compartment) => compartment.alt === subCompartmentSlug);
+// }
 
-export async function fetchSubCompartment(
-  compartmentSlug: string | undefined,
-  subCompartmentSlug: string | undefined,
-) {
-  const compartment = await fetchCompartmentBySlug(compartmentSlug);
-  return findSubCompartment(compartment, subCompartmentSlug);
-}
+// export async function fetchSubCompartment(
+//   compartmentSlug: string | undefined,
+//   subCompartmentSlug: string | undefined,
+// ) {
+//   const compartment = await fetchCompartmentBySlug(compartmentSlug);
+//   return findSubCompartment(compartment, subCompartmentSlug);
+// }

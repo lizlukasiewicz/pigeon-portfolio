@@ -1,6 +1,18 @@
 
 import { IconType } from "react-icons";
 
+export const SiMagento = require('react-icons/si').SiMagento
+export const SiPhp = require('react-icons/si').SiPhp
+export const SiPython = require('react-icons/si').SiPython
+export const SiMicrosoftexcel = require('react-icons/si').SiMicrosoftexcel
+export const SiMicrosoftteams = require('react-icons/si').SiMicrosoftteams
+export const SiDjango = require('react-icons/si').SiDjango
+export const SiSelenium = require('react-icons/si').SiSelenium
+export const SiDigitalocean = require('react-icons/si').SiDigitalocean
+export const SiFilezilla=require('react-icons/si').SiFilezilla
+export const SiMongodb = require('react-icons/si').SiMongodb;
+export const SiMysql = require('react-icons/si').SiMysql;
+
 interface expArrayProps {
   title: string,
   details: string[],
@@ -27,43 +39,55 @@ export const expArray: expArrayProps[] = [
           "Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making.",
           "Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
       ],
-      dates: "March 2022 - March 2023",
+      dates: "March 2022 - Current",
       skills: [
           {
-              //icon: SiPython,
+              icon: SiPython,
               color: "rgb(66,106,149)",
               label: "Python",
               delay: "0ms"
           },
           {
-              //icon: //Django Icon,
+              icon: SiDjango,
               color: "rgb(202,42,128)",
               label: "Django",
               delay: "60ms"
           },
           {
-              //icon: SiMicrosoftexcel,
-              color: "rgb(46,106,61)",
-              label: "Excel",
+              icon: SiSelenium,
+              color: "rgb(0,174,0)",
+              label: "Selenium",
               delay: "120ms"
           },
           {
-              //icon: SiMicrosoftteams,
-              color: "rgb(119,124,216)",
-              label: "Teams",
+              icon: SiMysql,
+              color: "rgb(43,97,157)",
+              label: "MySQL",
               delay: "180ms"
           },
+          // {
+          //     icon: SiMicrosoftteams,
+          //     color: "rgb(119,124,216)",
+          //     label: "Teams",
+          //     delay: "180ms"
+          // },
           {
-              //icon: //Magento Icon,
-              color: "rgb(191,103,43)",
+              icon: SiMagento,
+              color: "rgb(229,100,53)",
               label: "Magento",
               delay: "240ms"
           },
           {
-              //icon: PHP,
-              color: "rgb(46,98,160)",
+              icon: SiPhp,
+              color: "rgb(135,141,184)",
               label: "PHP",
               delay: "300ms"
+          },
+          {
+              icon: SiMongodb,
+              color: "rgb(89,188,125)",
+              label: "MongoDB Compass",
+              delay: "360ms"
           },
       ],
       company: "BuySupply",
