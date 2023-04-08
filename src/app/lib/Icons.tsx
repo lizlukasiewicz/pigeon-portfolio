@@ -17,7 +17,7 @@ export const SiHtml5= require('react-icons/si').SiHtml5;
 export const SiJavascript = require('react-icons/si').SiJavascript;
 export const SiMagento = require('react-icons/si').SiMagento
 export const SiMaterialdesignicons= require('react-icons/si').SiMaterialdesignicons;
-export const SiMicrosoftexcel = require('react-icons/si').SiMicrosoftexcel;
+//export const SiMicrosoftexcel = require('react-icons/si').SiMicrosoftexcel;
 export const SiMongodb = require('react-icons/si').SiMongodb;
 export const SiMysql = require('react-icons/si').SiMysql;
 export const SiNextdotjs = require('react-icons/si').SiNextdotjs;
@@ -39,7 +39,10 @@ export const DiSqllite = require('react-icons/di').DiSqllite;
 
 export const GrReactjs = require('react-icons/gr').GrReactjs;
 
+export const FaPaintBrush = require('react-icons/fa').FaPaintBrush;
 export const FaNode = require('react-icons/fa').FaNode;
+
+export const VscSymbolClass=require('react-icons/vsc').VscSymbolClass;
 //export const DiMongodb = require('react-icons/di').DiMongodb;
 //export const TbBrandJavascript = require('react-icons/tb').TbBrandJavascript;
 //export const DiJavascript = require('react-icons/di').DiJavascript;
@@ -59,12 +62,12 @@ export interface Project {
       hoverColor?:string,
   }[],
 };
-export type Icon = {
-  name: string;
-  alt: string;
-  icon: React.ComponentType<IconType>;//React.ComponentType<{ size?: string; }>;
-  IconComponent: React.ElementType;
-};
+// export type Icon = {
+//   name: string;
+//   alt: string;
+//   icon: React.ComponentType<IconType>;
+//   IconComponent: React.ElementType;
+// };
 
 export interface SkillIconProps {
   hoverColor:string, 
@@ -156,9 +159,11 @@ from {
       active: 'https://lizlukasiewicz.github.io/Project-1-escape-Noface/',
       git: 'https://github.com/lizlukasiewicz/Project-1-escape-Noface',
       details: [
-        { label: 'JavaScript', icon: SiJavascript, hoverColor:"rgb(229,212,88)", delay: "0ms"}, // alt: 'JavaScript logo', 
-        { label: 'HTML', icon: SiHtml5, hoverColor:"rgb(200,85,51)", delay: "4ms"},//alt: 'HTML logo', 
-        { label: 'CSS', icon: SiCss3, hoverColor:"rgb(69,98,226)", delay: "80ms"},//alt: 'CSS logo', 
+        { label: 'Class-Based Programming', icon: VscSymbolClass, hoverColor:"rgb(211,110,90)", delay:"0ms"},
+        { label: 'JavaScript', icon: SiJavascript, hoverColor:"rgb(229,212,88)", delay: "4ms"}, // alt: 'JavaScript logo', 
+        { label: 'HTML', icon: SiHtml5, hoverColor:"rgb(200,85,51)", delay: "80ms"},//alt: 'HTML logo', 
+        { label: 'Canvas', icon: FaPaintBrush, hoverColor:"rgb(147,42,92)", delay: "120ms"},//alt: 'CSS logo', 
+        { label: 'CSS', icon: SiCss3, hoverColor:"rgb(69,98,226)", delay: "180ms"},//alt: 'CSS logo', 
       ],
     },
   ];

@@ -1,17 +1,31 @@
-
+import { cache } from 'react';
 import { IconType } from "react-icons";
 
-export const SiMagento = require('react-icons/si').SiMagento
-export const SiPhp = require('react-icons/si').SiPhp
-export const SiPython = require('react-icons/si').SiPython
-export const SiMicrosoftexcel = require('react-icons/si').SiMicrosoftexcel
-export const SiMicrosoftteams = require('react-icons/si').SiMicrosoftteams
-export const SiDjango = require('react-icons/si').SiDjango
-export const SiSelenium = require('react-icons/si').SiSelenium
-export const SiDigitalocean = require('react-icons/si').SiDigitalocean
-export const SiFilezilla=require('react-icons/si').SiFilezilla
+export const SiMagento = require('react-icons/si').SiMagento;
+export const SiPhp = require('react-icons/si').SiPhp;
+export const SiPython = require('react-icons/si').SiPython;
+export const SiMicrosoftexcel = require('react-icons/si').SiMicrosoftexcel;
+export const SiMicrosoftteams = require('react-icons/si').SiMicrosoftteams;
+export const SiDjango = require('react-icons/si').SiDjango;
+export const SiSelenium = require('react-icons/si').SiSelenium;
+export const SiDigitalocean = require('react-icons/si').SiDigitalocean;
+export const SiFilezilla=require('react-icons/si').SiFilezilla;
 export const SiMongodb = require('react-icons/si').SiMongodb;
 export const SiMysql = require('react-icons/si').SiMysql;
+export const SiGithub=require('react-icons/si').SiGithub;
+export const SiPostgresql = require('react-icons/si').SiPostgresql;
+
+export const GrStackOverflow=require('react-icons/gr').GrStackOverflow;
+export const GrReactjs = require('react-icons/gr').GrReactjs;
+
+export const RiCodeBoxLine = require('react-icons/ri').RiCodeBoxLine;
+
+export const VscGear = require('react-icons/vsc').VscGear
+
+//colored icons
+export const FcCommandLine=require('react-icons/fc').FcCommandLine;
+export const FcDataEncryption=require('react-icons/fc').FcDataEncryption;
+export const FcWorkflow=require('react-icons/fc').FcWorkflow;
 
 interface expArrayProps {
   title: string,
@@ -29,7 +43,7 @@ interface expArrayProps {
   color: string
 };
 
-export const expArray: expArrayProps[] = [
+export const getExpArray = cache((): expArrayProps[] => [
   {
       title: "Backend Software Engineer, Infrastructure / Data Operations",
       details: [
@@ -89,6 +103,18 @@ export const expArray: expArrayProps[] = [
               label: "MongoDB Compass",
               delay: "360ms"
           },
+          {
+              icon: RiCodeBoxLine,
+              color: "rgb(89,188,125)",
+              label: "Legacy Code",
+              delay: "420ms"
+          },
+          {
+              icon: SiFilezilla,
+              color: "rgb(184,0,0)",
+              label: "FTP/FTPS",
+              delay: "480ms"
+          },
       ],
       company: "BuySupply",
       companyFull: "Buy-Supply Corp",
@@ -105,37 +131,37 @@ export const expArray: expArrayProps[] = [
     dates: "Summer 2021",
     skills: [
         {
-            //icon: GrStackOverflow,
+            icon: GrStackOverflow,
             color: "rgb(234,200,88)",
             label: "Full-Stack Engineering",
             delay: "0ms"
         },
         {
-            //icon: SiGithub,
+            icon: SiGithub,
             color: "rgb(111,51,153)",
             label: "Git",
             delay: "60ms"
         },
         {
-            //icon: SiReact,
+            icon: GrReactjs,
             color: "rgb(96,206,238)",
             label: "React",
             delay: "120ms"
         },
         {
-            //icon: SiPython,
+            icon: SiPython,
             color: "rgb(66,106,149)",
             label: "Python",
             delay: "180ms"
         },
         {
-            //icon: SiPostgresql,
+            icon: SiPostgresql,
             color: "rgb(61,97,174)",
             label: "SQL",
             delay: "240ms"
         },
         {
-            //icon: SiMongodb,
+            icon: SiMongodb,
             color: "rgb(100,160,83)",
             label: "Mongo",
             delay: "300ms"
@@ -147,8 +173,15 @@ export const expArray: expArrayProps[] = [
     color: "rgb(150,54,52)",
 
 },
-]
+]);
 
+export async function fetchExpByCompany(company: string | undefined) {
+  return getExpArray().find((exp) => exp.company === company);
+}
+
+export async function fetchExpArray(): Promise<expArrayProps[]> {
+  return getExpArray();
+}
 
 // "• Participate in full life-cycle software development
 // • Design, implement, and deploy highly scalable and reliable systems

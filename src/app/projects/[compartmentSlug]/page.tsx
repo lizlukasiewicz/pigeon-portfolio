@@ -113,7 +113,7 @@ export default function Page({ params }: PageProps) {
             
                     <HStack>
                        
-                        {data.details.map((icons, i) => {
+                        {data.details?.map((icons, i) => {
                             return(
                               <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
                               <Center >

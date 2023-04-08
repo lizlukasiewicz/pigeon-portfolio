@@ -1,18 +1,17 @@
 'use client';
 
-import { Box, VStack, Text } from '@chakra-ui/react'
+import { Box, Stack, Text, Container } from '@chakra-ui/react'
 
 export default function Experience() {
-    return(
-        <VStack>
-
+    
+  return(
+        <Box>
+          
             <Text>
             experience route
             </Text>
 
-            
 
-
-        </VStack>
+        </Box>
     )
 }

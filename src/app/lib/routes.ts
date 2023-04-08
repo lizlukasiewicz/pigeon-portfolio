@@ -28,7 +28,7 @@ export type PageProps = {
   pageRefs?: React.MutableRefObject<{}>;
   visible?: boolean;
   visRef?: React.RefObject<Element>;
-  params: any;
+  params?: any;
   children?: React.ReactNode;
 };
 
@@ -63,14 +63,14 @@ export type Item = {
 
         ],
     },
-    {    
-     name: 'Experience',
-     slug: 'experience',
-     description: 'Experience will go here',
-     items: [
+    // {    
+    //  name: 'Experience',
+    //  slug: 'experience',
+    //  description: 'Experience will go here',
+    //  items: [
 
-        ],
-    },
+    //     ],
+    // },
     // {
     //   name: 'Blog',
     //   slug: 'blog',
@@ -220,7 +220,6 @@ export const getCompartment = cache((): Compartment[] => [
 // ];
 
 export async function fetchCompartmentBySlug(slug: string | undefined) {
-  // Assuming it always return expected compartment
   return getCompartment().find((compartment) => compartment.slug === slug);
 }
 

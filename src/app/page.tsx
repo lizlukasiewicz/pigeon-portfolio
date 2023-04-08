@@ -8,6 +8,7 @@ import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import Social from "./components/Social"
 import About from './about/About'
+import Experience from './experience/page'
 import * as React from "react";
 
 import { useOnScreen } from './lib/Loading';
@@ -48,6 +49,7 @@ export default function Home() {
           visible={visible}
           visRef={visRef}/>
 
+        <Experience />
         <div className={styles.grid}>
           
           {demos.map((section) => {
@@ -76,8 +78,8 @@ export default function Home() {
                                 </h2>
                               
                               </Link>
-                              <p>{item.bullet1}</p>
-                              {/* <p>{item.bullet2}</p> */}
+                              {/* <p>{item.bullet1}</p>
+                              <p>{item.bullet2}</p> */}
                             </div>
                             );
                         })): null}

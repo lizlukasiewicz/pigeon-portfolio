@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { projects, SkillIcon } from '../lib/Icons' 
-import { fadeDown } from '../lib/helpers/animation'
-import { Link } from '@chakra-ui/next-js'
-import { Icon, Button, List, ListItem, Tooltip, Heading, HStack, VStack, Container, Center, Box, Flex } from '@chakra-ui/react'
-import { FaExternalLinkAlt } from "react-icons/fa"
-import { FiGithub } from "react-icons/fi"
-import { VscDebugStart } from "react-icons/vsc"
-import {ImCogs} from "react-icons/im"
+import { projects, SkillIcon } from '../lib/Icons';
+import { fadeDown } from '../lib/helpers/animation';
+import { Link } from '@chakra-ui/next-js';
+import { Icon, Button, List, ListItem, Tooltip, Heading, HStack, VStack, Container, Center, Box, Flex } from '@chakra-ui/react';
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { VscDebugStart } from "react-icons/vsc";
+import {ImCogs} from "react-icons/im";
 
 
 export default function Projects() {
