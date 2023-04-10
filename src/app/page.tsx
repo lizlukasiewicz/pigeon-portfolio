@@ -8,7 +8,7 @@ import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import Social from "./components/Social"
 import About from './about/About'
-import Experience from './experience/page'
+import Experience from './(experience)/page'
 import * as React from "react";
 
 import { useOnScreen } from './lib/Loading';
