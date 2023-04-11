@@ -21,3 +21,22 @@ from {
   opacity: 1;
 }
 `;
+export const growRight: string = keyframes`
+  from { 
+    width: 0;
+    opacity: 0;
+  } to {
+    width: 32vw;
+    opacity: 1;
+  }
+`;
+
+export const growRightLittle: string = keyframes`
+  from {
+    width: 0;
+    opacity: 0;
+  } to {
+    width: 2vw;
+    opacity: 1;
+  }
+`
