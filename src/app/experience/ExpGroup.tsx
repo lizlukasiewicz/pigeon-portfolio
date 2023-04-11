@@ -2,28 +2,25 @@
 import React from "react";
 import { Stack, VStack, Heading, StackDivider, Container } from '@chakra-ui/react'
 import { IconType } from "react-icons";
-import { Exp } from './Exp'
+
 
 export type Item = {
-  title: string,
-  details: string[],
-  dates: string,
-  skills: {
-      color?: string,
-      delay?: string,
-      icon?: React.ComponentType<IconType>,
-      label?: string,
-  }[],
-  company?: string,
-  companyFull: string,
-  companyLink: string,
-  color: string
+  // title: string,
+  // details: string[],
+  // dates: string,
+  // skills: {
+  //     color?: string,
+  //     delay?: string,
+  //     icon?: React.ComponentType<IconType>,
+  //     label?: string,
+  // }[],
+  company: string,
+  // companyFull: string,
+  // companyLink: string,
+  // color: string
 }
 export const ExpGroup = ({items}:{items: Item[]}) => {
-  const [idx, setIdx] = React.useState<number>(0);
-  React.useEffect((): void => {
-    idx && setIdx(idx)
-  }, [idx]);
+  
   return (
     <Container
       maxW={{ base: "85%", xl: "70%" }}>
@@ -50,12 +47,12 @@ export const ExpGroup = ({items}:{items: Item[]}) => {
             }}>
                 {item.company}
             </Heading>
-            <Exp
+            {/* <Exp
               // idx={idx} 
               // setIdx={setIdx} 
               item={item}
               
-              />
+              /> */}
               </Container>
           ))}
         </VStack>

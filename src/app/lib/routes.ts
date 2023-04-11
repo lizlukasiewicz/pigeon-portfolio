@@ -63,14 +63,14 @@ export type Item = {
 
         ],
     },
-    // {    
-    //  name: 'Experience',
-    //  slug: 'experience',
-    //  description: 'Experience will go here',
-    //  items: [
+    {    
+     name: 'Experience',
+     slug: 'experience',
+     description: 'Experience will go here',
+     items: [
 
-    //     ],
-    // },
+        ],
+    },
     // {
     //   name: 'Blog',
     //   slug: 'blog',
