@@ -11,7 +11,7 @@ import { Stack, Text } from '@chakra-ui/react'
 //   visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
 // }
 
-export default async function Layout({children,}: {children: React.ReactNode}) //pageRefs, visible, visRef }: PageProps)
+export default function Layout({children,}: {children: React.ReactNode}) //pageRefs, visible, visRef }: PageProps)
     {
   //const experiences= await fetchExpArray()
   // const [idx, setIdx] = React.useState<number>(0);
