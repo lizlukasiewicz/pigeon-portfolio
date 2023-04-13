@@ -1,21 +1,19 @@
-'use client';
-import React from 'react';
-import { Box, Stack, Text, Container } from '@chakra-ui/react'
-import { Item } from './ExpGroup'
+// 'use client';
+// import React from "react";
+// import { Stack, List, VStack, Heading, StackDivider, Container, ListItem } from '@chakra-ui/react'
+// import { IconType } from "react-icons";
+// import { getExpArray } from "../lib/experience"
 
-export default function Experience() {
-  // const [idx, setIdx] = React.useState<number>(0);
-  // React.useEffect((): void => {
-  //   idx && setIdx(idx)
-  // }, [idx]);
+
+
+
+export default function Experience(){
+  
+  //const exp= await fetchExpByCompany
   return(
-        <Box>
-          
-            <Text>
-            experience route
-            </Text>
+    <div>
+      <p>page.tsx</p>
+    </div>
 
-
-        </Box>
-    )
+  )
 }

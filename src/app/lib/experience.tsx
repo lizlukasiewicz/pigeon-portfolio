@@ -1,4 +1,4 @@
-import { cache } from 'react';
+// import { cache } from 'react';
 import { IconType } from "react-icons";
 
 export const SiMagento = require('react-icons/si').SiMagento;
@@ -27,7 +27,7 @@ export const FcCommandLine=require('react-icons/fc').FcCommandLine;
 export const FcDataEncryption=require('react-icons/fc').FcDataEncryption;
 export const FcWorkflow=require('react-icons/fc').FcWorkflow;
 
-interface expArrayProps {
+export interface expArrayProps {
   title: string,
   details: string[],
   dates: string,
@@ -42,8 +42,8 @@ interface expArrayProps {
   companyLink: string,
   color: string
 };
-
-export const getExpArray = cache((): expArrayProps[] => [
+// = cache(()
+export const getExpArray: expArrayProps[] = [
   {
       title: "Backend Software Engineer, Infrastructure / Data Operations",
       details: [
@@ -173,15 +173,15 @@ export const getExpArray = cache((): expArrayProps[] => [
     color: "rgb(150,54,52)",
 
 },
-]);
+];
 
-export async function fetchExpByCompany(company: string | undefined) {
-  return getExpArray().find((exp) => exp.company === company);
-}
+// export async function fetchExpByCompany(company: string | undefined) {
+//   return getExpArray().find((exp) => exp.company === company);
+// }
 
-export async function fetchExpArray(): Promise<expArrayProps[]> {
-  return getExpArray();
-}
+// export async function fetchExpArray(): Promise<expArrayProps[]> {
+//   return getExpArray();
+// }
 
 // "• Participate in full life-cycle software development
 // • Design, implement, and deploy highly scalable and reliable systems
