@@ -10,19 +10,24 @@ import { Stack, Text } from '@chakra-ui/react'
 //   visRef?: any,
 //   visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
 // }
+export type expProps = {
+  idx: number;
+  setIdx: React.Dispatch<React.SetStateAction<number>>;
+}
+export type PageProps = {
+  children?: React.ReactNode;
+  params?: expProps;
+};
 
-export default function Layout({children,}: {children: React.ReactNode}) //pageRefs, visible, visRef }: PageProps)
+export default function Layout({ children, params }: PageProps) //pageRefs, visible, visRef }: PageProps)
     {
-  //const experiences= await fetchExpArray()
-  // const [idx, setIdx] = React.useState<number>(0);
-  // React.useEffect((): void => {
-  //   idx && setIdx(idx)
-  // }, [idx]);
+
   return(
     <TempContainer label={'Experience'}>
-      <Stack>
+      <Stack
+        spacing={5}
+        minHeight={{ base: "80vh", lg: "60vh" }}>
 
-      <p>hi this is from layout.tsx</p>
 
         {children}
         

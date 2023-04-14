@@ -3,7 +3,7 @@ import React from 'react';
 import { fetchCompartment } from '../lib/routes';
 import { TabGroup  } from './TabGroup';
 // import { useOnScreen } from '../lib/Loading';
-
+//import { TempContainer } from '../ui/TempContainer'
 
 export default async function Layout({
   children,
@@ -14,25 +14,27 @@ export default async function Layout({
   // const [visRef, visible] = useOnScreen();
   const projects = await fetchCompartment();
     return (
-      <>
-       
-          <TabGroup
-          path='/projects'
-          items={[
-            {
-              text: 'All',
-            },
-            ...projects.map((x) => ({
-              text: x.name,
-              slug: x.slug,
-            })), 
-          ]}
-          />
-
-  
+      // <TempContainer label={'Projects'}>
+        <>
         
-  
-        <>{children}</>
-      </>
+            <TabGroup
+            path='/projects'
+            items={[
+              {
+                text: 'All',
+              },
+              ...projects.map((x) => ({
+                text: x.name,
+                slug: x.slug,
+              })), 
+            ]}
+            />
+
+    
+          
+    
+          <>{children}</>
+        </>
+      // </TempContainer>
     );
   }

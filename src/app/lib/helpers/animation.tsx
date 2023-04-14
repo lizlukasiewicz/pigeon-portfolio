@@ -40,3 +40,12 @@ export const growRightLittle: string = keyframes`
     opacity: 1;
   }
 `
+export const sideBob: string = keyframes`
+  0% {
+    left: -25%;
+  } 50% {
+    left: -15%;
+  } 100% {
+    left: -25%
+  }
+`

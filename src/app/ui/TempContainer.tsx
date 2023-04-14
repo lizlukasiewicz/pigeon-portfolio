@@ -67,7 +67,7 @@ export const TempContainer=({
                         <HStack>
                           <Box 
                             animation={growRightAnim}//&& loaded
-                            backgroundColor={"#AC23F4"}//pinkish/purple
+                            backgroundColor={"#008582"}// NOT LISTED MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -75,14 +75,14 @@ export const TempContainer=({
                             width={0}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid #AC23F4",//pinkish/purple
+                                borderTop: "4px solid #008582",// NOT LISTED MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
                                 width: 0 }} />
                           <Box 
                             animation={growRightLittleAnim}//&&loaded
-                            backgroundColor={"rgb(0,226,203)"}//bright teal
+                            backgroundColor={"rgb(100,156,166)"}//topPal MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -90,14 +90,14 @@ export const TempContainer=({
                             width={0}
                             _before={{
                                 borderLeft: "4px solid transparent",
-                                borderBottom: "4px solid rgb(0,226,203)",//bright teal
+                                borderBottom: "4px solid rgb(100,156,166)",//topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 left: -1,
                                 width: 0 }}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid rgb(0,226,203)",//bright teal
+                                borderTop: "4px solid rgb(100,156,166)",//topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
@@ -107,7 +107,8 @@ export const TempContainer=({
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: 'lg', sm: 'xl', md: "2xl" }}
                             fontWeight={"bold"}
-                            color={"#B3DDC1"}>
+                            color={"#00C484"}//<<NEON GREEN //color={"#B3DDC1"}> <<MUTED GREEN
+                            >
                             {title}
                         </Heading>
                     </Stack>

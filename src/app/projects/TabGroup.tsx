@@ -12,8 +12,6 @@ export const TabGroup = ({ path, items }: { path: string; items: Item[] }) => {
   return (
     <HStack 
       width={"100%"}
-      marginTop={5}
-      paddingX={5}
       spacing={7}
     >
       {items.map((item) => (

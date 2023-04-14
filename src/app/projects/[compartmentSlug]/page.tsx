@@ -27,12 +27,6 @@ export default function Page({ params }: PageProps) {
           }; 
           project();
         }, []);
-    // for (let y of data.details) {
-    //   for (let x in y) {
-    //     console.log(`✨ fetchCompartmentBySlug: ${x}`)
-
-    //   }
-    // }
 
     if (!data) return null;
     return(
