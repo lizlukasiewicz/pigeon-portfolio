@@ -50,7 +50,7 @@ export default function Home() {
           visible={visible}
           visRef={visRef}/>
 
-
+{/* 
         <div className={styles.grid}>
           
           {demos.map((section) => {
@@ -79,8 +79,8 @@ export default function Home() {
                                 </h2>
                               
                               </Link>
-                              {/* <p>{item.bullet1}</p>
-                              <p>{item.bullet2}</p> */}
+                              <p>{item.bullet1}</p>
+                              <p>{item.bullet2}</p>
                             </div>
                             );
                         })): null}
@@ -89,7 +89,7 @@ export default function Home() {
             )
           })}
         </div>
-      
+       */}
     </VStack>
   )
 }

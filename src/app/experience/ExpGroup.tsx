@@ -8,12 +8,11 @@ import {
           Text, 
           StackDivider, 
           ListItem, 
-          Box, 
-          Tooltip,
-          Center } from '@chakra-ui/react'
-// import { IconType } from "react-icons";
+          Box
+         } from '@chakra-ui/react'
 import { getExpArray } from '../lib/experience';
 import { sideBob } from "../lib/helpers/animation";
+import { SkillIcon } from "@/app/lib/Icons";
 
 interface ExperienceWidgetProps {
   idx: number,
@@ -43,7 +42,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
         <Stack
           direction={["column", "row"]}
           height={290}
-          divider={<StackDivider borderColor='#649CA6' />}
+          //divider={<StackDivider borderColor='#649CA6' />}
           marginTop={{ base: "20%", sm: "10%", lg: 0 }}
           marginBottom={{ base: "50%", sm: "15%", lg: 0 }}
           width={{ base: "80vw", lg: "60vw" }}>
@@ -175,10 +174,24 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
               {/* JOB DESCRIPTION */}
               <List
-                        alignItems={"space-between"}
-                        display={"flex"}
-                        flexDirection={"column"}
-                        marginY={5}>
+                alignItems={"space-between"}
+                display={"flex"}
+                flexDirection={"column"}
+                marginY={5}>
+                  {getExpArray[idx].details.map((bullet, i) => (
+                    <ListItem
+                      
+                      display={"flex"}
+                      key={i}
+                      flexDirection={"column"}
+                      marginY={2}>
+                        <Text as={"span"}
+                        fontFamily={"var(--chakra-fonts-nunito)"}>
+                          {bullet}
+                        </Text>
+                    </ListItem>
+                  ))}
+
 
               
               </List>
@@ -187,9 +200,14 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
         {/* TOOLS USED ICONS */}
         <HStack
-                fontFamily={"var(--chakra-fonts-nunito)"}
-                paddingLeft={5}
-                spacing={"10%"}>
+          fontFamily={"var(--chakra-fonts-nunito)"}
+          paddingLeft={5}
+          spacing={"10%"}>
+            {getExpArray[idx].skills.map((skill, i) => (
+              <SkillIcon hoverColor={skill.color} delay={skill.delay} icon={skill.icon} label={skill.label} />
+              
+            ))}
+                
 
         </HStack>
       </React.Fragment>

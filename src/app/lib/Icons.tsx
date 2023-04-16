@@ -1,4 +1,4 @@
-//import { cache } from 'react';
+
 import { IconType } from "react-icons";
 import {
     Box,
@@ -6,8 +6,8 @@ import {
     Center,
     Icon,
     HStack,
-    keyframes,
 } from '@chakra-ui/react'
+import { fadeDown, fadeRight } from "./helpers/animation";
 export const SiChakraui = require('react-icons/si').SiChakraui;
 export const SiCss3 = require('react-icons/si').SiCss3;
 export const SiExpress = require('react-icons/si').SiExpress;
@@ -47,6 +47,10 @@ export const VscSymbolClass=require('react-icons/vsc').VscSymbolClass;
 //export const TbBrandJavascript = require('react-icons/tb').TbBrandJavascript;
 //export const DiJavascript = require('react-icons/di').DiJavascript;
 //export const DiReact = require('react-icons/di').DiReact;
+//export const SiMysql = require('react-icons/si').SiMysql 
+//export const SiTailwindcss= require('react-icons/si').SiTailwindcss
+//export const TbBrandBootstrap = require('react-icons/tb').TbBrandBootstrap 
+// export const DiSqllite = require('react-icons/di').DiSqllite 
 
 export interface Project {
   name: string,
@@ -62,12 +66,6 @@ export interface Project {
       hoverColor?:string,
   }[],
 };
-// export type Icon = {
-//   name: string;
-//   alt: string;
-//   icon: React.ComponentType<IconType>;
-//   IconComponent: React.ElementType;
-// };
 
 export interface SkillIconProps {
   hoverColor:string, 
@@ -76,26 +74,6 @@ export interface SkillIconProps {
   label: string,
 };
 
-export const fadeRight: string = keyframes`
-from {
-  transform: translateX(-40px);
-  opacity: 0;
-}
-to {
-  transform: translateX(0px);
-  opacity: 1;
-}
-`;
-
-export const fadeDown: string = keyframes`
-from {
-  transform: translateY(-20px);
-  opacity: 0;
-} to {
-  transform: translateY(0px);
-  opacity: 1;
-}
-`;
 
   export const projects: { name:string; slug:string; bullets: string[]; active:string; git:string; details:SkillIconProps[] }[] = [
     {

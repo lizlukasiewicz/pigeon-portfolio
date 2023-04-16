@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-//import { Stack, List, VStack, Heading, StackDivider, Container, ListItem } from '@chakra-ui/react';
+import { Stack} from '@chakra-ui/react';// List, VStack, Heading, StackDivider, Container, ListItem } from '@chakra-ui/react';
 import { PageProps } from "./layout"
 import { ExpGroup } from "./ExpGroup";
 
@@ -12,9 +12,9 @@ export default function Experience({ params }: PageProps){
     idx && setIdx(idx)
   }, [idx]);
   return(
-    <React.Fragment>
+    <Stack>
       <ExpGroup idx={idx} setIdx={setIdx}/>
-    </React.Fragment>
+    </Stack>
 
   )
 }

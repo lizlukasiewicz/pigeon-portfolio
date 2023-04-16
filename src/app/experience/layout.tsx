@@ -38,31 +38,3 @@ export default function Layout({ children, params }: PageProps) //pageRefs, visi
 
     );
   }
-//   <Stack
-//   direction={'row'}
-//   spacing={5}
-//   minHeight={{ base: "80vh", lg: "60vh" }}>
-
-        
-//       <Text>THIS IS CHILD-------------</Text>
-//       <Text>-------------</Text>
-//       {children}
-// </Stack>        
-  // <ExpGroup
-              // idx={idx} 
-              // setIdx={setIdx}
-              // items={[
-                //   ...experiences.map((x) => ({
-                  //     company: x.company,
-                  // idx: {idx}, 
-                  // setIdx: {setIdx}
-                  // title: x.title,
-                  // details: x.details,
-                  // dates: x.dates,
-                  // skills: x.skills,
-                  // companyFull: x.companyFull,
-                  // companyLink: x.companyLink,
-                  // color: x.color,
-                  //   })),
-                  // ]}
-                 // />

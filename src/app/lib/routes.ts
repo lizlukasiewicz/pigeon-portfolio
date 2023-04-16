@@ -16,14 +16,6 @@ export const DiMongodb = require('react-icons/di').DiMongodb
 export const GrReactjs = require('react-icons/gr').GrReactjs
 export const FaNode = require('react-icons/fa').FaNode
 
-//export const TbBrandJavascript = require('react-icons/tb').TbBrandJavascript 
-//export const DiJavascript = require('react-icons/di').DiJavascript 
-//export const DiReact = require('react-icons/di').DiReact;
-//export const SiMysql = require('react-icons/si').SiMysql 
-//export const SiTailwindcss= require('react-icons/si').SiTailwindcss
-//export const TbBrandBootstrap = require('react-icons/tb').TbBrandBootstrap 
-// export const DiSqllite = require('react-icons/di').DiSqllite 
-
 export type PageProps = {
   pageRefs?: React.MutableRefObject<{}>;
   visible?: boolean;
@@ -226,18 +218,3 @@ export async function fetchCompartmentBySlug(slug: string | undefined) {
 export async function fetchCompartment(): Promise<Compartment[]> {
   return getCompartment();
 }
-
-// async function findSubCompartment(
-//   compartment: Compartment | undefined,
-//   subCompartmentSlug: string | undefined,
-// ) {
-//   return compartment?.details.find((compartment) => compartment.alt === subCompartmentSlug);
-// }
-
-// export async function fetchSubCompartment(
-//   compartmentSlug: string | undefined,
-//   subCompartmentSlug: string | undefined,
-// ) {
-//   const compartment = await fetchCompartmentBySlug(compartmentSlug);
-//   return findSubCompartment(compartment, subCompartmentSlug);
-// }

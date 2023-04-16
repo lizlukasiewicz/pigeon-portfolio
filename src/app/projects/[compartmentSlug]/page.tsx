@@ -1,5 +1,6 @@
 'use client';
 import { fetchCompartmentBySlug, Compartment, type PageProps } from "@/app/lib/routes";
+import { SkillIcon } from "@/app/lib/Icons";
 //import { type PageProps } from '@/app/lib/Loading'
 import { 
     Icon, 
@@ -17,7 +18,7 @@ import { FiGithub } from "react-icons/fi"
 import React from "react";
 
 
-// TODO: Make it pretty
+// TODO: Make it REALLY pretty
 export default function Page({ params }: PageProps) {
     const [data, setData] = React.useState(params.Compartment);
     React.useEffect(() => {
@@ -107,27 +108,11 @@ export default function Page({ params }: PageProps) {
             
                     <HStack>
                        
-                        {data.details?.map((icons, i) => {
-                            return(
-                              <Tooltip hasArrow label={icons.name} key={i} aria-label={icons.alt} >
-                              <Center >
-
-                                  <Icon as={icons.icon}
-                                      borderRadius={5}
-                                      color={"#00E2CB"}
-                                      boxSize={8}
-                                      transition={"100ms ease-in-out"}
-                                      _hover={{
-                                          transform: "scale(1.1)",
-                                          color: `${icons.hoverColor}`,
-                                          // filter: colorMode(
-                                          //     "brightness(1.1)" ,
-                                          //     `brightness(1.2) drop-shadow(0 0 5px ${color})`) 
-                                      }}  />
-                              </Center>
-                          </Tooltip>
-                                )
-                            })}
+                        {data.details.map((icons, i) => (
+                        <SkillIcon hoverColor={icons.hoverColor} delay={icons.delay} icon={icons.icon} label={icons.label}/>
+                            
+                                
+                        ))}
                     </HStack>
                 </VStack>
 

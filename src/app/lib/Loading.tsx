@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export type PageProps = {
-    pageRefs?: React.MutableRefObject<{}>,//React.RefObject<HTMLDivElement>,//React.MutableRefObject<Record<string, Element>>,
+    pageRefs?: React.MutableRefObject<{}>,
     visible?: boolean,
     visRef?: React.RefObject<Element>,
     params?: any;
@@ -9,8 +9,8 @@ export type PageProps = {
   };
   
 // 
-export const useOnScreen = (): [React.MutableRefObject<undefined>, boolean] => {//[React.RefObject<Element>, boolean] => {
-    const visRef = React.useRef();//<HTMLDivElement>(null);
+export const useOnScreen = (): [React.MutableRefObject<undefined>, boolean] => {
+    const visRef = React.useRef();
     const [visible, setVisible] = React.useState(false);
   
     const callbackFunction: IntersectionObserverCallback = (entries: IntersectionObserverEntry[]) => {

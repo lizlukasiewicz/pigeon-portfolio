@@ -1,4 +1,4 @@
-// import { cache } from 'react';
+
 import { IconType } from "react-icons";
 
 export const SiMagento = require('react-icons/si').SiMagento;
@@ -32,26 +32,26 @@ export interface expArrayProps {
   details: string[],
   dates: string,
   skills: {
-      color?: string,
-      delay?: string,
-      icon?: React.ComponentType<IconType>,
-      label?: string,
+      color: string,
+      delay: string,
+      icon: React.ComponentType<IconType>,
+      label: string,
   }[],
   company: string,
   companyFull: string,
   companyLink: string,
   color: string
 };
-// = cache(()
+
 export const getExpArray: expArrayProps[] = [
   {
       title: "Backend Software Engineer, Infrastructure / Data Operations",
       details: [
-          "Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting.",
-          "Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow.",
-          "Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
-          "Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making.",
-          "Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
+          "Designed and deployed custom data ingestion module using Python/Django, integrated complex data across multiple vendor platforms into a unified database", //"Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting."
+          "Maintained e-commerce website using PHP and Magento, implemented custom themes, modules, and extensions to enhance user experience and site performance.",//"Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
+          //"Collaborated throughout software development life cycle, maintained coding standards, source control management, build processes, and testing in an Agile development workflow.",//"Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow."
+          //"Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
+          "Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making.",//"Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making."
       ],
       dates: "March 2022 - Current",
       skills: [
@@ -174,14 +174,6 @@ export const getExpArray: expArrayProps[] = [
 
 },
 ];
-
-// export async function fetchExpByCompany(company: string | undefined) {
-//   return getExpArray().find((exp) => exp.company === company);
-// }
-
-// export async function fetchExpArray(): Promise<expArrayProps[]> {
-//   return getExpArray();
-// }
 
 // "• Participate in full life-cycle software development
 // • Design, implement, and deploy highly scalable and reliable systems
