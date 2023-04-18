@@ -57,7 +57,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
-                  color={idx === i ? '#FFFFFF' : '#175C78' } // 2ndPal NEON BLUE :::  WHITE
+                  color={idx === i ? '#E1E1E1' : '#175C78' } // 2ndPal NEON BLUE :::  WHITE
                   backgroundColor={idx === i ? '#121D36' : "rgba(2,4,5,0.5)"} // 2ndPal DEEP BLUE ::: BLACK
                   borderBottom={["3px solid", 0] }
                   borderLeft={[0, "3px solid"]}
@@ -122,7 +122,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                       {/* POSITION TITLE */}
                       <Text 
                         as={"span"} 
-                        color={"#FFFFFF"}
+                        color={"#E1E1E1"}
                         //fontFamily={"var(--chakra-fonts-mono)"}
                         >
                       {getExpArray[idx].title}

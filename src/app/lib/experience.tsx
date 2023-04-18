@@ -73,12 +73,12 @@ export const getExpArray: expArrayProps[] = [
               label: "Selenium",
               delay: "120ms"
           },
-          {
-              icon: SiMysql,
-              color: "rgb(43,97,157)",
-              label: "MySQL",
-              delay: "180ms"
-          },
+          // {
+          //     icon: SiMysql,
+          //     color: "rgb(43,97,157)",
+          //     label: "MySQL",
+          //     delay: "180ms"
+          // },
           // {
           //     icon: SiMicrosoftteams,
           //     color: "rgb(119,124,216)",
@@ -103,17 +103,17 @@ export const getExpArray: expArrayProps[] = [
               label: "MongoDB Compass",
               delay: "360ms"
           },
-          {
-              icon: RiCodeBoxLine,
-              color: "rgb(89,188,125)",
-              label: "Legacy Code",
-              delay: "420ms"
-          },
+          // {
+          //     icon: RiCodeBoxLine,
+          //     color: "rgb(89,188,125)",
+          //     label: "Legacy Code",
+          //     delay: "420ms"
+          // },
           {
               icon: SiFilezilla,
               color: "rgb(184,0,0)",
               label: "FTP/FTPS",
-              delay: "480ms"
+              delay: "420ms"
           },
       ],
       company: "BuySupply",

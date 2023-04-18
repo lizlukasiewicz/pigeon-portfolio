@@ -49,3 +49,12 @@ export const sideBob: string = keyframes`
     left: -25%
   }
 `
+export const upDown: string = keyframes`
+  0% {
+    transform: translateY(0);
+  } 50% {
+    transform: translateY(1px);
+  } 100% {
+    transform: translateY(0);
+  }
+`

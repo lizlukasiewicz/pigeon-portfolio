@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react"
 import { SkillTable } from "../lib/Icons"
 import { fadeDown, fadeRight} from '../lib/helpers/animation'
+import { TempContainer } from '../ui/TempContainer';
 //import {  PageProps } from '../lib/Loading';
 type PageProps = {
     pageRefs: React.MutableRefObject<{}>;
@@ -25,6 +26,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     const fadeRightSecond: string = `${fadeRight} 800ms 1200ms forwards`;
     
     return(
+      <TempContainer label={'About me'}>
         <Box
           display={"flex"}
           flexDir={'column'}
@@ -37,7 +39,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
               // marginTop={{base: "50px", lg:"100px"}}
               // mx={{base: "70px", lg:"200px"}}
               display={"flex"}
-              opacity={visible ? 1 : 0.25}
+              opacity={visible ? 1 : 0.75}
               // 💥 REMOVE WHEN DONE FORMATTING
               //border={"1px solid rgb(98,202,243)"} //BLUE
               flexDir={"row"}
@@ -107,6 +109,6 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
             </Box>
             
         </Box>
-
+        </TempContainer>
     )
 }

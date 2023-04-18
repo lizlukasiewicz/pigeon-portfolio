@@ -44,7 +44,22 @@
 
   }
 
-
+.lampMode{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#lib {
+  position: fixed;
+  visibility: hidden;
+}
+.lib{
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: scale(2);
+}
 
 @media (hover: hover) and (pointer: fine) {
     .logo:hover {

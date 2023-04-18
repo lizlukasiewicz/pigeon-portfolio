@@ -1,5 +1,11 @@
 'use client';
 
+import { ColorToggle } from './ColorToggle';
+import {
+  Button,
+  Text
+} from '@chakra-ui/react'
+import { fadeDown } from '../lib/helpers/animation';
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './nav.module.css'
@@ -9,7 +15,7 @@ import Sidebar from './Sidebar';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Navbar() {
-
+  const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   return(
     <div className={styles.navigation}>
       <Link 
@@ -63,14 +69,28 @@ export default function Navbar() {
               Contact
             </h2>
             </Link>
+            <Button
+              //animation={fadeDownAnim}
+              as={"a"}
+              color={'#00C484'}
+              cursor={"pointer"}
+              href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
+              target={"_blank"}           
+              fontFamily={"var(--chakra-fonts-mono)"}
+              fontSize={'1.1rem'}
+              position={"relative"}
+              //transition={"100ms ease-out"}
+              _hover={{color:"#FFFFFF"}}>
+                <Text
+                  as='b'>
 
-            <Link 
-            className={styles.links}
-            href="/resume">
-            <h2 className={inter.className}>
-              Resume
-            </h2>
-            </Link>
+                  Resume
+                </Text>
+              
+            </Button>
+
+            {/* <ColorToggle /> */}
+          
       </div>
 
       <div className={styles.sidebar}>

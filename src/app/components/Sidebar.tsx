@@ -10,7 +10,6 @@ import {
   Box,
   VStack,
   Button,
-  keyframes,
   useMediaQuery
 } from '@chakra-ui/react'
 
@@ -236,8 +235,29 @@ export default function Sidebar() {
                 </Text>
             </Link>
           </Box>
+          <Button
+            animation={fadeDownAnim}
+            as={"a"}
+            color={'#00C484'}
+            cursor={"pointer"}
+            href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
+            target={"_blank"}
+            onClick={() => setMenuOpen(!menuOpen)}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            position={"relative"}
+            transition={"100ms ease-out"}
+            _before={{
+                borderRadius: "2px",
+                height: "2px",
+                position: "absolute",
+                transition: "100ms ease-out"
+            }}>
+              <Icon as={FaReadme} w={20} h={20} mr={20}/>
+              Resume
+            
+          </Button>
 
-          <Box
+          {/* <Box
             as='button' 
             animation={fadeDownAnim}
             cursor={"pointer"}
@@ -265,7 +285,7 @@ export default function Sidebar() {
                   Resume
                 </Text>
             </Link>
-          </Box>
+          </Box> */}
           
         </VStack>
 

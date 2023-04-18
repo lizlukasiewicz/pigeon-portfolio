@@ -38,14 +38,14 @@ export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"2xl"}
-                  color='#00C484'
+                  color={'#00C484'}
                   marginY={5}>
 
                     Git Commit, To 
                       
                       <Text 
-                        as='b' 
-                        color='#00C484'
+                        as={"span"} 
+                        color={'#00C484'}
                         _hover={{color:"#F3BA40"}}>
                           Something 
                       </Text>

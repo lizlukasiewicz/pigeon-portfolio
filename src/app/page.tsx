@@ -35,10 +35,8 @@ export default function Home() {
           scrollDir={scrollDir}
           y={y}/>
         
-        <Splash 
-          pageRefs={pageRefs}
-          visible={visible2}
-          visRef={visRef2}/>
+        <Splash //pageRefs={pageRefs}  visible={visible2}  visRef={visRef2} 
+        />
         
         <About 
           pageRefs={pageRefs}
