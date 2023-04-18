@@ -79,8 +79,7 @@ export default function Sidebar() {
                 </Text>
             </Link>
           </Box>
-
-            
+          
           <Box
             as='button' 
             animation={fadeDownAnim}
@@ -256,6 +255,7 @@ export default function Sidebar() {
               Resume
             
           </Button>
+          
 
           {/* <Box
             as='button' 

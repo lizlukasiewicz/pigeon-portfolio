@@ -3,10 +3,12 @@ import * as React from "react";
 import {
     Stack,
     Box,
-    Text
+    Text,
+    Icon
 } from "@chakra-ui/react"
-import { SkillTable } from "../lib/Icons"
-import { fadeDown, fadeRight} from '../lib/helpers/animation'
+import { SkillTable, NightIcon, NightIcon2 } from "../lib/Icons"
+//<Icon as={NightIcon} w={35} h={35}/> //smaller:: <Icon as={NightIcon2} w={45} />
+import { fadeDown, fadeRight } from '../lib/helpers/animation'
 import { TempContainer } from '../ui/TempContainer';
 //import {  PageProps } from '../lib/Loading';
 type PageProps = {
@@ -56,32 +58,22 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                   textAlign={"justify"}>
 
                     <Text 
-                      animation={fadeDownText} 
+                      //animation={fadeDownText} 
                       // 💥 REMOVE WHEN DONE FORMATTING
                       //border={"1px solid rgb(0,226,203)"} 
                       align={'left'} 
                       fontSize={{ base: "sm", lg: "lg" }} 
                       color='#B3DDC1' 
+                      cursor={"pointer"}
                       onMouseOver={ () => setName(!name)}>
                         
-                        Hey there! My name is {name? 
-                                                      <Text 
-                                                        as='b' 
-                                                        fontSize={{ base: "sm", lg: "lg" }} 
-                                                        color='#59BC7D'>
-                                                          Elizabeth,
-                                                      </Text>
-                                                    :
-                                                      <Text 
-                                                        as='b' 
-                                                        fontSize={{ base: "sm", lg: "lg" }} 
-                                                        color='#59BC7D' >
-                                                          E,
-                                                      </Text>}
+                        Hey there! My name is <Text as={'span'} fontSize={{ base: "md", lg: "lg" }} color='#59BC7D'> E<Text as={'span'} opacity={name? 1 : 0} transition={"300ms ease-in-out"}>lizabeth,</Text></Text>
+
+                                                      
                     </Text>
 
                     <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
-                      And I like to build things-
+                      And I like to build things- 
                     </Text>
 
                     <Text animation={fadeDownText} align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>

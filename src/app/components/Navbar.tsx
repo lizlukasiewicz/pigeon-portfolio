@@ -30,6 +30,7 @@ export default function Navbar() {
         priority
         />
       </Link>
+      {/* <ColorToggle /> */}
       <div className={styles.pages}>
       
             <Link 

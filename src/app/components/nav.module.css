@@ -60,6 +60,37 @@
   cursor: pointer;
   transform: scale(2);
 }
+.lib :hover {
+  background: rgba(0,0,0,.12);
+}
+.lib svg{
+  display: inline;
+}
+.lib svg path {
+  transition: all .3s ease;
+}
+.lib svg path:transition > .onoff {
+  opacity: .8;
+}
+.lib svg path:transition > .shine {
+  opacity: .0;
+}
+.lib svg path:transition > .lamp {
+  opacity: .0;
+}
+#lib:checked, .lib svg path:not(.shine,.lamp){
+  stroke: #C1B971;
+}
+#lib:checked + .lib svg path > .onoff {
+  animation: updown .4s linear forwards;
+}
+#lib:checked + .lib svg path > .onoff:animation path > .shine{
+  opacity: 1;
+}
+#lib:checked + .lib svg path > .onoff:animation path > .lamp{
+  opacity: 1;
+}
+
 
 @media (hover: hover) and (pointer: fine) {
     .logo:hover {
@@ -122,6 +153,15 @@
       }
 
 
+  }
+  @keyframes updown {
+    0% {
+      transform: translateY(0);
+    } 50% {
+      transform: translateY(1px);
+    } 100% {
+      transform: translateY(0);
+    }
   }
 @keyframes spin {
     from {
