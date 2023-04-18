@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react"
 import { SkillTable, NightIcon, NightIcon2 } from "../lib/Icons"
 //<Icon as={NightIcon} w={35} h={35}/> //smaller:: <Icon as={NightIcon2} w={45} />
-import { fadeDown, fadeRight } from '../lib/helpers/animation'
+import { fadeDown, fadeRight, growRight } from '../lib/helpers/animation'
 import { TempContainer } from '../ui/TempContainer';
 //import {  PageProps } from '../lib/Loading';
 type PageProps = {
@@ -23,9 +23,9 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
         visible && setLoaded(true)
     }, [visible]);
     const [name, setName] = React.useState<boolean>(false);
-    const fadeDownText: string = `${fadeDown} 200ms 180ms forwards`;
-    const fadeRightFirst: string = `${fadeRight} 800ms 800ms forwards`;
-    const fadeRightSecond: string = `${fadeRight} 800ms 1200ms forwards`;
+    const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
+    const fadeRightFirst: string = `6s 3s forwards ${growRight}`;//800ms 800ms
+    const fadeRightSecond: string = `6s 4s forwards ${growRight}`;//800ms 1200ms
     
     return(
       <TempContainer label={'About me'}>
@@ -72,19 +72,18 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                                                       
                     </Text>
 
-                    <Text animation={fadeDownText} align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
+                    <Text //animation={fadeDownText}
+                      align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
                       And I like to build things- 
                     </Text>
 
-                    <Text animation={fadeDownText} align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>
-                      Because
-                      <Text animation={fadeRightFirst} as='b' color='#59BC7D'> I can.</Text>
-                    </Text>
+                    <Text //animation={fadeDownText}  
+                      align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>
+                      Because<Text animation={fadeRightFirst} as={'span'} color='#59BC7D' opacity={0} > I can.</Text></Text>
 
-                    <Text animation={fadeDownText} align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color='#B3DDC1'>
-                      Because 
-                      <Text animation={fadeRightSecond} as='b' color='#59BC7D'> I feel like it.</Text> 
-                    </Text>
+                    <Text //animation={fadeDownText}  
+                      align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color='#B3DDC1'>
+                      Because<Text animation={fadeRightSecond} as={'span'} color='#59BC7D' opacity={0} > I feel like it.</Text> </Text>
                 </Stack>
             </Box>
 

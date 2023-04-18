@@ -41,14 +41,7 @@ export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
                   color={'#00C484'}
                   marginY={5}>
 
-                    Git Commit, To 
-                      
-                      <Text 
-                        as={"span"} 
-                        color={'#00C484'}
-                        _hover={{color:"#F3BA40"}}>
-                          Something 
-                      </Text>
+                    Git Commit, To<Text as={"span"} color={'#00C484'} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
 
                     ::
 
