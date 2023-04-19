@@ -209,18 +209,18 @@ export const NightIcon = createIcon({
   viewBox: "0 0 24 24",
   path: [
     (<path 
-      stroke="#C1B971"
+      stroke="#C1B971" //"#020405"
       strokeWidth={"2"}
       strokeLinecap="round"
       d="M8 20H12M16 20H12M12 20V11"/>),
     (<path 
-      stroke="#C1B971" 
+      stroke="#C1B971" //"#020405" 
       strokeWidth={"2"} 
       strokeLinecap="round"
       d="M17 11V16" />),
     
     (<path 
-      stroke="#C1B971" 
+      stroke="#C1B971" //"#020405" 
       strokeWidth={"2"}
       d="M15 4H9C6.23858 4 4 6.23858 4 9V9.5C4 10.3284 4.67157 11 5.5 11H18.5C19.3284 11 20 10.3284 20 9.5V9C20 6.23858 17.7614 4 15 4Z" />),
     
@@ -265,30 +265,35 @@ export const NightIcon = createIcon({
   
   ]
 })
-//{props}: {props:boolean}
-export const NightIcon2 = () => (
-  <Icon viewBox="0 0 24 24" focusable={true} role='checkbox'>
-    <path 
-      stroke="#C1B971"
+export const DayIcon= createIcon({
+  displayName: 'DayIcon',
+  viewBox: "0 0 24 24",
+  path: [
+    (<path 
+      stroke="#E1E1E1"//"#020405"
       strokeWidth={"2"}
       strokeLinecap="round"
-      d="M8 20H12M16 20H12M12 20V11"/>
-    <path 
-      stroke="#C1B971" 
+      d="M8 20H12M16 20H12M12 20V11"/>),
+    (<path 
+      stroke="#E1E1E1"//"#020405" 
       strokeWidth={"2"} 
       strokeLinecap="round"
-      d="M17 11V16" />
-    <path 
-      stroke="#C1B971" 
+      d="M17 11V16" />),
+    
+    (<path 
+      stroke="#E1E1E1"//"#020405" 
       strokeWidth={"2"}
-      d="M15 4H9C6.23858 4 4 6.23858 4 9V9.5C4 10.3284 4.67157 11 5.5 11H18.5C19.3284 11 20 10.3284 20 9.5V9C20 6.23858 17.7614 4 15 4Z" />
-    <path 
-      d="M3 21L5 12H19L21 21H3Z" 
-      fill="url(#paint0_linear_976_2597)"/>
-    <path 
-      d="M9 3C5.68629 3 3 5.68629 3 9V9.5C3 10.8807 4.11929 12 5.5 12H18.5C19.8807 12 21 10.8807 21 9.5V9C21 5.68629 18.3137 3 15 3H9Z" 
-      fill="url(#paint1_radial_976_2597)"/>
-    <defs>
+      d="M15 4H9C6.23858 4 4 6.23858 4 9V9.5C4 10.3284 4.67157 11 5.5 11H18.5C19.3284 11 20 10.3284 20 9.5V9C20 6.23858 17.7614 4 15 4Z" />),
+    
+    // (<path 
+    //   d="M3 21L5 12H19L21 21H3Z" 
+    //   fill="url(#paint0_linear_976_2597)"/>),
+    
+    // (<path 
+    //   d="M9 3C5.68629 3 3 5.68629 3 9V9.5C3 10.8807 4.11929 12 5.5 12H18.5C19.8807 12 21 10.8807 21 9.5V9C21 5.68629 18.3137 3 15 3H9Z" 
+    //   fill="url(#paint1_radial_976_2597)"/>),
+
+    (<defs>
       <linearGradient
         id="paint0_linear_976_2597"
         x1={"12"}
@@ -316,6 +321,8 @@ export const NightIcon2 = () => (
 
 
       </radialGradient>
-    </defs>
-  </Icon>
-)
+    </defs>),
+
+  
+  ]
+})

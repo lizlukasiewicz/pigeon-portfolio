@@ -6,8 +6,7 @@ import {
     Text,
     Icon
 } from "@chakra-ui/react"
-import { SkillTable, NightIcon, NightIcon2 } from "../lib/Icons"
-//<Icon as={NightIcon} w={35} h={35}/> //smaller:: <Icon as={NightIcon2} w={45} />
+import { SkillTable } from "../lib/Icons"
 import { fadeDown, fadeRight, growRight } from '../lib/helpers/animation'
 import { TempContainer } from '../ui/TempContainer';
 //import {  PageProps } from '../lib/Loading';
@@ -76,6 +75,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                       align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
                       And I like to build things- 
                     </Text>
+                    
 
                     <Text //animation={fadeDownText}  
                       align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>

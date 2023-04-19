@@ -43,54 +43,68 @@
     visibility: collapse;
 
   }
-
 .lampMode{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#lib {
-  position: fixed;
-  visibility: hidden;
-}
-.lib{
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  transform: scale(2);
-}
-.lib :hover {
-  background: rgba(0,0,0,.12);
-}
-.lib svg{
-  display: inline;
-}
-.lib svg path {
-  transition: all .3s ease;
-}
-.lib svg path:transition > .onoff {
-  opacity: .8;
-}
-.lib svg path:transition > .shine {
-  opacity: .0;
-}
-.lib svg path:transition > .lamp {
-  opacity: .0;
-}
-#lib:checked, .lib svg path:not(.shine,.lamp){
-  stroke: #C1B971;
-}
-#lib:checked + .lib svg path > .onoff {
-  animation: updown .4s linear forwards;
-}
-#lib:checked + .lib svg path > .onoff:animation path > .shine{
-  opacity: 1;
-}
-#lib:checked + .lib svg path > .onoff:animation path > .lamp{
-  opacity: 1;
-}
-
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #D1FBDF; */
+    box-sizing: border-box;
+  }
+  .checkbox {
+    position: fixed;
+    visibility: hidden;
+  }
+  
+  .lib {
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transform: scale(3);
+  }
+  .svg {
+    display: inline;
+  }
+  .svg > path {
+    transition: all 0.3s ease;
+  }
+  .onoff {
+    opacity: 0.8;
+  }
+  .shine {
+    opacity: 0;
+  }
+  .lamp {
+    opacity: 0;
+  }
+  .lib:hover {
+    background: rgba(209,251,223,.5);
+  }
+  
+ .checkbox:checked + .lib svg path:not(.shine, .lamp) {
+    stroke: #C1B971;
+  }
+ .checkbox:checked + .lib svg path.onoff {
+    animation: updown 0.4s linear forwards;
+  }
+ .checkbox:checked + .lib svg path.shine {
+    opacity: 1;
+  }
+ .checkbox:checked + .lib svg path.lamp {
+    opacity: 1;
+  }
+  
+  @keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 @media (hover: hover) and (pointer: fine) {
     .logo:hover {
@@ -154,15 +168,7 @@
 
 
   }
-  @keyframes updown {
-    0% {
-      transform: translateY(0);
-    } 50% {
-      transform: translateY(1px);
-    } 100% {
-      transform: translateY(0);
-    }
-  }
+
 @keyframes spin {
     from {
       transform: rotate(0deg);
