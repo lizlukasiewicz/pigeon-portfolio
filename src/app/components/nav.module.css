@@ -44,7 +44,7 @@
 
   }
 .lampMode{
-    min-height: 10vh;
+    min-height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +60,7 @@
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
-    transform: scale(3);
+    transform: scale(2);
   }
   .svg {
     display: inline;
@@ -72,26 +72,26 @@
     opacity: 0.8;
   }
   .shine {
-    opacity: 0;
+    opacity: 1;
   }
   .lamp {
-    opacity: 0;
+    opacity: 1;
   }
-  .lib:hover {
+  /* .lib:hover {
     background: rgba(209,251,223,.5);
-  }
+  } */
   
  .checkbox:checked + .lib svg path:not(.shine, .lamp) {
-    stroke: #C1B971;
+    stroke: #020405;
   }
  .checkbox:checked + .lib svg path.onoff {
     animation: updown 0.4s linear forwards;
   }
  .checkbox:checked + .lib svg path.shine {
-    opacity: 1;
+    opacity: 0;
   }
  .checkbox:checked + .lib svg path.lamp {
-    opacity: 1;
+    opacity: 0;
   }
   
   @keyframes updown {
