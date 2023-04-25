@@ -23,10 +23,10 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 display={"flex"}
                 justifyContent={"center"}
                 position={"fixed"}
-                right={{ base: 2, sm: 5, lg: 0 }}
+                right={{ base: 1, sm: 5, lg: -1 }}
                 top={
                     y > 80 && scrollDir === "down" ? 
-                        "2%"
+                        "6%"
                         : y > 60 && scrollDir === "up" ? 
                             "10%"
                             : 
@@ -42,7 +42,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         href={e.href} /> ))}
                 <Divider
                     borderColor={"#00E2CB"}//colorMode("lightModeColor", "currentColor")
-                    width={{ base: 0, lg: 20 }} />
+                    width={{ base: 0, lg: 10 }} />
             </Stack>
             <Stack
                 alignItems={"center"}
@@ -54,14 +54,14 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 direction={"row"}
                 display={"flex"}
                 justifyContent={"center"}
-                left={{ base: -20, sm: -16, lg: 0 }}
+                left={{ base: -20, sm: -16, lg: -5 }}
                 position={"fixed"}
                 transform={{ base: "rotate(-90deg)", lg: "rotate(0deg)" }}
                 transition={"200ms ease-out"}
                 zIndex={1}>
                     <Divider
                         borderColor={"#00E2CB"}//colorMode("lightModeColor", "currentColor")
-                        width={{ base: 0, lg: 16}} />
+                        width={{ base: 0, lg: 10}} />
                     <SocialIcon
                         delay={"80ms"} 
                         href={"mailto:e.lukasiewicz.n@gmail.com"} 

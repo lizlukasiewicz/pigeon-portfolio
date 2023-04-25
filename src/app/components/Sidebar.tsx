@@ -247,7 +247,6 @@ export default function Sidebar({ menuOpen, setMenuOpen }: NavMenuIconProps) {
             href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
             target={"_blank"}
             onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
             position={"relative"}
             transition={"100ms ease-out"}
             _before={{
@@ -256,8 +255,15 @@ export default function Sidebar({ menuOpen, setMenuOpen }: NavMenuIconProps) {
                 position: "absolute",
                 transition: "100ms ease-out"
             }}>
+              <Text
+                  as='b'
+                  _hover={{color:"#FFFFFF"}}
+                  fontFamily={"var(--chakra-fonts-mono)"}
+                  fontSize='1.1rem'>
               <Icon as={FaReadme} w={20} h={20} mr={20}/>
-              Resume
+                      Resume
+              </Text>
+
             
           </Button>
           

@@ -1,50 +1,10 @@
-.navigation {
-    padding: 1rem;
-    display: flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    align-items: space-between;
-    font-size: 0.9rem;
-    width: 100%;
-    z-index: 2;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-      
-    
-}
+
 .logo {
-    /* display: flex;
-    align-items: center;
-    justify-content: flex-start; */
     margin: 0 1rem 0 0;
     border: 4px solid rgba(var(--foreground-rgb), 0.25);
     border-radius: 40px;
 }
 
-
-.pages {
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0.5rem;
-    
-    
-}
-.links h2 {
-  color: rgba(0, 196, 132, 1);
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  font-family: var(--font-mono);
-}
-
-
-.sidebar {
-    visibility: collapse;
-
-  }
 .lampMode{
     min-height: 5vh;
     display: flex;
@@ -108,68 +68,13 @@
     }
   }
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
     .logo:hover {
-      border: 4px solid rgba(var(--foreground-rgb), 1);
     }
-    .pages h2:hover {
-        color: rgba(225, 225, 225, 0.9);
-    }
-    .sidebar:hover {
-        color: rgba(225, 225, 225, 0.9);
-    }
-}
+} */
 
-@media (max-width: 1023px) {
-
-    .navigation {
-        font-size: 0.8rem;
-        padding: 1rem;
-        flex-direction:row;
-        justify-content: flex-start;
-        align-items: space-between;
-        width: 100%;
-        z-index: 2;
-        border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-        
-        background-clip: padding-box;
-        backdrop-filter: blur(24px);
-      }
-    
-      .pages {
-        visibility: hidden;
-
-      }
-      .links h2 {
-        color: rgba(0, 196, 132, 1);
-        font-weight: 700;
-        padding: 0.5rem 1rem;
-        font-family: var(--font-mono);
-    }
-
-
-      .sidebar {
-        position: absolute;
-        right: 0.5rem;
-        visibility:visible;
-        color: rgba(0, 196, 132, 1);
-        font-weight: 700;
-        padding: 0.5rem 1rem;
-        z-index: 2;
-      }
-    
-      .logo {
-        position: absolute;
-        left: 0.5rem;
-        align-items: flex-start;
-        z-index: 1;
-        margin: 0 1rem 0 0;
-        border: 4px solid rgba(var(--foreground-rgb), 0.25);
-        border-radius: 40px;
-      }
-
-
-  }
+/* @media (max-width: 1023px) {
+  } */
 
 @keyframes spin {
     from {
