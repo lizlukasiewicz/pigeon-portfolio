@@ -11,7 +11,7 @@ import About from './about/About'
 
 import * as React from "react";
 
-import { useOnScreen } from './lib/Loading';
+import { useOnScreen } from './lib/helpers/Loading';
 import { useNavigation } from './lib/helpers/useNav'
 
 const inter = Inter({ subsets: ['latin'] })

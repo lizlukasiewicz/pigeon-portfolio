@@ -13,22 +13,27 @@ import {
   useMediaQuery
 } from '@chakra-ui/react'
 
-export default function Sidebar() {
+interface NavMenuIconProps {
+  menuOpen: boolean,
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
+};
+
+export default function Sidebar({ menuOpen, setMenuOpen }: NavMenuIconProps) {
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
-  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
+  // const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
   return(
-    <>
+    <React.Fragment>
       <Button 
         onClick={() => setMenuOpen(!menuOpen)} 
-        zIndex={4}
-        >
-        <HamburgerIcon  w={45} h={45} color='#00C484'/>
+        zIndex={4}>
+        <HamburgerIcon  w={45} h={45} color='#00C484' //rgba(0, 196, 132, 1)
+        /> 
       </Button>
       
        
@@ -256,41 +261,10 @@ export default function Sidebar() {
             
           </Button>
           
-
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-            <Link 
-              href="/resume" 
-              >
-                <Text
-                  as='b'
-                  cursor={"pointer"}
-                  fontFamily={"var(--chakra-fonts-mono)"}
-                  fontSize='1.1rem'
-                  color='#00C484'
-                  _hover={{color:"#FFFFFF"}}>
-                  <Icon as={FaReadme} w={20} h={20} mr={20}/>
-                  Resume
-                </Text>
-            </Link>
-          </Box> */}
-          
         </VStack>
 
 
     
-    </>
+    </React.Fragment>
   )
 }

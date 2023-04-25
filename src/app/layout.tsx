@@ -1,13 +1,17 @@
 'use client'
 
+import * as React from "react";
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
 // import { extendTheme } from '@chakra-ui/react'
+import { useNavigation } from './lib/helpers/useNav';
 import './globals.css';
 import Navbar from './components/Navbar';
 
 
 export default function RootLayout({children,}: {children: React.ReactNode}) {
+  const [y, scrollDir]: [number, string] = useNavigation();
+  const pageRefs: React.MutableRefObject<{}> = React.useRef({});
   return (
     <html lang="en">
       {/*
@@ -17,7 +21,10 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <head />
       <body>
         <CacheProvider>
-          <Navbar />
+          <Navbar 
+                pageRefs={pageRefs}
+                scrollDir={scrollDir}
+                y={y}/>
           <ChakraProvider>{children}</ChakraProvider>
         </CacheProvider>
       </body>
