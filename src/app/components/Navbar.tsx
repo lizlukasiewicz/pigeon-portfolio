@@ -1,12 +1,14 @@
 'use client';
 
-import { ColorToggle } from './ColorToggle';
+import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
   Button,
   Text,
   Heading,
   useMediaQuery,
   HStack,
+  useColorMode,  
+  Center,
 } from '@chakra-ui/react'
 import * as React from "react";
 import { fadeDown } from '../lib/helpers/animation';
@@ -22,6 +24,7 @@ interface PageProps {
 }
 
 export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
+  const { colorMode, toggleColorMode } = useColorMode();
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
@@ -50,15 +53,12 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
         width={"100%"}
         zIndex={2}>
 
-      
-
-
-       {/* {styles.navigation}> */}
           <HStack
             animation={fadeDownAnim}
             left={isLargeScreen ? 10 : 10}
             position={"absolute"}
             transition={"200ms ease-out"}>
+
               <Link 
                 href="/">
 
@@ -71,7 +71,13 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
                     priority />
 
               </Link>
-              {/* <ColorToggle /> */}
+              {/* {animation, cursor, onClick, _hover} */}
+              <Center
+                
+                onClick={toggleColorMode}>
+              {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
+              </Center>
+              
           </HStack>
       
           <HStack
@@ -88,16 +94,10 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
               <NavBarRoutes />
               :
               <Sidebar 
-              menuOpen={menuOpen} //  {styles.sidebar}>
+              menuOpen={menuOpen} 
               setMenuOpen={setMenuOpen}/>
             }
-          </HStack>
-            {/* NAVIGATION  BAR */}
-          {/* <div className={styles.pages}>
-          
-          </div> */}
-
-        
+          </HStack>   
       </HStack>
     </React.Fragment>
   )

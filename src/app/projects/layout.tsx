@@ -3,7 +3,7 @@ import React from 'react';
 import { fetchCompartment } from '../lib/routes';
 import { TabGroup  } from './TabGroup';
 // import { useOnScreen } from '../lib/Loading';
-//import { TempContainer } from '../ui/TempContainer'
+import { TempContainer } from '../ui/TempContainer'
 
 export default async function Layout({
   children,
@@ -14,7 +14,7 @@ export default async function Layout({
   // const [visRef, visible] = useOnScreen();
   const projects = await fetchCompartment();
     return (
-      // <TempContainer label={'Projects'}>
+      <TempContainer label={'Projects'}>
         <>
         
             <TabGroup
@@ -35,6 +35,6 @@ export default async function Layout({
     
           <>{children}</>
         </>
-      // </TempContainer>
+      </TempContainer>
     );
   }

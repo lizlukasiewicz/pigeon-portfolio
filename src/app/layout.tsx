@@ -1,9 +1,10 @@
 'use client'
 
 import * as React from "react";
-import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { Providers } from "./providers";
 // import { extendTheme } from '@chakra-ui/react'
+import { ColorModeScript } from '@chakra-ui/react'
+import theme from './theme'
 import { useNavigation } from './lib/helpers/useNav';
 import './globals.css';
 import Navbar from './components/Navbar';
@@ -20,13 +21,14 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       */}
       <head />
       <body>
-        <CacheProvider>
+        <Providers>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Navbar 
                 pageRefs={pageRefs}
                 scrollDir={scrollDir}
                 y={y}/>
-          <ChakraProvider>{children}</ChakraProvider>
-        </CacheProvider>
+          {children}
+        </Providers>
       </body>
     </html>
   )

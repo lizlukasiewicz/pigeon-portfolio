@@ -1,19 +1,27 @@
 "use client";
-import { ColorToggle } from "../components/ColorToggle";
+import { ColorToggle, Toggle, ColorToggleDay } from "../components/ColorToggle";
 
 import { 
         Button,
         Center,
         useColorMode,  
+        useColorModeValue as uCMV,
+        Box,
+        Text
       } from "@chakra-ui/react"
 
 // const SwitchIcon = uCMV(ColorToggle, ColorToggleDay);//might have to export icons in <Icon as={tag}/> from Icons page
 
 export default function Contact() {
   const { colorMode, toggleColorMode } = useColorMode();
+  
     return(
-        <div>
-            <h2>Contact me</h2>
+        <Box
+          width={"100%"}
+          marginTop={{base: "50px", lg:"100px"}}
+          backgroundColor={uCMV("#B3DDC1", "#121D36")}>
+            <Text
+              color={uCMV("#1C2445", "#00E2CB")}>Contact me</Text>
             {/* <Center 
               color={"transparent"}
               width={43}
@@ -23,14 +31,17 @@ export default function Contact() {
               _hover={{ cursor: "pointer" }}
               > */}
                 <Button
-                  color={"goldenrod"}
+                 
                   width={38}
                   onClick={toggleColorMode}>
 
-                  <ColorToggle />
-                  {/* Toggle{colorMode == 'light' ? ' Light ' : ' Dark '} */}
+                  {/* <Toggle 
+                    onClick={toggleColorMode}
+                    _hover={{ cursor: "pointer" }}/>
+                    /> */}
+                  {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
                 </Button>
             {/* </Center> */}
-        </div>
+        </Box>
     )
 }
