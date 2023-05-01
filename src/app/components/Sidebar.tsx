@@ -14,11 +14,12 @@ import {
 } from '@chakra-ui/react'
 
 interface NavMenuIconProps {
+  pageRefs: React.MutableRefObject<{}>,
   menuOpen: boolean,
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
-export default function Sidebar({ menuOpen, setMenuOpen }: NavMenuIconProps) {
+export default function Sidebar({ pageRefs, menuOpen, setMenuOpen }: NavMenuIconProps) {
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
   // const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
@@ -26,6 +27,11 @@ export default function Sidebar({ menuOpen, setMenuOpen }: NavMenuIconProps) {
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
+
+//   const scrollIntoView = (type: string): void => {
+//     pageRefs.current[type].scrollIntoView({ behavior: "smooth" });
+//     menuOpen && setMenuOpen(!menuOpen);
+// };
 
   return(
     <React.Fragment>

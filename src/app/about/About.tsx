@@ -27,7 +27,11 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     const fadeRightSecond: string = `6s 4s forwards ${growRight}`;//800ms 1200ms
     
     return(
-      <TempContainer label={'About me'}>
+      <TempContainer 
+        label={'about'}  
+        title={'About me'} 
+        pageRefs={pageRefs}
+        refNum={1}>
         <Box
           display={"flex"}
           flexDir={'column'}

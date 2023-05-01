@@ -1,25 +1,23 @@
 'use client'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-import { demos } from './lib/routes'
 import { Link } from '@chakra-ui/next-js'
 import { VStack, Container } from "@chakra-ui/react";
+import Navbar from './components/Navbar';
 import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import Social from "./components/Social"
 import About from './about/About'
+import ExperienceLayout from './_experience/layout'
 
 import * as React from "react";
 
 import { useOnScreen } from './lib/helpers/Loading';
 import { useNavigation } from './lib/helpers/useNav'
 
-const inter = Inter({ subsets: ['latin'] })
-
 
 export default function Home() { 
   const pageRefs: React.MutableRefObject<{}> = React.useRef({});
   const [visRef, visible] = useOnScreen();
+  const [visRef1, visible1] = useOnScreen();
   const [visRef2, visible2] = useOnScreen();
   const [visRef3, visible3] = useOnScreen();
 
@@ -30,18 +28,26 @@ export default function Home() {
       // 💥 REMOVE WHEN DONE FORMATTING //YELLOW
       //border={"1px solid rgb(243,186,64)"}
       > 
-
+        <Navbar 
+          pageRefs={pageRefs}
+          scrollDir={scrollDir}
+          y={y}/>
         <Social 
           scrollDir={scrollDir}
           y={y}/>
         
-        <Splash //pageRefs={pageRefs}  visible={visible2}  visRef={visRef2} 
+        <Splash 
         />
         
         <About 
           pageRefs={pageRefs}
-          visible={visible3}
-          visRef={visRef3}/>
+          visible={visible1}
+          visRef={visRef1}/>
+        
+        <ExperienceLayout 
+          pageRefs={pageRefs}
+          visRef={visRef2}
+          visible={visible2}/>
 
         <GitCalendar 
           pageRefs={pageRefs}

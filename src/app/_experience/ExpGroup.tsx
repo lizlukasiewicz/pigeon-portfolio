@@ -19,21 +19,6 @@ interface ExperienceWidgetProps {
   setIdx: React.Dispatch<React.SetStateAction<number>>
 };
 
-//export type Item = {
-  // title: string,
-  // details: string[],
-  // dates: string,
-  // skills: {
-  //     color?: string,
-  //     delay?: string,
-  //     icon?: React.ComponentType<IconType>,
-  //     label?: string,
-  // }[],
-  //company: string,
-  // companyFull: string,
-  // companyLink: string,
-  // color: string
-//}
 
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   const sideBobAnim: string = `${sideBob} 1s infinite`;

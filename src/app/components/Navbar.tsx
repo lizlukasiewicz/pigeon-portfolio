@@ -33,6 +33,12 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
+  const scrollIntoView = (type: string): void => {
+    const pageRef = pageRefs.current[type];
+    pageRef.scrollIntoView({ behavior: 'smooth' });
+    menuOpen && setMenuOpen(!menuOpen);
+  };
+
   return(
     <React.Fragment>
       <HStack
@@ -82,7 +88,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
       
           <HStack
             align={"center"}
-            //fontSize={'1.1rem'}
             justify={"center"}
             paddingX={"2rem"}
             position={"absolute"}
@@ -91,9 +96,10 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
             transition={"200ms ease-out"}>
                         
             {isLargeScreen ? 
-              <NavBarRoutes />
+              <NavBarRoutes scrollIntoView={scrollIntoView} />
               :
               <Sidebar 
+              pageRefs={pageRefs}
               menuOpen={menuOpen} 
               setMenuOpen={setMenuOpen}/>
             }
@@ -102,15 +108,24 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     </React.Fragment>
   )
 }
-export const NavButton = ({ label, delay, href}: {label: string; delay: string; href: string;} ) => {
+
+interface NavButtonProps {
+  delay: string,
+  label: string,
+  title: string,
+  scroll: (arg0: string) => void,
+};
+
+export const NavButton = ({ label, delay, title, scroll}: NavButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   return (
-    <Link
-    href={href}>
+    // <Link
+    // href={href}>
       <Heading
           fontWeight={"bold"}
           animation={fadeDownAnim}
           cursor={"pointer"}
+          onClick={() => scroll(label)}
           fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
           fontFamily={"var(--chakra-fonts-mono)"}
           color={"#00C484"}
@@ -132,18 +147,23 @@ export const NavButton = ({ label, delay, href}: {label: string; delay: string; 
             color: "#E1E1E1",
             _before: { width: "105%" } }}
             >
-          {label}
+          {title}
       </Heading>
-    </Link>
+    // </Link>
   );
 };
 
-export const NavBarRoutes= () => (
+interface NavButtonsProps {
+  isLargeScreen?: boolean,
+  scrollIntoView: (arg0: string) => void,
+};
+
+export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
   <React.Fragment>
-    <NavButton label="About" delay={"0ms"} href={"/about"} />
-    <NavButton label="Projects" delay={"60ms"} href={"/projects"} />
-    <NavButton label="Experience" delay={"120ms"} href={"/experience"} />
-    <NavButton label="Contact" delay={"180ms"} href={"/contact"} />
+    <NavButton label="about" title="About" delay={"0ms"} scroll={scrollIntoView} />
+    <NavButton label="projects" title="Projects" delay={"60ms"} scroll={scrollIntoView} />
+    <NavButton label="experience" title="Experience" delay={"120ms"} scroll={scrollIntoView} />
+    <NavButton label="contact" title="Contact" delay={"180ms"} scroll={scrollIntoView} />
     <ResumeButton />
   </React.Fragment>
 
