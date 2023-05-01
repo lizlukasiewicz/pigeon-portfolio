@@ -23,7 +23,9 @@ interface ExperienceWidgetProps {
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
-      <React.Fragment>
+      <Stack 
+        spacing={5}
+        minHeight={{ base: "80vh", lg: "60vh" }}>
         <Stack
           direction={["column", "row"]}
           height={290}
@@ -195,7 +197,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                 
 
         </HStack>
-      </React.Fragment>
+      </Stack>
               
   )
 }

@@ -6,7 +6,7 @@ import Splash from './components/Splash'
 import GitCalendar from "./components/GitCalendar"
 import Social from "./components/Social"
 import About from './about/About'
-import ExperienceLayout from './_experience/layout'
+import ExperienceLayout from './experience/ExperienceLayout'
 
 import * as React from "react";
 

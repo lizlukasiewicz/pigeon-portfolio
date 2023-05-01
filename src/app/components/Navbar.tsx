@@ -101,7 +101,8 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
               <Sidebar 
               pageRefs={pageRefs}
               menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen}/>
+              setMenuOpen={setMenuOpen}
+              />
             }
           </HStack>   
       </HStack>
@@ -119,8 +120,6 @@ interface NavButtonProps {
 export const NavButton = ({ label, delay, title, scroll}: NavButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   return (
-    // <Link
-    // href={href}>
       <Heading
           fontWeight={"bold"}
           animation={fadeDownAnim}
@@ -149,7 +148,7 @@ export const NavButton = ({ label, delay, title, scroll}: NavButtonProps ) => {
             >
           {title}
       </Heading>
-    // </Link>
+
   );
 };
 
