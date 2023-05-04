@@ -2,20 +2,9 @@ import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box } from '@chakra-ui/react'
 import * as React from 'react';
 
-// type PageProps = {
-//   pageRefs?: React.MutableRefObject<{}>;
-//   visRef?: any;
-//   visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-// };
 
-// TODO: FIX TRANSITION ANIMATION  { pageRefs, visRef, visible }: PageProps
 export default function Splash() {
     const [name, setName] = React.useState<boolean>(false);
-    // const [loaded, setLoaded] = React.useState<boolean>(false);
-    
-    // React.useEffect(() => {
-    //     visible && setLoaded(true)
-    // }, [visible]);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;//1000ms`;//
 
     return(
@@ -41,39 +30,16 @@ export default function Splash() {
                 padding={7}
                 pos={"absolute"}
                 top={"260"}
-                zIndex={2}
+                zIndex={1}
                 onMouseOver={() => setName(!name)}
                
                 _hover={{
                   cursor: "pointer"
                 }}
                 animation={fadeDownAnim}
-                transition={"500ms ease-out"}
+                //transition={"500ms ease-out"}
               >
-                {name ?
-
-                    <Text
-                     as={'b'}
-                     fontWeight={600}
-                     fontFamily={"var(--chakra-fonts-mono)"}
-                     fontSize={'3xl'}> 
-                          /. Lukasiewicz ./ 
-                    </Text> 
-
-                :
-
-                     <Text
-                      as={'b'}
-                      fontWeight={600}
-                      fontFamily={"var(--chakra-fonts-mono)"}
-                      fontSize={'3xl'}>
-                        / wu.kaˈɕɛ.vit͡ʂ /
-                     </Text>
-
-                 }
-                 
-
-                    
+              <Text as={'b'}fontWeight={600}fontFamily={"var(--chakra-fonts-mono)"}fontSize={'3xl'}><Text as={'span'} opacity={name? 0 : 1} transition={"500ms ease-in-out"}>w</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name? 'L' : 'u'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'u':'.'}</Text>ka<Text as={'span'} transition={"500ms ease-in-out"}>{name?'s':"'"}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'i':'ɕ'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'e':'ɛ'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'w':'.'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'i':'v'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'c':'i'}</Text><Text as={'span'} transition={"300ms ease-in-out"}>{name?'z':'t͡'}</Text><Text as={'span'} opacity={name? 0 : 1} transition={"300ms ease-in-out"}>ʂ</Text></Text> 
             </Box>
                 
 

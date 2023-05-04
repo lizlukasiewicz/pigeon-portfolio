@@ -27,7 +27,6 @@ interface NavMenuIconProps {
   pageRefs: React.MutableRefObject<{}>,
   menuOpen: boolean,
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  // NavBarRoutes: React.FC,
 };
 
 export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconProps) {
@@ -56,7 +55,7 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
       
        
         <VStack 
-          backgroundColor={"rgba(2, 4, 5, 0.7)"}
+          backgroundColor={"rgba(2, 4, 5, 0.9)"} //colorMode()
           opacity={1}
           paddingTop={90}
           boxShadow={"dark-lg"}
@@ -66,12 +65,12 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
           alignItems={"flex-start"}
           position={"fixed"}
           right={menuOpen ? 0 : "-50%"}
-          top={menuOpen? 0: 0}
+          top={0}
           spacing={35}
           pl={'3%'}
           transition={"300ms ease-in-out"}
-          width={"30%"}
-          zIndex={2}>
+          width={"45%"}
+          zIndex={3}>
           
           <Box
             as='button' 
@@ -273,9 +272,6 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
           </Button> */}
           
         </VStack>
-
-
-    
     </React.Fragment>
   )
 }
@@ -312,14 +308,14 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
                 fontSize='1.1rem'
                 color='#00C484'
                 _hover={{color:"#FFFFFF"}}>
-                  <Center animation={fadeDownAnim} opacity={0}>
+                  {/* <Center animation={fadeDownAnim} opacity={0}> */}
                       <Icon
                           as={icon}
                           borderRadius={5}
-                          color={"#00C484"}
-                          boxSize={8}
+                          //color={"#00C484"}
+                          boxSize={5}
                           transition={"100ms ease-in-out"}/>
-                  </Center>
+                  {/* </Center> */}
 
                 {label}
             </Text>
