@@ -43,15 +43,20 @@ export interface expArrayProps {
   color: string
 };
 
+
+////"Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making."
+////"Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
+////"Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow."
+////"Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
+////"Utilized Selenium web scraper/crawler in Python to collect, clean, and patch data from various websites, and successfully incorporated the resulting data into a SQL database, contributing to improved accuracy and efficiency of data processing."
+////"Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting."
 export const getExpArray: expArrayProps[] = [
   {
       title: "Backend Software Engineer, Infrastructure / Data Operations",
       details: [
-          "Designed and deployed custom data ingestion module using Python/Django, integrated complex data across multiple vendor platforms into a unified database", //"Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting."
-          "Maintained e-commerce website using PHP and Magento, implemented custom themes, modules, and extensions to enhance user experience and site performance.",//"Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
-          //"Collaborated throughout software development life cycle, maintained coding standards, source control management, build processes, and testing in an Agile development workflow.",//"Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow."
-          //"Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
-          "Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making.",//"Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making."
+        "Devised and deployed custom Python/Django tools, facilitating seamless integration of data from multiple vendors into a unified relational database model, optimizing data analysis and reporting capabilities",
+        "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
+        "Employed Selenium for Web Scraping in Python, efficiently collecting and cleaning data from various sources, subsequently integrating it into a SQL database, adhering to the principles of ETL processes",
       ],
       dates: "March 2022 - Current",
       skills: [

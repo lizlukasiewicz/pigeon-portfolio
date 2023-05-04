@@ -6,7 +6,6 @@ import {
           VStack, 
           HStack, 
           Text, 
-          StackDivider, 
           ListItem, 
           Box
          } from '@chakra-ui/react'
@@ -29,9 +28,8 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
         <Stack
           direction={["column", "row"]}
           height={290}
-          //divider={<StackDivider borderColor='#649CA6' />}
           marginTop={{ base: "20%", sm: "10%", lg: 0 }}
-          marginBottom={{ base: "50%", sm: "15%", lg: 0 }}
+          marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
           width={{ base: "80vw", lg: "60vw" }}>
 
           {/* EXPERIENCE TABS */}
@@ -76,12 +74,8 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                         as={"span"}
                         // fontFamily={"var(--chakra-fonts-mono)"}
                         // fontSize={'xl'}
-                        fontWeight={"bold"}
                         color={idx === i ? '#B3DDC1': '#00C484'}// 1stPal LGT GRN ::: 1stPal NEON GRN
-                        // _hover={{
-                        //   color: "#F3BA40"
-                        // }}
-                        >
+                        fontWeight={"bold"}>
                           {exp.company}
                         </Text>
 
@@ -110,7 +104,6 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                       <Text 
                         as={"span"} 
                         color={"#E1E1E1"}
-                        //fontFamily={"var(--chakra-fonts-mono)"}
                         >
                       {getExpArray[idx].title}
                       </Text>
@@ -149,6 +142,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                     </Stack>
 
                 </Text>
+                
                 {/* EMPLOYMENT DATES */}
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
@@ -191,7 +185,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
           paddingLeft={5}
           spacing={"10%"}>
             {getExpArray[idx].skills.map((skill, i) => (
-              <SkillIcon hoverColor={skill.color} delay={skill.delay} icon={skill.icon} label={skill.label} />
+              <SkillIcon hoverColor={skill.color} delay={skill.delay} icon={skill.icon} label={skill.label} key={i}/>
               
             ))}
                 
