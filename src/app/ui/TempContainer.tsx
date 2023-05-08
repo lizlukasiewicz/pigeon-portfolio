@@ -19,7 +19,7 @@ export const TempContainer=({
   pageRefs,
   refNum
 }:{
-  children: React.ReactNode;//JSX.Element | JSX.Element[],
+  children: React.ReactNode;
   label: string,
   title?: string,
   loaded?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
@@ -41,9 +41,9 @@ export const TempContainer=({
         case 2:
             testVar = { ...pageRefs.current, experience: el };
             break;
-//         case 3:
-//             testVar = { ...pageRefs.current, projects: el };
-//             break;
+        case 3:
+            testVar = { ...pageRefs.current, projects: el };
+            break;
 //         case 4:
 //             testVar = { ...pageRefs.current, contact: el };
 //             break;
@@ -55,7 +55,7 @@ export const TempContainer=({
   return (
     <Container
             maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-            opacity={1}//loaded ? 1 : 0.4
+            opacity={loaded ? 1 : 0.3}//loaded ? 1 : 0.5
             ref={el => el && (pageRefs.current = findScroll(el, refNum))}
             transition={"500ms ease-out"}>
             <Stack

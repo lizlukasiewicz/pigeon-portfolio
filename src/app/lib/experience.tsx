@@ -52,7 +52,7 @@ export interface expArrayProps {
 ////"Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting."
 export const getExpArray: expArrayProps[] = [
   {
-      title: "Backend Software Engineer, Infrastructure / Data Operations",
+      title: "Software Engineer, Infrastructure",/// Data Operations
       details: [
         "Devised and deployed custom Python/Django tools, facilitating seamless integration of data from multiple vendors into a unified relational database model, optimizing data analysis and reporting capabilities",
         "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
@@ -82,12 +82,6 @@ export const getExpArray: expArrayProps[] = [
           //     icon: SiMysql,
           //     color: "rgb(43,97,157)",
           //     label: "MySQL",
-          //     delay: "180ms"
-          // },
-          // {
-          //     icon: SiMicrosoftteams,
-          //     color: "rgb(119,124,216)",
-          //     label: "Teams",
           //     delay: "180ms"
           // },
           {

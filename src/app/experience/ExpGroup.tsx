@@ -98,16 +98,16 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                   fontWeight={"bold"}
                   fontFamily={"var(--chakra-fonts-mono)"} 
                   marginBottom={2}>
-                    <Stack display={"flex"}>
+                    {/* <Stack display={"flex"}> */}
 
                       {/* POSITION TITLE */}
                       <Text 
-                        as={"span"} 
+                        // as={"span"} 
                         color={"#E1E1E1"}
                         >
                       {getExpArray[idx].title}
                       </Text>
-                      <Text>
+                      {/* <Text> */}
                         <Text
                           as={'span'}
                           color={"#B3DDC1"}
@@ -136,10 +136,10 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                           _hover={{
                               opacity: 1,
                               _before: { width: "100%" } }}>
-                          {getExpArray[idx].companyFull}
+                              {getExpArray[idx].companyFull}
                         </Text>
-                      </Text>
-                    </Stack>
+                      {/* </Text> */}
+                    {/* </Stack> */}
 
                 </Text>
                 

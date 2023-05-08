@@ -7,6 +7,7 @@ import GitCalendar from "./components/GitCalendar"
 import Social from "./components/Social"
 import About from './about/About'
 import ExperienceLayout from './experience/ExperienceLayout'
+import ProjectLayout from './projects/ProjectLayout';
 
 import * as React from "react";
 
@@ -41,59 +42,24 @@ export default function Home() {
         
         <About 
           pageRefs={pageRefs}
-          visible={visible1}
-          visRef={visRef1}/>
+          visible={visible}
+          visRef={visRef}/>
         
         <ExperienceLayout 
           pageRefs={pageRefs}
-          visRef={visRef2}
-          visible={visible2}/>
+          visRef={visRef1}
+          visible={visible1}/>
 
         <GitCalendar 
           pageRefs={pageRefs}
-          visible={visible}
-          visRef={visRef}/>
+          visible={visible2}
+          visRef={visRef2}/>
+        
+        <ProjectLayout
+          pageRefs={pageRefs}
+          visRef={visRef3}
+          visible={visible3}/>
 
-{/* 
-        <div className={styles.grid}>
-          
-          {demos.map((section) => {
-            return(
-              <div className={styles.card} key={section.name}>
-                <Link
-                  
-                  href={section.slug}
-                  key={section.name}
-                  >
-                    <h2 className={inter.className}>{section.name}</h2></Link>
-                    <br></br>
-                    <p>{section.description}</p>
-                    <div className={styles.subcards}>
-                        {section.items ? ( section.items.map((item) => {
-                          return (
-                            <div className={styles.subcard} key={item.name}>
-                              <Link
-                                
-                                href={`${section.slug}/${item.slug}`}
-                                key={item.name}
-                                className={styles.thirteen}
-                              >
-                                <h2 className={inter.className}>
-                                  {item.name}
-                                </h2>
-                              
-                              </Link>
-                              <p>{item.bullet1}</p>
-                              <p>{item.bullet2}</p>
-                            </div>
-                            );
-                        })): null}
-                  </div>
-              </div>
-            )
-          })}
-        </div>
-       */}
     </VStack>
   )
 }
