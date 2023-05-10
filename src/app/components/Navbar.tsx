@@ -159,9 +159,10 @@ interface NavButtonsProps {
 
 export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
   <React.Fragment>
-    <NavButton label="about" title="About" delay={"0ms"} scroll={scrollIntoView} />
-    <NavButton label="projects" title="Projects" delay={"60ms"} scroll={scrollIntoView} />
-    <NavButton label="experience" title="Experience" delay={"120ms"} scroll={scrollIntoView} />
+    <NavButton label="home" title="Home" delay={"0ms"} scroll={scrollIntoView} />
+    <NavButton label="about" title="About" delay={"60ms"} scroll={scrollIntoView} />
+    <NavButton label="projects" title="Projects" delay={"120ms"} scroll={scrollIntoView} />
+    <NavButton label="experience" title="Experience" delay={"160ms"} scroll={scrollIntoView} />
     <NavButton label="contact" title="Contact" delay={"180ms"} scroll={scrollIntoView} />
     <ResumeButton />
   </React.Fragment>

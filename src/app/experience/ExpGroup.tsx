@@ -98,15 +98,13 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                   fontWeight={"bold"}
                   fontFamily={"var(--chakra-fonts-mono)"} 
                   marginBottom={2}>
-                    {/* <Stack display={"flex"}> */}
 
                       {/* POSITION TITLE */}
                     <Text 
-                        //as={"span"} 
                         color={"#E1E1E1"}>
                           {getExpArray[idx].title}
-                          {/* <Text> */}
                     </Text>
+
                     <Text
                       as={'span'}
                       color={"#B3DDC1"}
@@ -114,32 +112,30 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                         {` @ `}
 
                       {/* LINK TO COMPANY */}
-                    <Text
-                      as={"a"}
-                      href={getExpArray[idx].companyLink}
-                      opacity={0.6}
-                      color={"#E1E1E1"}
-                      position={"relative"}
-                      rel={"noreferrer"}
-                      target={"_blank"}
-                      transitionDuration={"0.2s"}
-                      _before={{
-                        backgroundColor: "white",
-                        borderRadius: "2px",
-                        bottom: -1,
-                        content: `""`,
-                        height: "2px",
-                        position: "absolute",
-                        transition: "100ms ease-out",
-                        width: 0 }}
+                      <Text
+                        as={"a"}
+                        href={getExpArray[idx].companyLink}
+                        opacity={0.6}
+                        color={"#E1E1E1"}
+                        position={"relative"}
+                        rel={"noreferrer"}
+                        target={"_blank"}
+                        transitionDuration={"0.2s"}
+                        _before={{
+                          backgroundColor: "white",
+                          borderRadius: "2px",
+                          bottom: -1,
+                          content: `""`,
+                          height: "2px",
+                          position: "absolute",
+                          transition: "100ms ease-out",
+                          width: 0 }}
                         _hover={{
                           opacity: 1,
                           _before: { width: "100%" } }}>
-                          {getExpArray[idx].companyFull}
+                            {getExpArray[idx].companyFull}
+                      </Text>
                     </Text>
-                    </Text>
-                      {/* </Text> */}
-                    {/* </Stack> */}
 
                 </Text>
                 

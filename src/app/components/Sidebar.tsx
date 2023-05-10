@@ -1,16 +1,15 @@
 'use client';
 
 import * as React from 'react';
-import { Link } from '@chakra-ui/next-js'
 import { fadeDown } from '../lib/helpers/animation';
 export const FaTerminal = require('react-icons/fa').FaTerminal
 export const FaBloggerB = require('react-icons/fa').FaBloggerB
 export const FaTools = require('react-icons/fa').FaTools
 export const FaMailBulk = require('react-icons/fa').FaMailBulk
+export const FaHome = require('react-icons/fa').FaHome
 
 
-
-import { FaReadme, FaHome} from "react-icons/fa"
+import { FaReadme } from "react-icons/fa"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Box,
@@ -18,7 +17,6 @@ import {
   Button,
   Icon, 
   Text, 
-  Center,
   useMediaQuery
 } from '@chakra-ui/react'
 import { IconType } from "react-icons";
@@ -30,9 +28,7 @@ interface NavMenuIconProps {
 };
 
 export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconProps) {
-  const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
-  //const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
@@ -72,204 +68,8 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
           width={"45%"}
           zIndex={3}>
           
-          <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-            <Link href="/">
-                <Text
-                    as='b'
-                    cursor={"pointer"}
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    fontSize='1.4rem'
-                    color='#00C484'
-                    _hover={{color:"#FFFFFF"}}>
-
-                  <Icon as={FaHome} w={35} h={35} />
-                </Text>
-            </Link>
-          </Box>
           
           <NavBarRoutes scrollIntoView={scrollIntoView} />
-          {/* ********************** START NAVBARROUTES *************************** */}
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-                  <Text
-                    as='b'
-                    cursor={"pointer"}
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    fontSize='1.1rem'
-                    color='#00C484'
-                    _hover={{color:"#FFFFFF"}}>
-
-                    <Icon as={FaTerminal} w={20} h={20} mr={20}/>
-
-                    About Me
-                  </Text>
-          </Box> */}
-
-
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-                <Text
-                    as='b'
-                    cursor={"pointer"}
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    fontSize='1.1rem'
-                    color='#00C484'
-                    _hover={{color:"#FFFFFF"}}>
-
-                    <Icon as={FaBloggerB} w={20} h={20} mr={20}/>
-                    Experience
-                </Text>
-          </Box> */}
-
-
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-            // <Link href="/blog"   >
-                <Text
-                    as='b'
-                    cursor={"pointer"}
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    fontSize='1.1rem'
-                    color='#00C484'
-                    _hover={{color:"#FFFFFF"}}>
-
-                    <Icon as={FaBloggerB} w={20} h={20} mr={20}/>
-                    Blog
-                </Text>
-            // </Link>
-          </Box> */}
-
-
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-                <Text
-                  as='b'
-                  cursor={"pointer"}
-                  fontFamily={"var(--chakra-fonts-mono)"}
-                  fontSize='1.1rem'
-                  color='#00C484'
-                  _hover={{color:"#FFFFFF"}}>
-                  <Icon as={FaTools} w={20} h={20} mr={20}/>
-                  Projects
-                </Text>
-          </Box> */}
-
-
-          {/* <Box
-            as='button' 
-            animation={fadeDownAnim}
-            cursor={"pointer"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            fontFamily={"var(--chakra-fonts-mono)"}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out",
-            }}>
-                <Text
-                  as='b'
-                  cursor={"pointer"}
-                  fontFamily={"var(--chakra-fonts-mono)"}
-                  fontSize='1.1rem'
-                  color='#00C484'
-                  _hover={{color:"#FFFFFF"}}>
-                  <Icon as={FaMailBulk} w={20} h={20} mr={20}/>
-                  Contact
-                </Text>
-          </Box> */}
-          {/* ********************** END NAVBARROUTES **********************  */}
-
-          {/* <Button
-            animation={fadeDownAnim}
-            as={"a"}
-            color={'#00C484'}
-            cursor={"pointer"}
-            href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
-            target={"_blank"}
-            onClick={() => setMenuOpen(!menuOpen)}
-            position={"relative"}
-            transition={"100ms ease-out"}
-            _before={{
-                borderRadius: "2px",
-                height: "2px",
-                position: "absolute",
-                transition: "100ms ease-out"
-            }}>
-              <Text
-                  as='b'
-                  _hover={{color:"#FFFFFF"}}
-                  fontFamily={"var(--chakra-fonts-mono)"}
-                  fontSize='1.1rem'>
-              <Icon as={FaReadme} w={20} h={20} mr={20}/>
-                      Resume
-              </Text>
-
-            
-          </Button> */}
           
         </VStack>
     </React.Fragment>
@@ -285,6 +85,7 @@ interface BarButtonProps {
 };
 const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
+  const text = `.  ${label}`
   return (
     <Box
         as='button' 
@@ -308,16 +109,16 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
                 fontSize='1.1rem'
                 color='#00C484'
                 _hover={{color:"#FFFFFF"}}>
-                  {/* <Center animation={fadeDownAnim} opacity={0}> */}
+              
                       <Icon
                           as={icon}
                           borderRadius={5}
                           //color={"#00C484"}
-                          boxSize={5}
+                          boxSize={6}
                           transition={"100ms ease-in-out"}/>
-                  {/* </Center> */}
+                  
 
-                {label}
+                {text}
             </Text>
     </Box>
   );
@@ -330,10 +131,11 @@ interface NavButtonsProps {
 
 export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
   <React.Fragment>
-    <BarButton label="about" delay={"0ms"} scroll={scrollIntoView} icon={FaTerminal} />
+    <BarButton label="home" delay={"0ms"} scroll={scrollIntoView} icon={FaHome} />
+    <BarButton label="about" delay={"60ms"} scroll={scrollIntoView} icon={FaTerminal} />
     <BarButton label="experience" delay={"120ms"} scroll={scrollIntoView} icon={FaBloggerB} />
-    <BarButton label="projects" delay={"60ms"} scroll={scrollIntoView} icon={FaTools} />
-    <BarButton label="contact" delay={"180ms"} scroll={scrollIntoView} icon={FaMailBulk} />
+    <BarButton label="projects" delay={"180ms"} scroll={scrollIntoView} icon={FaTools} />
+    <BarButton label="contact" delay={"240ms"} scroll={scrollIntoView} icon={FaMailBulk} />
     <ResumeButton />
   </React.Fragment>
 )

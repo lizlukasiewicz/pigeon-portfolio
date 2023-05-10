@@ -38,10 +38,6 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
             width={{ base: "80vw", lg: "60vw" }}>
 
               <Box
-                // //🔥 REMOVE WHEN DONE FORMATTING
-                // border={"1px solid rgb(0,226,203)"}
-                // borderRadius={50}
-                // padding={2}
                 marginBottom={"5%"}
                 minWidth={"100%"}>
                   <Heading
@@ -72,7 +68,6 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                         _hover={{
                           color: "#F3BA40",
                           cursor: "pointer"
-                          // backgroundColor: "#111837"
                         }}>
 
                           <Text

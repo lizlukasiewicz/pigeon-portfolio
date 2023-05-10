@@ -7,9 +7,9 @@ import {
     Icon
 } from "@chakra-ui/react"
 import { SkillTable } from "../lib/Icons"
-import { fadeDown, fadeRight, growRight } from '../lib/helpers/animation'
+import { fadeDown, growRight } from '../lib/helpers/animation'
 import { TempContainer } from '../ui/TempContainer';
-//import {  PageProps } from '../lib/Loading';
+
 type PageProps = {
     pageRefs: React.MutableRefObject<{}>;
     visRef: any;
@@ -23,8 +23,8 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     }, [visible]);
     const [name, setName] = React.useState<boolean>(false);
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
-    const fadeRightFirst: string = `6s 3s forwards ${growRight}`;//800ms 800ms
-    const fadeRightSecond: string = `6s 4s forwards ${growRight}`;//800ms 1200ms
+    const fadeRightFirst: string = `800ms 800ms forwards ${growRight}`;
+    const fadeRightSecond: string = `800ms 1200ms forwards ${growRight}`;
     
     return(
       <TempContainer 
@@ -37,8 +37,6 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
             ref={visRef}
             display={"flex"}
             flexDir={'column'}
-            // 💥 REMOVE WHEN DONE FORMATTING
-            //border={"1px solid rgb(243,186,64)"} //YELLOW
             minHeight={"30vh"}>
 
               <Box
@@ -47,15 +45,11 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                 // mx={{base: "70px", lg:"200px"}}
                 display={"flex"}
                 opacity={visible ? 1 : 0.75}
-                // 💥 REMOVE WHEN DONE FORMATTING
-                //border={"1px solid rgb(98,202,243)"} //BLUE
                 flexDir={"row"}
                 justifyContent={"space-around"}
                 // minHeight={"70vh"}
                 ref={el => pageRefs.current = { ...pageRefs.current, home: el }}>
                   <Stack
-                    // 💥 REMOVE WHEN DONE FORMATTING
-                    // border={"1px solid rgb(172,35,244)"} // PURPLE  
                     ref={visRef}
                     color={"rgb(0,0,0,0.65)"}
                     fontFamily={"var(--chakra-fonts-mono)"}
@@ -63,9 +57,6 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                     textAlign={"justify"}>
 
                       <Text 
-                        //animation={fadeDownText} 
-                        // 💥 REMOVE WHEN DONE FORMATTING
-                        //border={"1px solid rgb(0,226,203)"} 
                         align={'left'} 
                         fontSize={{ base: "sm", lg: "lg" }} 
                         color='#B3DDC1' 
@@ -77,17 +68,17 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                                                         
                       </Text>
 
-                      <Text //animation={fadeDownText}
+                      <Text
                         align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
                         And I like to build things- 
                       </Text>
                       
 
-                      <Text //animation={fadeDownText}  
+                      <Text  
                         align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>
                         Because<Text animation={fadeRightFirst} as={'span'} color='#59BC7D' opacity={0} > I can.</Text></Text>
 
-                      <Text //animation={fadeDownText}  
+                      <Text  
                         align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color='#B3DDC1'>
                         Because<Text animation={fadeRightSecond} as={'span'} color='#59BC7D' opacity={0} > I feel like it.</Text> </Text>
                   </Stack>

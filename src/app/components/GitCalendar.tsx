@@ -1,21 +1,9 @@
-import { Heading, Stack, Flex, Text} from "@chakra-ui/react";
+import { Stack, Flex, Text} from "@chakra-ui/react";
 import * as React from "react";
-//import { useOnScreen } from "../lib/Loading";//, PageProps} from "../lib/Loading";
 import GitHubCalendar from 'react-github-calendar';
 import ReactTooltip from "react-tooltip";
 
-type PageProps = {
-    pageRefs: React.MutableRefObject<{}>;
-    visRef: any;
-    visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-};
-
-export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
-    const [loaded, setLoaded] = React.useState<boolean>(false);
-    
-    React.useEffect(() => {
-        visible && setLoaded(true)
-    }, [visible]);
+export default function GitCalendar() {
     
     return(
         <Flex
@@ -23,16 +11,11 @@ export default function GitCalendar({ pageRefs, visRef, visible }: PageProps) {
           boxSizing={"border-box"}
           flexDirection={{ base: "column", md: "row" }}
           height={"30vh"}
-          // 💥 REMOVE WHEN DONE FORMATTING
-          //border={"1px solid rgb(172,35,244)"} // PURPLE  
-          opacity={visible ? 1 : 0.25}
           position={"relative"}
-          ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
           transition={"1s ease-out"}>
             
             <Stack
               align={"center"}
-              ref={visRef}
               width={{ base: "85vw", lg: "65vw" }}>
 
                 <Text
