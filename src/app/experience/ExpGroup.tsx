@@ -27,9 +27,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
         minHeight={{ base: "80vh", lg: "60vh" }}>
         <Stack
           direction={["column", "row"]}
-          height={290}
+          height={300}
           marginTop={{ base: "20%", sm: "10%", lg: 0 }}
-          marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
+          marginBottom={{ base: "50%", sm: "35%", lg: 0 }}
           width={{ base: "80vw", lg: "60vw" }}>
 
           {/* EXPERIENCE TABS */}
@@ -101,43 +101,43 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                     {/* <Stack display={"flex"}> */}
 
                       {/* POSITION TITLE */}
-                      <Text 
-                        // as={"span"} 
-                        color={"#E1E1E1"}
-                        >
-                      {getExpArray[idx].title}
-                      </Text>
-                      {/* <Text> */}
-                        <Text
-                          as={'span'}
-                          color={"#B3DDC1"}
-                          fontFamily={"var(--chakra-fonts-nunito)"}>
-                            {` @ `}
-                        </Text>
+                    <Text 
+                        //as={"span"} 
+                        color={"#E1E1E1"}>
+                          {getExpArray[idx].title}
+                          {/* <Text> */}
+                    </Text>
+                    <Text
+                      as={'span'}
+                      color={"#B3DDC1"}
+                      fontFamily={"var(--chakra-fonts-nunito)"}>
+                        {` @ `}
 
-                        {/* LINK TO COMPANY */}
-                        <Text
-                          as={"a"}
-                          href={getExpArray[idx].companyLink}
-                          opacity={0.6}
-                          position={"relative"}
-                          rel={"noreferrer"}
-                          target={"_blank"}
-                          transitionDuration={"0.2s"}
-                          _before={{
-                              backgroundColor: "white",
-                              borderRadius: "2px",
-                              bottom: -1,
-                              content: `""`,
-                              height: "2px",
-                              position: "absolute",
-                              transition: "100ms ease-out",
-                              width: 0 }}
-                          _hover={{
-                              opacity: 1,
-                              _before: { width: "100%" } }}>
-                              {getExpArray[idx].companyFull}
-                        </Text>
+                      {/* LINK TO COMPANY */}
+                    <Text
+                      as={"a"}
+                      href={getExpArray[idx].companyLink}
+                      opacity={0.6}
+                      color={"#E1E1E1"}
+                      position={"relative"}
+                      rel={"noreferrer"}
+                      target={"_blank"}
+                      transitionDuration={"0.2s"}
+                      _before={{
+                        backgroundColor: "white",
+                        borderRadius: "2px",
+                        bottom: -1,
+                        content: `""`,
+                        height: "2px",
+                        position: "absolute",
+                        transition: "100ms ease-out",
+                        width: 0 }}
+                        _hover={{
+                          opacity: 1,
+                          _before: { width: "100%" } }}>
+                          {getExpArray[idx].companyFull}
+                    </Text>
+                    </Text>
                       {/* </Text> */}
                     {/* </Stack> */}
 
@@ -147,7 +147,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"sm"}
-                  opacity={0.5}>
+                  opacity={0.7}>
                     {getExpArray[idx].dates}
                 </Text>
 
@@ -158,14 +158,14 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                 alignItems={"space-between"}
                 display={"flex"}
                 flexDirection={"column"}
-                marginY={5}>
+                marginY={1}>
                   {getExpArray[idx].details.map((bullet, i) => (
                     <ListItem
                       
                       display={"flex"}
                       key={i}
                       flexDirection={"column"}
-                      marginY={2}>
+                      marginY={1}>
                         <Text as={"span"}
                         fontFamily={"var(--chakra-fonts-nunito)"}>
                           {bullet}

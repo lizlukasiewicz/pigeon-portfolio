@@ -58,7 +58,7 @@ export const getExpArray: expArrayProps[] = [
         "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
         "Employed Selenium for Web Scraping in Python, efficiently collecting and cleaning data from various sources, subsequently integrating it into a SQL database, adhering to the principles of ETL processes",
       ],
-      dates: "March 2022 - Current",
+      dates: "March 2022 - March 2023",
       skills: [
           {
               icon: SiPython,

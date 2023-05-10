@@ -41,12 +41,13 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                 // //🔥 REMOVE WHEN DONE FORMATTING
                 // border={"1px solid rgb(0,226,203)"}
                 // borderRadius={50}
-                padding={5}
+                // padding={2}
+                marginBottom={"5%"}
                 minWidth={"100%"}>
                   <Heading
                     fontFamily={"var(--chakra-fonts-mono)"}
                     fontWeight={"bold"}
-                    fontSize={"4xl"}
+                    fontSize={"3xl"}
                     color='#00C484'>
                         <Icon as={ImCogs} w={10} color='#00C484' />
                       Built by a Machine
@@ -57,8 +58,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
               <List
                 display={"flex"} 
                 width={"100%"}
-                flexDirection={"row"}
-                spacing={7}>
+                flexDirection={"row"}>
                   {projectArray.map((title, i) => (
 
                       <ListItem
@@ -66,11 +66,13 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                         color={idx === i ? '#E1E1E1' : '#175C78' }
                         onClick={() => setIdx(i)}
                         fontFamily={"var(--chakra-fonts-mono)"}
+                        paddingLeft={7}
                         fontSize={'lg'}
                         fontWeight={"bold"}
                         _hover={{
                           color: "#F3BA40",
-                          backgroundColor: "#111837"
+                          cursor: "pointer"
+                          // backgroundColor: "#111837"
                         }}>
 
                           <Text
@@ -101,8 +103,8 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                         <Heading
                           fontFamily={"var(--chakra-fonts-mono)"}
                           fontWeight={"bold"}
-                          fontSize={"xl"}
-                          color='#00C484'
+                          fontSize={"2xl"}
+                          color="#E1E1E1"
                           _hover={{color:"#FFFFFF"}}>
                             {projectArray[idx].name}
                         </Heading>
@@ -148,7 +150,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                     </List>
 
                     {/* ICON STACK */}
-                    <HStack spacing={3} marginTop={3}>
+                    <HStack spacing={8} marginTop={3}>
                       {/* { hoverColor, delay, icon, label}: SkillIconProps */}
                       {projectArray[idx].details.map((icons, i) => (
                         <SkillIcon key={i} hoverColor={icons.hoverColor} delay={icons.delay} icon={icons.icon} label={icons.name}/>
