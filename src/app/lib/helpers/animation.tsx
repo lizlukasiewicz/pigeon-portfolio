@@ -58,3 +58,54 @@ export const upDown: string = keyframes`
     transform: translateY(0);
   }
 `
+
+export const openLetter: string = keyframes`
+from {
+  transform: translateY(0) scaleY(1);
+  z-index: 1;
+} to {
+  transform: translateY(-100%) scaleY(-1);
+  z-index: 0;
+}
+`
+
+export const fadeOut: string = keyframes`
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+  } 50% {
+    opacity: 1;
+    filter: brightness(2);
+    transform: scale(1.5);
+  } 85% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+  } 100% {
+    opacity: 0;
+    filter: brightness(1);
+    transform: scale(1);
+  }
+`
+
+export const shake: string = keyframes`
+  0% {
+    transform: rotate(0deg);
+  } 33% {
+    transform: rotate(-5deg);
+  } 66% {
+    transform: rotate(5deg);
+  } 100% {
+    transform: rotate(0deg);
+  }
+`
+export const slideUp: string = keyframes`
+  from {
+    transform: translateY(0);
+    height: 90%;
+  } to {
+    transform: translateY(-50%);
+    height: 120%;
+  }
+`

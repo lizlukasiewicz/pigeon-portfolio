@@ -19,7 +19,6 @@ import { Icon,
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { VscDebugStart } from "react-icons/vsc";
-import {ImCogs} from "react-icons/im";
 
 interface ProjectProps {
   idx: number,
@@ -31,27 +30,28 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
     return(
           <Stack
             spacing={5}
-            minHeight={{ base: "80vh", lg: "60vh" }}
-            height={290}
-            marginTop={{ base: "20%", sm: "10%", lg: 0 }}
+            minHeight={{ base: "40vh", lg: "50vh" }}
+            height={280}
+            marginTop={{ base: "20%", sm: "5%", lg: 0 }}
             marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
             width={{ base: "80vw", lg: "60vw" }}>
 
-              <Box
+              {/* <Box
                 marginBottom={"5%"}
                 minWidth={"100%"}>
                   <Heading
                     fontFamily={"var(--chakra-fonts-mono)"}
+                    paddingLeft={1}
                     fontWeight={"bold"}
-                    fontSize={"3xl"}
+                    fontSize={"2xl"}
                     color='#00C484'>
-                        <Icon as={ImCogs} w={10} color='#00C484' />
                       Built by a Machine
                   </Heading>
-              </Box>
+              </Box> */}
 
                 {/* PROJECT TABS */}
               <List
+                marginTop={'5%'}
                 display={"flex"} 
                 width={"100%"}
                 flexDirection={"row"}>
@@ -62,7 +62,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                         color={idx === i ? '#E1E1E1' : '#175C78' }
                         onClick={() => setIdx(i)}
                         fontFamily={"var(--chakra-fonts-mono)"}
-                        paddingLeft={7}
+                        paddingLeft={6}
                         fontSize={'lg'}
                         fontWeight={"bold"}
                         _hover={{
@@ -88,8 +88,8 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
                 {/* PROJECT DETAILS */}
                   
-                <Container padding={5} maxW="100%" centerContent>
-                  <Box padding={4}>
+                <Container padding={3} maxW="100%" >
+                  <Box padding={3}>
                     <HStack
                       marginBottom={6}
                       justifyContent={"space-between"}>

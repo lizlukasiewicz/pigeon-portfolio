@@ -23,13 +23,14 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
       <Stack 
-        spacing={5}
-        minHeight={{ base: "80vh", lg: "60vh" }}>
+        justifyContent={'space-around'}
+        spacing={2}
+        minHeight={{ base: "70vh", lg: "60vh" }}>
         <Stack
           direction={["column", "row"]}
-          height={300}
-          marginTop={{ base: "20%", sm: "10%", lg: 0 }}
-          marginBottom={{ base: "50%", sm: "35%", lg: 0 }}
+          height={290}
+          marginTop={{ base: "20%", sm: "5%", lg: 0 }}
+          marginBottom={{ base: "30%", lg: 0 }}
           width={{ base: "80vw", lg: "60vw" }}>
 
           {/* EXPERIENCE TABS */}
@@ -38,7 +39,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
             display={"flex"}
             flexDirection={["row", "column"]}
             height={"100%"}
-            width={["100%", "20%"]}>
+            width={["100%", "30%"]}>
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
@@ -73,7 +74,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                       <Text
                         as={"span"}
                         // fontFamily={"var(--chakra-fonts-mono)"}
-                        // fontSize={'xl'}
+                        // fontSize={'lg'}
                         color={idx === i ? '#B3DDC1': '#00C484'}// 1stPal LGT GRN ::: 1stPal NEON GRN
                         fontWeight={"bold"}>
                           {exp.company}

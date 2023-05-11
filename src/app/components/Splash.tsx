@@ -1,7 +1,6 @@
 import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box } from '@chakra-ui/react'
 import * as React from 'react';
-import { TempContainer } from '../ui/TempContainer';
 
 type PageProps = {
   pageRefs: React.MutableRefObject<{}>;
@@ -21,12 +20,14 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
     return(
       <Box
         w={'100%'} 
-        h={'650px'}
-        ref={el => pageRefs.current = { ...pageRefs.current, home: el }}>
+        h={'800px'}
+        ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+        paddingY={"10vh"}>
           <Box w={'100%'} 
+              //minHeight={'90vh'}
               h={'650px'}
               ref={visRef}
-              opacity={visible ? 1 : 0.5} 
+              //opacity={visible ? 1 : 0.5} 
               transition={"500ms ease-out"}
               bgGradient='radial(circle 375px at center, 
                                               #112941 46%, 
@@ -39,7 +40,8 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                 justifyContent={"center"}
                 alignItems={"center"}
                 pos={"relative"}
-                minH={"400px"}>
+                minH={"400px"}
+                marginBottom={"10%"}>
 
               <Box
                   m={"0.5rem"}

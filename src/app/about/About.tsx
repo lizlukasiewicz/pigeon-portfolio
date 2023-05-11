@@ -37,7 +37,8 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
             ref={visRef}
             display={"flex"}
             flexDir={'column'}
-            minHeight={"30vh"}>
+            minHeight={"60vh"}
+            justifyContent={'space-evenly'}>
 
               <Box
                 // marginBottom={{ base: "-25%", lg: 0 }}
@@ -47,7 +48,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                 opacity={visible ? 1 : 0.75}
                 flexDir={"row"}
                 justifyContent={"space-around"}
-                // minHeight={"70vh"}
+                //minHeight={"30vh"}
                 ref={el => pageRefs.current = { ...pageRefs.current, home: el }}>
                   <Stack
                     ref={visRef}

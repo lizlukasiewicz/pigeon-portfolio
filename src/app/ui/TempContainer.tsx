@@ -43,9 +43,9 @@ export const TempContainer=({
         case 3:
             testVar = { ...pageRefs.current, projects: el };
             break;
-//         case 4:
-//             testVar = { ...pageRefs.current, contact: el };
-//             break;
+        case 4:
+            testVar = { ...pageRefs.current, contact: el };
+            break;
         default:
             console.log("🪷 Nav");
     };

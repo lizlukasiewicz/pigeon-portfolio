@@ -67,15 +67,15 @@ export const SkillTable = () => (
         fontSize={{ base: "sm", lg: "md" }}
         width={"100%"}>
         <HStack justifyContent={"space-around"} padding={2}>
-            <SkillIcon icon={SiJavascript} hoverColor={"rgb(229,212,88)"} label={"JavaScript"} delay={"0ms"} />
-            <SkillIcon icon={GrReactjs} hoverColor={"rgb(114,183,208)"} label={"React"} delay={"60ms"} />
+            <SkillIcon icon={SiTypescript} hoverColor={"rgb(65,112,183)"} label={"TypeScript"} delay={"0ms"} />
+            <SkillIcon icon={SiPython} hoverColor={"rgb(66,108,152)"} label={"Python"} delay={"60ms"} />
             <SkillIcon icon={SiCss3} hoverColor={"rgb(69,98,226)"} label={"CSS"} delay={"120ms"} />
             <SkillIcon icon={SiMysql} hoverColor={"rgb(43,97,157)"} label={"SQL"} delay={"180ms"} />
             <SkillIcon icon={FaNode} hoverColor={"rgb(110,149,99)"} label={"Node.js"} delay={"240ms"} />
             <SkillIcon icon={SiPhp} hoverColor={"rgb(135,141,184)"} label={"PHP"} delay={"300ms"} />
         </HStack>
         <HStack justifyContent={"space-around"} padding={2}>
-            <SkillIcon icon={SiTypescript} hoverColor={"rgb(65,112,183)"} label={"TypeScript"} delay={"360ms"} />
+            <SkillIcon icon={SiJavascript} hoverColor={"rgb(229,212,88)"} label={"JavaScript"} delay={"360ms"} />
             <SkillIcon icon={SiNextdotjs} hoverColor={"rgb(50,109,170)"} label={"Next.js"} delay={"420ms"} />
             <SkillIcon icon={SiExpress} hoverColor={"rgb(182,103,144)"} label={"Express"} delay={"480ms"} />
             <SkillIcon icon={SiMongodb} hoverColor={"rgb(89,188,125)"} label={"MongoDB"} delay={"540ms"} />
@@ -83,7 +83,7 @@ export const SkillTable = () => (
             <SkillIcon icon={SiFirebase} hoverColor={"rgb(219,129,49)"} label={"Firebase"} delay={"660ms"} />
         </HStack>
         <HStack justifyContent={"space-around"} padding={2}>
-            <SkillIcon icon={SiPython} hoverColor={"rgb(66,108,152)"} label={"Python"} delay={"720ms"} />
+            <SkillIcon icon={GrReactjs} hoverColor={"rgb(114,183,208)"} label={"React"} delay={"720ms"} />
             <SkillIcon icon={SiVuedotjs} hoverColor={"rgb(96,172,128)"} label={"Vue.js"} delay={"780ms"} />
             <SkillIcon icon={SiTailwindcss} hoverColor={"rgb(89,170,163)"} label={"Tailwind"} delay={"840ms"} />
             <SkillIcon icon={SiGit} hoverColor={"rgb(211,87,60)"} label={"Git"} delay={"900ms"} />

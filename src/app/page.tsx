@@ -2,12 +2,13 @@
 
 import { VStack } from "@chakra-ui/react";
 import Navbar from './components/Navbar';
-import Splash from './components/Splash'
-import GitCalendar from "./components/GitCalendar"
-import Social from "./components/Social"
-import About from './about/About'
-import ExperienceLayout from './experience/ExperienceLayout'
+import Splash from './components/Splash';
+import GitCalendar from "./components/GitCalendar";
+import Social from "./components/Social";
+import About from './about/About';
+import ExperienceLayout from './experience/ExperienceLayout';
 import ProjectLayout from './projects/ProjectLayout';
+import Contact from './contact/Contact'
 
 import * as React from "react";
 
@@ -21,6 +22,7 @@ export default function Home() {
   const [visRef2, visible2] = useOnScreen();
   const [visRef3, visible3] = useOnScreen();
   const [visRef4, visible4] = useOnScreen();
+  const [visRef5, visible5] = useOnScreen();
 
   const [y, scrollDir]: [number, string] = useNavigation();
   return (
@@ -54,8 +56,13 @@ export default function Home() {
           pageRefs={pageRefs}
           visRef={visRef4}
           visible={visible4}/>
-        <GitCalendar />
 
+        <GitCalendar />
+        
+        <Contact
+          pageRefs={pageRefs}
+          visRef={visRef5}
+          visible={visible5}/>
     </VStack>
   )
 }
