@@ -41,7 +41,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         key={i}
                         href={e.href} /> ))}
                 <Divider
-                    borderColor={"#00E2CB"}//colorMode("lightModeColor", "currentColor")
+                    borderColor={"#F3BA40"}//colorMode("lightModeColor", "currentColor")
                     width={{ base: 0, lg: 10 }} />
             </Stack>
             <Stack
