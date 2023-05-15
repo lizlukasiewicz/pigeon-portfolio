@@ -1,5 +1,5 @@
 import { fadeDown } from '../lib/helpers/animation';
-import { Text, Box } from '@chakra-ui/react'
+import { Text, Box, useColorModeValue as uCMV, Container } from '@chakra-ui/react'
 import * as React from 'react';
 
 type PageProps = {
@@ -21,8 +21,16 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
       <Box
         w={'100%'} 
         h={'800px'}
-        ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+        //ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
         paddingY={"10vh"}>
+          <Container
+            top={1}
+            zIndex={2}
+            position={"absolute"}
+            ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+            height={"2px"}
+            width={"2px"}
+            backgroundColor={"#FFFF81"}></Container>
           <Box w={'100%'} 
               //minHeight={'90vh'}
               h={'650px'}
@@ -35,7 +43,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
                                               #00E2CB 61.4%, 
                                               rgba(51, 72, 80, 0.8) 62%, 
                                               rgba(7, 18, 43, 0.5) 82%,
-                                              rgba(7, 18, 43, 0) 92%)'
+                                              rgba(7, 18, 43, 0) 92%)'//{uCMV("lightModeColor", "currentColor")}
                 display={"flex"}
                 justifyContent={"center"}
                 alignItems={"center"}

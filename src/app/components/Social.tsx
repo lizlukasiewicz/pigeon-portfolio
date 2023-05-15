@@ -3,7 +3,7 @@ import {
     IconButton,
     Stack,
     Text,
-    //useColorModeValue as colorMode
+    useColorModeValue as uCMV
   } from "@chakra-ui/react";
 
 import * as React from "react";
@@ -41,7 +41,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         key={i}
                         href={e.href} /> ))}
                 <Divider
-                    borderColor={"#F3BA40"}//colorMode("lightModeColor", "currentColor")
+                    borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
                     width={{ base: 0, lg: 10 }} />
             </Stack>
             <Stack
@@ -60,7 +60,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 transition={"200ms ease-out"}
                 zIndex={1}>
                     <Divider
-                        borderColor={"#F3BA40"}//colorMode("lightModeColor", "currentColor")
+                        borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
                         width={{ base: 0, lg: 10}} />
                     <SocialIcon
                         delay={"80ms"} 
@@ -69,7 +69,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         <Text
                             animation={fadeDownAnim}
                             as={"a"}
-                            color={"#F3BA40"}//colorMode("lightModeColor", "currentColor")
+                            color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: "xs", lg: "sm" }}
                             href={"mailto:e.lukasiewicz.n@gmail.com"}
@@ -78,7 +78,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                             target={"_blank"}
                             transition={"100ms ease-out"}
                             _before={{
-                                backgroundColor: "#F3BA40",//colorMode("lightModeColor", "currentColor")
+                                backgroundColor: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"},//{uCMV("lightModeColor", "currentColor")}
                                 borderRadius: "5px",
                                 bottom: -1,
                                 content: `""`,
@@ -87,7 +87,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                                 transition: "100ms ease-out",
                                 width: 0 }}
                             _hover={{
-                                color: "#F3BA40",//colorMode("lightModeColor", "currentColor")
+                                color: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
                                 _before: {
                                 width: "105%" } }}>
                             e.lukasiewicz.n@gmail.com
@@ -114,7 +114,7 @@ export const SocialIcon = ({ delay, href, icon }: SocialIconProps) => {
         aria-label={"social-icon-button"}
         backgroundColor={"transparent"}
         border={"1px solid"}
-        color={"#F3BA40"}//colorMode("rgb(64,124,104)", "green.500")}
+        color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}}//colorMode("rgb(64,124,104)", "green.500")}
         href={href}
         icon={icon}
         opacity={"0"}
