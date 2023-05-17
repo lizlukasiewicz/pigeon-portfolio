@@ -62,7 +62,8 @@ export const TempContainer=({
                 direction={{ base: 'column', md: 'row' }}
                 paddingY={18}
                 paddingTop={"7.5%"}
-                spacing={{ base: 8, md: 10 }}>
+                spacing={{ base: 8, md: 10 }}
+                >
                 <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
                         <HStack>

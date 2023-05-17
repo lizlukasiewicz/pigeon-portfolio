@@ -79,7 +79,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
               </Link>
               {/* {animation, cursor, onClick, _hover} */}
               <Center
-                
                 onClick={toggleColorMode}>
               {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
               </Center>

@@ -4,6 +4,7 @@ import {
     Stack,
     Box,
     Text,
+    useColorModeValue as uCMV,
     Icon
 } from "@chakra-ui/react"
 import { SkillTable } from "../lib/Icons"
@@ -60,28 +61,28 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                       <Text 
                         align={'left'} 
                         fontSize={{ base: "sm", lg: "lg" }} 
-                        color='#B3DDC1' 
+                        color={uCMV("#2B2B2B", '#B3DDC1')} 
                         cursor={"pointer"}
                         onMouseOver={ () => setName(!name)}>
                           
-                          Hey there! My name is <Text as={'span'} fontSize={{ base: "md", lg: "lg" }} color='#59BC7D'> E<Text as={'span'} opacity={name? 1 : 0} transition={"300ms ease-in-out"}>lizabeth,</Text></Text>
+                          Hey there! My name is <Text as={'span'} fontSize={{ base: "md", lg: "lg" }} color={uCMV("#D54440", '#59BC7D')}> E<Text as={'span'} opacity={name? 1 : 0} transition={"300ms ease-in-out"}>lizabeth,</Text></Text>
 
                                                         
                       </Text>
 
                       <Text
-                        align={'center'} fontSize={{ base: "sm", lg: "lg" }} color='#B3DDC1'>
+                        align={'center'} fontSize={{ base: "sm", lg: "lg" }} color={uCMV("#2B2B2B", '#B3DDC1')}>
                         And I like to build things- 
                       </Text>
                       
 
                       <Text  
-                        align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color='#B3DDC1'>
-                        Because<Text animation={fadeRightFirst} as={'span'} color='#59BC7D' opacity={0} > I can.</Text></Text>
+                        align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color={uCMV("#2B2B2B", '#B3DDC1')}>
+                        Because<Text animation={fadeRightFirst} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I can.</Text></Text>
 
                       <Text  
-                        align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color='#B3DDC1'>
-                        Because<Text animation={fadeRightSecond} as={'span'} color='#59BC7D' opacity={0} > I feel like it.</Text> </Text>
+                        align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color={uCMV("#2B2B2B", '#B3DDC1')}>
+                        Because<Text animation={fadeRightSecond} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I feel like it.</Text> </Text>
                   </Stack>
               </Box>
 
@@ -91,7 +92,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                     animation={fadeDownText} 
                     align={'center'} 
                     fontSize={{ base: "md", lg: "lg" }} 
-                    color='#B3DDC1'>
+                    color={uCMV("#2B2B2B", '#B3DDC1')}>
                       In the meantime, here are just a few skills in my toolbox:
                   </Text>
                   <SkillTable />
