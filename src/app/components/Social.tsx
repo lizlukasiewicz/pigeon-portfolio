@@ -60,7 +60,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 transition={"200ms ease-out"}
                 zIndex={1}>
                     <Divider
-                        borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
+                        borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
                         width={{ base: 0, lg: 10}} />
                     <SocialIcon
                         delay={"80ms"} 
@@ -69,7 +69,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         <Text
                             animation={fadeDownAnim}
                             as={"a"}
-                            color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
+                            color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: "xs", lg: "sm" }}
                             href={"mailto:e.lukasiewicz.n@gmail.com"}
@@ -78,7 +78,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                             target={"_blank"}
                             transition={"100ms ease-out"}
                             _before={{
-                                backgroundColor: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"},//{uCMV("lightModeColor", "currentColor")}
+                                backgroundColor: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"},
                                 borderRadius: "5px",
                                 bottom: -1,
                                 content: `""`,
@@ -87,7 +87,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                                 transition: "100ms ease-out",
                                 width: 0 }}
                             _hover={{
-                                color: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"}//{uCMV("lightModeColor", "currentColor")}
+                                color: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"}
                                 _before: {
                                 width: "105%" } }}>
                             e.lukasiewicz.n@gmail.com
@@ -123,8 +123,8 @@ export const SocialIcon = ({ delay, href, icon }: SocialIconProps) => {
         target={"_blank"}
         transition={"100ms ease-out"}
         _hover={{
-            backgroundColor: "rgba(0,226,203,0.5)",//colorMode("rgb(64,124,104)", "green.500"),
-            border: "1px solid white",//colorMode("0px", "1px solid"),
-            color: "white" }} />
+            backgroundColor: uCMV("rgba(226,156,176,0.5)", "rgba(0,226,203,0.5)"),//"rgba(0,226,203,0.5)",//
+            border: uCMV("1px solid #2B2B2B", "1px solid white"),//"1px solid white",//
+            color: uCMV("#2B2B2B", "white") }} />
     );
 };

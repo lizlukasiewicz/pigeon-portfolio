@@ -7,6 +7,7 @@ import {
   Heading,
   HStack,
   Stack,
+  useColorModeValue as uCMV
 } from '@chakra-ui/react';
 import { growRight, growRightLittle } from '../lib/helpers/animation';
 
@@ -33,6 +34,7 @@ export const TempContainer=({
     switch (refNum) {
         case 0:
             testVar = { ...pageRefs.current, home: el };
+            console.log(`navigating HOME 🍍`)
             break;
         case 1:
             testVar = { ...pageRefs.current, about: el };
@@ -54,7 +56,7 @@ export const TempContainer=({
   return (
     <Container
             maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-            opacity={1}//loaded ? 1 : 0.5
+            //opacity={1}//loaded ? 1 : 0.5
             ref={el => el && (pageRefs.current = findScroll(el, refNum))}
             transition={"500ms ease-out"}>
             <Stack
@@ -69,7 +71,7 @@ export const TempContainer=({
                         <HStack>
                           <Box 
                             animation={growRightAnim}//&& loaded
-                            backgroundColor={"#008582"}// NOT LISTED MUTED BLUE
+                            backgroundColor={"#008582"}//{uCMV("lightModeColor", "currentColor")}// NOT LISTED MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -77,14 +79,14 @@ export const TempContainer=({
                             width={0}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid #008582",// NOT LISTED MUTED BLUE
+                                borderTop: "4px solid #008582",//{uCMV("lightModeColor", "currentColor")}// NOT LISTED MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
                                 width: 0 }} />
                           <Box 
                             animation={growRightLittleAnim}//&&loaded
-                            backgroundColor={"rgb(100,156,166)"}//topPal MUTED BLUE
+                            backgroundColor={"rgb(100,156,166)"}//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -92,14 +94,14 @@ export const TempContainer=({
                             width={0}
                             _before={{
                                 borderLeft: "4px solid transparent",
-                                borderBottom: "4px solid rgb(100,156,166)",//topPal MUTED BLUE
+                                borderBottom: "4px solid rgb(100,156,166)",//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 left: -1,
                                 width: 0 }}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid rgb(100,156,166)",//topPal MUTED BLUE
+                                borderTop: "4px solid rgb(100,156,166)",//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
@@ -109,7 +111,7 @@ export const TempContainer=({
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: 'lg', sm: 'xl', md: "2xl" }}
                             fontWeight={"bold"}
-                            color={"#00C484"}//<<NEON GREEN //color={"#B3DDC1"}> <<MUTED GREEN
+                            color={"#00C484"}//{uCMV("lightModeColor", "currentColor")}//<<NEON GREEN //color={"#B3DDC1"}> <<MUTED GREEN
                             >
                             {title}
                         </Heading>

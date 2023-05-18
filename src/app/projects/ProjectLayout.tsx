@@ -22,7 +22,7 @@ export default function ProjectLayout({ pageRefs, visRef, visible}: PageProps) {
       }, [idx]);
     return (
       <TempContainer 
-        label={'Projects'} 
+        label={'projects'} 
         title={"The things I've Built"} 
         pageRefs={pageRefs} 
         refNum={3}

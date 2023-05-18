@@ -7,6 +7,7 @@ import {
     Icon,
     HStack,
     createIcon,
+    useColorModeValue as uCMV
 } from '@chakra-ui/react'
 import { fadeDown, fadeRight, upDown } from "./helpers/animation";
 export const SiChakraui = require('react-icons/si').SiChakraui;
@@ -45,7 +46,7 @@ export const SkillIcon = ({ hoverColor, delay, icon, label}: SkillIconProps) => 
                 <Icon
                     as={icon}
                     borderRadius={5}
-                    color={"#00C484"}
+                    color={"#00C484"}//{uCMV("lightModeColor", "#00C484")}//{uCMV("lightModeColor", "currentColor")}
                     boxSize={8}
                     transition={"100ms ease-in-out"}
                     _hover={{

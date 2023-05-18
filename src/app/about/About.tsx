@@ -4,12 +4,12 @@ import {
     Stack,
     Box,
     Text,
-    useColorModeValue as uCMV,
-    Icon
+    useColorModeValue as uCMV
 } from "@chakra-ui/react"
 import { SkillTable } from "../lib/Icons"
 import { fadeDown, growRight } from '../lib/helpers/animation'
 import { TempContainer } from '../ui/TempContainer';
+import GitCalendar from "../components/GitCalendar";
 
 type PageProps = {
     pageRefs: React.MutableRefObject<{}>;
@@ -97,7 +97,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                   </Text>
                   <SkillTable />
               </Box>
-              
+              <GitCalendar />
           </Box>
         </TempContainer>
     )

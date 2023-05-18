@@ -1,42 +1,5 @@
-import './nav.module.css'
 import styles from './nav.module.css'
-import { Center } from "@chakra-ui/react";
 
-interface ColorProps {
-  animation?: string
-  // bottom?: string | number,
-  children?: JSX.Element,
-  // color: string,
-  cursor?: string,
-  // filter?: string,
-  // left?: string | number,
-  // marginTop?: string | number,
-  // minWidth?: string | number,
-  onClick?: () => void,
-  // onMouseOver?: React.MouseEventHandler<HTMLDivElement>,
-  // opacity?: number,
-  // overflow? : string,
-  // right?: string | number,
-  // role?: string,
-  // top?: string | number,
-  // transform? : string,
-  // transitionDelay?: string,
-  // width: string | number,
-  // _groupHover?: {},
-  _hover?: {},
-};
-
-export const ColorToggle =({animation, cursor, onClick, _hover}: ColorProps) => {
-  return(
-    <Center
-      animation={animation}
-      cursor={cursor}
-      onClick={onClick}
-      _hover={_hover}>
-        <Toggle />
-    </Center>
-  )
-}
 
 export const Toggle = () => (
   <div className={styles.lampMode}>

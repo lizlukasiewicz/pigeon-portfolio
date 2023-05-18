@@ -97,14 +97,13 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               <Box>
                 <Text
                   fontWeight={"bold"}
+                  color={"#E1E1E1"}
                   fontFamily={"var(--chakra-fonts-mono)"} 
                   marginBottom={2}>
 
                       {/* POSITION TITLE */}
-                    <Text 
-                        color={"#E1E1E1"}>
+
                           {getExpArray[idx].title}
-                    </Text>
 
                     <Text
                       as={'span'}

@@ -1,16 +1,20 @@
 'use client';
 
+import * as React from "react";
 import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
   Button,
   Text,
   Heading,
+  Box,
+  Icon,
   useMediaQuery,
   HStack,
-  useColorMode,  
+  useColorMode,
+  useColorModeValue as uCMV,
   Center,
 } from '@chakra-ui/react'
-import * as React from "react";
+import { IconType } from "react-icons";
 import { fadeDown } from '../lib/helpers/animation';
 import Image from 'next/image'
 import { Link } from '@chakra-ui/next-js'
@@ -46,13 +50,13 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
         backdropFilter='auto' 
         backdropBlur='24px'
         height={y !== 0 && scrollDir === "up" ? 
-                  85//65 
+                  85//65 //
                   : 
                   100}
         justify={"center"}
         position={"fixed"}
         top={y > 80 && scrollDir === "down" ? 
-              -10//-110 
+              -10//-110 //
               : 
               0}
         transition={"200ms ease-out"}
@@ -77,7 +81,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
                     priority />
 
               </Link>
-              {/* {animation, cursor, onClick, _hover} */}
               <Center
                 onClick={toggleColorMode}>
               {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
@@ -112,41 +115,55 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
 interface NavButtonProps {
   delay: string,
   label: string,
-  title: string,
+  icon?: React.ComponentType<IconType>,
   scroll: (arg0: string) => void,
 };
 
-export const NavButton = ({ label, delay, title, scroll}: NavButtonProps ) => {
+export const NavButton = ({ label, delay, icon, scroll}: NavButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
+  const text = `_ ${label}`
   return (
-      <Heading
-          fontWeight={"bold"}
-          animation={fadeDownAnim}
-          cursor={"pointer"}
-          onClick={() => scroll(label)}
-          fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
-          fontFamily={"var(--chakra-fonts-mono)"}
-          color={"#00C484"}
-          opacity={0}
-          px={"0.5rem"}
-          py={"1rem"}
-          transition={"100ms ease-out"}
-          _before={{
-            backgroundColor: "#008582",
+      <Box
+        as='button' 
+        cursor={"pointer"}
+        onClick={() => scroll(label)}
+        position={"relative"}
+        _before={{
             borderRadius: "2px",
-            bottom: -1,
-            content: `""`,
-            height: "1px",
+            height: "2px",
             position: "absolute",
             transition: "100ms ease-out",
-            width: 0 
-          }}
-          _hover={{
-            color: "#E1E1E1",
-            _before: { width: "105%" } }}
-            >
-          {title}
-      </Heading>
+        }}>
+
+          <Heading
+            fontWeight={"bold"}
+            animation={fadeDownAnim}
+            cursor={"pointer"}
+            fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            color={uCMV("#2B2B2B", "#00C484")}
+            opacity={0}
+            px={"0.5rem"}
+            py={"1rem"}
+            transition={"100ms ease-out"}
+            _before={{
+              backgroundColor: uCMV("#F3BA40", "#008582"),
+              borderRadius: "2px",
+              bottom: -1,
+              content: `""`,
+              height: "1px",
+              position: "absolute",
+              transition: "100ms ease-out",
+              width: 0 
+            }}
+            _hover={{
+              color:uCMV("#D54440", "#E1E1E1"),
+              _before: { width: "105%" } }}>
+
+                {text}
+
+          </Heading>
+      </Box>
 
   );
 };
@@ -158,11 +175,11 @@ interface NavButtonsProps {
 
 export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
   <React.Fragment>
-    <NavButton label="home" title="Home" delay={"0ms"} scroll={scrollIntoView} />
-    <NavButton label="about" title="About" delay={"60ms"} scroll={scrollIntoView} />
-    <NavButton label="projects" title="Projects" delay={"120ms"} scroll={scrollIntoView} />
-    <NavButton label="experience" title="Experience" delay={"160ms"} scroll={scrollIntoView} />
-    <NavButton label="contact" title="Contact" delay={"180ms"} scroll={scrollIntoView} />
+    <NavButton label="home" delay={"0ms"} scroll={scrollIntoView} />
+    <NavButton label="about" delay={"60ms"} scroll={scrollIntoView} />
+    <NavButton label="experience" delay={"120ms"} scroll={scrollIntoView} />
+    <NavButton label="projects" delay={"160ms"} scroll={scrollIntoView} />
+    <NavButton label="contact" delay={"180ms"} scroll={scrollIntoView} />
     <ResumeButton />
   </React.Fragment>
 
@@ -175,14 +192,14 @@ export const ResumeButton = () => {
     <Button
       animation={fadeDownAnim}
       as={"a"}
-      color={'#00C484'}
+      color={uCMV("#111837", "#00C484")}//{'#00C484'}//
       cursor={"pointer"}
       href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
       target={"_blank"}           
       fontFamily={"var(--chakra-fonts-mono)"}
       fontSize={'1.1rem'}
       position={"relative"}
-      _hover={{color:"#FFFFFF"}}>
+      _hover={{color:uCMV("#D54440", "#FFFFFF")}}>
 
                 <Text
                   as='b'>

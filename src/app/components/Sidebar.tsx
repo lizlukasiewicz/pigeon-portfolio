@@ -17,7 +17,8 @@ import {
   Button,
   Icon, 
   Text, 
-  useMediaQuery
+  useMediaQuery,
+  useColorModeValue as uCMV
 } from '@chakra-ui/react'
 import { IconType } from "react-icons";
 
@@ -45,16 +46,16 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
       <Button 
         onClick={() => setMenuOpen(!menuOpen)} 
         zIndex={4}>
-        <HamburgerIcon  w={45} h={45} color='#00C484' //rgba(0, 196, 132, 1)
+        <HamburgerIcon  w={45} h={45} color={uCMV("#121D36", "#00C484")} //rgba(0, 196, 132, 1)////'#00C484'
         /> 
       </Button>
       
        
         <VStack 
-          backgroundColor={"rgba(2, 4, 5, 0.9)"} //colorMode()
+          backgroundColor={uCMV("rgba(255,238,213,0.5)", "rgba(2, 4, 5, 0.9)")}//{"rgba(2, 4, 5, 0.9)"}
           opacity={1}
           paddingTop={90}
-          boxShadow={"dark-lg"}
+          boxShadow={uCMV("", "dark-lg")}
           fontSize={16}
           height={500}
           justifyContent={"flex-start"}
@@ -69,7 +70,7 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
           zIndex={3}>
           
           
-          <NavBarRoutes scrollIntoView={scrollIntoView} />
+          <SideBarRoutes scrollIntoView={scrollIntoView} />
           
         </VStack>
     </React.Fragment>
@@ -92,7 +93,7 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
         animation={fadeDownAnim}
         cursor={"pointer"}
         onClick={() => scroll(label)}
-        fontFamily={"var(--chakra-fonts-mono)"}
+        //fontFamily={"var(--chakra-fonts-mono)"}
         position={"relative"}
         transition={"100ms ease-out"}
         _before={{
@@ -107,13 +108,12 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
                 as='b'
                 fontFamily={"var(--chakra-fonts-mono)"}
                 fontSize='1.1rem'
-                color='#00C484'
+                color='#00C484'//{uCMV("lightModeColor", "currentColor")}
                 _hover={{color:"#FFFFFF"}}>
               
                       <Icon
                           as={icon}
                           borderRadius={5}
-                          //color={"#00C484"}
                           boxSize={6}
                           transition={"100ms ease-in-out"}/>
                   
@@ -129,7 +129,7 @@ interface NavButtonsProps {
   scrollIntoView: (arg0: string) => void,
 };
 
-export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
+export const SideBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
   <React.Fragment>
     <BarButton label="home" delay={"0ms"} scroll={scrollIntoView} icon={FaHome} />
     <BarButton label="about" delay={"60ms"} scroll={scrollIntoView} icon={FaTerminal} />
@@ -145,7 +145,7 @@ const ResumeButton = ()=> {
     <Button
             animation={fadeDownAnim}
             as={"a"}
-            color={'#00C484'}
+            color={'#00C484'}//{uCMV("lightModeColor", "currentColor")}
             cursor={"pointer"}
             href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
             target={"_blank"}
@@ -159,7 +159,7 @@ const ResumeButton = ()=> {
             }}>
               <Text
                   as='b'
-                  _hover={{color:"#FFFFFF"}}
+                  _hover={{color:"#FFFFFF"}}//{uCMV("lightModeColor", "currentColor")}
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize='1.1rem'>
               <Icon as={FaReadme} w={10} />

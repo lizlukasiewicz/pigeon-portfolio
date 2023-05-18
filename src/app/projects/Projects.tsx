@@ -36,18 +36,6 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
             marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
             width={{ base: "80vw", lg: "60vw" }}>
 
-              {/* <Box
-                marginBottom={"5%"}
-                minWidth={"100%"}>
-                  <Heading
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    paddingLeft={1}
-                    fontWeight={"bold"}
-                    fontSize={"2xl"}
-                    color='#00C484'>
-                      Built by a Machine
-                  </Heading>
-              </Box> */}
 
                 {/* PROJECT TABS */}
               <List

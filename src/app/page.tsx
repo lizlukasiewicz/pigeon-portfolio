@@ -3,7 +3,7 @@
 import { VStack } from "@chakra-ui/react";
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
-import GitCalendar from "./components/GitCalendar";
+// import GitCalendar from "./components/GitCalendar";
 import Social from "./components/Social";
 import About from './about/About';
 import ExperienceLayout from './experience/ExperienceLayout';
@@ -56,8 +56,6 @@ export default function Home() {
           pageRefs={pageRefs}
           visRef={visRef4}
           visible={visible4}/>
-
-        <GitCalendar />
         
         <Contact
           pageRefs={pageRefs}
