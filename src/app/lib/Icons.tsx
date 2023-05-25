@@ -46,15 +46,15 @@ export const SkillIcon = ({ hoverColor, delay, icon, label}: SkillIconProps) => 
                 <Icon
                     as={icon}
                     borderRadius={5}
-                    color={"#00C484"}//{uCMV("lightModeColor", "#00C484")}//{uCMV("lightModeColor", "currentColor")}
+                    color={uCMV("#822320", "#00C484")}//{uCMV("lightModeColor", "currentColor")}
                     boxSize={8}
                     transition={"100ms ease-in-out"}
                     _hover={{
                         transform: "scale(1.1)",
                         color: `${hoverColor}`,
-                        // filter: colorMode(
-                        //     "brightness(1.1)" ,
-                        //     `brightness(1.2) drop-shadow(0 0 5px ${color})`) 
+                        filter: uCMV(
+                            "brightness(1.1)" ,
+                            `brightness(1.2) drop-shadow(0 0 5px ${hoverColor})`) 
                     }} 
                 />
             </Center>

@@ -1,11 +1,12 @@
 :root {
-  --max-width: 1100px;
+  --max-width: 1200px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
   'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
   'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --foreground-rgb: 225, 225, 225;
+  /* 225, 225, 225; */
+  --foreground-rgb: 43, 43, 43; 
   --foreground-emphasis-rbg: 0, 196, 132;
   --background-start-rgb:17, 24, 55;
   --background-end-rgb: 7, 14, 35;
@@ -24,6 +25,8 @@
     circle 375px at center, 
     #112941 46%, 
     rgba(93, 185, 188, 0.52) 60%, 
+    /* #131d30, 
+    #fffdf1,  */
     #00E2CB 61.4%, 
     rgba(51, 72, 80, 0.8) 62%, 
     rgba(7, 18, 43, 0.5) 82%,
@@ -60,10 +63,10 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 51% 0%;
   }
@@ -73,33 +76,34 @@ body {
   100% {
     background-position: 51% 0%;
   }
-}
+} */
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
   color: rgb(var(--foreground-rgb));
   animation: gradient 4s ease infinite;
-  background-image: linear-gradient(135deg, #131D30, #020405);
+  background-image: linear-gradient(135deg, #131D30, #020405, #00231C);
   background-size: 400% 400%;
   height: 100%;
   width: 100%;
-  /* background-image: linear-gradient(to right, #091124, #0d1426 30%, #091220 90%); */
   
-}
+} */
 
-a {
+/* //background-image: linear-gradient(135deg,  #E29CB0, #ECD9EA);//background-image: linear-gradient(to right, #091124, #0d1426 30%, #091220 90%); */
+
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 225, 225, 225;
-    --background-start-rgb:17, 24, 55;
+    /* --background-start-rgb:17, 24, 55;
     --background-end-rgb: 7, 14, 35;
 
     --primary-glow: radial-gradient(
@@ -111,7 +115,16 @@ a {
       rgba(7, 18, 43, 0.5) 82%,
       rgba(7, 18, 43, 0) 92%
       );
-  
+
+      bgGradient=   radial(
+                      circle 375px at center, 
+                      #112941 46%, 
+                      rgba(93, 185, 188, 0.52) 60%, 
+                      #00E2CB 61.4%, 
+                      rgba(51, 72, 80, 0.8) 62%, 
+                      rgba(7, 18, 43, 0.5) 82%,
+                      rgba(7, 18, 43, 0) 92%)
+
     --secondary-glow: radial-gradient(
       circle 375px at center, 
       #112941 46%, 
@@ -138,37 +151,23 @@ a {
     --callout-rgb: 17, 41, 65;
     --callout-border-rgb: 179, 221, 193;
     --card-rgb: 180, 185, 188;
-    --card-border-rgb: 131, 134, 135;
+    --card-border-rgb: 131, 134, 135; */
   }
-  html {
+  /* body {
+    color: rgb(var(--foreground-rgb));
+    animation: gradient 4s ease infinite;
+    background-image: linear-gradient(135deg, #131D30, #020405);
+  } */
+  /* html {
     color-scheme: dark;
-  }
+  } */
 }
 
-@media (max-width: 1023px) {
- :root{
-  --primary-glow: radial-gradient(
-    circle 300px at center, 
-    #112941 46%, 
-    rgba(93, 185, 188, 0.52) 60%, 
-    #00E2CB 61.4%, 
-    rgba(51, 72, 80, 0.8) 62%, 
-    rgba(7, 18, 43, 0.5) 82%,
-    rgba(7, 18, 43, 0.1) 92%
-    );
-  --secondary-glow: radial-gradient(
-    circle 300px at center, 
-    #112941 46%, 
-    rgba(93, 185, 188, 0.52) 60%, 
-    #00E2CB 61.4%, 
-    rgba(51, 72, 80, 0.8) 62%, 
-    rgba(7, 18, 43, 0.5) 82%,
-    rgba(7, 18, 43, 0.1) 92%
-    );
-  
- }
+/* @media (max-width: 1023px) {
 
-}
+} */
+
+
 /* @media (prefers-reduced-motion) {
 body {
   background: linear-gradient(
@@ -180,3 +179,4 @@ body {
 }
 
 } */
+

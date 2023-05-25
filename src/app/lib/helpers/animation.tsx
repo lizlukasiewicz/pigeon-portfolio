@@ -1,6 +1,16 @@
 import { keyframes } from "@chakra-ui/react";
 
-
+export const gradient: string = keyframes`
+0% {
+  background-position: 51% 0%;
+}
+50% {
+  background-position: 50% 100%;
+}
+100% {
+  background-position: 51% 0%;
+}
+`;
 export const fadeRight: string = keyframes`
 from {
   transform: translateX(-40px);

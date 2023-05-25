@@ -8,7 +8,7 @@ import {
 
 import * as React from "react";
 import { fadeDown } from '../lib/helpers/animation';
-import { PageProps } from '../lib/helpers/interfaces';//
+import { PageProps } from '../lib/helpers/interfaces';
 import { socialList } from "../lib/social";
 import { FiMail } from "react-icons/fi";
 
@@ -41,7 +41,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         key={i}
                         href={e.href} /> ))}
                 <Divider
-                    borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
+                    borderColor={uCMV("#822320", "#F3BA40")}//{"#F3BA40"}
                     width={{ base: 0, lg: 10 }} />
             </Stack>
             <Stack
@@ -60,7 +60,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 transition={"200ms ease-out"}
                 zIndex={1}>
                     <Divider
-                        borderColor={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
+                        borderColor={uCMV("#822320", "#F3BA40")}//{"#F3BA40"}
                         width={{ base: 0, lg: 10}} />
                     <SocialIcon
                         delay={"80ms"} 
@@ -69,7 +69,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                         <Text
                             animation={fadeDownAnim}
                             as={"a"}
-                            color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}
+                            color={uCMV("#822320", "#F3BA40")}//{"#F3BA40"}
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: "xs", lg: "sm" }}
                             href={"mailto:e.lukasiewicz.n@gmail.com"}
@@ -78,7 +78,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                             target={"_blank"}
                             transition={"100ms ease-out"}
                             _before={{
-                                backgroundColor: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"},
+                                backgroundColor: uCMV("#822320", "#F3BA40"),//{"#F3BA40"},
                                 borderRadius: "5px",
                                 bottom: -1,
                                 content: `""`,
@@ -87,7 +87,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
                                 transition: "100ms ease-out",
                                 width: 0 }}
                             _hover={{
-                                color: uCMV("#D54440", "#F3BA40"),//{"#F3BA40"}
+                                color: uCMV("#822320", "#F3BA40"),//{"#F3BA40"}
                                 _before: {
                                 width: "105%" } }}>
                             e.lukasiewicz.n@gmail.com
@@ -113,8 +113,8 @@ export const SocialIcon = ({ delay, href, icon }: SocialIconProps) => {
         animation={fadeDownAnim}
         aria-label={"social-icon-button"}
         backgroundColor={"transparent"}
-        border={"1px solid"}
-        color={uCMV("#D54440", "#F3BA40")}//{"#F3BA40"}}//colorMode("rgb(64,124,104)", "green.500")}
+        border={uCMV("1.5px solid", "1px solid")}
+        color={uCMV("#822320", "#F3BA40")}//{"#F3BA40"}}//colorMode("rgb(64,124,104)", "green.500")}
         href={href}
         icon={icon}
         opacity={"0"}
@@ -123,8 +123,8 @@ export const SocialIcon = ({ delay, href, icon }: SocialIconProps) => {
         target={"_blank"}
         transition={"100ms ease-out"}
         _hover={{
-            backgroundColor: uCMV("rgba(226,156,176,0.5)", "rgba(0,226,203,0.5)"),//"rgba(0,226,203,0.5)",//
-            border: uCMV("1px solid #2B2B2B", "1px solid white"),//"1px solid white",//
+            backgroundColor: uCMV("rgba(255,255,129,0.5)", "rgba(0,226,203,0.5)"),//"rgba(0,226,203,0.5)",//
+            border: uCMV("1.5px solid #2B2B2B", "1px solid white"),//"1px solid white",//
             color: uCMV("#2B2B2B", "white") }} />
     );
 };

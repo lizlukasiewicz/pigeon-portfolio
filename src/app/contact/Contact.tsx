@@ -13,7 +13,7 @@ type PageProps = {
   visRef: any;
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
-
+// TODO CLEANUP DAYMODE COLORS
 export default function Contact({ pageRefs, visRef, visible }: PageProps) {
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
@@ -25,7 +25,7 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
     const shakeAnim: string = `${shake} 200ms ease-in-out`;
     const slideUpAnim: string = `${slideUp} 500ms 500ms ease-in-out forwards`;
     const bgColor1: string = uCMV("#121D36", "#B3DDC1")
-    const bgColor2: string = uCMV("#B3DDC1", "#1C2445")
+    const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <TempContainer
         pageRefs={pageRefs}

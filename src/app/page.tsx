@@ -1,14 +1,14 @@
 'use client'
 
-import { VStack } from "@chakra-ui/react";
+import { VStack, useColorModeValue as uCMV } from "@chakra-ui/react";
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
-// import GitCalendar from "./components/GitCalendar";
 import Social from "./components/Social";
 import About from './about/About';
 import ExperienceLayout from './experience/ExperienceLayout';
 import ProjectLayout from './projects/ProjectLayout';
 import Contact from './contact/Contact'
+import { gradient } from "./lib/helpers/animation";
 
 import * as React from "react";
 
@@ -25,9 +25,17 @@ export default function Home() {
   const [visRef5, visible5] = useOnScreen();
 
   const [y, scrollDir]: [number, string] = useNavigation();
+
+  const breatheAnim: string = `${gradient} 6s ease infinite`
+
   return (
     <VStack 
-      spacing={1}> 
+      spacing={1}
+      bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")} //#FFF4E1, #FFEED5, #FFFAF1,   ##FFF4E1,
+      bgSize={"400% 400%"}
+      bgPosition={"51% 0%"}
+      animation={breatheAnim}
+      > 
         <Navbar 
           pageRefs={pageRefs}
           scrollDir={scrollDir}

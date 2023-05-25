@@ -18,7 +18,7 @@ interface ExperienceWidgetProps {
   setIdx: React.Dispatch<React.SetStateAction<number>>
 };
 
-
+// TODO  DAYMODE COLORS
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
@@ -43,8 +43,8 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
-                  color={idx === i ? '#E1E1E1' : '#175C78' } // 2ndPal NEON BLUE :::  WHITE
-                  backgroundColor={idx === i ? '#121D36' : "rgba(2,4,5,0.5)"} // 2ndPal DEEP BLUE ::: BLACK
+                  color={idx === i ? '#E1E1E1' : '#175C78' } // 2ndPal NEON BLUE :::  WHITE                   //{uCMV("lightModeColor", "currentColor")}
+                  backgroundColor={idx === i ? '#121D36' : "rgba(2,4,5,0.5)"} // 2ndPal DEEP BLUE ::: BLACK  //{uCMV("lightModeColor", "currentColor")}
                   borderBottom={["3px solid", 0] }
                   borderLeft={[0, "3px solid"]}
                   fontFamily={"var(--chakra-fonts-mono)"}
@@ -64,9 +64,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                     opacity: idx === i ? 1 : 0,
                     position: "absolute" }}
                   _hover={{
-                      backgroundColor: "#111837", // 1stPal DEEPEST BLUE
-                      borderColor: "#175C78", // 1stPal MED BLUE
-                      color: "#F3BA40", // GOLD
+                      backgroundColor: "#111837", // 1stPal DEEPEST BLUE //{uCMV("lightModeColor", "#111837")}
+                      borderColor: "#175C78", // 1stPal MED BLUE //{uCMV("lightModeColor", "#175C78")}
+                      color: "#F3BA40", // GOLD                 //{uCMV("lightModeColor", "#F3BA40")}
                       cursor: "pointer",
                       transitionDuration: "0.3s",
                       _before: { opacity: 1 } }}>
@@ -97,7 +97,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               <Box>
                 <Text
                   fontWeight={"bold"}
-                  color={"#E1E1E1"}
+                  color={"#E1E1E1"} //{uCMV("lightModeColor", "currentColor")}
                   fontFamily={"var(--chakra-fonts-mono)"} 
                   marginBottom={2}>
 
@@ -107,7 +107,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
                     <Text
                       as={'span'}
-                      color={"#B3DDC1"}
+                      color={"#B3DDC1"} //{uCMV("lightModeColor", "currentColor")}
                       fontFamily={"var(--chakra-fonts-nunito)"}>
                         {` @ `}
 
@@ -116,13 +116,13 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                         as={"a"}
                         href={getExpArray[idx].companyLink}
                         opacity={0.6}
-                        color={"#E1E1E1"}
+                        color={"#E1E1E1"} //{uCMV("lightModeColor", "currentColor")}
                         position={"relative"}
                         rel={"noreferrer"}
                         target={"_blank"}
                         transitionDuration={"0.2s"}
                         _before={{
-                          backgroundColor: "white",
+                          backgroundColor: "white", //{uCMV("lightModeColor", "currentColor")}
                           borderRadius: "2px",
                           bottom: -1,
                           content: `""`,

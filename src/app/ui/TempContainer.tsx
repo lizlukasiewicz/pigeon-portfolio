@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { growRight, growRightLittle } from '../lib/helpers/animation';
 
+// TODO  DAYMODE COLORS
 export const TempContainer=({
   children,
   label,
@@ -71,7 +72,7 @@ export const TempContainer=({
                         <HStack>
                           <Box 
                             animation={growRightAnim}//&& loaded
-                            backgroundColor={"#008582"}//{uCMV("lightModeColor", "currentColor")}// NOT LISTED MUTED BLUE
+                            backgroundColor={"#008582"}//{uCMV("#E29CB0", "#008582")}// DARK PINK || NOT LISTED MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -79,14 +80,14 @@ export const TempContainer=({
                             width={0}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid #008582",//{uCMV("lightModeColor", "currentColor")}// NOT LISTED MUTED BLUE
+                                borderTop: "4px solid #008582",//uCMV("4px solid #E29CB0", "4px solid #008582")// DARK PINK || NOT LISTED MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
                                 width: 0 }} />
                           <Box 
                             animation={growRightLittleAnim}//&&loaded
-                            backgroundColor={"rgb(100,156,166)"}//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
+                            backgroundColor={uCMV("rgb(222,198,223)", "rgb(100,156,166)")} //{"rgb(100,156,166)"} ////nonlist Pink  ||  topPal MUTED BLUE
                             height={1}
                             opacity={0}
                             position={"relative"}
@@ -94,14 +95,14 @@ export const TempContainer=({
                             width={0}
                             _before={{
                                 borderLeft: "4px solid transparent",
-                                borderBottom: "4px solid rgb(100,156,166)",//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
+                                borderBottom: "4px solid rgb(100,156,166)",//uCMV("4px solid rgb(222,198,223)", "4px solid rgb(100,156,166)")//nonlist Pink  ||  topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 left: -1,
                                 width: 0 }}
                             _after={{
                                 borderRight: "4px solid transparent",
-                                borderTop: "4px solid rgb(100,156,166)",//{uCMV("lightModeColor", "currentColor")}//topPal MUTED BLUE
+                                borderTop: "4px solid rgb(100,156,166)",//uCMV("4px solid rgb(222,198,223)", "4px solid rgb(100,156,166)")//nonlist Pink  ||  topPal MUTED BLUE
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
@@ -111,7 +112,7 @@ export const TempContainer=({
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: 'lg', sm: 'xl', md: "2xl" }}
                             fontWeight={"bold"}
-                            color={"#00C484"}//{uCMV("lightModeColor", "currentColor")}//<<NEON GREEN //color={"#B3DDC1"}> <<MUTED GREEN
+                            color={uCMV("#121D36", "#00C484")}//2ndPAL DARK NAVY  ||  NEON GREEN              {"#00C484"}// //color={"#B3DDC1"}> <<MUTED GREEN
                             >
                             {title}
                         </Heading>

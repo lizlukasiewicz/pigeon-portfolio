@@ -1,8 +1,9 @@
-import { Stack, Flex, Text} from "@chakra-ui/react";
+import { Stack, Flex, Text, useColorModeValue as uCMV} from "@chakra-ui/react";
 import * as React from "react";
 import GitHubCalendar from 'react-github-calendar';
 import ReactTooltip from "react-tooltip";
 
+// TODO  DAYMODE COLORS
 export default function GitCalendar() {
     
     return(
@@ -21,7 +22,7 @@ export default function GitCalendar() {
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"2xl"}
-                  color={'#00C484'}//{uCMV("lightModeColor", "currentColor")}
+                  color={uCMV("#822320", "#00C484")}//{'#00C484'}//
                   marginY={5}>
 
                     Git Commit, To<Text as={"span"} color={'#00C484'} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
@@ -34,11 +35,11 @@ export default function GitCalendar() {
                   blockRadius={7}
                   color={"#00C484"}
                   theme={{
-                      level0:  "rgb(17 24 55)",//{uCMV("lightModeColor", "currentColor")},
-                      level1:  "rgb(33, 74, 55)",//{uCMV("lightModeColor", "currentColor")}
-                      level2:  "rgb(68, 150, 109)",//{uCMV("lightModeColor", "currentColor")},
-                      level3:  "rgb(89, 188, 125)",//{uCMV("lightModeColor", "currentColor")},
-                      level4:  "rgb(0, 196, 132)",//{uCMV("lightModeColor", "currentColor")} 
+                      level0: uCMV("rgb(236,217,234)", "rgb(17 24 55)"),//"rgb(17 24 55)",
+                      level1: uCMV("rgb(226,156,176)", "rgb(33, 74, 55)"),//"rgb(33, 74, 55)",
+                      level2: uCMV("rgb(241,114,90)", "rgb(68, 150, 109)"),//"rgb(68, 150, 109)",
+                      level3: uCMV("rgb(213,68,64)", "rgb(89, 188, 125)"),//"rgb(89, 188, 125)",
+                      level4: uCMV("rgb(130,35,32)", "rgb(0, 196, 132)"),//"rgb(0, 196, 132)",
                   }}
                   username="lizlukasiewicz">
 

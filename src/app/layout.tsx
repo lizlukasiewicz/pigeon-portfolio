@@ -2,9 +2,8 @@
 
 import * as React from "react";
 import { Providers } from "./providers";
-// import { extendTheme } from '@chakra-ui/react'
 import { ColorModeScript } from '@chakra-ui/react'
-import theme from './theme'
+import {theme} from './theme'
 import './globals.css';
 
 
