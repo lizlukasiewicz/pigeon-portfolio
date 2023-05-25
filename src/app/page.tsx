@@ -2,7 +2,7 @@
 
 import { VStack, useColorModeValue as uCMV } from "@chakra-ui/react";
 import Navbar from './components/Navbar';
-import Splash from './components/Splash';
+import Splash from './home/Splash';
 import Social from "./components/Social";
 import About from './about/About';
 import ExperienceLayout from './experience/ExperienceLayout';
@@ -10,14 +10,14 @@ import ProjectLayout from './projects/ProjectLayout';
 import Contact from './contact/Contact'
 import { gradient } from "./lib/helpers/animation";
 
-import * as React from "react";
+import {useRef, MutableRefObject} from "react";
 
 import { useOnScreen } from './lib/helpers/Loading';
 import { useNavigation } from './lib/helpers/useNav'
 
 
 export default function Home() { 
-  const pageRefs: React.MutableRefObject<{}> = React.useRef({});
+  const pageRefs: MutableRefObject<{}> = useRef({});
   const [visRef1, visible1] = useOnScreen();
   const [visRef2, visible2] = useOnScreen();
   const [visRef3, visible3] = useOnScreen();

@@ -13,6 +13,7 @@ type PageProps = {
   visRef: any;
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
+
 // TODO CLEANUP DAYMODE COLORS
 export default function Contact({ pageRefs, visRef, visible }: PageProps) {
   const [loaded, setLoaded] = React.useState<boolean>(false);

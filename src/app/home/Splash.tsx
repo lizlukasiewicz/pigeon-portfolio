@@ -1,19 +1,19 @@
 import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
-import * as React from 'react';
+import {MutableRefObject, RefObject, Dispatch, useState, useEffect } from 'react';
 
 type PageProps = {
-  pageRefs: React.MutableRefObject<{}>;
-  visRef: any;
-  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+  pageRefs: MutableRefObject<{}>;
+  visRef:  any;//RefObject<HTMLDivElement>;
+  visible: boolean | Dispatch<any> | MutableRefObject<any>;
 };
 
 
 export default function Splash({ pageRefs, visRef, visible }: PageProps) {
-    const [name, setName] = React.useState<boolean>(false);
+    const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
-    const [loaded, setLoaded] = React.useState<boolean>(false);
-    React.useEffect(() => {
+    const [loaded, setLoaded] = useState<boolean>(false);
+    useEffect(() => {
         visible && setLoaded(true)
     }, [visible]);
 
@@ -29,7 +29,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
               <Box w={'100%'} 
                   ref={visRef}
                   minHeight={'800px'}//'650px'
-                  opacity={visible ? 1 : 0.3} //"radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(243,186,64, 0.8) 62%, rgba(255,244,225,0.3)82%,rgba(7, 18, 43, 0) 92%)"
+                  opacity={loaded ? 1 : 0.3} //"radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(243,186,64, 0.8) 62%, rgba(255,244,225,0.3)82%,rgba(7, 18, 43, 0) 92%)"
                   bgGradient={uCMV("radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(255,211,21, 0.8) 63%, rgba(255,244,225,0.5) 83%, rgba(255,238,213, 0) 92%)", 
                                     "radial(circle 375px at center, #112941 46%, rgba(93, 185, 188, 0.52) 60%, #00E2CB 61.4%, rgba(51, 72, 80, 0.8) 62%, rgba(7, 18, 43, 0.5) 82%,rgba(7, 18, 43, 0) 92%)")}
                   display={"flex"}

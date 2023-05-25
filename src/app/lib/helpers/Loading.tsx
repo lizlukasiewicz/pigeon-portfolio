@@ -1,24 +1,24 @@
-import * as React from "react";
+import { useEffect, useRef, useState, MutableRefObject, RefObject, ReactNode } from "react";
 
 export type PageProps = {
-    pageRefs?: React.MutableRefObject<{}>,
+    pageRefs?: MutableRefObject<{}>,
     visible?: boolean,
-    visRef?: React.RefObject<Element>,
+    visRef?: RefObject<HTMLDivElement>,
     params?: any;
-    children?: React.ReactNode;
+    children?: ReactNode;
   };
   
 // 
-export const useOnScreen = (): [React.MutableRefObject<undefined>, boolean] => {
-    const visRef = React.useRef();
-    const [visible, setVisible] = React.useState(false);
+export const useOnScreen = () => { //: [MutableRefObject<{}>, boolean]//[MutableRefObject<undefined>, boolean]
+    const visRef = useRef();
+    const [visible, setVisible] = useState<boolean>(false);
   
-    const callbackFunction: IntersectionObserverCallback = (entries: IntersectionObserverEntry[]) => {
+    const callbackFunction = (entries: IntersectionObserverEntry[]) => {//: IntersectionObserverCallback
       const [entry] = entries;
       setVisible(entry.isIntersecting);
     };
   
-    React.useEffect(() => {
+    useEffect(() => {
       const observer = new IntersectionObserver(callbackFunction, {
         root: null,
         rootMargin: "0px",

@@ -30,12 +30,12 @@ export const TempContainer=({
 
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
   const growRightLittleAnim: string = `${growRightLittle} 1s 250ms forwards`;
+
   const findScroll = (el: HTMLDivElement, refNum: number) => {
     let testVar: {} = {};
     switch (refNum) {
         case 0:
             testVar = { ...pageRefs.current, home: el };
-            console.log(`navigating HOME 🍍`)
             break;
         case 1:
             testVar = { ...pageRefs.current, about: el };
@@ -52,6 +52,7 @@ export const TempContainer=({
         default:
             console.log("🪷 Nav");
     };
+    console.log(`testVar: ${testVar}`)
     return testVar
 };
   return (
