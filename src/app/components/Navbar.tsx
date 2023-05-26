@@ -37,7 +37,7 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
   }, [isLargeScreen]);
 
   const scrollIntoView = (type: string): void => {
-    const pageRef = pageRefs.current[type]
+    const pageRef = pageRefs.current;//[type]
     pageRef.scrollIntoView({ behavior: 'smooth' });
     menuOpen && setMenuOpen(!menuOpen);
   };

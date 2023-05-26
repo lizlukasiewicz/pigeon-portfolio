@@ -10,7 +10,7 @@ export type PageProps = {
   
 // 
 export const useOnScreen = () => { //: [MutableRefObject<{}>, boolean]//[MutableRefObject<undefined>, boolean]
-    const visRef = useRef();
+    const visRef = useRef<HTMLDivElement | null>(null);
     const [visible, setVisible] = useState<boolean>(false);
   
     const callbackFunction = (entries: IntersectionObserverEntry[]) => {//: IntersectionObserverCallback
