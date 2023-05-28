@@ -1,9 +1,5 @@
-'use client'
 
-import * as React from "react";
 import { Providers } from "./providers";
-import { ColorModeScript } from '@chakra-ui/react'
-import {theme} from './theme'
 import './globals.css';
 
 
@@ -18,8 +14,6 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <head />
       <body>
         <Providers>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-
           {children}
         </Providers>
       </body>

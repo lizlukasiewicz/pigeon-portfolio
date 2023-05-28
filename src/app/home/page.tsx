@@ -1,24 +1,28 @@
+"use client";
 import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
-import {MutableRefObject, RefObject, Dispatch, useState, useEffect } from 'react';
+import {useRef,  useState, useEffect } from 'react';
+// import { useOnScreen } from '../lib/helpers/Loading';
 
-type PageProps = {
-  pageRefs: MutableRefObject<{}>;
-  visRef:  any;//RefObject<HTMLDivElement>;
-  visible: boolean | Dispatch<any> | MutableRefObject<any>;
-};
+import { pageRefs } from '../ui/HomeContainer';
+
+// type PageProps = {
+//   pageRefs: MutableRefObject<{}>;
+//   visRef:  any;//RefObject<HTMLDivElement>;
+//   visible: boolean | Dispatch<any> | MutableRefObject<any>;
+// };
 
 
-export default function Splash({ pageRefs, visRef, visible }: PageProps) {//
-    const [name, setName] = useState<boolean>(false);
+export default function Home() {//{ pageRefs, visRef, visible }: PageProps
+  // const [visRef, visible] = useOnScreen();
+  const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
     const [loaded, setLoaded] = useState<boolean>(false);
-    useEffect(() => {
-        visible && setLoaded(true)
-    }, [visible]);
-
-    return(
-      <Flex
+    // useEffect(() => {
+    //     visible && setLoaded(true)
+    // }, [visible]);
+  return(
+    <Flex
         w={'100%'} 
         alignItems={"center"}
         position={"relative"}
@@ -27,7 +31,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {//
           
 
               <Box w={'100%'} 
-                  ref={visRef}
+                  //ref={visRef}
                   minHeight={'800px'}//'650px'
                   //opacity={loaded ? 1 : 0.3} //"radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(243,186,64, 0.8) 62%, rgba(255,244,225,0.3)82%,rgba(7, 18, 43, 0) 92%)"
                   bgGradient={uCMV("radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(255,211,21, 0.8) 63%, rgba(255,244,225,0.5) 83%, rgba(255,238,213, 0) 92%)", 
@@ -56,5 +60,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {//
               </Box>
           
       </Flex>
-    )
+
+
+  )
 }

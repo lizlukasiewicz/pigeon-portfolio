@@ -18,11 +18,11 @@ import { useNavigation } from './lib/helpers/useNav'
 
 export default function Home() { 
   const pageRefs: MutableRefObject<{}> = useRef({});
-  const [homeRef, visible1] = useOnScreen();
-  const [aboutRef, visible2] = useOnScreen();
-  const [expRef, visible3] = useOnScreen();
-  const [projectRef, visible4] = useOnScreen();
-  const [contactRef, visible5] = useOnScreen();
+  const [visRef1, visible1] = useOnScreen();
+  const [visRef2, visible2] = useOnScreen();
+  const [visRef3, visible3] = useOnScreen();
+  const [visRef4, visible4] = useOnScreen();
+  const [visRef5, visible5] = useOnScreen();
 
   const [y, scrollDir]: [number, string] = useNavigation();
 
@@ -47,27 +47,27 @@ export default function Home() {
         <Splash
           pageRefs={pageRefs}
           visible={visible1}
-          visRef={homeRef} />
+          visRef={visRef1} />
         
         <About 
           pageRefs={pageRefs}
           visible={visible2}
-          visRef={aboutRef}/>
+          visRef={visRef2}/>
         
         <ExperienceLayout 
           pageRefs={pageRefs}
-          visRef={expRef}
+          visRef={visRef3}
           visible={visible3}/>
 
         
         <ProjectLayout
           pageRefs={pageRefs}
-          visRef={projectRef}
+          visRef={visRef4}
           visible={visible4}/>
         
         <Contact
           pageRefs={pageRefs}
-          visRef={contactRef}
+          visRef={visRef5}
           visible={visible5}/>
     </VStack>
   )

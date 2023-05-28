@@ -17,7 +17,7 @@ type PageProps = {
     visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
-export default function About({ pageRefs, visRef, visible }: PageProps) {
+export default function About({ pageRefs, visRef, visible }: PageProps) {//
     const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)
@@ -32,8 +32,8 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
         label={'about'}  
         title={'About me'} 
         pageRefs={pageRefs}
-        refNum={1}
-        loaded={loaded}>
+        //loaded={loaded}
+        refNum={1}>
           <Box
             ref={visRef}
             display={"flex"}
@@ -46,7 +46,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                 // marginTop={{base: "50px", lg:"100px"}}
                 // mx={{base: "70px", lg:"200px"}}
                 display={"flex"}
-                opacity={visible ? 1 : 0.75}
+                //opacity={visible ? 1 : 0.75}
                 flexDir={"row"}
                 justifyContent={"space-around"}
                 //minHeight={"30vh"}
