@@ -2,9 +2,8 @@
 import { fadeDown } from '../lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
 import {useRef,  useState, useEffect } from 'react';
-// import { useOnScreen } from '../lib/helpers/Loading';
-
-import { pageRefs } from '../ui/HomeContainer';
+import { useOnScreen } from '../lib/helpers/Loading';
+import { useParams } from 'next/navigation';
 
 // type PageProps = {
 //   pageRefs: MutableRefObject<{}>;
@@ -14,20 +13,23 @@ import { pageRefs } from '../ui/HomeContainer';
 
 
 export default function Home() {//{ pageRefs, visRef, visible }: PageProps
-  // const [visRef, visible] = useOnScreen();
+  const params = useParams();
+  const [visRef, visible] = useOnScreen();
   const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
     const [loaded, setLoaded] = useState<boolean>(false);
-    // useEffect(() => {
-    //     visible && setLoaded(true)
-    // }, [visible]);
+    useEffect(() => {
+        console.log(`🐝Home useParams: ${params}`);
+        visible && setLoaded(true)
+    }, [visible]);
   return(
     <Flex
         w={'100%'} 
         alignItems={"center"}
         position={"relative"}
         height={"100vh"}
-        ref={el => pageRefs.current = { ...pageRefs.current, home: el }}>
+        //ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+        >
           
 
               <Box w={'100%'} 

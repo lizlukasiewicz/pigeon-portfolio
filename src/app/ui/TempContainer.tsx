@@ -24,42 +24,42 @@ export const TempContainer=({
   label?: string,
   title?: string,
   loaded?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
-  pageRefs: React.MutableRefObject<{}>,
+  pageRefs?: React.MutableRefObject<{}>,
   refNum: number,
 })=> {
 
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
   const growRightLittleAnim: string = `${growRightLittle} 1s 250ms forwards`;
 
-  const findScroll = (el: HTMLDivElement, refNum: number) => {
-    let testVar: {} = {};
-    switch (refNum) {
-        case 0:
-            testVar = { ...pageRefs.current, home: el };
-            break;
-        case 1:
-            testVar = { ...pageRefs.current, about: el };
-            break;
-        case 2:
-            testVar = { ...pageRefs.current, experience: el };
-            break;
-        case 3:
-            testVar = { ...pageRefs.current, projects: el };
-            break;
-        case 4:
-            testVar = { ...pageRefs.current, contact: el };
-            break;
-        default:
-            console.log("🪷 Nav");
-    };
-    console.log(`testVar: ${testVar}`)
-    return testVar
-};
+//   const findScroll = (el: HTMLDivElement, refNum: number) => {
+//     let testVar: {} = {};
+//     switch (refNum) {
+//         case 0:
+//             testVar = { ...pageRefs.current, home: el };
+//             break;
+//         case 1:
+//             testVar = { ...pageRefs.current, about: el };
+//             break;
+//         case 2:
+//             testVar = { ...pageRefs.current, experience: el };
+//             break;
+//         case 3:
+//             testVar = { ...pageRefs.current, projects: el };
+//             break;
+//         case 4:
+//             testVar = { ...pageRefs.current, contact: el };
+//             break;
+//         default:
+//             console.log("🪷 Nav");
+//     };
+//     console.log(`testVar: ${testVar}`)
+//     return testVar
+// };
   return (
     <Container
             maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
             //opacity={1}//loaded ? 1 : 0.5
-            ref={el => el && (pageRefs.current = findScroll(el, refNum))}
+            //ref={el => el && (pageRefs.current = findScroll(el, refNum))}
             transition={"500ms ease-out"}>
             <Stack
                 align={'center'}
