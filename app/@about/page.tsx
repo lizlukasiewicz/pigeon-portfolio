@@ -6,22 +6,23 @@ import {
     Text,
     useColorModeValue as uCMV
 } from "@chakra-ui/react"
-import { SkillTable } from "../lib/Icons"
-import { fadeDown, growRight } from '../lib/helpers/animation'
-import { TempContainer } from '../ui/TempContainer';
+import { SkillTable } from "lib/Icons"
+import { fadeDown, growRight } from 'lib/helpers/animation'
+import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
+//import { pageRefs } from '../ui/HomeContainer';
 
-type PageProps = {
-    pageRefs: React.MutableRefObject<{}>;
-    visRef: any;
-    visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-};
+// type PageProps = {
+//     pageRefs: React.MutableRefObject<{}>;
+//     visRef: any;
+//     visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+// };
 
-export default function About({ pageRefs, visRef, visible }: PageProps) {//
+export default function About(){//{ pageRefs, visRef, visible }: PageProps) {//
     const [loaded, setLoaded] = React.useState<boolean>(false);
-    React.useEffect(() => {
-        visible && setLoaded(true)
-    }, [visible]);
+    // React.useEffect(() => {
+    //     visible && setLoaded(true)
+    // }, [visible]);
     const [name, setName] = React.useState<boolean>(false);
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
     const fadeRightFirst: string = `800ms 800ms forwards ${growRight}`;
@@ -31,11 +32,11 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {//
       <TempContainer 
         label={'about'}  
         title={'About me'} 
-        pageRefs={pageRefs}
+        //pageRefs={pageRefs}
         //loaded={loaded}
         refNum={1}>
           <Box
-            ref={visRef}
+            //ref={visRef}
             display={"flex"}
             flexDir={'column'}
             minHeight={"60vh"}
@@ -50,9 +51,10 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {//
                 flexDir={"row"}
                 justifyContent={"space-around"}
                 //minHeight={"30vh"}
-                ref={el => pageRefs.current = { ...pageRefs.current, home: el }}>
+                //ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+                >
                   <Stack
-                    ref={visRef}
+                    //ref={visRef}
                     color={"rgb(0,0,0,0.65)"}
                     fontFamily={"var(--chakra-fonts-mono)"}
                     // fontSize={{ base: "sm", lg: "md" }}

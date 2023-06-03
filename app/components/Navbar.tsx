@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from "react";
-// import { Toggle,  ColorToggleDay } from './ColorToggle';
+import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
   Button,
   Text,
@@ -9,16 +9,16 @@ import {
   Box,
   useMediaQuery,
   HStack,
-  // useColorMode,
+  useColorMode,
   useColorModeValue as uCMV,
   Center,
 } from '@chakra-ui/react'
 import { IconType } from "react-icons";
-import { fadeDown } from '../lib/helpers/animation';
+import { fadeDown } from 'lib/helpers/animation';
 import Image from 'next/image'
 import { Link } from '@chakra-ui/next-js'
 import Sidebar from './Sidebar';
-// import styles from './nav.module.css'
+import styles from './nav.module.css'
 
 interface PageProps {
   pageRefs: React.MutableRefObject<{}>,
@@ -27,7 +27,7 @@ interface PageProps {
 }
 
 export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
-  //const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
@@ -74,16 +74,16 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
                 <Image
                     src="/Frame_14.png"
                     alt="Pigeon Logo"
-                    //className={styles.logo}
+                    className={styles.logo}
                     width={70}
                     height={70}
                     priority />
 
               </Link>
-              {/* <Center
+              <Center
                 onClick={toggleColorMode}>
               {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
-              </Center> */}
+              </Center>
               
           </HStack>
       

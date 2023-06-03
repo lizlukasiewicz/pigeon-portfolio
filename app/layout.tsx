@@ -1,12 +1,10 @@
 
 import { Providers } from "./providers";
-import './globals.css';
-import React from "react";
+import 'styles/globals.css';
 
 
 
 export default function RootLayout(props: {
-                                    children: React.ReactNode;
                                     home: React.ReactNode;
                                     about: React.ReactNode;
                                     contact: React.ReactNode;}) {
@@ -21,7 +19,6 @@ export default function RootLayout(props: {
         <Providers>
           {props.home}
           {props.about}
-          {props.children}
           {props.contact}
         </Providers>
       </body>

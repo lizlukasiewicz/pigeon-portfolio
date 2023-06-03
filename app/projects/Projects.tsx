@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
-import { SkillIcon } from '../lib/Icons';
-import { projectArray } from '../lib/routes';
-import { fadeDown } from '../lib/helpers/animation';
+import { SkillIcon } from 'lib/Icons';
+import { projectArray } from 'lib/routes';
+import { fadeDown } from 'lib/helpers/animation';
 import { Icon, 
         Button, 
         List, 

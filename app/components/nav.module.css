@@ -1,0 +1,40 @@
+.logo {
+  margin: 0 1rem 0 0;
+  border: 4px solid rgba(var(--foreground-rgb), 0.25);
+  border-radius: 40px;
+}
+
+.lampMode{
+  min-height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #D1FBDF; */
+  box-sizing: border-box;
+}
+.checkbox {
+  position: fixed;
+  visibility: hidden;
+}
+
+.lib {
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: scale(1.5);
+}
+.svg {
+  display: inline;
+}
+.svg > path {
+  transition: all 0.3s ease;
+}
+.onoff {
+  opacity: 0.8;
+}
+.shine {
+  opacity: 1;
+}
+.lamp {
+  opacity: 1;
+}

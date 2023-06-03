@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { fadeDown } from '../lib/helpers/animation';
+import { fadeDown } from 'lib/helpers/animation';
 export const FaTerminal = require('react-icons/fa').FaTerminal
 export const FaBloggerB = require('react-icons/fa').FaBloggerB
 export const FaTools = require('react-icons/fa').FaTools

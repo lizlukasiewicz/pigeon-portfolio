@@ -9,9 +9,9 @@ import {
           ListItem, 
           Box
          } from '@chakra-ui/react'
-import { getExpArray } from '../lib/experience';
-import { sideBob } from "../lib/helpers/animation";
-import { SkillIcon } from "@/app/lib/Icons";
+import { getExpArray } from 'lib/experience';
+import { sideBob } from "lib/helpers/animation";
+import { SkillIcon } from "lib/Icons";
 
 interface ExperienceWidgetProps {
   idx: number,

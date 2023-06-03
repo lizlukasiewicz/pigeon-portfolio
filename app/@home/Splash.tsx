@@ -1,4 +1,4 @@
-import { fadeDown } from '../lib/helpers/animation';
+import { fadeDown } from 'lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
 import {MutableRefObject, RefObject, Dispatch, useState, useEffect } from 'react';
 

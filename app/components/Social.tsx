@@ -7,9 +7,9 @@ import {
   } from "@chakra-ui/react";
 
 import * as React from "react";
-import { fadeDown } from '../lib/helpers/animation';
-import { PageProps } from '../lib/helpers/interfaces';
-import { socialList } from "../lib/social";
+import { fadeDown } from 'lib/helpers/animation';
+import { PageProps } from 'lib/helpers/interfaces';
+import { socialList } from "lib/social";
 import { FiMail } from "react-icons/fi";
 
 

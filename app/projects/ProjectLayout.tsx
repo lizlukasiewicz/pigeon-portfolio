@@ -1,5 +1,5 @@
 import React from 'react';
-import { TempContainer } from '../ui/TempContainer';
+import { TempContainer } from 'ui/TempContainer';
 import Projects from './Projects'
 import { Stack } from "@chakra-ui/react";
 

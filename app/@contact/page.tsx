@@ -1,21 +1,25 @@
 "use client";
 import * as React from "react";
-import { TempContainer } from "../ui/TempContainer";
+import { TempContainer } from "ui/TempContainer";
 import { 
         useColorModeValue as uCMV,
         Box,
         Text,
         Flex
       } from "@chakra-ui/react"
-import { fadeOut, shake, slideUp, openLetter } from "../lib/helpers/animation";
-type PageProps = {
-  pageRefs: React.MutableRefObject<{}>;
-  visRef: any;
-  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-};
+import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
+import { useOnScreen } from "lib/helpers/Loading";
+//import { pageRefs } from '../ui/HomeContainer';
 
-// TODO CLEANUP DAYMODE COLORS
-export default function Contact({ pageRefs, visRef, visible }: PageProps) {
+// type PageProps = {
+//   pageRefs: React.MutableRefObject<{}>;
+//   visRef: any;
+//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+// };
+
+
+export default function Contact() { //{ pageRefs, visRef, visible }: PageProps) {
+  const [visRef, visible] = useOnScreen();
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)
@@ -29,7 +33,7 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <TempContainer
-        pageRefs={pageRefs}
+        //pageRefs={pageRefs}
         loaded={loaded}
         label={"contact"}
         title={"Drop a line"}
@@ -39,11 +43,11 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
             flexDirection={"column"}
             height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
             justifyContent={"center"}
-            ref={visRef}
+            //ref={visRef}
             width={{ base: "85vw", sm: "65vw", lg: "45vw" }}>
               <Box
                 alignItems={"center"}
-                animation={visible ? shakeAnim : fadeOutAnim}
+                //animation={visible ? shakeAnim : fadeOutAnim}
                 border={"1px solid"}
                 borderRadius={5}
                 boxShadow={"0 15px 10px -10px rgba(0,0,0,0.5)"}

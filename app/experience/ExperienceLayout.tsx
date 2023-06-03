@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { ExpGroup } from "./ExpGroup";
-import { TempContainer } from '../ui/TempContainer';
+import { TempContainer } from 'ui/TempContainer';
 import { Stack } from "@chakra-ui/react";
 
 interface PageProps {

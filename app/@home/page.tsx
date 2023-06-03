@@ -1,9 +1,8 @@
 "use client";
-import { fadeDown } from '../lib/helpers/animation';
+import { fadeDown } from 'lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
 import {useRef,  useState, useEffect } from 'react';
-import { useOnScreen } from '../lib/helpers/Loading';
-import { useParams } from 'next/navigation';
+import { useOnScreen } from 'lib/helpers/Loading';
 
 // type PageProps = {
 //   pageRefs: MutableRefObject<{}>;
@@ -13,15 +12,13 @@ import { useParams } from 'next/navigation';
 
 
 export default function Home() {//{ pageRefs, visRef, visible }: PageProps
-  const params = useParams();
   const [visRef, visible] = useOnScreen();
   const [name, setName] = useState<boolean>(false);
-    const fadeDownAnim: string = `${fadeDown} 1000ms`;
-    const [loaded, setLoaded] = useState<boolean>(false);
-    useEffect(() => {
-        console.log(`🐝Home useParams: ${params}`);
-        visible && setLoaded(true)
-    }, [visible]);
+  const fadeDownAnim: string = `${fadeDown} 1000ms`;
+  const [loaded, setLoaded] = useState<boolean>(false);
+  useEffect(() => {
+      visible && setLoaded(true)
+  }, [visible]);
   return(
     <Flex
         w={'100%'} 
