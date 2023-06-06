@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import * as React from "react";
 import { Toggle,  ColorToggleDay } from './ColorToggle';
@@ -13,10 +13,9 @@ import {
   useColorModeValue as uCMV,
   Center,
 } from '@chakra-ui/react'
-import { IconType } from "react-icons";
 import { fadeDown } from 'lib/helpers/animation';
 import Image from 'next/image'
-import { Link } from '@chakra-ui/next-js'
+import Link from 'next/link';
 import Sidebar from './Sidebar';
 import styles from './nav.module.css'
 
@@ -36,11 +35,15 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
-  const scrollIntoView = (type: string): void => {
-    const pageRef = pageRefs.current[type];
-    pageRef.scrollIntoView({ behavior: 'smooth' });
+  const scrollToElement = (type: any): void => {
+    pageRefs.current[type].scrollIntoView({ behavior: 'smooth', });
     menuOpen && setMenuOpen(!menuOpen);
   };
+  // const scrollIntoView = (type: string): void => {
+  //   const pageRef = pageRefs.current[type];
+  //   pageRef.scrollIntoView({ behavior: 'smooth' });
+  //   menuOpen && setMenuOpen(!menuOpen);
+  // };
 
   return(
     <React.Fragment>
@@ -97,7 +100,7 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
             transition={"200ms ease-out"}>
                         
             {isLargeScreen ? 
-              <NavBarRoutes scrollIntoView={scrollIntoView} />
+              <NavBarRoutes scrollToElement={scrollToElement} />
               :
               <Sidebar 
               pageRefs={pageRefs}
@@ -114,11 +117,10 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
 interface NavButtonProps {
   delay: string,
   label: string,
-  icon?: React.ComponentType<IconType>,
   scroll: (arg0: string) => void,
 };
 
-export const NavButton = ({ label, delay, icon, scroll}: NavButtonProps ) => {
+export const NavButton = ({ label, delay, scroll}: NavButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   const text = `_ ${label}`
   return (
@@ -133,7 +135,7 @@ export const NavButton = ({ label, delay, icon, scroll}: NavButtonProps ) => {
             position: "absolute",
             transition: "100ms ease-out",
         }}>
-
+        
           <Heading
             fontWeight={"bold"}
             animation={fadeDownAnim}
@@ -162,23 +164,23 @@ export const NavButton = ({ label, delay, icon, scroll}: NavButtonProps ) => {
                 {text}
 
           </Heading>
+
       </Box>
 
   );
 };
 
 interface NavButtonsProps {
-  isLargeScreen?: boolean,
-  scrollIntoView: (arg0: string) => void,
+  scrollToElement: (arg0: string) => void,
 };
 
-export const NavBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
+export const NavBarRoutes= ({ scrollToElement }: NavButtonsProps) => (
   <React.Fragment>
-    <NavButton label="home" delay={"0ms"} scroll={scrollIntoView} />
-    <NavButton label="about" delay={"60ms"} scroll={scrollIntoView} />
-    <NavButton label="experience" delay={"120ms"} scroll={scrollIntoView} />
-    <NavButton label="projects" delay={"160ms"} scroll={scrollIntoView} />
-    <NavButton label="contact" delay={"180ms"} scroll={scrollIntoView} />
+    <HomeButton />
+    <NavButton label="about" delay={"60ms"} scroll={scrollToElement} />
+    <NavButton label="experience" delay={"120ms"} scroll={scrollToElement} />
+    <NavButton label="projects" delay={"160ms"} scroll={scrollToElement} />
+    <NavButton label="contact" delay={"180ms"} scroll={scrollToElement} />
     <ResumeButton />
   </React.Fragment>
 
@@ -191,7 +193,7 @@ export const ResumeButton = () => {
     <Button
       animation={fadeDownAnim}
       as={"a"}
-      color={uCMV("#111837", "#00C484")}//{'#00C484'}//
+      color={uCMV("#111837", "#00C484")}
       cursor={"pointer"}
       href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
       target={"_blank"}           
@@ -206,5 +208,37 @@ export const ResumeButton = () => {
                 </Text>
               
     </Button>
+  )
+}
+
+export const HomeButton = () => {
+  const text = "_ home"
+  return(
+    <Link href={"/#home"} scroll={false}>
+      <Heading
+        fontWeight={"bold"}
+        cursor={"pointer"}
+        fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
+        fontFamily={"var(--chakra-fonts-mono)"}
+        color={uCMV("#2B2B2B", "#00C484")}
+        px={"0.5rem"}
+        py={"1rem"}
+        transition={"100ms ease-out"}
+        _before={{
+          backgroundColor: uCMV("#F3BA40", "#008582"),
+          borderRadius: "2px",
+          bottom: -1,
+          content: `""`,
+          height: "1px",
+          position: "absolute",
+          transition: "100ms ease-out",
+          width: 0 
+        }}
+        _hover={{
+          color:uCMV("#D54440", "#E1E1E1"),
+          _before: { width: "105%" } }}>
+            {text}
+      </Heading>
+    </Link>
   )
 }

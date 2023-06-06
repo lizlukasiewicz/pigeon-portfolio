@@ -2,24 +2,21 @@
 import * as React from "react";
 import { TempContainer } from "ui/TempContainer";
 import { 
+        Container,
         useColorModeValue as uCMV,
         Box,
         Text,
         Flex
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
-import { useOnScreen } from "lib/helpers/Loading";
-//import { pageRefs } from '../ui/HomeContainer';
+type PageProps = {
+  pageRefs: React.MutableRefObject<{}>;
+  visRef: any;
+  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+};
 
-// type PageProps = {
-//   pageRefs: React.MutableRefObject<{}>;
-//   visRef: any;
-//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-// };
-
-
-export default function Contact() { //{ pageRefs, visRef, visible }: PageProps) {
-  const [visRef, visible] = useOnScreen();
+// TODO CLEANUP DAYMODE COLORS
+export default function Contact({ pageRefs, visRef, visible }: PageProps) {
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)
@@ -32,22 +29,25 @@ export default function Contact() { //{ pageRefs, visRef, visible }: PageProps) 
     const bgColor1: string = uCMV("#121D36", "#B3DDC1")
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
-      <TempContainer
-        //pageRefs={pageRefs}
-        loaded={loaded}
-        label={"contact"}
-        title={"Drop a line"}
-        refNum={4}>
+      <Container
+        maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+        //opacity={1}//loaded ? 1 : 0.5
+        ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}
+        transition={"500ms ease-out"}>
+          <TempContainer
+            loaded={loaded}
+            label={"contact"}
+            title={"Drop a line"}/>
           <Flex
             alignItems={"center"}
             flexDirection={"column"}
             height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
             justifyContent={"center"}
-            //ref={visRef}
+            ref={visRef}
             width={{ base: "85vw", sm: "65vw", lg: "45vw" }}>
               <Box
                 alignItems={"center"}
-                //animation={visible ? shakeAnim : fadeOutAnim}
+                animation={visible ? shakeAnim : fadeOutAnim}
                 border={"1px solid"}
                 borderRadius={5}
                 boxShadow={"0 15px 10px -10px rgba(0,0,0,0.5)"}
@@ -143,6 +143,6 @@ export default function Contact() { //{ pageRefs, visRef, visible }: PageProps) 
               
               </Box>
           </Flex>
-      </TempContainer>
+      </Container>
     )
 }

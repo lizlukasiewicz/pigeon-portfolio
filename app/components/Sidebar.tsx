@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import * as React from 'react';
 import { fadeDown } from 'lib/helpers/animation';
@@ -35,7 +35,7 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
-  const scrollIntoView = (type: string): void => {
+  const scrollIntoView = (type: any): void => {
     const pageRef = pageRefs.current[type];
     pageRef.scrollIntoView({ behavior: 'smooth' });
     menuOpen && setMenuOpen(!menuOpen);
@@ -125,7 +125,6 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
 };
 
 interface NavButtonsProps {
-  isLargeScreen?: boolean,
   scrollIntoView: (arg0: string) => void,
 };
 

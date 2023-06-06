@@ -18,14 +18,12 @@ export const TempContainer=({
   title,
   loaded,
   pageRefs,
-  refNum
 }:{
-  children: React.ReactNode;
+  children?: React.ReactNode;
   label?: string,
   title?: string,
   loaded?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
   pageRefs?: React.MutableRefObject<{}>,
-  refNum: number,
 })=> {
 
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
@@ -35,42 +33,59 @@ export const TempContainer=({
 //     let testVar: {} = {};
 //     switch (refNum) {
 //         case 0:
+//             // for(let x in pageRefs.current) {
+//                   // console.log(`🪲 pagerefs: ${x} refNum:${refNum}`)
+//             // }
 //             testVar = { ...pageRefs.current, home: el };
 //             break;
 //         case 1:
+//             // for(let x in pageRefs.current) {
+//                   // console.log(`🍄 pagerefs: ${x} refNum:${refNum}`)
+//             // }
 //             testVar = { ...pageRefs.current, about: el };
 //             break;
 //         case 2:
+//             // for(let x in pageRefs.current) {
+//                   // console.log(`🪷 pagerefs: ${x} refNum:${refNum}`)
+//             // }
 //             testVar = { ...pageRefs.current, experience: el };
 //             break;
 //         case 3:
+//             // for(let x in pageRefs.current) {
+//                   // console.log(`🌈 pagerefs: ${x} refNum:${refNum}`)
+//             // }
 //             testVar = { ...pageRefs.current, projects: el };
 //             break;
 //         case 4:
+//             // for(let x in pageRefs.current) {
+//                   // console.log(`🪸 pagerefs: ${x} refNum:${refNum}`)
+//             // }
 //             testVar = { ...pageRefs.current, contact: el };
 //             break;
 //         default:
 //             console.log("🪷 Nav");
 //     };
-//     console.log(`testVar: ${testVar}`)
+//     // for(let x in pageRefs.current) {
+//     //   console.log(`🪲 pagerefs: ${x} refNum:${refNum}`)
+//     // }
 //     return testVar
 // };
   return (
-    <Container
-            maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-            //opacity={1}//loaded ? 1 : 0.5
-            //ref={el => el && (pageRefs.current = findScroll(el, refNum))}
-            transition={"500ms ease-out"}>
-            <Stack
-                align={'center'}
-                direction={{ base: 'column', md: 'row' }}
-                paddingY={18}
-                paddingTop={"7.5%"}
-                spacing={{ base: 8, md: 10 }}
-                >
-                <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
+    // <Container
+    //         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+    //         //opacity={loaded ? 1 : 0.5}
+    //         ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
+    //         transition={"500ms ease-out"}>
+    //         <Stack
+    //             align={'center'}
+    //             direction={{ base: 'column', md: 'row' }}
+    //             paddingY={18}
+    //             paddingTop={"7.5%"}
+    //             spacing={{ base: 8, md: 10 }}
+    //             >
+    //             <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
-                        <HStack>
+                        <HStack opacity={loaded ? 1 : 0.5}>
                           <Box 
                             animation={growRightAnim}//&& loaded
                             backgroundColor={"#008582"}//{uCMV("#E29CB0", "#008582")}// DARK PINK || NOT LISTED MUTED BLUE
@@ -118,17 +133,17 @@ export const TempContainer=({
                             {title}
                         </Heading>
                     </Stack>
-                    <Flex
-                        align={'center'}
-                        bottom={3}
-                        flex={1}
-                        justify={'center'}
-                        position={'relative'}
-                        width={'full'}>
-                        {children}
-                    </Flex>
-                </Stack>
-            </Stack>
-    </Container>
+    //                 <Flex
+    //                     align={'center'}
+    //                     bottom={3}
+    //                     flex={1}
+    //                     justify={'center'}
+    //                     position={'relative'}
+    //                     width={'full'}>
+    //                     {children}
+    //                 </Flex>
+    //             </Stack>
+    //         </Stack>
+    // </Container>
 
   )}

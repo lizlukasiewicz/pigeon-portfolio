@@ -1,6 +1,7 @@
 'use client'
 import * as React from "react";
 import {
+    Container,
     Stack,
     Box,
     Text,
@@ -28,12 +29,16 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {//
     const fadeRightSecond: string = `800ms 1200ms forwards ${growRight}`;
     
     return(
-      <TempContainer 
-        label={'about'}  
-        title={'About me'} 
-        pageRefs={pageRefs}
-        //loaded={loaded}
-        refNum={1}>
+      <Container
+        maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+        //opacity={1}//loaded ? 1 : 0.5
+        ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
+        transition={"500ms ease-out"}>
+          <TempContainer 
+            label={'about'}  
+            title={'About me'} 
+            loaded={loaded}
+            />
           <Box
             ref={visRef}
             display={"flex"}
@@ -99,6 +104,6 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {//
               </Box>
               <GitCalendar />
           </Box>
-        </TempContainer>
+        </Container>
     )
 }
