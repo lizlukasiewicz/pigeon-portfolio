@@ -1,5 +1,3 @@
-'use client';
-import * as React from 'react';
 import { SkillIcon } from 'lib/Icons';
 import { projectArray } from 'lib/routes';
 import { fadeDown } from 'lib/helpers/animation';
@@ -14,6 +12,7 @@ import { Icon,
         Container, 
         Center, 
         Box, 
+        useColorModeValue as uCMV,
         Text, 
         Stack } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -25,6 +24,7 @@ interface ProjectProps {
   setIdx: React.Dispatch<React.SetStateAction<number>>
 };
 
+// TODO  DAYMODE COLORS
 export default function Projects({ idx, setIdx }: ProjectProps) {
     const fadeDownAnim: string = `${fadeDown} 500ms 80ms forwards`;
     return(

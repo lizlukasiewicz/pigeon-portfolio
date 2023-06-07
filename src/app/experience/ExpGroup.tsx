@@ -1,5 +1,3 @@
-'use client';
-import React from "react";
 import { 
           Stack, 
           List, 
@@ -7,6 +5,7 @@ import {
           HStack, 
           Text, 
           ListItem, 
+          useColorModeValue as uCMV,
           Box
          } from '@chakra-ui/react'
 import { getExpArray } from 'lib/experience';
@@ -43,9 +42,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
-                  color={idx === i ? '#E1E1E1' : '#175C78' } // 2ndPal NEON BLUE :::  WHITE                   //{uCMV("lightModeColor", "currentColor")}
-                  backgroundColor={idx === i ? '#121D36' : "rgba(2,4,5,0.5)"} // 2ndPal DEEP BLUE ::: BLACK  //{uCMV("lightModeColor", "currentColor")}
-                  borderBottom={["3px solid", 0] }
+                  color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#FFD316", "#175C78") } //(active) WHITE ::: (not active) MUTED BLUE  ||| (active)//uCMV("#822320", "#E1E1E1") (not)uCMV("#E29CB0", "#175C78")
+                  backgroundColor={idx === i ? uCMV("rgb(255,255,255)", "#121D36") : uCMV("rgba(236,217,234,0.3)", "rgba(2,4,5,0.5)")} // 2ndPal DEEP BLUE ::: BLACK   
+                  borderBottom={["3px solid", 0] }                            //(ACTIVE) uCMV("#FFFF81", "#121D36") (NOT) uCMV("rgba(236,217,234,0.1)", "rgba(2,4,5,0.5)")
                   borderLeft={[0, "3px solid"]}
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"md"}
@@ -64,8 +63,8 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                     opacity: idx === i ? 1 : 0,
                     position: "absolute" }}
                   _hover={{
-                      backgroundColor: "#111837", // 1stPal DEEPEST BLUE //{uCMV("lightModeColor", "#111837")}
-                      borderColor: "#175C78", // 1stPal MED BLUE //{uCMV("lightModeColor", "#175C78")}
+                      backgroundColor: uCMV("#ECD9EA", "#111837"), // 1stPal DEEPEST BLUE //{uCMV("#FFF4E1", "#111837")}
+                      borderColor: uCMV("#FFFF81", "#175C78"), // 1stPal MED BLUE //{uCMV("#3D1C4A", "#175C78")}
                       color: "#F3BA40", // GOLD                 //{uCMV("lightModeColor", "#F3BA40")}
                       cursor: "pointer",
                       transitionDuration: "0.3s",
@@ -75,7 +74,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                         as={"span"}
                         // fontFamily={"var(--chakra-fonts-mono)"}
                         // fontSize={'lg'}
-                        color={idx === i ? '#B3DDC1': '#00C484'}// 1stPal LGT GRN ::: 1stPal NEON GRN
+                        color={idx === i ? uCMV("#020405", "#B3DDC1"): uCMV("#822320", "#00C484")}// 1stPal LGT GRN ::: 1stPal NEON GRN  //uCMV("#46373E", "#B3DDC1") //uCMV("#822320", "#00C484")
                         fontWeight={"bold"}>
                           {exp.company}
                         </Text>
@@ -89,6 +88,8 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
           <VStack
             alignItems={"flex-start"}
+            backgroundColor={uCMV('rgba(255,255,255,0.3)', 'rgba(2,4,5,0)')}
+            borderRadius={20}
             display={"flex"}
             height={"100%"}
             paddingX={[0, 5]}
@@ -97,7 +98,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               <Box>
                 <Text
                   fontWeight={"bold"}
-                  color={"#E1E1E1"} //{uCMV("lightModeColor", "currentColor")}
+                  color={uCMV("#020405", "#E1E1E1")}
                   fontFamily={"var(--chakra-fonts-mono)"} 
                   marginBottom={2}>
 
@@ -107,7 +108,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
                     <Text
                       as={'span'}
-                      color={"#B3DDC1"} //{uCMV("lightModeColor", "currentColor")}
+                      color={uCMV("#822320", "#B3DDC1")}
                       fontFamily={"var(--chakra-fonts-nunito)"}>
                         {` @ `}
 
@@ -115,14 +116,14 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                       <Text
                         as={"a"}
                         href={getExpArray[idx].companyLink}
-                        opacity={0.6}
-                        color={"#E1E1E1"} //{uCMV("lightModeColor", "currentColor")}
+                        opacity={0.7}
+                        color={uCMV("#46373E", "#E1E1E1")}
                         position={"relative"}
                         rel={"noreferrer"}
                         target={"_blank"}
                         transitionDuration={"0.2s"}
                         _before={{
-                          backgroundColor: "white", //{uCMV("lightModeColor", "currentColor")}
+                          backgroundColor: uCMV("#3D1C4A", "white"),
                           borderRadius: "2px",
                           bottom: -1,
                           content: `""`,

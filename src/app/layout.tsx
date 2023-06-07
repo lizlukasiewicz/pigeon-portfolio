@@ -1,9 +1,17 @@
 
 import { Providers } from "./providers";
-import 'styles/globals.css';
+import '/styles/globals.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Lukasiewicz',
+  description: 'Welcome to my Portfolio',
+  icons: {
+    icon: '/Frame_14.png',
+    apple: '/Frame_14.png',
+  },
+};
 
-
-//({children,}: {children: React.ReactNode})  {children}
 export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="en">

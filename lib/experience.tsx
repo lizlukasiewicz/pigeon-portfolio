@@ -40,7 +40,6 @@ export interface expArrayProps {
   company: string,
   companyFull: string,
   companyLink: string,
-  color: string
 };
 
 
@@ -118,7 +117,6 @@ export const getExpArray: expArrayProps[] = [
       company: "BuySupply",
       companyFull: "Buy-Supply Corp",
       companyLink: "https://www.buysupply.com/",
-      color: "rgb(57,64,120)",
   },
   {
     title: "Software Engineering Fellow",
@@ -169,7 +167,6 @@ export const getExpArray: expArrayProps[] = [
     company: "GA",
     companyFull: "General Assembly",
     companyLink: "https://generalassemb.ly/",
-    color: "rgb(150,54,52)",
 
 },
 ];

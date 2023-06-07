@@ -3,7 +3,7 @@ import * as React from "react";
 import GitHubCalendar from 'react-github-calendar';
 import ReactTooltip from "react-tooltip";
 
-// TODO  DAYMODE COLORS
+
 export default function GitCalendar() {
     
     return(
@@ -22,10 +22,10 @@ export default function GitCalendar() {
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"2xl"}
-                  color={uCMV("#822320", "#00C484")}//{'#00C484'}//
+                  color={uCMV("#822320", "#00C484")}
                   marginY={5}>
 
-                    Git Commit, To<Text as={"span"} color={'#00C484'} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
+                    Git Commit, To<Text as={"span"} color={uCMV("#46373E", '#00E2CB')} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
 
                     ::
 

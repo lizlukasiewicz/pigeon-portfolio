@@ -39,11 +39,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     pageRefs.current[type].scrollIntoView({ behavior: 'smooth', });
     menuOpen && setMenuOpen(!menuOpen);
   };
-  // const scrollIntoView = (type: string): void => {
-  //   const pageRef = pageRefs.current[type];
-  //   pageRef.scrollIntoView({ behavior: 'smooth' });
-  //   menuOpen && setMenuOpen(!menuOpen);
-  // };
 
   return(
     <React.Fragment>
@@ -70,18 +65,25 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
             left={isLargeScreen ? 10 : 10}
             position={"absolute"}
             transition={"200ms ease-out"}>
-
-              <Link 
-                href="/">
-
-                <Image
-                    src="/Frame_14.png"
-                    alt="Pigeon Logo"
-                    className={styles.logo}
-                    width={70}
-                    height={70}
-                    priority />
-
+              <Link href="/">
+                {colorMode == 'light' ? 
+                    <Image
+                      src="/light_pigeon.png"
+                      alt="Pigeon Logo"
+                      className={styles.logo}
+                      width={70}
+                      height={70}
+                      priority />
+                      
+                      :
+                      <Image
+                      src="/Frame_14.png"
+                      alt="Pigeon Logo"
+                      className={styles.logo}
+                      width={70}
+                      height={70}
+                      priority />
+                    }
               </Link>
               <Center
                 onClick={toggleColorMode}>
@@ -140,9 +142,9 @@ export const NavButton = ({ label, delay, scroll}: NavButtonProps ) => {
             fontWeight={"bold"}
             animation={fadeDownAnim}
             cursor={"pointer"}
-            fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
+            fontSize={'1.1rem'}
             fontFamily={"var(--chakra-fonts-mono)"}
-            color={uCMV("#2B2B2B", "#00C484")}
+            color={uCMV("#020405", "#00C484")}
             opacity={0}
             px={"0.5rem"}
             py={"1rem"}
@@ -158,7 +160,7 @@ export const NavButton = ({ label, delay, scroll}: NavButtonProps ) => {
               width: 0 
             }}
             _hover={{
-              color:uCMV("#D54440", "#E1E1E1"),
+              color:uCMV("#822320", "#E1E1E1"),
               _before: { width: "105%" } }}>
 
                 {text}
@@ -186,6 +188,8 @@ export const NavBarRoutes= ({ scrollToElement }: NavButtonsProps) => (
 
 );
 
+
+// TODO: use <Box as={"button"} for color options
 export const ResumeButton = () => {
   const fadeDownAnim: string = `${fadeDown} 200ms 300ms forwards`;
 
@@ -193,7 +197,7 @@ export const ResumeButton = () => {
     <Button
       animation={fadeDownAnim}
       as={"a"}
-      color={uCMV("#111837", "#00C484")}
+      color={uCMV("#020405", "#00C484")}
       cursor={"pointer"}
       href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
       target={"_blank"}           
@@ -214,13 +218,13 @@ export const ResumeButton = () => {
 export const HomeButton = () => {
   const text = "_ home"
   return(
-    <Link href={"/#home"} scroll={false}>
+    <Link href={"/"} scroll={false}>
       <Heading
         fontWeight={"bold"}
         cursor={"pointer"}
-        fontSize={'1.1rem'}//{{ base: '1.1rem', sm: '1rem', md: '1.1rem' }}
+        fontSize={'1.1rem'}
         fontFamily={"var(--chakra-fonts-mono)"}
-        color={uCMV("#2B2B2B", "#00C484")}
+        color={uCMV("#020405", "#00C484")}
         px={"0.5rem"}
         py={"1rem"}
         transition={"100ms ease-out"}
@@ -235,8 +239,9 @@ export const HomeButton = () => {
           width: 0 
         }}
         _hover={{
-          color:uCMV("#D54440", "#E1E1E1"),
-          _before: { width: "105%" } }}>
+          color:uCMV("#822320", "#E1E1E1"),
+          _before: { width: "10%" }
+          }}>
             {text}
       </Heading>
     </Link>
