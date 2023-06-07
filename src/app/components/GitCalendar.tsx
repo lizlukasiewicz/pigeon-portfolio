@@ -35,11 +35,11 @@ export default function GitCalendar() {
                   blockRadius={7}
                   color={"#00C484"}
                   theme={{
-                      level0: uCMV("rgb(236,217,234)", "rgb(17 24 55)"),//"rgb(17 24 55)",
-                      level1: uCMV("rgb(226,156,176)", "rgb(33, 74, 55)"),//"rgb(33, 74, 55)",
-                      level2: uCMV("rgb(241,114,90)", "rgb(68, 150, 109)"),//"rgb(68, 150, 109)",
-                      level3: uCMV("rgb(213,68,64)", "rgb(89, 188, 125)"),//"rgb(89, 188, 125)",
-                      level4: uCMV("rgb(130,35,32)", "rgb(0, 196, 132)"),//"rgb(0, 196, 132)",
+                      level0: uCMV("rgb(236,217,234)", "rgb(17 24 55)"),
+                      level1: uCMV("rgb(226,156,176)", "rgb(33, 74, 55)"),
+                      level2: uCMV("rgb(241,114,90)", "rgb(68, 150, 109)"),
+                      level3: uCMV("rgb(213,68,64)", "rgb(89, 188, 125)"),
+                      level4: uCMV("rgb(130,35,32)", "rgb(0, 196, 132)"),
                   }}
                   username="lizlukasiewicz">
 

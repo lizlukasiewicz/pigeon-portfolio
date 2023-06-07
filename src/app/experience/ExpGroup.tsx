@@ -17,7 +17,6 @@ interface ExperienceWidgetProps {
   setIdx: React.Dispatch<React.SetStateAction<number>>
 };
 
-// TODO  DAYMODE COLORS
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
@@ -42,9 +41,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
-                  color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#FFD316", "#175C78") } //(active) WHITE ::: (not active) MUTED BLUE  ||| (active)//uCMV("#822320", "#E1E1E1") (not)uCMV("#E29CB0", "#175C78")
-                  backgroundColor={idx === i ? uCMV("rgb(255,255,255)", "#121D36") : uCMV("rgba(236,217,234,0.3)", "rgba(2,4,5,0.5)")} // 2ndPal DEEP BLUE ::: BLACK   
-                  borderBottom={["3px solid", 0] }                            //(ACTIVE) uCMV("#FFFF81", "#121D36") (NOT) uCMV("rgba(236,217,234,0.1)", "rgba(2,4,5,0.5)")
+                  color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#FFD316", "#175C78") }
+                  backgroundColor={idx === i ? uCMV("rgb(255,255,255)", "#121D36") : uCMV("rgba(236,217,234,0.3)", "rgba(2,4,5,0.5)")} 
+                  borderBottom={["3px solid", 0] }
                   borderLeft={[0, "3px solid"]}
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"md"}
@@ -63,9 +62,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                     opacity: idx === i ? 1 : 0,
                     position: "absolute" }}
                   _hover={{
-                      backgroundColor: uCMV("#ECD9EA", "#111837"), // 1stPal DEEPEST BLUE //{uCMV("#FFF4E1", "#111837")}
-                      borderColor: uCMV("#FFFF81", "#175C78"), // 1stPal MED BLUE //{uCMV("#3D1C4A", "#175C78")}
-                      color: "#F3BA40", // GOLD                 //{uCMV("lightModeColor", "#F3BA40")}
+                      backgroundColor: uCMV("#ECD9EA", "#111837"),
+                      borderColor: uCMV("#FFFF81", "#175C78"),
+                      color: "#F3BA40",
                       cursor: "pointer",
                       transitionDuration: "0.3s",
                       _before: { opacity: 1 } }}>
@@ -74,7 +73,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
                         as={"span"}
                         // fontFamily={"var(--chakra-fonts-mono)"}
                         // fontSize={'lg'}
-                        color={idx === i ? uCMV("#020405", "#B3DDC1"): uCMV("#822320", "#00C484")}// 1stPal LGT GRN ::: 1stPal NEON GRN  //uCMV("#46373E", "#B3DDC1") //uCMV("#822320", "#00C484")
+                        color={idx === i ? uCMV("#020405", "#B3DDC1"): uCMV("#822320", "#00C484")}
                         fontWeight={"bold"}>
                           {exp.company}
                         </Text>
