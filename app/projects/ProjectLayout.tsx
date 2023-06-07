@@ -23,7 +23,7 @@ export default function ProjectLayout({ pageRefs, visRef, visible}: PageProps) {
     return (
       <Container
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        opacity={loaded ? 1 : 0.5}//{1}//
+        opacity={loaded ? 1 : 0.5}
         ref={el => pageRefs.current = { ...pageRefs.current, projects: el }}
         transition={"500ms ease-out"}>
         <TempContainer 

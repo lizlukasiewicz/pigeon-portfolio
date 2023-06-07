@@ -24,7 +24,7 @@ interface ProjectProps {
   setIdx: React.Dispatch<React.SetStateAction<number>>
 };
 
-// TODO  DAYMODE COLORS
+
 export default function Projects({ idx, setIdx }: ProjectProps) {
     const fadeDownAnim: string = `${fadeDown} 500ms 80ms forwards`;
     return(
@@ -37,7 +37,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
             width={{ base: "80vw", lg: "60vw" }}>
 
 
-                {/* PROJECT TABS */}
+              {/* PROJECT TABS */}
               <List
                 marginTop={'5%'}
                 display={"flex"} 
@@ -47,7 +47,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
                       <ListItem
                         key={i}
-                        color={idx === i ? '#E1E1E1' : '#175C78' }
+                        color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
                         onClick={() => setIdx(i)}
                         fontFamily={"var(--chakra-fonts-mono)"}
                         paddingLeft={6}
@@ -60,7 +60,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
                           <Text
                             as={"span"}
-                            color={idx === i ? "#FFFFFF" : '#00C484'}
+                            color={idx === i ? uCMV("#D54440", "#FFFFFF") : uCMV("#4D403C", "#00C484")}
                             _hover={{
                               color: "#F3BA40"
                             }}>
@@ -87,8 +87,9 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                           fontFamily={"var(--chakra-fonts-mono)"}
                           fontWeight={"bold"}
                           fontSize={"2xl"}
-                          color="#E1E1E1"
-                          _hover={{color:"#FFFFFF"}}>
+                          color={uCMV("#822320", "#E1E1E1")}
+                          _hover={{color:uCMV("#F3BA40", "#FFFFFF")}}
+                          >
                             {projectArray[idx].name}
                         </Heading>
                         
@@ -99,10 +100,11 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                               target={"_blank"}
                               href={`${projectArray[idx].git}`}
                               backgroundColor={"transparent"}
-                              _hover={{backgroundColor:"#112941"}}>
+                              _hover={{backgroundColor:uCMV("#FFFF81", "#112941")}}
+                              >
                               <Tooltip hasArrow label={"Github Repo"} aria-label={"Github Repo Link"}>
                                 <Center animation={fadeDownAnim} opacity={0}>
-                                  <Icon as={FiGithub} w={7} h={7} color='#B3DDC1' />
+                                  <Icon as={FiGithub} w={7} h={7} color={uCMV("#4D403C", "#B3DDC1")}/>
                                 </Center>
                               </Tooltip>
                           </Button>
@@ -112,10 +114,11 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                               target={"_blank"}
                               href={`${projectArray[idx].active}`}
                               backgroundColor={"transparent"}
-                              _hover={{backgroundColor:"#112941"}}>
+                              _hover={{backgroundColor:uCMV("#FFFF81", "#112941")}}
+                              >
                             <Tooltip hasArrow label={"Link to Project"} aria-label={"Link to Project"}>
                               <Center animation={fadeDownAnim} opacity={0}>
-                                <Icon as={FaExternalLinkAlt} w={7} h={7} color='#B3DDC1' />
+                                <Icon as={FaExternalLinkAlt} w={7} h={7} color={uCMV("#4D403C", "#B3DDC1")}/>
                               </Center>
                             </Tooltip>
                           </Button>
@@ -125,7 +128,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                     {/* PROJECT DETAILS/DESCRIPTION */}
                     <List>
                         {projectArray[idx].bullets.map((bullet, x) => (
-                            <ListItem key={x} color='#B3DDC1'>
+                            <ListItem key={x} color={uCMV("020405", "#B3DDC1")}>
                                 <Icon as={VscDebugStart} w={3} marginRight={3}/> 
                                 {bullet}
                             </ListItem>
@@ -134,7 +137,6 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
                     {/* ICON STACK */}
                     <HStack spacing={8} marginTop={3}>
-                      {/* { hoverColor, delay, icon, label}: SkillIconProps */}
                       {projectArray[idx].details.map((icons, i) => (
                         <SkillIcon key={i} hoverColor={icons.hoverColor} delay={icons.delay} icon={icons.icon} label={icons.name}/>
                       ))}

@@ -24,9 +24,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {//
             w={'100%'} 
             alignItems={"center"}
             position={"relative"}
-            height={"90vh"}
-            //ref={el => pageRefs.current = { ...pageRefs.current, home: el }}
-            >
+            height={"90vh"}>
               
 
                   <Box w={'100%'} 
@@ -50,7 +48,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {//
                             cursor: "pointer"
                           }}
                           animation={fadeDownAnim}>
-                        <Text as={'b'}fontWeight={600}fontFamily={"var(--chakra-fonts-mono)"}fontSize={'3xl'} color={uCMV("#2B2B2B", "#E1E1E1")}>
+                        <Text as={'b'}fontWeight={600}fontFamily={"var(--chakra-fonts-mono)"}fontSize={'3xl'} color={uCMV("#822320", "#E1E1E1")}>
                           <Text as={'span'} opacity={name? 0 : 1} transition={"500ms ease-in-out"}>w</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name? 'L' : 'u'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'u':'.'}</Text>ka<Text as={'span'} transition={"500ms ease-in-out"}>{name?'s':"'"}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'i':'ɕ'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'e':'ɛ'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'w':'.'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'i':'v'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'c':'i'}</Text><Text as={'span'} transition={"500ms ease-in-out"}>{name?'z':'t͡'}</Text><Text as={'span'} opacity={name? 0 : 1} transition={"500ms ease-in-out"}>ʂ</Text>
                         </Text> 
                       </Box>
