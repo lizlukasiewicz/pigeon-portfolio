@@ -10,13 +10,14 @@ export const FaHome = require('react-icons/fa').FaHome
 import Link from 'next/link';
 
 import { FaReadme } from "react-icons/fa"
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, SmallCloseIcon } from '@chakra-ui/icons'
 import {
   Box,
   VStack,
   Button,
   Icon,
   Heading, 
+  Center,
   Text, 
   useMediaQuery,
   useColorModeValue as uCMV
@@ -44,12 +45,21 @@ export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconP
 
   return(
     <React.Fragment>
-      <Button // TODO: use <Box as={"button"} for color options
+      <Box
+        as={"button"}
+        borderRadius={10}
         onClick={() => setMenuOpen(!menuOpen)} 
+        //_hover={{ border: "1px solid #00E2CB"}}
+        height="60px"
+        width="80px"
         zIndex={4}>
-        <HamburgerIcon  w={45} h={45} color={uCMV("#822320", "#00C484")}
-        /> 
-      </Button>
+          {menuOpen ? 
+            <SmallCloseIcon w={5} h={5} color={uCMV("#822320", "#00C484")}/>
+          :
+            <HamburgerIcon  w={50} h={50} color={uCMV("#822320", "#00C484")}/> 
+          }
+
+      </Box>
        
       <VStack 
         backgroundColor={uCMV("rgba(255,244,225,0.9)", "rgba(2, 4, 5, 0.9)")}

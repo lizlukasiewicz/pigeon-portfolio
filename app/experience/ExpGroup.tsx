@@ -87,7 +87,7 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
           <VStack
             alignItems={"flex-start"}
-            backgroundColor={uCMV('rgba(255,255,255,0.3)', 'rgba(2,4,5,0)')}
+            //backgroundColor={uCMV('rgba(255,255,255,0.3)', 'rgba(2,4,5,0)')}
             borderRadius={20}
             display={"flex"}
             height={"100%"}

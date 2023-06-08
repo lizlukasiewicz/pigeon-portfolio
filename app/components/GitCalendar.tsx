@@ -25,7 +25,7 @@ export default function GitCalendar() {
                   color={uCMV("#822320", "#00C484")}
                   marginY={5}>
 
-                    Git Commit, To<Text as={"span"} color={uCMV("#46373E", '#00E2CB')} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
+                    Git Commit, To<Text as={"a"} href={"https://github.com/lizlukasiewicz"} target="_blank" color={uCMV("#46373E", '#00E2CB')} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
 
                     ::
 

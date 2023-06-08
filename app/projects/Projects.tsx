@@ -62,7 +62,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                             as={"span"}
                             color={idx === i ? uCMV("#D54440", "#FFFFFF") : uCMV("#4D403C", "#00C484")}
                             _hover={{
-                              color: "#F3BA40"
+                              color: uCMV("#AC23F4", "#F3BA40")
                             }}>
                               {title.name}
                           </Text>
@@ -84,11 +84,14 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
                         {/* PROJECT TITLE */}
                         <Heading
+                          as={"a"}
+                          target={"_blank"}
+                          href={`${projectArray[idx].active}`}
                           fontFamily={"var(--chakra-fonts-mono)"}
                           fontWeight={"bold"}
                           fontSize={"2xl"}
                           color={uCMV("#822320", "#E1E1E1")}
-                          _hover={{color:uCMV("#F3BA40", "#FFFFFF")}}
+                          _hover={{color:uCMV("#3D1C4A", "#FFFFFF")}}
                           >
                             {projectArray[idx].name}
                         </Heading>

@@ -15,7 +15,7 @@ type PageProps = {
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
-// TODO CLEANUP DAYMODE COLORS
+
 export default function Contact({ pageRefs, visRef, visible }: PageProps) {
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
@@ -26,12 +26,12 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
     const openLetterAnim: string = `${openLetter} 500ms ease-in-out forwards`;
     const shakeAnim: string = `${shake} 200ms ease-in-out`;
     const slideUpAnim: string = `${slideUp} 500ms 500ms ease-in-out forwards`;
-    const bgColor1: string = uCMV("#121D36", "#B3DDC1")
+    const bgColor1: string = uCMV("#020405", "#B3DDC1")
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <Container
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        //opacity={1}//loaded ? 1 : 0.5
+        opacity={loaded ? 1 : 0.5}
         ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}
         transition={"500ms ease-out"}>
           <TempContainer
@@ -102,16 +102,17 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
                                     width={"90%"}>
                                       <Flex flexDirection={"column"} width={"90%"} opacity={.8}>
                                         <Text fontWeight={"bold"}>Dear Viewer,</Text>
-                                        <Text
-                                          //          DaymodeColor   NightModeColor
-                                          color={uCMV("#1C2445", "#00E2CB")}>
+                                        <Text 
+                                          color={uCMV("#3D1C4A", "#00E2CB")}
+                                          as={"a"}
+                                          href={"mailto:e.lukasiewicz.n@gmail.com"}>
                                             Contact me
                                         </Text>
                                         <Text marginY={"5%"} textAlign={"left"}>
                                             {`Let's get in touch! You can email me `}
                                             <Text
                                                 as={"a"}
-                                                color={uCMV("rgb(190,147,45)", "goldenrod")}
+                                                color={uCMV("#D54440", "goldenrod")}
                                                 href={"mailto:e.lukasiewicz.n@gmail.com"}
                                                 position={"relative"}
                                                 _before={{
