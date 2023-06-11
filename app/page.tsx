@@ -14,7 +14,6 @@ import Contact from "app/contact/Contact";
 
 
 export default function Home() { 
-  // TODO: EXPORT INITIATION OF PAGEREFS HERE TO CHILDREN COMPONENTS FOR TEMPCONTAINER
   const pageRefs: React.MutableRefObject<{}> = useRef({});
   const [homeRef, homeVisible] = useOnScreen();
   const [aboutRef, aboutVisible] = useOnScreen();
@@ -26,7 +25,7 @@ export default function Home() {
   return(
     <VStack 
       spacing={1}
-      bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")} //#FFF4E1, #FFEED5, #FFFAF1,   ##FFF4E1,
+      bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")}
       bgSize={"400% 400%"}
       bgPosition={"51% 0%"}
       animation={breatheAnim}> 
