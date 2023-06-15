@@ -5,7 +5,7 @@
 export default function Blog() {
     return(
         <div>
-            <p>Hi this is blog</p>
+            <p>Open source, Openly sourced.</p>
              
         </div>
     )
