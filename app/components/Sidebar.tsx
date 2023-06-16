@@ -24,22 +24,23 @@ import {
 } from '@chakra-ui/react'
 import { IconType } from "react-icons";
 
+type PageRefsType = { [key: string]: HTMLElement };
+
 interface NavMenuIconProps {
-  pageRefs: React.MutableRefObject<{}>,
-  menuOpen: boolean,
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  pageRefs: React.MutableRefObject<PageRefsType>,
+  isMenuOpen: boolean,
 };
 
-export default function Sidebar({ pageRefs, menuOpen, setMenuOpen}: NavMenuIconProps) {
+export default function Sidebar({ pageRefs, isMenuOpen }: NavMenuIconProps) {
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(isMenuOpen);
 
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
-  const scrollIntoView = (type: any): void => {
-    const pageRef = pageRefs.current[type];
-    pageRef.scrollIntoView({ behavior: 'smooth' });
+  const scrollIntoView = (label: any): void => {
+    pageRefs.current[label].scrollIntoView({ behavior: 'smooth' });
     menuOpen && setMenuOpen(!menuOpen);
   };
 

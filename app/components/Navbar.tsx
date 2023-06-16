@@ -1,5 +1,3 @@
-// 'use client';
-
 import * as React from "react";
 import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
@@ -19,8 +17,10 @@ import Link from 'next/link';
 import Sidebar from './Sidebar';
 import styles from './nav.module.css'
 
+type PageRefsType = { [key: string]: HTMLElement };
+
 interface PageProps {
-  pageRefs: React.MutableRefObject<{}>,
+  pageRefs: React.MutableRefObject<PageRefsType>,
   scrollDir: string | number,
   y: string | number,
 }
@@ -35,8 +35,8 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
-  const scrollToElement = (type: any): void => {
-    pageRefs.current[type].scrollIntoView({ behavior: 'smooth', });
+  const scrollToElement = (label: any): void => {
+    pageRefs.current[label].scrollIntoView({ behavior: 'smooth', });
     menuOpen && setMenuOpen(!menuOpen);
   };
 
@@ -106,8 +106,7 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
               :
               <Sidebar 
               pageRefs={pageRefs}
-              menuOpen={menuOpen} 
-              setMenuOpen={setMenuOpen}
+              isMenuOpen={menuOpen}
               />
             }
           </HStack>   
