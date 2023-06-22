@@ -41,22 +41,22 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
               <List
                 marginTop={'5%'}
                 display={"flex"} 
-                width={"100%"}
+                maxW={"75vw"}//{"100%"}
                 flexDirection={"row"}>
                   {projectArray.map((title, i) => (
-
-                      <ListItem
-                        key={i}
-                        color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
-                        onClick={() => setIdx(i)}
-                        fontFamily={"var(--chakra-fonts-mono)"}
-                        paddingLeft={6}
-                        fontSize={'lg'}
-                        fontWeight={"bold"}
-                        _hover={{
-                          color: "#F3BA40",
-                          cursor: "pointer"
-                        }}>
+                    
+                    <ListItem
+                    key={i}
+                    color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
+                    onClick={() => setIdx(i)}
+                    fontFamily={"var(--chakra-fonts-mono)"}
+                    paddingLeft={5}
+                    fontSize={{base:'md', lg: 'lg'}}
+                    fontWeight={"bold"}
+                    _hover={{
+                      color: "#F3BA40",
+                      cursor: "pointer"
+                    }}>
 
                           <Text
                             as={"span"}
@@ -68,9 +68,9 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                           </Text>
 
                       </ListItem>
-
-                  ))}
+                    ))}
               </List>
+
 
               <VStack spacing={0}>
 

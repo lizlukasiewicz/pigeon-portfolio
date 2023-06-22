@@ -25,13 +25,13 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     }, [visible]);
     const [name, setName] = React.useState<boolean>(false);
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
-    const fadeRightFirst: string = `800ms 800ms forwards ${growRight}`;
-    const fadeRightSecond: string = `800ms 1200ms forwards ${growRight}`;
+    const fadeRightFirst: string = `1000ms 800ms forwards ${growRight}`;
+    const fadeRightSecond: string = `1000ms 1200ms forwards ${growRight}`;
     
     return(
       <Container
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        //opacity={1}//loaded ? 1 : 0.5
+        //opacity={loaded ? 1 : 0}
         ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
         transition={"500ms ease-out"}>
           <TempContainer 
@@ -41,15 +41,16 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
               <Box
                 ref={visRef}
                 display={"flex"}
+                opacity={visible ? 1 : 0}
                 flexDir={'column'}
-                minHeight={"60vh"}
-                justifyContent={'space-evenly'}>
+                minHeight={"70vh"}
+                justifyContent={'space-between'}>
                   <Box
                     // marginBottom={{ base: "-25%", lg: 0 }}
                     // marginTop={{base: "50px", lg:"100px"}}
                     // mx={{base: "70px", lg:"200px"}}
                     display={"flex"}
-                    //opacity={visible ? 1 : 0.75}
+                    
                     flexDir={"row"}
                     justifyContent={"space-around"}>
                       <Stack
@@ -60,7 +61,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
 
                           <Text 
                             align={'left'} 
-                            fontSize={{ base: "sm", lg: "lg" }} 
+                            fontSize={{ base: "md", lg: "lg" }} 
                             color={uCMV("#020405", '#B3DDC1')} 
                             cursor={"pointer"}
                             onMouseOver={ () => setName(!name)}>
@@ -81,12 +82,13 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                             Because<Text animation={fadeRightFirst} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I can.</Text></Text>
 
                           <Text  
-                            align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color={uCMV("#020405", '#B3DDC1')}>
+                            align={'right'} marginY={2} fontSize={{  base: "2xl", lg: "4xl" }}  color={uCMV("#020405", '#B3DDC1')}>
                             Because<Text animation={fadeRightSecond} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I feel like it.</Text> </Text>
                       </Stack>
                   </Box>
 
-                  <Box>
+                  <Box
+                    marginY={"10vh"}>
                       <Text 
                         fontFamily={"var(--chakra-fonts-mono)"} 
                         animation={fadeDownText} 

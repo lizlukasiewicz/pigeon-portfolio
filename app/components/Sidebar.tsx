@@ -52,10 +52,10 @@ export default function Sidebar({ pageRefs, isMenuOpen }: NavMenuIconProps) {
         onClick={() => setMenuOpen(!menuOpen)} 
         //_hover={{ border: "1px solid #00E2CB"}}
         height="60px"
-        width="80px"
+        width="50px"
         zIndex={4}>
           {menuOpen ? 
-            <SmallCloseIcon w={5} h={5} color={uCMV("#822320", "#00C484")}/>
+            <SmallCloseIcon w={6} h={6} color={uCMV("#822320", "#00C484")}/>
           :
             <HamburgerIcon  w={50} h={50} color={uCMV("#822320", "#00C484")}/> 
           }
@@ -97,7 +97,7 @@ interface BarButtonProps {
 };
 const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
-  const text = `.  ${label}`
+  const text = `  ${label}`
   return (
     <Box
       as='button' 
@@ -116,14 +116,14 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
               cursor={"pointer"}
               as='b'
               fontFamily={"var(--chakra-fonts-mono)"}
-              fontSize='1.1rem'
+              fontSize='1rem'
               color={uCMV("#2B2B2B", "#00C484")}
               _hover={{color:uCMV("#D54440", "#FFFFFF")}}>
               
                 <Icon
                   as={icon}
-                  borderRadius={5}
-                  boxSize={6}
+                  borderRadius={6}
+                  boxSize={5}
                   transition={"100ms ease-in-out"}/>
 
                 {text}
@@ -168,7 +168,7 @@ const ResumeButton = ()=> {
             as='b'
             _hover={{color:uCMV("#D54440","#FFFFFF")}}
             fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize='1.1rem'>
+            fontSize='1rem'>
               <Icon as={FaReadme} w={10} />
                       Resume
           </Text>
@@ -191,13 +191,13 @@ export const HomeButton = () => {
           height: "2px",
           position: "absolute",
           transition: "100ms ease-out",}}>
-            <Link href={"/"} scroll={false}>
+            <Link href={"/#home"} scroll={false}>
                 <Heading
                   animation={fadeDownAnim}
                   cursor={"pointer"}
                   as='b'
                   fontFamily={"var(--chakra-fonts-mono)"}
-                  fontSize='1.1rem'
+                  fontSize='1rem'
                   color={uCMV("#2B2B2B", "#00C484")}
                   _hover={{color:uCMV("#D54440", "#FFFFFF")}}>
                     <Icon
