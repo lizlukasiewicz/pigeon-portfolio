@@ -38,25 +38,21 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
 
 
               {/* PROJECT TABS */}
-              <List
-                marginTop={'5%'}
-                display={"flex"} 
-                maxW={"75vw"}//{"100%"}
-                flexDirection={"row"}>
+              <HStack>
                   {projectArray.map((title, i) => (
                     
-                    <ListItem
-                    key={i}
-                    color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
-                    onClick={() => setIdx(i)}
-                    fontFamily={"var(--chakra-fonts-mono)"}
-                    paddingLeft={5}
-                    fontSize={{base:'md', lg: 'lg'}}
-                    fontWeight={"bold"}
-                    _hover={{
-                      color: "#F3BA40",
-                      cursor: "pointer"
-                    }}>
+                    <Heading
+                        key={i}
+                        color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
+                        onClick={() => setIdx(i)}
+                        fontFamily={"var(--chakra-fonts-mono)"}
+                        paddingX={1}
+                        fontSize={{base:'md', lg: 'lg', sm:'sm'}}
+                        fontWeight={"bold"}
+                        _hover={{
+                          color: "#F3BA40",
+                          cursor: "pointer"
+                        }}>
 
                           <Text
                             as={"span"}
@@ -67,9 +63,9 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                               {title.name}
                           </Text>
 
-                      </ListItem>
+                      </Heading>
                     ))}
-              </List>
+              </HStack>
 
 
               <VStack spacing={0}>
