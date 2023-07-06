@@ -11,13 +11,12 @@ export default function GitCalendar() {
           alignItems={"center"}
           boxSizing={"border-box"}
           flexDirection={{ base: "column", md: "row" }}
-          height={"40vh"}
           position={"relative"}
           transition={"1s ease-out"}>
             
             <Stack
               align={"center"}
-              width={"85vw"} >
+              width={"80vw"} >
 
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}

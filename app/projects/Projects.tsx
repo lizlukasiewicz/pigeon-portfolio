@@ -31,9 +31,7 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
           <Stack
             spacing={5}
             minHeight={{ base: "40vh", lg: "50vh" }}
-            height={280}
             marginTop={{ base: "20%", sm: "5%", lg: 0 }}
-            marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
             width={{ base: "80vw", lg: "60vw" }}>
 
 

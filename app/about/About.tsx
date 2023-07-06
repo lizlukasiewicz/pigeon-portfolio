@@ -38,25 +38,22 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
             label={'about'}  
             title={'About me'} 
             loaded={loaded}>
-              <Box
+              <Stack
                 ref={visRef}
-                display={"flex"}
-                opacity={visible ? 1 : 0}
-                flexDir={'column'}
-                minHeight={"70vh"}
-                justifyContent={'space-between'}>
+                width={{ base: "80vw", lg: "60vw" }}
+                direction={"column"}
+                opacity={visible ? 1 : 0.1}
+                //minHeight={"70vh"}
+                justify={"space-around"}
+                spacing={20}>
+
                   <Box
-                    // marginBottom={{ base: "-25%", lg: 0 }}
-                    // marginTop={{base: "50px", lg:"100px"}}
-                    // mx={{base: "70px", lg:"200px"}}
                     display={"flex"}
-                    
                     flexDir={"row"}
                     justifyContent={"space-around"}>
                       <Stack
                         color={"rgb(0,0,0,0.65)"}
                         fontFamily={"var(--chakra-fonts-mono)"}
-                        // fontSize={{ base: "sm", lg: "md" }}
                         textAlign={"justify"}>
 
                           <Text 
@@ -79,28 +76,26 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
 
                           <Text  
                             align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text animation={fadeRightFirst} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I can.</Text></Text>
-
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I can.</Text></Text>{/* animation={fadeRightFirst} opacity={0} */}
                           <Text  
                             align={'right'} marginY={2} fontSize={{  base: "2xl", lg: "4xl" }}  color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text animation={fadeRightSecond} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I feel like it.</Text> </Text>
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I feel like it.</Text> </Text>{/* animation={fadeRightSecond} opacity={0}  */}
                       </Stack>
                   </Box>
 
-                  <Box
-                    marginY={"10vh"}>
+                  <Box>
                       <Text 
                         fontFamily={"var(--chakra-fonts-mono)"} 
                         animation={fadeDownText} 
                         align={'center'} 
-                        fontSize={{ base: "md", lg: "lg" }} 
+                        fontSize={["xl", "lg"]} //{ base: "md", lg: "lg" }
                         color={uCMV("#020405", '#B3DDC1')}>
                           In the meantime, here are just a few skills in my toolbox:
                       </Text>
                       <SkillTable />
                   </Box>
                   <GitCalendar />
-              </Box>
+              </Stack>
           </TempContainer>
         </Container>
     )

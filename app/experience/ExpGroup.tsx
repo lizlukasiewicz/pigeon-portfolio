@@ -9,7 +9,6 @@ import {
           Box
          } from '@chakra-ui/react'
 import { getExpArray } from 'lib/experience';
-import { sideBob } from "lib/helpers/animation";
 import { SkillIcon } from "lib/Icons";
 
 interface ExperienceWidgetProps {
@@ -18,22 +17,19 @@ interface ExperienceWidgetProps {
 };
 
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
-  const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
       <Stack 
-        justifyContent={'space-evenly'}
-        spacing={2}
         minHeight={{ base: "70vh", lg: "60vh" }}>
         <Stack
           direction={["column", "row"]}
-          //marginTop={{ base: "10%", sm: "5%", lg: 0 }}
+          marginTop={{ base: "10%", sm: "5%", lg: 0 }}
           width={"80vw"}>{/* { base: "80vw", lg: "60vw" } */}
 
           {/* EXPERIENCE TABS */}
 
           <List
             display={"flex"}
-            flexDirection={["row", "column"]}
+            flexDirection={["row", "column"]} //{["mobile_screen", "desktop_screen"]} 
             height={"100%"}
             width={["90%", "30%"]}>
               {getExpArray.map((exp, i) => (

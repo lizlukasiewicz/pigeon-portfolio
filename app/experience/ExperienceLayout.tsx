@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import { ExpGroup } from "./ExpGroup";
 import { TempContainer } from 'ui/TempContainer';
-import { Stack, Box, Container, useColorModeValue as uCMV } from "@chakra-ui/react";
+import { Stack, Container} from "@chakra-ui/react";
 
 interface PageProps {
   pageRefs: React.MutableRefObject<{}>,
@@ -30,10 +30,10 @@ export default function ExperienceLayout({ pageRefs, visRef, visible}: PageProps
           label={'experience'} 
           title={'My Experience'} 
           loaded={loaded}>
-            <Container 
+            <Stack 
               ref={visRef} >
               <ExpGroup idx={idx} setIdx={setIdx}/>
-            </Container>
+            </Stack>
         </TempContainer>
     </Container>
           
