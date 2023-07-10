@@ -9,7 +9,6 @@ import {
           Box
          } from '@chakra-ui/react'
 import { getExpArray } from 'lib/experience';
-import { sideBob } from "lib/helpers/animation";
 import { SkillIcon } from "lib/Icons";
 
 interface ExperienceWidgetProps {
@@ -18,26 +17,21 @@ interface ExperienceWidgetProps {
 };
 
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
-  const sideBobAnim: string = `${sideBob} 1s infinite`;
   return (
       <Stack 
-        justifyContent={'space-around'}
-        spacing={2}
-        minHeight={{ base: "70vh", lg: "60vh" }}>
+        minHeight={{ base: "30vh", lg: "40vh" }}>
         <Stack
           direction={["column", "row"]}
-          height={290}
-          marginTop={{ base: "20%", sm: "5%", lg: 0 }}
-          marginBottom={{ base: "30%", lg: 0 }}
-          width={{ base: "80vw", lg: "60vw" }}>
+          marginTop={{ base: "10%", sm: "5%", lg: 0 }}
+          width={"80vw"}>
 
           {/* EXPERIENCE TABS */}
 
           <List
             display={"flex"}
-            flexDirection={["row", "column"]}
+            flexDirection={["row", "column"]} //{["mobile_screen", "desktop_screen"]} 
             height={"100%"}
-            width={["100%", "30%"]}>
+            width={["90%", "30%"]}>
               {getExpArray.map((exp, i) => (
                 <ListItem
                   key={i}
@@ -71,8 +65,6 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
                       <Text
                         as={"span"}
-                        // fontFamily={"var(--chakra-fonts-mono)"}
-                        // fontSize={'lg'}
                         color={idx === i ? uCMV("#020405", "#B3DDC1"): uCMV("#822320", "#00C484")}
                         fontWeight={"bold"}>
                           {exp.company}
@@ -87,12 +79,10 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
           <VStack
             alignItems={"flex-start"}
-            //backgroundColor={uCMV('rgba(255,255,255,0.3)', 'rgba(2,4,5,0)')}
             borderRadius={20}
             display={"flex"}
             height={"100%"}
-            paddingX={[0, 5]}
-            paddingY={{ base: 10, sm: 0, lg: 5 }}
+            paddingY={{ base: 5, sm: 0, lg: 5 }}
             width={{ base: "100%", lg: "80%" }}>
               <Box>
                 <Text
@@ -150,36 +140,35 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
               </Box>
 
               {/* JOB DESCRIPTION */}
-              <List
-                alignItems={"space-between"}
-                display={"flex"}
-                flexDirection={"column"}
-                marginY={1}>
-                  {getExpArray[idx].details.map((bullet, i) => (
-                    <ListItem
+              <Box>
+                <List
+                  alignItems={"space-between"}
+                  display={"flex"}
+                  flexDirection={"column"}
+                  marginY={1}>
+                    {getExpArray[idx].details.map((bullet, i) => (
+                      <ListItem
                       
                       display={"flex"}
                       key={i}
                       flexDirection={"column"}
                       marginY={1}>
-                        <Text as={"span"}
-                        fontFamily={"var(--chakra-fonts-nunito)"}>
-                          {bullet}
-                        </Text>
-                    </ListItem>
-                  ))}
-
-
-              
-              </List>
+                          <Text as={"span"}
+                          fontFamily={"var(--chakra-fonts-nunito)"}>
+                            {bullet}
+                          </Text>
+                      </ListItem>
+                    ))}
+                </List>
+              </Box>
           </VStack>
         </Stack>
 
         {/* TOOLS USED ICONS */}
         <HStack
           fontFamily={"var(--chakra-fonts-nunito)"}
-          paddingLeft={5}
-          spacing={"10%"}>
+          paddingLeft={2}
+          spacing={"5%"}>
             {getExpArray[idx].skills.map((skill, i) => (
               <SkillIcon hoverColor={skill.color} delay={skill.delay} icon={skill.icon} label={skill.label} key={i}/>
               

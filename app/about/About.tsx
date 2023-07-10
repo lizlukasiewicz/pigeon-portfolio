@@ -25,42 +25,40 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     }, [visible]);
     const [name, setName] = React.useState<boolean>(false);
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
-    const fadeRightFirst: string = `800ms 800ms forwards ${growRight}`;
-    const fadeRightSecond: string = `800ms 1200ms forwards ${growRight}`;
+    const fadeRightFirst: string = `1000ms 800ms forwards ${growRight}`;
+    const fadeRightSecond: string = `1000ms 1200ms forwards ${growRight}`;
     
     return(
       <Container
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        //opacity={1}//loaded ? 1 : 0.5
+        //opacity={loaded ? 1 : 0}
         ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  
             title={'About me'} 
             loaded={loaded}>
-              <Box
+              <Stack
                 ref={visRef}
-                display={"flex"}
-                flexDir={'column'}
-                minHeight={"60vh"}
-                justifyContent={'space-evenly'}>
+                width={{ base: "80vw", lg: "60vw" }}
+                direction={"column"}
+                opacity={visible ? 1 : 0.1}
+                //minHeight={"70vh"}
+                justify={"space-around"}
+                spacing={20}>
+
                   <Box
-                    // marginBottom={{ base: "-25%", lg: 0 }}
-                    // marginTop={{base: "50px", lg:"100px"}}
-                    // mx={{base: "70px", lg:"200px"}}
                     display={"flex"}
-                    //opacity={visible ? 1 : 0.75}
                     flexDir={"row"}
                     justifyContent={"space-around"}>
                       <Stack
                         color={"rgb(0,0,0,0.65)"}
                         fontFamily={"var(--chakra-fonts-mono)"}
-                        // fontSize={{ base: "sm", lg: "md" }}
                         textAlign={"justify"}>
 
                           <Text 
                             align={'left'} 
-                            fontSize={{ base: "sm", lg: "lg" }} 
+                            fontSize={{ base: "md", lg: "lg" }} 
                             color={uCMV("#020405", '#B3DDC1')} 
                             cursor={"pointer"}
                             onMouseOver={ () => setName(!name)}>
@@ -78,11 +76,10 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
 
                           <Text  
                             align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text animation={fadeRightFirst} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I can.</Text></Text>
-
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I can.</Text></Text>{/* animation={fadeRightFirst} opacity={0} */}
                           <Text  
-                            align={'right'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} noOfLines={1} color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text animation={fadeRightSecond} as={'span'} color={uCMV("#D54440", '#59BC7D')} opacity={0} > I feel like it.</Text> </Text>
+                            align={'right'} marginY={2} fontSize={{  base: "2xl", lg: "4xl" }}  color={uCMV("#020405", '#B3DDC1')}>
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I feel like it.</Text> </Text>{/* animation={fadeRightSecond} opacity={0}  */}
                       </Stack>
                   </Box>
 
@@ -91,14 +88,14 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
                         fontFamily={"var(--chakra-fonts-mono)"} 
                         animation={fadeDownText} 
                         align={'center'} 
-                        fontSize={{ base: "md", lg: "lg" }} 
+                        fontSize={["xl", "lg"]} //{ base: "md", lg: "lg" }
                         color={uCMV("#020405", '#B3DDC1')}>
                           In the meantime, here are just a few skills in my toolbox:
                       </Text>
                       <SkillTable />
                   </Box>
                   <GitCalendar />
-              </Box>
+              </Stack>
           </TempContainer>
         </Container>
     )

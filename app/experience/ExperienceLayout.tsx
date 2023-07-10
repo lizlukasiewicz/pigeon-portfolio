@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import { ExpGroup } from "./ExpGroup";
 import { TempContainer } from 'ui/TempContainer';
-import { Stack, Container, useColorModeValue as uCMV } from "@chakra-ui/react";
+import { Stack, Container} from "@chakra-ui/react";
 
 interface PageProps {
   pageRefs: React.MutableRefObject<{}>,
@@ -23,7 +23,7 @@ export default function ExperienceLayout({ pageRefs, visRef, visible}: PageProps
   return(
     <Container
       maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-      opacity={loaded ? 1 : 0.5}//{1}//
+      opacity={loaded ? 1 : 0.1}
       ref={el => pageRefs.current = { ...pageRefs.current, experience: el }}
       transition={"500ms ease-out"}>
         <TempContainer 

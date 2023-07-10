@@ -11,19 +11,18 @@ export default function GitCalendar() {
           alignItems={"center"}
           boxSizing={"border-box"}
           flexDirection={{ base: "column", md: "row" }}
-          height={"30vh"}
           position={"relative"}
           transition={"1s ease-out"}>
             
             <Stack
               align={"center"}
-              width={{ base: "85vw", lg: "65vw" }}>
+              width={"80vw"} >
 
                 <Text
                   fontFamily={"var(--chakra-fonts-mono)"}
                   fontSize={"2xl"}
                   color={uCMV("#822320", "#00C484")}
-                  marginY={5}>
+                  marginY={2}>
 
                     Git Commit, To<Text as={"a"} href={"https://github.com/lizlukasiewicz"} target="_blank" color={uCMV("#46373E", '#00E2CB')} _hover={{color:"#F3BA40"}} transition={"300ms ease-in-out"}> Something </Text>
 
@@ -32,7 +31,7 @@ export default function GitCalendar() {
                 </Text>
 
                 <GitHubCalendar
-                  blockRadius={7}
+                  blockRadius={2}
                   color={"#00C484"}
                   theme={{
                       level0: uCMV("rgb(236,217,234)", "rgb(17 24 55)"),

@@ -42,7 +42,9 @@ export interface expArrayProps {
   companyLink: string,
 };
 
-
+// "Devised and deployed custom Python/Django tools, facilitating seamless integration of data from multiple vendors into a unified relational database model, optimizing data analysis and reporting capabilities",
+// "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
+// "Employed Selenium for Web Scraping in Python, efficiently collecting and cleaning data from various sources, subsequently integrating it into a SQL database, adhering to the principles of ETL processes",
 ////"Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making."
 ////"Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
 ////"Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow."
@@ -53,9 +55,9 @@ export const getExpArray: expArrayProps[] = [
   {
       title: "Software Engineer, Infrastructure",/// Data Operations
       details: [
-        "Devised and deployed custom Python/Django tools, facilitating seamless integration of data from multiple vendors into a unified relational database model, optimizing data analysis and reporting capabilities",
-        "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
-        "Employed Selenium for Web Scraping in Python, efficiently collecting and cleaning data from various sources, subsequently integrating it into a SQL database, adhering to the principles of ETL processes",
+        "Deployed customized Python/Django tools for integrating data between multiple vendors into a unified relational database model",
+        "Contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality and efficient build processes.",
+        "Employed Selenium for Web Scraping, efficiently collecting and cleaning data from various sources",
       ],
       dates: "March 2022 - March 2023",
       skills: [

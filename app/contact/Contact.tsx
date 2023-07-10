@@ -44,7 +44,7 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
                 height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
                 justifyContent={"center"}
                 ref={visRef}
-                width={{ base: "85vw", sm: "65vw", lg: "45vw" }}>
+                width={{ base: "80vw", lg: "60vw" }}>
                   <Box
                     alignItems={"center"}
                     animation={visible ? shakeAnim : fadeOutAnim}

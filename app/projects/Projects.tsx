@@ -31,27 +31,21 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
           <Stack
             spacing={5}
             minHeight={{ base: "40vh", lg: "50vh" }}
-            height={280}
             marginTop={{ base: "20%", sm: "5%", lg: 0 }}
-            marginBottom={{ base: "50%", sm: "30%", lg: 0 }}
             width={{ base: "80vw", lg: "60vw" }}>
 
 
               {/* PROJECT TABS */}
-              <List
-                marginTop={'5%'}
-                display={"flex"} 
-                width={"100%"}
-                flexDirection={"row"}>
+              <HStack>
                   {projectArray.map((title, i) => (
-
-                      <ListItem
+                    
+                    <Heading
                         key={i}
                         color={idx === i ? uCMV("#822320", "#E1E1E1") : uCMV("#4D403C", "#175C78") }
                         onClick={() => setIdx(i)}
                         fontFamily={"var(--chakra-fonts-mono)"}
-                        paddingLeft={6}
-                        fontSize={'lg'}
+                        paddingX={1}
+                        fontSize={{base:'md', lg: 'lg', sm:'sm'}}
                         fontWeight={"bold"}
                         _hover={{
                           color: "#F3BA40",
@@ -67,10 +61,10 @@ export default function Projects({ idx, setIdx }: ProjectProps) {
                               {title.name}
                           </Text>
 
-                      </ListItem>
+                      </Heading>
+                    ))}
+              </HStack>
 
-                  ))}
-              </List>
 
               <VStack spacing={0}>
 

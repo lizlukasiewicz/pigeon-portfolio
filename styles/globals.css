@@ -62,8 +62,10 @@
 
 html,
 body {
-  max-width: 100vw;
-  /* overflow-x: hidden; */
+  /* max-width: 100vw; */
+  /* background-size:100vw; */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* @keyframes gradient {
@@ -162,10 +164,14 @@ body {
     color-scheme: dark;
   } */
 }
+/* 1023px */
+@media (max-width: 1000px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
 
-/* @media (max-width: 1023px) {
-
-} */
+  }
+}
 
 
 /* @media (prefers-reduced-motion) {

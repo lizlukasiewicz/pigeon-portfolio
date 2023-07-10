@@ -24,10 +24,12 @@ export default function Home() {
   const breatheAnim: string = `${gradient} 6s ease infinite`
   return(
     <VStack 
-      spacing={1}
+      width={"100%"}
+      spacing={5}
+      // paddingX={"5vw"}
       bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")}
       bgSize={"400% 400%"}
-      bgPosition={"51% 0%"}
+      bgPosition={"51% 10%"}
       animation={breatheAnim}> 
         <Navbar 
           pageRefs={pageRefs}

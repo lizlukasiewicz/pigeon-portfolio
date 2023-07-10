@@ -46,22 +46,15 @@ export default function Social({ scrollDir, y }: PageProps ) {
             </Stack>
             <Stack
                 alignItems={"center"}
-                bottom={{ base:  y > 80 ? 
-                                    "11%" : 
-                                    "15%", lg: y > 80 ? 
-                                        "2%" : 
-                                        "5%" }}//"11%", lg:"5%"}}//
+                bottom={{ base:"15%", lg: "11%" }}
                 direction={"row"}
                 display={"flex"}
                 justifyContent={"center"}
-                left={{ base: -20, sm: -16, lg: -5 }}
+                left={[-24, -20]}
                 position={"fixed"}
-                transform={{ base: "rotate(-90deg)", lg: "rotate(0deg)" }}
+                transform={"rotate(-90deg)"}
                 transition={"200ms ease-out"}
                 zIndex={1}>
-                    <Divider
-                        borderColor={uCMV("#3D1C4A", "#F3BA40")}
-                        width={{ base: 0, lg: 10}} />
                     <SocialIcon
                         delay={"80ms"} 
                         href={"mailto:e.lukasiewicz.n@gmail.com"} 

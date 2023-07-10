@@ -62,7 +62,8 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
 
           <HStack
             animation={fadeDownAnim}
-            left={isLargeScreen ? 10 : 10}
+            left={isLargeScreen ? 6 : 1}
+            paddingX={"1rem"}
             position={"absolute"}
             transition={"200ms ease-out"}>
               <Link href="/">
@@ -95,10 +96,10 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
           <HStack
             align={"center"}
             justify={"center"}
-            paddingX={"2rem"}
+            paddingX={"1rem"}
             position={"absolute"}
-            right={isLargeScreen ? 5 : 0}
-            spacing={'1.5rem'}
+            right={isLargeScreen ? 4 : 1}
+            spacing={'1.2rem'}
             transition={"200ms ease-out"}>
                         
             {isLargeScreen ? 
