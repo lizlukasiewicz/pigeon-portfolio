@@ -19,11 +19,11 @@ interface ExperienceWidgetProps {
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   return (
       <Stack 
-        minHeight={{ base: "70vh", lg: "60vh" }}>
+        minHeight={{ base: "30vh", lg: "40vh" }}>
         <Stack
           direction={["column", "row"]}
           marginTop={{ base: "10%", sm: "5%", lg: 0 }}
-          width={"80vw"}>{/* { base: "80vw", lg: "60vw" } */}
+          width={"80vw"}>
 
           {/* EXPERIENCE TABS */}
 
@@ -65,8 +65,6 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
                       <Text
                         as={"span"}
-                        // fontFamily={"var(--chakra-fonts-mono)"}
-                        // fontSize={'lg'}
                         color={idx === i ? uCMV("#020405", "#B3DDC1"): uCMV("#822320", "#00C484")}
                         fontWeight={"bold"}>
                           {exp.company}
@@ -81,11 +79,9 @@ export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
 
           <VStack
             alignItems={"flex-start"}
-            //backgroundColor={uCMV('rgba(255,255,255,0.3)', 'rgba(2,4,5,0)')}
             borderRadius={20}
             display={"flex"}
             height={"100%"}
-            //paddingX={5}
             paddingY={{ base: 5, sm: 0, lg: 5 }}
             width={{ base: "100%", lg: "80%" }}>
               <Box>
