@@ -30,6 +30,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
     
     return(
       <Container
+        id="about"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         //opacity={loaded ? 1 : 0}
         ref={el => pageRefs.current = { ...pageRefs.current, about: el }}

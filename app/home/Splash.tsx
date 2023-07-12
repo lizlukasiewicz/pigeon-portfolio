@@ -19,7 +19,7 @@ export default function Splash({ pageRefs, visRef, visible }: PageProps) {
 
     return(
           <Flex
-            id="#home"
+            id="home"
             w={'100%'} 
             alignItems={"center"}
             position={"relative"}

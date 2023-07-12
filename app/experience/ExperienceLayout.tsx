@@ -22,6 +22,7 @@ export default function ExperienceLayout({ pageRefs, visRef, visible}: PageProps
       }, [idx]);
   return(
     <Container
+      id="experience"
       maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
       opacity={loaded ? 1 : 0.1}
       ref={el => pageRefs.current = { ...pageRefs.current, experience: el }}

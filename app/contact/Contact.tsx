@@ -30,6 +30,7 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <Container
+        id="contact"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         opacity={loaded ? 1 : 0.5}
         ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}

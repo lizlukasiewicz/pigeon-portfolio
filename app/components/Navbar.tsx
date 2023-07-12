@@ -1,10 +1,10 @@
-import * as React from "react";
+import React  from "react";
+import ScrollLink from "lib/helpers/useNav";
 import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
   Button,
   Text,
   Heading,
-  Box,
   useMediaQuery,
   HStack,
   useColorMode,
@@ -35,10 +35,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
 
-  const scrollToElement = (label: any): void => {
-    pageRefs.current[label].scrollIntoView({ behavior: 'smooth', });
-    menuOpen && setMenuOpen(!menuOpen);
-  };
 
   return(
     <React.Fragment>
@@ -103,7 +99,7 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
             transition={"200ms ease-out"}>
                         
             {isLargeScreen ? 
-              <NavBarRoutes scrollToElement={scrollToElement} />
+              <NavBarRoutes  />
               :
               <Sidebar 
               pageRefs={pageRefs}
@@ -119,25 +115,25 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
 interface NavButtonProps {
   delay: string,
   label: string,
-  scroll: (arg0: string) => void,
 };
 
-export const NavButton = ({ label, delay, scroll}: NavButtonProps ) => {
+const NavButton = ({ label, delay}: NavButtonProps) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   const text = `_ ${label}`
+  const href = `#${label}`
   return (
-      <Box
-        as='button' 
-        cursor={"pointer"}
-        onClick={() => scroll(label)}
-        position={"relative"}
-        _before={{
-            borderRadius: "2px",
-            height: "2px",
-            position: "absolute",
-            transition: "100ms ease-out",
-        }}>
-        
+      // <Box
+      //   as='button' 
+      //   cursor={"pointer"}
+      //   onClick={() => scroll(label)}
+      //   position={"relative"}
+      //   _before={{
+      //       borderRadius: "2px",
+      //       height: "2px",
+      //       position: "absolute",
+      //       transition: "100ms ease-out",
+      //   }}>
+      <ScrollLink href={href} >
           <Heading
             fontWeight={"bold"}
             animation={fadeDownAnim}
@@ -166,26 +162,20 @@ export const NavButton = ({ label, delay, scroll}: NavButtonProps ) => {
                 {text}
 
           </Heading>
-
-      </Box>
+        </ScrollLink>
 
   );
 };
 
-interface NavButtonsProps {
-  scrollToElement: (arg0: string) => void,
-};
-
-export const NavBarRoutes= ({ scrollToElement }: NavButtonsProps) => (
+export const NavBarRoutes= () => (
   <React.Fragment>
-    <HomeButton />
-    <NavButton label="about" delay={"60ms"} scroll={scrollToElement} />
-    <NavButton label="experience" delay={"120ms"} scroll={scrollToElement} />
-    <NavButton label="projects" delay={"160ms"} scroll={scrollToElement} />
-    <NavButton label="contact" delay={"180ms"} scroll={scrollToElement} />
+    <NavButton label="home" delay={"0ms"}  />
+    <NavButton label="about" delay={"60ms"}  />
+    <NavButton label="experience" delay={"120ms"}  />
+    <NavButton label="projects" delay={"160ms"}  />
+    <NavButton label="contact" delay={"180ms"}  />
     <ResumeButton />
   </React.Fragment>
-
 );
 
 
@@ -212,38 +202,5 @@ export const ResumeButton = () => {
                 </Text>
               
     </Button>
-  )
-}
-
-export const HomeButton = () => {
-  const text = "_ home"
-  return(
-    <Link href={"/"} scroll={false}>
-      <Heading
-        fontWeight={"bold"}
-        cursor={"pointer"}
-        fontSize={'1.1rem'}
-        fontFamily={"var(--chakra-fonts-mono)"}
-        color={uCMV("#020405", "#00C484")}
-        px={"0.5rem"}
-        py={"1rem"}
-        transition={"100ms ease-out"}
-        _before={{
-          backgroundColor: uCMV("#F3BA40", "#008582"),
-          borderRadius: "2px",
-          bottom: -1,
-          content: `""`,
-          height: "1px",
-          position: "absolute",
-          transition: "100ms ease-out",
-          width: 0 
-        }}
-        _hover={{
-          color:uCMV("#822320", "#E1E1E1"),
-          _before: { width: "10%" }
-          }}>
-            {text}
-      </Heading>
-    </Link>
   )
 }
