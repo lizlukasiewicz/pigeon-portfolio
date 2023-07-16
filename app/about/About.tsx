@@ -13,12 +13,11 @@ import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
 
 type PageProps = {
-    pageRefs: React.MutableRefObject<{}>;
     visRef: any;
     visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
-export default function About({ pageRefs, visRef, visible }: PageProps) {
+export default function About({ visRef, visible }: PageProps) {
     const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)
@@ -33,7 +32,7 @@ export default function About({ pageRefs, visRef, visible }: PageProps) {
         id="about"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         //opacity={loaded ? 1 : 0}
-        ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
+        // ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  

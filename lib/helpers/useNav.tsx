@@ -32,6 +32,7 @@ export const useNavigation = (): [number, string] => {
 import Link, { LinkProps } from "next/link";
 import React, { PropsWithChildren } from "react";
 
+
 type AnchorProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   keyof LinkProps
@@ -39,12 +40,17 @@ type AnchorProps = Omit<
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
 
 const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
+  //figure out how to set scroll to the difference of 
+  // current windowY and elem.top IF windowY isnt at zero
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    // first prevent the default behavior
     e.preventDefault();
-    //remove everything before the hash
-    const targetId = e.currentTarget.href.replace(/.*\#/, "");
+    // get the href and remove everything before the hash (#)
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
-    window.scrollTo({
+    window.scrollTo({// OR elem?scrollIntoView({behavior:"smooth"})
       top: elem?.getBoundingClientRect().top,
       behavior: "smooth",
     });

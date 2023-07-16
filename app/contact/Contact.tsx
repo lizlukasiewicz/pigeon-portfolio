@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import React from "react";
 import { TempContainer } from "ui/TempContainer";
 import { 
         Container,
@@ -10,13 +10,12 @@ import {
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
 type PageProps = {
-  pageRefs: React.MutableRefObject<{}>;
   visRef: any;
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
 
-export default function Contact({ pageRefs, visRef, visible }: PageProps) {
+export default function Contact({ visRef, visible }: PageProps) {
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)
@@ -30,10 +29,10 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <Container
-        id="contact"
+      id="contact"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        opacity={loaded ? 1 : 0.5}
-        ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}
+        //opacity={loaded ? 1 : 0.5}
+        //ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}
         transition={"500ms ease-out"}>
           <TempContainer
             loaded={loaded}
@@ -44,11 +43,11 @@ export default function Contact({ pageRefs, visRef, visible }: PageProps) {
                 flexDirection={"column"}
                 height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
                 justifyContent={"center"}
-                ref={visRef}
+                //ref={visRef}
                 width={{ base: "80vw", lg: "60vw" }}>
                   <Box
                     alignItems={"center"}
-                    animation={visible ? shakeAnim : fadeOutAnim}
+                    animation={shakeAnim}//loaded ? shakeAnim : fadeOutAnim
                     border={"1px solid"}
                     borderRadius={5}
                     boxShadow={"0 15px 10px -10px rgba(0,0,0,0.5)"}

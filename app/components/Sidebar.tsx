@@ -1,4 +1,3 @@
-// 'use client';
 
 import * as React from 'react';
 import { fadeDown } from 'lib/helpers/animation';
@@ -8,6 +7,7 @@ export const FaTools = require('react-icons/fa').FaTools
 export const FaMailBulk = require('react-icons/fa').FaMailBulk
 export const FaHome = require('react-icons/fa').FaHome
 import Link from 'next/link';
+import ScrollLink from "lib/helpers/useNav";
 
 import { FaReadme } from "react-icons/fa"
 import { HamburgerIcon, SmallCloseIcon } from '@chakra-ui/icons'
@@ -17,32 +17,23 @@ import {
   Button,
   Icon,
   Heading, 
-  Center,
   Text, 
   useMediaQuery,
   useColorModeValue as uCMV
 } from '@chakra-ui/react'
 import { IconType } from "react-icons";
 
-type PageRefsType = { [key: string]: HTMLElement };
-
 interface NavMenuIconProps {
-  pageRefs: React.MutableRefObject<PageRefsType>,
   isMenuOpen: boolean,
 };
 
-export default function Sidebar({ pageRefs, isMenuOpen }: NavMenuIconProps) {
+export default function Sidebar({ isMenuOpen }: NavMenuIconProps) {
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
   const [menuOpen, setMenuOpen] = React.useState<boolean>(isMenuOpen);
 
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
   }, [isLargeScreen]);
-
-  const scrollIntoView = (label: any): void => {
-    pageRefs.current[label].scrollIntoView({ behavior: 'smooth' });
-    menuOpen && setMenuOpen(!menuOpen);
-  };
 
   return(
     <React.Fragment>
@@ -81,7 +72,7 @@ export default function Sidebar({ pageRefs, isMenuOpen }: NavMenuIconProps) {
         width={"45%"}
         zIndex={3}>
         
-        <SideBarRoutes scrollIntoView={scrollIntoView} />
+        <SideBarRoutes  />
         
       </VStack>
     </React.Fragment>
@@ -93,24 +84,25 @@ interface BarButtonProps {
   delay: string,
   label: string,
   icon: React.ComponentType<IconType>,
-  scroll: (arg0: string) => void,
 };
-const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
+const BarButton = ({ label, delay, icon}: BarButtonProps ) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   const text = `  ${label}`
+  const href = `#${label}`
   return (
-    <Box
-      as='button' 
-      animation={fadeDownAnim}
-      cursor={"pointer"}
-      onClick={() => scroll(label)}
-      position={"relative"}
-      transition={"100ms ease-out"}
-      _before={{
-          borderRadius: "2px",
-          height: "2px",
-          position: "absolute",
-          transition: "100ms ease-out",}}>
+    // <Box
+    //   as='button' 
+    //   animation={fadeDownAnim}
+    //   cursor={"pointer"}
+    //   onClick={() => scroll(label)}
+    //   position={"relative"}
+    //   transition={"100ms ease-out"}
+    //   _before={{
+    //       borderRadius: "2px",
+    //       height: "2px",
+    //       position: "absolute",
+    //       transition: "100ms ease-out",}}>
+    <ScrollLink href={href} >
             <Text
               animation={fadeDownAnim}
               cursor={"pointer"}
@@ -128,21 +120,20 @@ const BarButton = ({ label, delay, icon, scroll}: BarButtonProps ) => {
 
                 {text}
             </Text>
-    </Box>
+      </ScrollLink>
+
   );
 };
 
-interface NavButtonsProps {
-  scrollIntoView: (arg0: string) => void,
-};
 
-export const SideBarRoutes= ({ scrollIntoView }: NavButtonsProps) => (
+export const SideBarRoutes= () => (
   <React.Fragment>
-    <HomeButton />
-    <BarButton label="about" delay={"60ms"} scroll={scrollIntoView} icon={FaTerminal} />
-    <BarButton label="experience" delay={"120ms"} scroll={scrollIntoView} icon={FaBloggerB} />
-    <BarButton label="projects" delay={"180ms"} scroll={scrollIntoView} icon={FaTools} />
-    <BarButton label="contact" delay={"240ms"} scroll={scrollIntoView} icon={FaMailBulk} />
+    {/* <HomeButton /> */}
+    <BarButton label="home" delay={"0ms"} icon={FaHome}/>
+    <BarButton label="about" delay={"60ms"} icon={FaTerminal} />
+    <BarButton label="experience" delay={"120ms"} icon={FaBloggerB} />
+    <BarButton label="projects" delay={"180ms"} icon={FaTools} />
+    <BarButton label="contact" delay={"240ms"} icon={FaMailBulk} />
     <ResumeButton />
   </React.Fragment>
 )
@@ -191,7 +182,7 @@ export const HomeButton = () => {
           height: "2px",
           position: "absolute",
           transition: "100ms ease-out",}}>
-            <Link href={"/#home"} scroll={false}>
+            <Link href={"home"} scroll={false}>
                 <Heading
                   animation={fadeDownAnim}
                   cursor={"pointer"}

@@ -3,13 +3,12 @@ import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
 import { useState, useEffect } from 'react';
 
 type PageProps = {
-  pageRefs: React.MutableRefObject<{}>;
   visRef:  any;
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 };
 
 
-export default function Splash({ pageRefs, visRef, visible }: PageProps) {
+export default function Splash({ visRef, visible }: PageProps) {
     const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
     const [loaded, setLoaded] = useState<boolean>(false);

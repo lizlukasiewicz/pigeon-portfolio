@@ -36,13 +36,14 @@ export const TempContainer=({
                 >
                 <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
-                        <HStack opacity={loaded ? 1 : 0.1}>
+                        <HStack // opacity={loaded ? 1 : 0.1}
+                        >
                           <Box 
                             animation={growRightAnim}//&& loaded
                             backgroundColor={uCMV("#3D1C4A", "#008582")}// DARK RED || NOT LISTED MUTED BLUE   //{"#008582"}//
                             height={1}
                             borderRadius={10}
-                            opacity={0}
+                            //opacity={0}
                             position={"relative"}
                             top={"3%"}
                             width={0}

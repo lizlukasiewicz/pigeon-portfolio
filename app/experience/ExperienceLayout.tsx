@@ -5,12 +5,11 @@ import { TempContainer } from 'ui/TempContainer';
 import { Stack, Container} from "@chakra-ui/react";
 
 interface PageProps {
-  pageRefs: React.MutableRefObject<{}>,
   visRef: any,
   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
 };
 
-export default function ExperienceLayout({ pageRefs, visRef, visible}: PageProps) {
+export default function ExperienceLayout({ visRef, visible}: PageProps) {
   const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
         visible && setLoaded(true)
@@ -24,17 +23,17 @@ export default function ExperienceLayout({ pageRefs, visRef, visible}: PageProps
     <Container
       id="experience"
       maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-      opacity={loaded ? 1 : 0.1}
-      ref={el => pageRefs.current = { ...pageRefs.current, experience: el }}
+      //opacity={loaded ? 1 : 0.1}
+      //ref={el => pageRefs.current = { ...pageRefs.current, experience: el }}
       transition={"500ms ease-out"}>
         <TempContainer 
           label={'experience'} 
           title={'My Experience'} 
           loaded={loaded}>
-            <Stack 
-              ref={visRef} >
+            {/* <Stack 
+              ref={visRef} > */}
               <ExpGroup idx={idx} setIdx={setIdx}/>
-            </Stack>
+            {/* </Stack> */}
         </TempContainer>
     </Container>
           

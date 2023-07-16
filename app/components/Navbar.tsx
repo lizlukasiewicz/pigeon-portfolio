@@ -17,15 +17,13 @@ import Link from 'next/link';
 import Sidebar from './Sidebar';
 import styles from './nav.module.css'
 
-type PageRefsType = { [key: string]: HTMLElement };
 
 interface PageProps {
-  pageRefs: React.MutableRefObject<PageRefsType>,
   scrollDir: string | number,
   y: string | number,
 }
 
-export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
+export default function Navbar({scrollDir, y }: PageProps) {
   const { colorMode, toggleColorMode } = useColorMode();
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
@@ -102,7 +100,6 @@ export default function Navbar({ pageRefs, scrollDir, y }: PageProps) {
               <NavBarRoutes  />
               :
               <Sidebar 
-              pageRefs={pageRefs}
               isMenuOpen={menuOpen}
               />
             }
@@ -121,18 +118,8 @@ const NavButton = ({ label, delay}: NavButtonProps) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   const text = `_ ${label}`
   const href = `#${label}`
+
   return (
-      // <Box
-      //   as='button' 
-      //   cursor={"pointer"}
-      //   onClick={() => scroll(label)}
-      //   position={"relative"}
-      //   _before={{
-      //       borderRadius: "2px",
-      //       height: "2px",
-      //       position: "absolute",
-      //       transition: "100ms ease-out",
-      //   }}>
       <ScrollLink href={href} >
           <Heading
             fontWeight={"bold"}
