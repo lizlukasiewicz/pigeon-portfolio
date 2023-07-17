@@ -32,7 +32,6 @@ export default function About({ visRef, visible }: PageProps) {
         id="about"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         //opacity={loaded ? 1 : 0}
-        // ref={el => pageRefs.current = { ...pageRefs.current, about: el }}
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  

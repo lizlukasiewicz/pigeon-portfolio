@@ -1,12 +1,21 @@
 import React  from "react";
 import ScrollLink from "lib/helpers/useNav";
+export const FaTerminal = require('react-icons/fa').FaTerminal
+export const FaBloggerB = require('react-icons/fa').FaBloggerB
+export const FaTools = require('react-icons/fa').FaTools
+export const FaMailBulk = require('react-icons/fa').FaMailBulk
+export const FaHome = require('react-icons/fa').FaHome
+import { HamburgerIcon, SmallCloseIcon } from '@chakra-ui/icons'
 import { Toggle,  ColorToggleDay } from './ColorToggle';
 import {
   Button,
   Text,
+  Icon,
+  Box,
   Heading,
   useMediaQuery,
   HStack,
+  VStack,
   useColorMode,
   useColorModeValue as uCMV,
   Center,
@@ -14,8 +23,8 @@ import {
 import { fadeDown } from 'lib/helpers/animation';
 import Image from 'next/image'
 import Link from 'next/link';
-import Sidebar from './Sidebar';
 import styles from './nav.module.css'
+import { IconType } from "react-icons";
 
 
 interface PageProps {
@@ -26,8 +35,8 @@ interface PageProps {
 export default function Navbar({scrollDir, y }: PageProps) {
   const { colorMode, toggleColorMode } = useColorMode();
   const fadeDownAnim: string = `${fadeDown} 250ms 20ms forwards`;
-  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
   const [isLargeScreen]: boolean[] = useMediaQuery("(min-width: 1050px)");
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect((): void => {
     isLargeScreen && setMenuOpen(false)
@@ -86,7 +95,7 @@ export default function Navbar({scrollDir, y }: PageProps) {
               </Center>
               
           </HStack>
-      
+          {/* Navigation items */}
           <HStack
             align={"center"}
             justify={"center"}
@@ -97,11 +106,43 @@ export default function Navbar({scrollDir, y }: PageProps) {
             transition={"200ms ease-out"}>
                         
             {isLargeScreen ? 
-              <NavBarRoutes  />
+              <NavBarRoutes isLargeScreen={isLargeScreen}/>
               :
-              <Sidebar 
-              isMenuOpen={menuOpen}
-              />
+              <React.Fragment>
+                  <Box
+                    as={"button"}
+                    borderRadius={10}
+                    onClick={() => setMenuOpen(!menuOpen)} 
+                    height="60px"
+                    width="50px"
+                    zIndex={4}>
+                        {menuOpen ? 
+                          <SmallCloseIcon w={6} h={6} color={uCMV("#822320", "#00C484")}/>
+                        :
+                          <HamburgerIcon  w={50} h={50} color={uCMV("#822320", "#00C484")}/> 
+                        }
+                  </Box>
+                  <VStack 
+                    backgroundColor={uCMV("rgba(255,244,225,0.9)", "rgba(2, 4, 5, 0.9)")}
+                    opacity={1}
+                    paddingTop={65}
+                    borderRadius={30}
+                    boxShadow={uCMV("lg", "dark-lg")}
+                    fontSize={16}
+                    height={500}
+                    justifyContent={"flex-start"}
+                    alignItems={"flex-start"}
+                    position={"fixed"}
+                    right={menuOpen ? 0 : "-50%"}
+                    top={0}
+                    spacing={15}
+                    pl={'3%'}
+                    transition={"300ms ease-in-out"}
+                    width={["55%", "45%"]}
+                    zIndex={3}>
+                      <NavBarRoutes isLargeScreen={isLargeScreen}/>
+                  </VStack>
+              </React.Fragment>
             }
           </HStack>   
       </HStack>
@@ -112,9 +153,11 @@ export default function Navbar({scrollDir, y }: PageProps) {
 interface NavButtonProps {
   delay: string,
   label: string,
+  isLargeScreen: boolean,
+  icon: React.ComponentType<IconType>,
 };
 
-const NavButton = ({ label, delay}: NavButtonProps) => {
+const NavButton = ({ label, delay, icon, isLargeScreen}: NavButtonProps) => {
   const fadeDownAnim: string =`${fadeDown} 250ms ${delay} forwards`;
   const text = `_ ${label}`
   const href = `#${label}`
@@ -145,7 +188,12 @@ const NavButton = ({ label, delay}: NavButtonProps) => {
             _hover={{
               color:uCMV("#822320", "#E1E1E1"),
               _before: { width: "105%" } }}>
-
+                {isLargeScreen ? <></>:
+                                  <Icon
+                                    as={icon}
+                                    borderRadius={6}
+                                    boxSize={5}
+                                    transition={"100ms ease-in-out"}/>}
                 {text}
 
           </Heading>
@@ -154,16 +202,21 @@ const NavButton = ({ label, delay}: NavButtonProps) => {
   );
 };
 
-export const NavBarRoutes= () => (
+interface NavButtonsProps {
+  isLargeScreen: boolean,
+}
+
+const NavBarRoutes= ({isLargeScreen}: NavButtonsProps) => {
+  return (
   <React.Fragment>
-    <NavButton label="home" delay={"0ms"}  />
-    <NavButton label="about" delay={"60ms"}  />
-    <NavButton label="experience" delay={"120ms"}  />
-    <NavButton label="projects" delay={"160ms"}  />
-    <NavButton label="contact" delay={"180ms"}  />
+    <NavButton label="home" delay={"0ms"}  isLargeScreen={isLargeScreen} icon={FaHome}/>
+    <NavButton label="about" delay={"60ms"}  isLargeScreen={isLargeScreen} icon={FaTerminal} />
+    <NavButton label="experience" delay={"120ms"}  isLargeScreen={isLargeScreen} icon={FaBloggerB} />
+    <NavButton label="projects" delay={"160ms"}  isLargeScreen={isLargeScreen} icon={FaTools} />
+    <NavButton label="contact" delay={"180ms"}  isLargeScreen={isLargeScreen} icon={FaMailBulk} />
     <ResumeButton />
   </React.Fragment>
-);
+);}
 
 
 // TODO: use <Box as={"button"} for color options

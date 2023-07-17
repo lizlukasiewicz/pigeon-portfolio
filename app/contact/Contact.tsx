@@ -32,7 +32,6 @@ export default function Contact({ visRef, visible }: PageProps) {
       id="contact"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         //opacity={loaded ? 1 : 0.5}
-        //ref={el => pageRefs.current = { ...pageRefs.current, contact: el }}
         transition={"500ms ease-out"}>
           <TempContainer
             loaded={loaded}

@@ -40,8 +40,6 @@ type AnchorProps = Omit<
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
 
 const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
-  //figure out how to set scroll to the difference of 
-  // current windowY and elem.top IF windowY isnt at zero
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
     e.preventDefault();
@@ -50,7 +48,11 @@ const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
     const targetId = href.replace(/.*\#/, "");
     // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
-    window.scrollTo({// OR elem?scrollIntoView({behavior:"smooth"})
+    // TODO:Temp fix for scrolling issue - resets Y to zero 
+    if (window.scrollY){
+      window.scroll(0,0)
+    }
+    window.scrollTo({
       top: elem?.getBoundingClientRect().top,
       behavior: "smooth",
     });

@@ -24,7 +24,6 @@ export default function Home() {
     <VStack 
       width={"100%"}
       spacing={5}
-      // paddingX={"5vw"}
       bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")}
       bgSize={"400% 400%"}
       bgPosition={"51% 10%"}
