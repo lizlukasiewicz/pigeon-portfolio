@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+// import React from "react";
 import { TempContainer } from "ui/TempContainer";
 import { 
         Container,
@@ -9,17 +9,17 @@ import {
         Flex
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
-type PageProps = {
-  visRef: any;
-  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-};
+// type PageProps = {
+//   visRef: any;
+//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+// };//{ visRef, visible }: PageProps
 
 
-export default function Contact({ visRef, visible }: PageProps) {
-  const [loaded, setLoaded] = React.useState<boolean>(false);
-    React.useEffect(() => {
-        visible && setLoaded(true)
-    }, [visible]);
+export default function Page() {
+  // const [loaded, setLoaded] = React.useState<boolean>(false);
+  //   React.useEffect(() => {
+  //       visible && setLoaded(true)
+  //   }, [visible]);
   
     const fadeOutAnim: string = `${fadeOut} 750ms ease-in-out forwards`;
     const openLetterAnim: string = `${openLetter} 500ms ease-in-out forwards`;
@@ -29,12 +29,12 @@ export default function Contact({ visRef, visible }: PageProps) {
     const bgColor2: string = uCMV("#FFF4E1", "#1C2445")
     return(
       <Container
-      id="contact"
+        id="contact"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
         //opacity={loaded ? 1 : 0.5}
         transition={"500ms ease-out"}>
           <TempContainer
-            loaded={loaded}
+            //loaded={loaded}
             label={"contact"}
             title={"Drop a line"}>
               <Flex
@@ -71,8 +71,8 @@ export default function Contact({ visRef, visible }: PageProps) {
                         position: "absolute",
                         zIndex: 1 }}>
 
-                          {loaded && (
-                            <React.Fragment>
+                          {/* {loaded && (
+                            <React.Fragment> */}
                               <Box
                                     animation={openLetterAnim}
                                     backgroundColor={bgColor1}
@@ -134,8 +134,8 @@ export default function Contact({ visRef, visible }: PageProps) {
 
                                 </Box>
 
-                            </React.Fragment>
-                          )}
+                            {/* </React.Fragment>
+                          )} */}
                   </Box>
               </Flex>
           </TempContainer>

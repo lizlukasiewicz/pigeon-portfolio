@@ -2,6 +2,7 @@
 import { Providers } from "./providers";
 import '/styles/globals.css'
 import type { Metadata } from 'next';
+import BackgroundContain from "ui/BackgroundContain";
  
 export const metadata: Metadata = {
   title: 'Lukasiewicz',
@@ -12,7 +13,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({children,}: {children: React.ReactNode}) {
+export default function RootLayout(props: {
+  children: React.ReactNode;
+  home: React.ReactNode;
+  about: React.ReactNode;
+  experience: React.ReactNode;
+  projects: React.ReactNode;
+  contact: React.ReactNode;
+}) {//({children,}: {children: React.ReactNode})
   return (
     <html lang="en">
       {/*
@@ -22,7 +30,14 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
       <head />
       <body>
         <Providers>
-        {children}
+          <BackgroundContain>
+            {props.home}
+            {props.about}
+            {props.experience}
+            {props.projects}
+            {props.contact}
+            {props.children}
+          </BackgroundContain>
         </Providers>
       </body>
     </html>

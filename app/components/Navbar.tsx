@@ -22,7 +22,6 @@ import {
 } from '@chakra-ui/react'
 import { fadeDown } from 'lib/helpers/animation';
 import Image from 'next/image'
-import Link from 'next/link';
 import styles from './nav.module.css'
 import { IconType } from "react-icons";
 
@@ -69,7 +68,6 @@ export default function Navbar({scrollDir, y }: PageProps) {
             paddingX={"1rem"}
             position={"absolute"}
             transition={"200ms ease-out"}>
-              <Link href="/">
                 {colorMode == 'light' ? 
                     <Image
                       src="/light_pigeon.png"
@@ -88,7 +86,6 @@ export default function Navbar({scrollDir, y }: PageProps) {
                       height={70}
                       priority />
                     }
-              </Link>
               <Center
                 onClick={toggleColorMode}>
               {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
@@ -133,7 +130,7 @@ export default function Navbar({scrollDir, y }: PageProps) {
                     justifyContent={"flex-start"}
                     alignItems={"flex-start"}
                     position={"fixed"}
-                    right={menuOpen ? 0 : "-50%"}
+                    right={menuOpen ? 0 : "-56%"}
                     top={0}
                     spacing={15}
                     pl={'3%'}

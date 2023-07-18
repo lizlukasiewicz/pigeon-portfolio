@@ -2,18 +2,18 @@
 import {useState, useEffect} from 'react';
 import { ExpGroup } from "./ExpGroup";
 import { TempContainer } from 'ui/TempContainer';
-import { Stack, Container} from "@chakra-ui/react";
+import { Container} from "@chakra-ui/react";
 
-interface PageProps {
-  visRef: any,
-  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
-};
+// interface PageProps {
+//   visRef: any,
+//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
+// };//{ visRef, visible}: PageProps
 
-export default function ExperienceLayout({ visRef, visible}: PageProps) {
-  const [loaded, setLoaded] = useState<boolean>(false);
-    useEffect(() => {
-        visible && setLoaded(true)
-    }, [visible]);
+export default function Page() {
+  // const [loaded, setLoaded] = useState<boolean>(false);
+  //   useEffect(() => {
+  //       visible && setLoaded(true)
+  //   }, [visible]);
 
   const [idx, setIdx] = useState<number>(0);
     useEffect((): void => {
@@ -27,8 +27,7 @@ export default function ExperienceLayout({ visRef, visible}: PageProps) {
       transition={"500ms ease-out"}>
         <TempContainer 
           label={'experience'} 
-          title={'My Experience'} 
-          loaded={loaded}>
+          title={'My Experience'} >
             {/* <Stack 
               ref={visRef} > */}
               <ExpGroup idx={idx} setIdx={setIdx}/>
