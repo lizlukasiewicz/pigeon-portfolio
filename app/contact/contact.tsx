@@ -15,7 +15,7 @@ import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
 // };//{ visRef, visible }: PageProps
 
 
-export default function Page() {
+export default function Contact() {
   // const [loaded, setLoaded] = React.useState<boolean>(false);
   //   React.useEffect(() => {
   //       visible && setLoaded(true)

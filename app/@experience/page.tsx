@@ -9,7 +9,7 @@ import { Container} from "@chakra-ui/react";
 //   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
 // };//{ visRef, visible}: PageProps
 
-export default function Page() {
+export default function Experience() {
   // const [loaded, setLoaded] = useState<boolean>(false);
   //   useEffect(() => {
   //       visible && setLoaded(true)

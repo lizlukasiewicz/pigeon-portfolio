@@ -6,7 +6,6 @@ import {
     Center,
     Icon,
     HStack,
-    createIcon,
     useColorModeValue as uCMV
 } from '@chakra-ui/react'
 import { fadeDown, fadeRight, upDown } from "./helpers/animation";

@@ -23,11 +23,40 @@
   cursor: pointer;
   transform: scale(1.5);
 }
-.svg {
-  display: inline;
+
+.lib .svg {
+  display: inline; 
+}
+
+.lib .svg path.onoff {
+  animation: updown .4s linear forwards; 
+}
+
+.lib .svg path.shine {
+  opacity: 1; 
+}
+
+.lib .svg path.lamp {
+    opacity: 1; 
+}
+
+.checkbox:checked + .lib .svg path.onoff {
+  opacity: 0.8; 
+}
+
+.checkbox:checked + .lib .svg path.shine {
+  opacity: 0; 
+}
+
+.checkbox:checked + .lib .svg path.lamp {
+  opacity: 0; 
 }
 .svg > path {
   transition: all 0.3s ease;
+}
+
+/* .svg {
+  display: inline;
 }
 .onoff {
   opacity: 0.8;
@@ -37,4 +66,11 @@
 }
 .lamp {
   opacity: 1;
-}
+} */
+@keyframes updown {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(1px); }
+  100% {
+    transform: translateY(0); } }

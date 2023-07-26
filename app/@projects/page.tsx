@@ -1,7 +1,7 @@
 'use client';
 import {useState, useEffect} from 'react';
 import { TempContainer } from 'ui/TempContainer';
-import Projects from './Projects'
+import Project from './Project';
 import { Container } from "@chakra-ui/react";
 
 // interface PageProps {
@@ -9,7 +9,7 @@ import { Container } from "@chakra-ui/react";
 //   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
 // };//{ visRef, visible}: PageProps
 
-export default function Page() {
+export default function Projects() {
   // const [loaded, setLoaded] = useState<boolean>(false);
     
   //   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Page() {
           label={'projects'} 
           title={"The things I've Built"} >
             {/* <Stack ref={visRef}> */}
-              <Projects idx={idx} setIdx={setIdx} />
+              <Project idx={idx} setIdx={setIdx} />
             {/* </Stack> */}
         </TempContainer>
         </Container>

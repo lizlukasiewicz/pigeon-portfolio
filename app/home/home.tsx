@@ -9,7 +9,7 @@ import { useState } from 'react';
 // };
 
 
-export default function Page() {
+export default function Splash() {
     const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
     // const [loaded, setLoaded] = useState<boolean>(false);

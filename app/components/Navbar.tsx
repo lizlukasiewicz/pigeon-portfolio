@@ -88,6 +88,7 @@ export default function Navbar({scrollDir, y }: PageProps) {
                     }
               <Center
                 onClick={toggleColorMode}>
+                  
               {colorMode == 'light' ? <ColorToggleDay /> : <Toggle />}
               </Center>
               

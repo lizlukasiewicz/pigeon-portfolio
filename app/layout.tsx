@@ -13,14 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout(props: {
-  children: React.ReactNode;
-  home: React.ReactNode;
-  about: React.ReactNode;
-  experience: React.ReactNode;
-  projects: React.ReactNode;
-  contact: React.ReactNode;
-}) {//({children,}: {children: React.ReactNode})
+export default function RootLayout({children,}: {children: React.ReactNode}) {//({children,}: {children: React.ReactNode})
   return (
     <html lang="en">
       {/*
@@ -31,12 +24,12 @@ export default function RootLayout(props: {
       <body>
         <Providers>
           <BackgroundContain>
-            {props.home}
+            {/* {props.home}
             {props.about}
             {props.experience}
             {props.projects}
-            {props.contact}
-            {props.children}
+            {props.contact} */}
+            {children}
           </BackgroundContain>
         </Providers>
       </body>

@@ -17,7 +17,7 @@ import GitCalendar from "../components/GitCalendar";
 //     visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
 // };
 
-export default function Page() {
+export default function About() {
     // const [loaded, setLoaded] = React.useState<boolean>(false);
     // React.useEffect(() => {
     //     visible && setLoaded(true)
