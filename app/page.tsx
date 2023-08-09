@@ -1,14 +1,11 @@
 import dynamic from 'next/dynamic'
 
 import Splash from "./home/home"
-// import About from "./about/about"
-//import Experience from "./@experience/page"
-//import Contact from "./contact/contact"
 
-const About=dynamic(() => import('./about/about'), { ssr: false })
+const About=dynamic(() => import('./about/about'))
 const Experience=dynamic(() => import('./@experience/page'))
 const Project=dynamic(() => import('./@projects/page'))
-const Contact = dynamic(() => import('./contact/contact'), { ssr: false })
+const Contact = dynamic(() => import('./contact/contact'))//, { ssr: false }
 
 export default function Home() { 
   return(
@@ -18,7 +15,7 @@ export default function Home() {
       <Experience />
       <Project />
       <Contact />
-        <p>footer</p>
+        {/* <p>footer</p> */}
     </div>
   )
 }

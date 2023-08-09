@@ -24,11 +24,6 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {//
       <body>
         <Providers>
           <BackgroundContain>
-            {/* {props.home}
-            {props.about}
-            {props.experience}
-            {props.projects}
-            {props.contact} */}
             {children}
           </BackgroundContain>
         </Providers>
