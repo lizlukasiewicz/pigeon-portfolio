@@ -42,7 +42,6 @@ export default function Contact() {
                 flexDirection={"column"}
                 height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
                 justifyContent={"center"}
-                //ref={visRef}
                 width={{ base: "80vw", lg: "60vw" }}>
                   <Box
                     alignItems={"center"}

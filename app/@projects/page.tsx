@@ -29,9 +29,7 @@ export default function Projects() {
         <TempContainer 
           label={'projects'} 
           title={"The things I've Built"} >
-            {/* <Stack ref={visRef}> */}
               <Project idx={idx} setIdx={setIdx} />
-            {/* </Stack> */}
         </TempContainer>
         </Container>
     );

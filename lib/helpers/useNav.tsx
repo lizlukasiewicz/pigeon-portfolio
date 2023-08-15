@@ -32,7 +32,7 @@ export const useNavigation = (): [number, string] => {
 
 import Link, { LinkProps } from "next/link";
 import React, { PropsWithChildren } from "react";
-
+import { useRouter } from "next/router";
 
 type AnchorProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -41,14 +41,13 @@ type AnchorProps = Omit<
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
 
 const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
+  const router = useRouter();
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // first prevent the default behavior
     e.preventDefault();
-    // get the href and remove everything before the hash (#)
     const href = e.currentTarget.href;
     const targetId = href.replace(/.*\#/, "");
-    // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
+    
     // TODO:Temp fix for scrolling issue - resets Y to zero 
     if (window.scrollY){
       window.scroll(0,0)
@@ -57,11 +56,14 @@ const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
       top: elem?.getBoundingClientRect().top,
       behavior: "smooth",
     });
+    router.push(`#${targetId}`)
   };
   return (
-    <Link {...props} onClick={handleScroll}>
+    // <Link {...props} onClick={handleScroll}>
+    <button type="button" onClick={() => handleScroll}>
       {children}
-    </Link>
+    </button>
+    // </Link>
   );
 };
 export default ScrollLink;

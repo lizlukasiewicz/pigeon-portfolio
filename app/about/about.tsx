@@ -31,7 +31,6 @@ export default function About() {
       <Container
         id="about"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        //opacity={loaded ? 1 : 0}
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  

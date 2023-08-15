@@ -28,10 +28,7 @@ export default function Experience() {
         <TempContainer 
           label={'experience'} 
           title={'My Experience'} >
-            {/* <Stack 
-              ref={visRef} > */}
               <ExpGroup idx={idx} setIdx={setIdx}/>
-            {/* </Stack> */}
         </TempContainer>
     </Container>
           

@@ -14,16 +14,31 @@ export const TempContainer=({
   children,
   label,
   title,
-  loaded,
   
 }:{
   children?: React.ReactNode;
-  label?: string,
+  label: string,
   title?: string,
-  loaded?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
   
 })=> {
+  const [loaded, setLoaded] = React.useState(false);
+  
+  React.useEffect(() => {
+    const elem = document.getElementById(label);
+    const inView = elem?.getBoundingClientRect().top
+    
+    const onScroll = () => {
+      if (inView && window.scrollY >= inView) {
+        console.log(`💈 ${inView}`)
+        setLoaded(true);
+      }
+    };
+    window.addEventListener("scroll", onScroll);
 
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
   const growRightLittleAnim: string = `${growRightLittle} 1s 250ms forwards`;
   return (
@@ -36,11 +51,11 @@ export const TempContainer=({
                 >
                 <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
-                        <HStack // opacity={loaded ? 1 : 0.1}
+                        <HStack opacity={loaded ? 1 : 0.1}
                         >
                           <Box 
-                            animation={growRightAnim}//&& loaded
-                            backgroundColor={uCMV("#3D1C4A", "#008582")}// DARK RED || NOT LISTED MUTED BLUE   //{"#008582"}//
+                            animation={growRightAnim }//&& loaded
+                            backgroundColor={uCMV("#3D1C4A", "#008582")}
                             height={1}
                             borderRadius={10}
                             //opacity={0}
@@ -49,7 +64,7 @@ export const TempContainer=({
                             width={0}
                             _after={{
                                 borderRight: "4px solid #008582",
-                                borderTop: uCMV("4px solid #3D1C4A", "4px solid #008582"),// DARK RED || NOT LISTED MUTED BLUE // "4px solid #008582",//
+                                borderTop: uCMV("4px solid #3D1C4A", "4px solid #008582"),
                                 content: `""`,
                                 position: "absolute",
                                 right: -1,
@@ -81,7 +96,7 @@ export const TempContainer=({
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{ base: 'lg', sm: 'xl', md: "2xl" }}
                             fontWeight={"bold"}
-                            color={uCMV("#46373E", "#00C484")}//Darker nonlist brown  ||  NEON GREEN              {"#00C484"}// //color={"#B3DDC1"}> <<MUTED GREEN
+                            color={uCMV("#46373E", "#00C484")}
                             >
                             {title}
                         </Heading>

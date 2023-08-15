@@ -217,7 +217,6 @@ const NavBarRoutes= ({isLargeScreen}: NavButtonsProps) => {
 );}
 
 
-// TODO: use <Box as={"button"} for color options
 export const ResumeButton = () => {
   const fadeDownAnim: string = `${fadeDown} 200ms 300ms forwards`;
 
