@@ -21,37 +21,36 @@ export const TempContainer=({
   title?: string,
   
 })=> {
-  const [loaded, setLoaded] = React.useState(false);
+  // const [loaded, setLoaded] = React.useState(false);
   
-  React.useEffect(() => {
-    const elem = document.getElementById(label);
-    const inView = elem?.getBoundingClientRect().top
+  // React.useEffect(() => {
+  //   const elem = document.getElementById(label);
+  //   const inView = elem?.getBoundingClientRect().top
     
-    const onScroll = () => {
-      if (inView && window.scrollY >= inView) {
-        console.log(`💈 ${inView}`)
-        setLoaded(true);
-      }
-    };
-    window.addEventListener("scroll", onScroll);
+  //   const onScroll = () => {
+  //     if (inView && window.scrollY >= inView) {
+  //       setLoaded(true);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", onScroll);
 
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", onScroll);
+  //   };
+  // }, []);
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
   const growRightLittleAnim: string = `${growRightLittle} 1s 250ms forwards`;
   return (
             <Stack
-                align={'center'}
-                direction={{ base: 'column', md: 'row' }}
+                align={'center'} // items-center
+                direction={{ base: 'column', md: 'row' }} // flex-col laptop:flex-row
                 paddingY={18}
                 paddingTop={"7%"}
                 spacing={{ base: 8, md: 10 }}
                 >
                 <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
-                        <HStack opacity={loaded ? 1 : 0.1}
+                        <HStack //opacity={loaded ? 1 : 0.1}
                         >
                           <Box 
                             animation={growRightAnim }//&& loaded

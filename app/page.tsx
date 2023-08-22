@@ -9,7 +9,9 @@ const Contact = dynamic(() => import('./contact/contact'))//, { ssr: false }
 
 export default function Home() { 
   return(
-    <div>
+    <div 
+    //className="flex flex-col w-full items-center space-x-5 bg-blend-gradient bg-zoom animate-[gradient_6s_ease_infinite]"
+    >
       <Splash />
       <About />
       <Experience />
