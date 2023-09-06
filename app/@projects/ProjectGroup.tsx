@@ -25,7 +25,7 @@ interface ProjectProps {
 };
 
 
-export default function Project({ idx, setIdx }: ProjectProps) {
+export default function ProjectGroup({ idx, setIdx }: ProjectProps) {
     const fadeDownAnim: string = `${fadeDown} 500ms 80ms forwards`;
     return(
           <Stack

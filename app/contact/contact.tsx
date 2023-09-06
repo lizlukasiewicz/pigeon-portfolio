@@ -1,5 +1,5 @@
-"use client";
-// import React from "react";
+
+import React from "react";
 import { TempContainer } from "ui/TempContainer";
 import { 
         Container,
@@ -9,17 +9,14 @@ import {
         Flex
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
-// type PageProps = {
-//   visRef: any;
-//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-// };//{ visRef, visible }: PageProps
+import { PageProps } from "lib/helpers/interfaces";
 
 
-export default function Contact() {
-  // const [loaded, setLoaded] = React.useState<boolean>(false);
-  //   React.useEffect(() => {
-  //       visible && setLoaded(true)
-  //   }, [visible]);
+export default function Contact({ visRef, visible }: PageProps) {
+  const [loaded, setLoaded] = React.useState<boolean>(false);
+    React.useEffect(() => {
+        visible && setLoaded(true)
+    }, [visible]);
   
     const fadeOutAnim: string = `${fadeOut} 750ms ease-in-out forwards`;
     const openLetterAnim: string = `${openLetter} 500ms ease-in-out forwards`;
@@ -31,10 +28,9 @@ export default function Contact() {
       <Container
         id="contact"
         maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
-        //opacity={loaded ? 1 : 0.5}
         transition={"500ms ease-out"}>
           <TempContainer
-            //loaded={loaded}
+            loaded={loaded}
             label={"contact"}
             title={"Drop a line"}>
               <Flex
@@ -42,10 +38,11 @@ export default function Contact() {
                 flexDirection={"column"}
                 height={{ base: "85vw", sm: "65vw", lg: "45vw" }}
                 justifyContent={"center"}
-                width={{ base: "80vw", lg: "60vw" }}>
+                width={{ base: "80vw", lg: "60vw" }}
+                ref={visRef}>
                   <Box
                     alignItems={"center"}
-                    animation={shakeAnim}//loaded ? shakeAnim : fadeOutAnim
+                    animation={visible ? shakeAnim : fadeOutAnim}
                     border={"1px solid"}
                     borderRadius={5}
                     boxShadow={"0 15px 10px -10px rgba(0,0,0,0.5)"}
@@ -70,23 +67,23 @@ export default function Contact() {
                         position: "absolute",
                         zIndex: 1 }}>
 
-                          {/* {loaded && (
-                            <React.Fragment> */}
+                          {loaded && (
+                            <React.Fragment>
                               <Box
-                                    animation={openLetterAnim}
-                                    backgroundColor={bgColor1}
-                                    border={'1px solid'}
-                                    clipPath={"polygon(0% 0%, 50% 50%, 100% 0%)"}
-                                    height={"100%"}
-                                    position={"absolute"}
-                                    width={"100.5%"}
-                                    zIndex={1}
-                                    _before={{
-                                        backgroundColor: bgColor2,
-                                        clipPath: "polygon(0% -1%, 50% 49%, 100% -1%)",
-                                        content: `""`,
-                                        inset: 0,
-                                        position: "absolute" }} />
+                                animation={openLetterAnim}
+                                backgroundColor={bgColor1}
+                                border={'1px solid'}
+                                clipPath={"polygon(0% 0%, 50% 50%, 100% 0%)"}
+                                height={"100%"}
+                                position={"absolute"}
+                                width={"100.5%"}
+                                zIndex={1}
+                                _before={{
+                                    backgroundColor: bgColor2,
+                                    clipPath: "polygon(0% -1%, 50% 49%, 100% -1%)",
+                                    content: `""`,
+                                    inset: 0,
+                                    position: "absolute" }} />
                                 <Box
                                     animation={slideUpAnim}
                                     backgroundColor={bgColor2}
@@ -132,9 +129,8 @@ export default function Contact() {
                                         </Flex>
 
                                 </Box>
-
-                            {/* </React.Fragment>
-                          )} */}
+                            </React.Fragment>
+                          )}
                   </Box>
               </Flex>
           </TempContainer>

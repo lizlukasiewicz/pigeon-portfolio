@@ -18,13 +18,6 @@ export const FaNode = require('react-icons/fa').FaNode
 export const VscSymbolClass=require('react-icons/vsc').VscSymbolClass;
 export const FaPaintBrush = require('react-icons/fa').FaPaintBrush;
 
-export type PageProps = {
-  pageRefs?: React.MutableRefObject<{}>;
-  visible?: boolean;
-  visRef?: React.RefObject<Element>;
-  params?: any;
-  children?: React.ReactNode;
-};
 
 export interface Compartment {
   name: string,

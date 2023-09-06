@@ -8,10 +8,13 @@ import {
 
 import * as React from "react";
 import { fadeDown } from 'lib/helpers/animation';
-import { PageProps } from 'lib/helpers/interfaces';
 import { socialList } from "lib/social";
 import { FiMail } from "react-icons/fi";
 
+interface PageProps {
+  scrollDir: string | number,
+  y: string | number,
+} 
 
 export default function Social({ scrollDir, y }: PageProps ) {
     const fadeDownAnim: string = `${fadeDown} 200ms 180ms forwards`;

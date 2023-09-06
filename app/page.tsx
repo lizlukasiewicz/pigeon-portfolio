@@ -1,23 +1,25 @@
-import dynamic from 'next/dynamic'
-
+'use client'
+import { useOnScreen } from 'lib/helpers/Loading'
 import Splash from "./home/home"
-
-const About=dynamic(() => import('./about/about'))
-const Experience=dynamic(() => import('./@experience/page'))
-const Project=dynamic(() => import('./@projects/page'))
-const Contact = dynamic(() => import('./contact/contact'))//, { ssr: false }
+import About from './about/about'
+import Experience from './@experience/Experience'
+import Projects from './@projects/Projects'
+import Contact from './contact/contact'
 
 export default function Home() { 
+  const [homeRef, homeVisible] = useOnScreen();
+  const [aboutRef, aboutVisible] = useOnScreen();
+  const [expRef, expVisible] = useOnScreen();
+  const [projectRef, projectVisible] = useOnScreen();
+  const [contactRef, contactVisible] = useOnScreen();
+
   return(
-    <div 
-    //className="flex flex-col w-full items-center space-x-5 bg-blend-gradient bg-zoom animate-[gradient_6s_ease_infinite]"
-    >
-      <Splash />
-      <About />
-      <Experience />
-      <Project />
-      <Contact />
-        {/* <p>footer</p> */}
+    <div className='min-w-full'>
+      <Splash visRef={homeRef} visible={homeVisible}/>
+      <About visRef={aboutRef} visible={aboutVisible}/>
+      <Experience visRef={expRef} visible={expVisible}/>
+      <Projects visRef={projectRef} visible={projectVisible}/>
+      <Contact visRef={contactRef} visible={contactVisible}/>
     </div>
   )
 }

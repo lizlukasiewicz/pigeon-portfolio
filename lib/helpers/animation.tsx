@@ -41,6 +41,22 @@ export const growRight: string = keyframes`
   }
 `;
 
+export const shrinkLeft: string = keyframes`
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+    
+  } 50% {
+    opacity: 0.5;
+    filter: brightness(0.5);
+
+  } 100% {
+    opacity: 0;
+    filter: brightness(0);
+
+  }
+`;
+
 export const growRightLittle: string = keyframes`
   from {
     width: 0;

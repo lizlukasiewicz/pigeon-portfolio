@@ -1,5 +1,5 @@
-'use client'
-import {useState} from "react";
+
+import {useState, useEffect} from "react";
 import {
     Container,
     Stack,
@@ -8,21 +8,18 @@ import {
     useColorModeValue as uCMV
 } from "@chakra-ui/react"
 import { SkillTable } from "lib/Icons"
-import { fadeDown, growRight } from 'lib/helpers/animation'
+import { fadeDown, growRight, shrinkLeft } from 'lib/helpers/animation'
 import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
+import { PageProps } from 'lib/helpers/interfaces';
 
-// type PageProps = {
-//     visRef: any;
-//     visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-// };
-
-export default function About() {
-    // const [loaded, setLoaded] = React.useState<boolean>(false);
-    // React.useEffect(() => {
-    //     visible && setLoaded(true)
-    // }, [visible]);
+export default function About({ visRef, visible }: PageProps) {
+    const [loaded, setLoaded] = useState<boolean>(false);
+    useEffect(() => {
+        visible && setLoaded(true)
+    }, [visible]);
     const [name, setName] = useState<boolean>(false);
+    const erase: string =`5s 100ms forwards ${shrinkLeft}`
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
     const fadeRightFirst: string = `1000ms 800ms forwards ${growRight}`;
     const fadeRightSecond: string = `1000ms 1200ms forwards ${growRight}`;
@@ -36,10 +33,10 @@ export default function About() {
             label={'about'}  
             title={'About me'}>
               <Stack
-                //ref={visRef}
+                ref={visRef}
                 width={{ base: "80vw", lg: "60vw" }}
                 direction={"column"}
-                //opacity={visible ? 1 : 0.1}
+                opacity={loaded ? 1 : 0.1}
                 //minHeight={"70vh"}
                 justify={"space-around"}
                 spacing={20}>
@@ -73,17 +70,17 @@ export default function About() {
 
                           <Text  
                             align={'left'} marginY={2} fontSize={{ base: "2xl", lg: "4xl" }} color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I can.</Text></Text>{/* animation={fadeRightFirst} opacity={0} */}
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')} animation={visible ? fadeRightFirst : erase} opacity={0}> I can.</Text></Text>
                           <Text  
                             align={'right'} marginY={2} fontSize={{  base: "2xl", lg: "4xl" }}  color={uCMV("#020405", '#B3DDC1')}>
-                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')}> I feel like it.</Text> </Text>{/* animation={fadeRightSecond} opacity={0}  */}
+                            Because<Text as={'span'} color={uCMV("#D54440", '#59BC7D')} animation={visible ? fadeRightSecond : erase} opacity={0}> I feel like it.</Text></Text>
                       </Stack>
                   </Box>
 
                   <Box>
                       <Text 
                         fontFamily={"var(--chakra-fonts-mono)"} 
-                        animation={fadeDownText} 
+                        animation={visible? fadeDownText : erase} 
                         align={'center'} 
                         fontSize={["xl", "lg"]} //{ base: "md", lg: "lg" }
                         color={uCMV("#020405", '#B3DDC1')}>

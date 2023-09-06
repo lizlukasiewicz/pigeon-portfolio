@@ -1,11 +1,17 @@
 export interface PageProps {
-    pageRefs?: React.MutableRefObject<{}>,
-    visRef?: any,
-    visible?: boolean | React.Dispatch<any> | React.MutableRefObject<any>,
-    y: string | number,
-    scrollDir: string | number,
-    isLargeScreen?: boolean,
+  visRef:  any;
+  visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
+
 };
+// visRef: React.RefObject<HTMLElement>; // Or React.RefObject<HTMLDivElement> or any other specific HTML element type
+// visible: boolean;
 
 
 
+// export type PageProps = {
+//   pageRefs?: React.MutableRefObject<{}>;
+//   visible?: boolean;
+//   visRef?: React.RefObject<Element>;
+//   params?: any;
+//   children?: React.ReactNode;
+// };

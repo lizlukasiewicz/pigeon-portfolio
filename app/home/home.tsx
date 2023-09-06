@@ -1,21 +1,17 @@
-"use client";
+
 import { fadeDown } from 'lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
-import { useState } from 'react';
-
-// type PageProps = {
-//   visRef:  any;
-//   visible: boolean | React.Dispatch<any> | React.MutableRefObject<any>;
-// };
+import { useState, useEffect } from 'react';
+import { PageProps } from 'lib/helpers/interfaces';
 
 
-export default function Splash() {
+export default function Splash({ visRef, visible }: PageProps) {
     const [name, setName] = useState<boolean>(false);
     const fadeDownAnim: string = `${fadeDown} 1000ms`;
-    // const [loaded, setLoaded] = useState<boolean>(false);
-    // useEffect(() => {
-    //     visible && setLoaded(true)
-    // }, [visible]);
+    const [loaded, setLoaded] = useState<boolean>(false);
+    useEffect(() => {
+        visible && setLoaded(true)
+    }, [visible]);
 
     return(
           <Flex
@@ -23,19 +19,19 @@ export default function Splash() {
             w={'100%'} 
             alignItems={"center"}
             position={"relative"}
-            height={"90vh"}>
-              
+            height={"90vh"}
+            ref={visRef}>
 
-                  <Box w={'100%'} 
-                      //ref={visRef}
-                      minHeight={'800px'}
-                      //opacity={loaded ? 1 : 0.3}
-                      bgGradient={uCMV("radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(255,211,21, 0.8) 63%, rgba(255,244,225,0.5) 83%, rgba(255,238,213, 0) 92%)", 
-                                        "radial(circle 375px at center, #112941 46%, rgba(93, 185, 188, 0.52) 60%, #00E2CB 61.4%, rgba(51, 72, 80, 0.8) 62%, rgba(7, 18, 43, 0.5) 82%,rgba(7, 18, 43, 0) 92%)")}
-                      display={"flex"}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      pos={"relative"}>
+                  <Box 
+                    w={'100%'} 
+                    minHeight={'800px'}
+                    opacity={loaded ? 1 : 0.3}
+                    bgGradient={uCMV("radial(circle 375px at center, #FFFFF1 46%, rgba(255,255,129, 0.52) 60%, #FFFF81 61.4%, rgba(255,211,21, 0.8) 63%, rgba(255,244,225,0.5) 83%, rgba(255,238,213, 0) 92%)", 
+                                      "radial(circle 375px at center, #112941 46%, rgba(93, 185, 188, 0.52) 60%, #00E2CB 61.4%, rgba(51, 72, 80, 0.8) 62%, rgba(7, 18, 43, 0.5) 82%,rgba(7, 18, 43, 0) 92%)")}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    pos={"relative"}>
 
                       <Box
                           m={"0.5rem"}
