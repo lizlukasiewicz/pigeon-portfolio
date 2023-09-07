@@ -8,7 +8,7 @@ import {
   Stack,
   useColorModeValue as uCMV
 } from '@chakra-ui/react';
-import { growRight, growRightLittle } from '../lib/helpers/animation';
+import { growRight, growRightLittle, dissolve } from '../lib/helpers/animation';
 
 export const TempContainer=({
   children,
@@ -21,6 +21,7 @@ export const TempContainer=({
   title?: string,
   loaded?: boolean,
 })=> {
+  const erase: string =`5s 100ms forwards ${dissolve}`
   const growRightAnim: string = `${growRight} 1s 250ms forwards`;
   const growRightLittleAnim: string = `${growRightLittle} 1s 250ms forwards`;
   return (
@@ -29,18 +30,17 @@ export const TempContainer=({
                 direction={{ base: 'column', md: 'row' }} // flex-col laptop:flex-row
                 paddingY={18}
                 paddingTop={"7%"}
-                spacing={{ base: 8, md: 10 }}
-                >
-                <Stack flex={2} spacing={{ base: 5, md: 10 }} position={"relative"}>
+                spacing={{ base: 8, md: 10 }}>
+                <Stack flex={2} spacing={{ base: 4, md: 10 }} position={"relative"}>
                     <Stack position={"relative"} spacing={3}>
-                        {/* {loaded && ( */}
+
                           <HStack>
                             <Box 
-                              animation={loaded ? growRightAnim : growRightAnim }//&& 
+                              animation={loaded ? growRightAnim : erase } 
                               backgroundColor={uCMV("#3D1C4A", "#008582")}
                               height={1}
                               borderRadius={10}
-                              //opacity={0}
+                              opacity={0}
                               position={"relative"}
                               top={"3%"}
                               width={0}
@@ -52,22 +52,22 @@ export const TempContainer=({
                                   right: -1,
                                   width: 0 }} />
                             <Box 
-                              animation={loaded ? growRightLittleAnim: growRightLittleAnim}//&&loaded
+                              animation={loaded ? growRightLittleAnim: erase}
                               backgroundColor={uCMV("rgb(130,35,32)", "rgb(100,156,166)")} //{"rgb(100,156,166)"} ////darker red nonlist  ||  topPal MUTED BLUE
                               height={1}
-                              //opacity={0}
+                              opacity={0}
                               position={"relative"}
                               top={"2%"}
                               width={0}
                               _before={{
-                                  //borderLeft: "4px solid transparent",
+                                  borderLeft: "4px solid transparent",
                                   borderBottom: uCMV("4px solid rgb(130,35,32)", "4px solid rgb(100,156,166)"),//darker red nonlist  ||  topPal MUTED BLUE//"4px solid rgb(100,156,166)",//
                                   content: `""`,
                                   position: "absolute",
                                   left: -1,
                                   width: 0 }}
                               _after={{
-                                  ////borderRight: "4px solid transparent",
+                                  borderRight: "4px solid transparent",
                                   borderTop: uCMV("4px solid rgb(130,35,32)", "4px solid rgb(100,156,166)"),//darker red nonlist  ||  topPal MUTED BLUE//"4px solid rgb(100,156,166)",//
                                   content: `""`,
                                   position: "absolute",

@@ -49,13 +49,13 @@ export default function Navbar({scrollDir, y }: PageProps) {
         backdropFilter='auto' 
         backdropBlur='24px'
         height={y !== 0 && scrollDir === "up" ? 
-                  85//65 //
+                  65
                   : 
-                  100}
+                  75}
         justify={"center"}
         position={"fixed"}
         top={y > 80 && scrollDir === "down" ? 
-              -10//-110 //
+              -3
               : 
               0}
         transition={"200ms ease-out"}
@@ -73,8 +73,8 @@ export default function Navbar({scrollDir, y }: PageProps) {
                       src="/light_pigeon.png"
                       alt="Pigeon Logo"
                       className={styles.logo}
-                      width={70}
-                      height={70}
+                      width={60}
+                      height={60}
                       priority />
                       
                       :
@@ -82,8 +82,8 @@ export default function Navbar({scrollDir, y }: PageProps) {
                       src="/Frame_14.png"
                       alt="Pigeon Logo"
                       className={styles.logo}
-                      width={70}
-                      height={70}
+                      width={60}
+                      height={60}
                       priority />
                     }
               <Center
@@ -132,6 +132,7 @@ export default function Navbar({scrollDir, y }: PageProps) {
                     alignItems={"flex-start"}
                     position={"fixed"}
                     right={menuOpen ? 0 : "-56%"}
+                    onClick={() => setMenuOpen(!menuOpen)}
                     top={0}
                     spacing={15}
                     pl={'3%'}
@@ -226,7 +227,7 @@ export const ResumeButton = () => {
       as={"a"}
       color={uCMV("#020405", "#00C484")}
       cursor={"pointer"}
-      href={"https://u1a45ww-yt0y3c8.s3.amazonaws.com/Elizabeth_Lukasiewicz_resume_.pdf"}
+      href={"https://s3.amazonaws.com/nyc-pigeon.com/e_lukasiewicz_resume.pdf"}
       target={"_blank"}           
       fontFamily={"var(--chakra-fonts-mono)"}
       fontSize={'1.1rem'}

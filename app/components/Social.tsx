@@ -26,14 +26,14 @@ export default function Social({ scrollDir, y }: PageProps ) {
                 display={"flex"}
                 justifyContent={"center"}
                 position={"fixed"}
-                right={{ base: 1, sm: 5, lg: -1 }}
+                right={{ base: 1, sm: 3, lg: -1 }}
                 top={
                     y > 80 && scrollDir === "down" ? 
                         "6%"
                         : y > 60 && scrollDir === "up" ? 
-                            "10%"
+                            "8%"
                             : 
-                            "15%"
+                            "10%"
                         }
                 transition={"200ms ease-out"}
                 zIndex={3}>
@@ -49,6 +49,7 @@ export default function Social({ scrollDir, y }: PageProps ) {
             </Stack>
             <Stack
                 alignItems={"center"}
+                pl={[2, 0]}
                 bottom={{ base:"15%", lg: "11%" }}
                 direction={"row"}
                 display={"flex"}
@@ -105,22 +106,22 @@ export const SocialIcon = ({ delay, href, icon }: SocialIconProps) => {
 
     return (
         <IconButton
-        as={"a"}
-        animation={fadeDownAnim}
-        aria-label={"social-icon-button"}
-        backgroundColor={"transparent"}
-        border={uCMV("1.5px solid", "1px solid")}
-        color={uCMV("#3D1C4A", "#F3BA40")}
-        href={href}
-        icon={icon}
-        opacity={"0"}
-        rel={"noreferrer"}
-        size={"xs"}
-        target={"_blank"}
-        transition={"100ms ease-out"}
-        _hover={{
-            backgroundColor: uCMV("rgba(255,255,129,0.5)", "rgba(0,226,203,0.5)"),
-            border: uCMV("1.5px solid #2B2B2B", "1px solid white"),
-            color: uCMV("#2B2B2B", "white") }} />
+          as={"a"}
+          animation={fadeDownAnim}
+          aria-label={"social-icon-button"}
+          backgroundColor={"transparent"}
+          border={uCMV("1.5px solid", "1px solid")}
+          color={uCMV("#3D1C4A", "#F3BA40")}
+          href={href}
+          icon={icon}
+          opacity={"0"}
+          rel={"noreferrer"}
+          size={"xs"}
+          target={"_blank"}
+          transition={"100ms ease-out"}
+          _hover={{
+              backgroundColor: uCMV("rgba(255,255,129,0.5)", "rgba(0,226,203,0.5)"),
+              border: uCMV("1.5px solid #2B2B2B", "1px solid white"),
+              color: uCMV("#2B2B2B", "white") }} />
     );
 };

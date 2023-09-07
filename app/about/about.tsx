@@ -8,7 +8,7 @@ import {
     useColorModeValue as uCMV
 } from "@chakra-ui/react"
 import { SkillTable } from "lib/Icons"
-import { fadeDown, growRight, shrinkLeft } from 'lib/helpers/animation'
+import { fadeDown, growRight, dissolve } from 'lib/helpers/animation'
 import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
 import { PageProps } from 'lib/helpers/interfaces';
@@ -19,7 +19,7 @@ export default function About({ visRef, visible }: PageProps) {
         visible && setLoaded(true)
     }, [visible]);
     const [name, setName] = useState<boolean>(false);
-    const erase: string =`5s 100ms forwards ${shrinkLeft}`
+    const erase: string =`5s 100ms forwards ${dissolve}`
     const fadeDownText: string = `5s 100ms forwards ${fadeDown}`;
     const fadeRightFirst: string = `1000ms 800ms forwards ${growRight}`;
     const fadeRightSecond: string = `1000ms 1200ms forwards ${growRight}`;
@@ -31,7 +31,8 @@ export default function About({ visRef, visible }: PageProps) {
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  
-            title={'About me'}>
+            title={'About me'}
+            loaded={loaded}>
               <Stack
                 ref={visRef}
                 width={{ base: "80vw", lg: "60vw" }}
