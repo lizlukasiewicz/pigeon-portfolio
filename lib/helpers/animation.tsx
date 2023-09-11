@@ -1,15 +1,10 @@
 import { keyframes } from "@chakra-ui/react";
 
 export const gradient: string = keyframes`
-0% {
-  background-position: 51% 0%;
-}
 50% {
   background-position: 50% 100%;
 }
-100% {
-  background-position: 51% 0%;
-}
+
 `;
 export const fadeRight: string = keyframes`
 from {
@@ -36,7 +31,7 @@ export const growRight: string = keyframes`
     width: 0;
     opacity: 0;
   } to {
-    width: 32vw;
+    width: 30vw;
     opacity: 1;
   }
 `;
@@ -60,6 +55,16 @@ export const growRightLittle: string = keyframes`
     opacity: 0;
   } to {
     width: 2vw;
+    opacity: 1;
+  }
+`
+
+export const growRightLong: string = keyframes`
+  from {
+    width: 0;
+    opacity: 0;
+  } to {
+    width: 45vw;
     opacity: 1;
   }
 `

@@ -19,11 +19,11 @@ interface ExperienceWidgetProps {
 export const ExpGroup = ({ idx, setIdx }: ExperienceWidgetProps) => {
   return (
       <Stack 
-        minHeight={{ base: "30vh", lg: "40vh" }}>
+        minHeight={{ base: "35vh", lg: "30vh" }}
+        width={{ base: "70vw", lg: "60vw" }}>
         <Stack
           direction={["column", "row"]}
-          marginTop={{ base: "10%", sm: "5%", lg: 0 }}
-          width={"80vw"}>
+          marginTop={{ base: "10%", sm: "5%", lg: 0 }}>
 
           {/* EXPERIENCE TABS */}
 

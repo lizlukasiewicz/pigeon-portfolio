@@ -9,7 +9,6 @@ import { Icon,
         Heading, 
         HStack, 
         VStack, 
-        Container, 
         Center, 
         Box, 
         useColorModeValue as uCMV,
@@ -29,14 +28,14 @@ export default function ProjectGroup({ idx, setIdx }: ProjectProps) {
     const fadeDownAnim: string = `${fadeDown} 500ms 80ms forwards`;
     return(
           <Stack
-            spacing={5}
-            minHeight={{ base: "40vh", lg: "50vh" }}
-            marginTop={{ base: "20%", sm: "5%", lg: 0 }}
-            width={{ base: "80vw", lg: "60vw" }}>
+            spacing={1}
+            minHeight={"25vh"}//{ base: "50vh", md: "30vh" }
+            marginTop={{ base: "4%", md:0 }}
+            width={{ base: "80vw", md: "60vw" }}>
 
 
               {/* PROJECT TABS */}
-              <HStack>
+              <HStack padding={{base:0, md:2}} position={"relative"} left={[-3, 0]}>
                   {projectArray.map((title, i) => (
                     
                     <Heading
@@ -45,7 +44,7 @@ export default function ProjectGroup({ idx, setIdx }: ProjectProps) {
                         onClick={() => setIdx(i)}
                         fontFamily={"var(--chakra-fonts-mono)"}
                         paddingX={1}
-                        fontSize={{base:'md', lg: 'lg', sm:'sm'}}
+                        fontSize={{base:'md', md: 'lg'}}
                         fontWeight={"bold"}
                         _hover={{
                           color: "#F3BA40",
@@ -66,14 +65,14 @@ export default function ProjectGroup({ idx, setIdx }: ProjectProps) {
               </HStack>
 
 
-              <VStack spacing={0}>
+              <VStack spacing={2} padding={3} >
 
                 {/* PROJECT DETAILS */}
                   
-                <Container padding={3} maxW="100%" >
-                  <Box padding={3}>
+                
+                  <Box padding={2}>
                     <HStack
-                      marginBottom={6}
+                      marginBottom={5}
                       justifyContent={"space-between"}>
 
                         {/* PROJECT TITLE */}
@@ -141,7 +140,7 @@ export default function ProjectGroup({ idx, setIdx }: ProjectProps) {
                     </HStack>
 
                   </Box>
-                </Container>
+                
               </VStack>
           </Stack>
     )

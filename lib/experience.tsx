@@ -42,15 +42,6 @@ export interface expArrayProps {
   companyLink: string,
 };
 
-// "Devised and deployed custom Python/Django tools, facilitating seamless integration of data from multiple vendors into a unified relational database model, optimizing data analysis and reporting capabilities",
-// "Actively contributed to all phases of the SDLC within an Agile-Scrum environment, ensuring code quality, source control management via Git, efficient build processes, and rigorous testing.",
-// "Employed Selenium for Web Scraping in Python, efficiently collecting and cleaning data from various sources, subsequently integrating it into a SQL database, adhering to the principles of ETL processes",
-////"Utilized SQL and data visualization tools such as Matplotlib to extract and analyze data from large-scale databases, providing actionable insights to inform strategic decision-making."
-////"Implemented continuous testing using unittest, resulting in improved system validation, reliability, and scalability, and reducing software bugs and downtime",
-////"Collaborated throughout the full software development life cycle, ensuring adherence to coding standards, source control management, build processes, and testing within an Agile development workflow."
-////"Developed and maintained e-commerce website using PHP and Magento, implementing custom themes, modules, and extensions to enhance user experience and site performance."
-////"Utilized Selenium web scraper/crawler in Python to collect, clean, and patch data from various websites, and successfully incorporated the resulting data into a SQL database, contributing to improved accuracy and efficiency of data processing."
-////"Designed, developed, and deployed custom in-house tools using Python/Django to integrate complex data from multiple vendor platforms into a unified database, enabling more efficient data analysis and reporting."
 export const getExpArray: expArrayProps[] = [
   {
       title: "Software Engineer, Infrastructure",/// Data Operations
@@ -172,10 +163,3 @@ export const getExpArray: expArrayProps[] = [
 
 },
 ];
-
-// "• Participate in full life-cycle software development
-// • Design, implement, and deploy highly scalable and reliable systems
-// • Build storage systems, libraries, and frameworks
-// • Contribute ideas for new features and identify areas for improvement proactively
-// • Collaborate effectively across teams, including outside of engineering
-// • Write clean, tested, and well-documented code"

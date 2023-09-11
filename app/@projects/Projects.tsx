@@ -25,7 +25,7 @@ export default function Projects({ visRef, visible }: PageProps) {
         ref={visRef}>
         <TempContainer 
           label={'projects'} 
-          title={"The things I've Built"} 
+          title={"Built by Me"} 
           loaded={loaded}>
               <ProjectGroup idx={idx} setIdx={setIdx} />
         </TempContainer>

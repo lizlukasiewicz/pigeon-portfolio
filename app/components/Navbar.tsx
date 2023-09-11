@@ -48,16 +48,12 @@ export default function Navbar({scrollDir, y }: PageProps) {
         align={"center"}
         backdropFilter='auto' 
         backdropBlur='24px'
-        height={y !== 0 && scrollDir === "up" ? 
-                  65
-                  : 
-                  75}
+        height={y !== 0 && scrollDir === "up" ? 65 //[mobile, desktop]
+                                              : 75}
         justify={"center"}
         position={"fixed"}
-        top={y > 80 && scrollDir === "down" ? 
-              -3
-              : 
-              0}
+        top={y > 80 && scrollDir === "down" ? -3
+                                            : 0}
         transition={"200ms ease-out"}
         width={"100%"}
         zIndex={2}>

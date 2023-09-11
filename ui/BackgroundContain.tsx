@@ -13,8 +13,8 @@ export default function BackgroundContain({children,}:{children: React.ReactNode
       width={"100%"}//w-full
       spacing={5} // space-x-5
       bgGradient={uCMV("linear(135deg, #FFFDF1, #FFEED5, #ECD9EA)", "linear(135deg, #131D30, #020405)")}// bg-[--background-gradient]
-      bgSize={"400% 400%"} // bg-zoom
-      bgPosition={"51% 10%"}// bg-start
+      bgSize={"200% 200%"} //400% 400% bg-zoom
+      bgPosition={"50% 0%"}// bgPosition={"51% 10%"}bg-start
       //animate-breathe //animate-[gradient_6s_ease_infinite]
       animation={breatheAnim}> 
         <Navbar 
