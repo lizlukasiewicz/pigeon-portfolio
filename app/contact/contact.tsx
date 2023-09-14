@@ -27,7 +27,8 @@ export default function Contact({ visRef, visible }: PageProps) {
     return(
       <Container
         id="contact"
-        maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+        borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
+        maxW={{ base: "100%", sm: "85%", lg: "85%", xl: "70%" }}
         transition={"500ms ease-out"}>
           <TempContainer
             loaded={loaded}

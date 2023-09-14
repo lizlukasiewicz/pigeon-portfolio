@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from "react";
  
- export const useOnScreen = () => { 
+export const useOnScreen = () => { 
   const visRef = useRef();
   const [visible, setVisible] = useState<boolean>(false);
 

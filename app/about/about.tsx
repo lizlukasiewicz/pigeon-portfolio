@@ -27,8 +27,11 @@ export default function About({ visRef, visible }: PageProps) {
     return(
       <Container
         id="about"
+        borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
+        borderTop={uCMV("1px solid #822320", "1px solid #00E2CB")}
+        borderRadius={'10px 20px 0px 0px'}
         ref={visRef}
-        maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+        maxW={{ base: "100%", sm: "85%", lg: "85%", xl: "70%" }}
         transition={"500ms ease-out"}>
           <TempContainer 
             label={'about'}  

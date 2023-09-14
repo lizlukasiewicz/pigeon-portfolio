@@ -2,9 +2,8 @@
 import {useState, useEffect} from 'react';
 import { TempContainer } from 'ui/TempContainer';
 import ProjectGroup from './ProjectGroup';
-import { Container } from "@chakra-ui/react";
+import { Container, useColorModeValue as uCMV } from "@chakra-ui/react";
 import { PageProps } from 'lib/helpers/interfaces';
-
 
 export default function Projects({ visRef, visible }: PageProps) {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -20,7 +19,8 @@ export default function Projects({ visRef, visible }: PageProps) {
     return (
       <Container
         id="projects"
-        maxW={{ base: "95%", sm: "85%", lg: "85%", xl: "70%" }}
+        borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
+        maxW={{ base: "100%", sm: "85%", lg: "85%", xl: "70%" }}
         transition={"500ms ease-out"}
         ref={visRef}>
         <TempContainer 

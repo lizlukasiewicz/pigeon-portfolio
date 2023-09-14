@@ -31,11 +31,30 @@ export const growRight: string = keyframes`
     width: 0;
     opacity: 0;
   } to {
-    width: 30vw;
+    width: 40%;
     opacity: 1;
   }
 `;
-
+//40%; 26vw
+export const growRightLong: string = keyframes`
+from {
+  width: 0;
+  opacity: 0;
+} to {
+  width: 60%;
+  opacity: 1;
+}
+`
+//40vw
+export const growRightLittle: string = keyframes`
+  from {
+    width: 0;
+    opacity: 0;
+  } to {
+    width: 2vw;
+    opacity: 1;
+  }
+`
 export const dissolve: string = keyframes`
   0% {
     opacity: 1;
@@ -48,26 +67,6 @@ export const dissolve: string = keyframes`
     transform: scale(1);
   }
 `;
-
-export const growRightLittle: string = keyframes`
-  from {
-    width: 0;
-    opacity: 0;
-  } to {
-    width: 2vw;
-    opacity: 1;
-  }
-`
-
-export const growRightLong: string = keyframes`
-  from {
-    width: 0;
-    opacity: 0;
-  } to {
-    width: 45vw;
-    opacity: 1;
-  }
-`
 export const sideBob: string = keyframes`
   0% {
     left: -25%;

@@ -5,7 +5,9 @@ import {
   Flex,
   Heading,
   HStack,
+  VStack,
   Stack,
+  Container,
   useColorModeValue as uCMV
 } from '@chakra-ui/react';
 import { growRight, growRightLong, dissolve } from '../lib/helpers/animation';
@@ -22,76 +24,83 @@ export const TempContainer=({
   loaded?: boolean,
 })=> {
   const erase: string =`5s 100ms forwards ${dissolve}`
-  const growRightAnim: string = `${growRightLong} 1s 250ms forwards`;
-  const growRightLittleAnim: string = `${growRight} 1s 250ms forwards`;
+  const growRightFirst: string = `${growRightLong} 1s 250ms forwards`;
+  const growRightSecond: string = `${growRight} 1s 700ms forwards`;//250ms
+  const growRightThird : string = `${growRightLong} 1s 1s forwards`//700ms
+  const growRightFourth : string = `${growRight} 1s 1s forwards`//1000ms
   return (
-            <Stack
-                align={'center'} 
-                direction={{ base: 'column', md: 'row' }} 
-                paddingY={10}
-                paddingTop={"7%"}
-                spacing={{ base: 8, md: 10 }}>
-                <Stack spacing={{ base: 4, md: 10 }} position={"relative"} paddingBottom={2} paddingRight={2} >
-                    <Stack position={"relative"} >
+      <VStack 
+        width={"100%"} 
+        paddingY={"8px"}//border={"1px solid #00C484"}
+        >
+          <HStack width={'100%'} >
+            {/* CIRCUIT START */}
+              <Box 
+                  backgroundColor={uCMV("rgba(255,244,225,1)", "rgba(19,29,48,1)")} 
+                  height={5}
+                  width={5}
+                  border={uCMV("1.5px solid #822320","1.5px solid #00E2CB")}
+                  borderRadius={'9999px'}
+                  position={"relative"}
+                  top={"-16px"}
+                  left={"-17px"}/>
 
-                          <HStack>
-                          <Box 
-                              backgroundColor={uCMV("rgba(255,244,225,0.9)", "rgba(19,29,48,0.8)")} 
-                              height={4}
-                              width={4}
-                              border={uCMV("1.5px solid #822320","1.5px solid #00E2CB")}
-                              borderRadius={'9999px'}
-                              //opacity={loaded ? 1 : 0}
-                              position={"relative"}
-                              top={"-10px"}
-                              left={"-15px"}
-                                  />
-                            <Box 
-                              animation={loaded ? growRightAnim : erase } 
-                              borderTop={uCMV("1px solid #822320", "1px solid #00E2CB")}
-                              borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
-                              borderRadius={"0px 50px 0px"}
-                              height={"6px"}
-                              opacity={0}
-                              position={"relative"}
-                              top={"-8px"}
-                              left={"-23px"}
-                              width={0}
-                              _after={{
-                                  borderRadius: "0px 5px 0px",
-                                  padding:"4px",
-                                  borderLeft: uCMV("0.9px solid #822320", "0.9px solid #00E2CB"),
-                                  borderBottom: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                                  content: `""`,
-                                  position: "absolute",
-                                  right: "-9px",
-                                  bottom: "-9px",
-                                  width: 1}} />
-                            <Box 
-                              animation={loaded ? growRightLittleAnim: erase}
-                              borderBottom={uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)")} //{"rgb(0,226,203)"} ////darker red nonlist  ||  topPal MUTED BLUE
-                              borderRight={uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)")} //{"rgb(0,226,203)"} ////darker red nonlist  ||  topPal MUTED BLUE
-                              height={"1px"}
-                              opacity={0}
-                              position={"relative"}
-                              bottom={"-3.5px"}
-                              left={"-20px"}
-                              width={0}
-                              _before={{
-                                  borderTop: uCMV("0.9px solid rgb(130,35,32)", "0.9px solid rgb(0,226,203)"),//darker red nonlist  ||  topPal MUTED BLUE//"1px solid rgb(0,226,203)",//
-                                  content: `""`,
-                                  position: "absolute",
-                                  left: -1,
-                                  width: 1 }}
-                              _after={{
-                                  borderTop: uCMV("0.9px solid rgb(130,35,32)", "0.9px solid rgb(0,226,203)"),//darker red nonlist  ||  topPal MUTED BLUE//"4px solid rgb(100,156,166)",//
-                                  borderRadius: "0px 5px 0px",
-                                  content: `""`,
-                                  position: "absolute",
-                                  right: -1,
-                                  width: 1 }} />
-                          </HStack>
-                                
+                <Box 
+                  animation={loaded ? growRightFirst : erase } 
+                  borderTop={uCMV("1px solid #822320", "1px solid #00E2CB")}
+                  borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
+                  borderRadius={"0px 50px 0px"}
+                  height={"6px"}
+                  opacity={0}
+                  position={"relative"}
+                  top={"-8px"}
+                  left={"-26px"}
+                  width={0}
+                  _after={{
+                      borderRadius: "0px 5px 0px",
+                      padding:"4px",
+                      borderLeft: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                      borderBottom: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                      content: `""`,
+                      position: "absolute",
+                      right: "-9px",
+                      bottom: "-9px",
+                      width: 1}} />
+                <Box 
+                  animation={loaded ? growRightSecond: erase}
+                  borderBottom={uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)")}
+                  borderRight={uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)")}
+                  height={"1px"}
+                  opacity={0}
+                  position={"relative"}
+                  bottom={"-3.5px"}
+                  left={"-19px"}
+                  width={0}
+                  _before={{
+                      borderTop: uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)"),
+                      content: `""`,
+                      position: "absolute",
+                      left: -2,
+                      bottom: "-1px",
+                      width: 2 }}
+                  _after={{
+                      borderTop: uCMV("1px solid rgb(130,35,32)", "1px solid rgb(0,226,203)"),
+                      borderRadius: "0px 5px 0px",
+                      content: `""`,
+                      position: "absolute",
+                      right: -9,
+                      bottom:"-1px",
+                      width: 9 }} />
+          </HStack>
+          <Stack
+            align={'center'} 
+            direction={'column'}//{ base: 'column', md: 'row' } //paddingTop={"7%"}//border={"1px solid #ECD9EA"}//PINK BORDERLEFT//spacing={{ base: 8, md: 10 }}
+            paddingY={"8%"}>
+                  
+                <Stack //border={"1px solid #FFD316"}//YELLOW  paddingRight={2} spacing={{ base: 4, md: 10 }} position={"relative"}
+                  paddingBottom={2}>
+                    <Stack //position={"relative"}
+                    >
                         <Heading
                             fontFamily={"var(--chakra-fonts-mono)"}
                             fontSize={{base:"2xl", sm: "xl", md: "2xl"}}
@@ -100,16 +109,65 @@ export const TempContainer=({
                             {title}
                         </Heading>
                     </Stack>
-                    <Flex
+                    <Flex //border={"1px solid #AC23F4"}//MAGENTA//bottom={3}//flex={1}// position={'relative'}// width={'100%'}
                         align={'center'}
-                        bottom={3}
-                        flex={1}
-                        justify={'center'}
-                        position={'relative'}
-                        width={'100%'}>
+                        justify={'center'}>
                         {children}
                     </Flex>
+                    
                 </Stack>
-            </Stack>
+          </Stack>
+            
+            {/*   BOTTOM CIRCUIT LINES     */}
+          <HStack width={'100%'} >
+            <Box 
+              animation={loaded ? growRightFourth: erase}
+              borderRadius={"50px"}
+              borderBottom={uCMV("1px solid #822320", "1px solid #00E2CB")}
+              borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
+              height={"1px"}
+              opacity={0}
+              position={"relative"}
+              bottom={"-9px"}
+              right={"-13px"}
+              width={0}
+              _before={{
+                borderTop: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                borderRadius: "0px 5px 0px",
+                content: `""`,
+                position: "absolute",
+                right: -1,
+                width: 1 }}
+              _after={{
+                borderTop: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                borderLeft: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                content: `""`,
+                borderRadius: "50px 0px 0px",
+                position: "absolute",
+                left: -3,
+                width: 4}} />
 
+            <Box 
+              animation={loaded ? growRightThird : erase } 
+              borderTop={uCMV("1px solid #822320", "1px solid #00E2CB")}
+              borderLeft={uCMV("1px solid #822320", "1px solid #00E2CB")} 
+              borderRadius={"50px 0px 50px"}
+              height={"6px"}
+              opacity={0}
+              position={"relative"}
+              top={"-2.5px"}
+              right={"-15px"}
+              width={0}
+              _before={{
+                  borderRadius: "5px 0px 5px",
+                  padding:"4px",
+                  borderRight: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                  borderBottom: uCMV("1px solid #822320", "1px solid #00E2CB"),
+                  content: `""`,
+                  position: "absolute",
+                  left: "-9px",
+                  bottom: "-9px",
+                  width: 1}} />
+          </HStack>
+    </VStack>
   )}
