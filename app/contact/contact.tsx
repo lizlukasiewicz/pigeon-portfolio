@@ -27,13 +27,12 @@ export default function Contact({ visRef, visible }: PageProps) {
     return(
       <Container
         id="contact"
-        borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
         maxW={{ base: "100%", sm: "85%", lg: "85%", xl: "70%" }}
         transition={"500ms ease-out"}>
           <TempContainer
             loaded={loaded}
-            label={"contact"}
-            title={"Drop a line"}>
+            title={"Contact me"}
+            label={"Drop a line"}>
               <Flex
                 alignItems={"center"}
                 flexDirection={"column"}

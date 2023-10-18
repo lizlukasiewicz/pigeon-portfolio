@@ -32,14 +32,6 @@ export interface Compartment {
   }[],
 };
 
-export type Item = {
-    name: string;
-    slug: string;
-    bullet1?: string;
-    bullet2?: string;
-};
-
-
 export const projectArray: Compartment[] = [
   {
     name: 'Riders Guild',

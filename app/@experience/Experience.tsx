@@ -20,7 +20,6 @@ export default function Experience({ visRef, visible }: PageProps) {
       id="experience"
       maxW={{ base: "100%", sm: "85%", lg: "85%", xl: "70%" }}
       ref={visRef}
-      borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
       transition={"500ms ease-out"}>
         <TempContainer 
           label={'experience'} 

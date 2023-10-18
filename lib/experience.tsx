@@ -114,9 +114,9 @@ export const getExpArray: expArrayProps[] = [
   {
     title: "Software Engineering Fellow",
     details: [
-        "Attended an 80+ hours/weekly bootcamp focused on full-stack software development",
-        "Developed a portfolio using HTML/CSS/JS, SQL, MongoDB, Axios, and Node",
-        "Utilized Git version control and managed team repositories",
+        "Utilized Git version control and managed team repositories while maintaining CI/CD pipelines for automated testing, integration, and deployment.",
+        "Launched a portfolio using HTML, CSS, JavaScript, Next.js, AWS Route 53, and Tailwind.",
+        "Foundational principles of object oriented programming while using RESTful APIs, Unit test, Integration test, Data structures and Algorithms.",
     ],
     dates: "Summer 2021",
     skills: [

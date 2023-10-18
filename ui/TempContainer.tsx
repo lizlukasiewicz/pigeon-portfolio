@@ -26,8 +26,6 @@ export const TempContainer=({
   const erase: string =`5s 100ms forwards ${dissolve}`
   const growRightFirst: string = `${growRightLong} 1s 250ms forwards`;
   const growRightSecond: string = `${growRight} 1s 700ms forwards`;//250ms
-  const growRightThird : string = `${growRightLong} 1s 1s forwards`//700ms
-  const growRightFourth : string = `${growRight} 1s 1s forwards`//1000ms
   return (
       <VStack 
         width={"100%"} 
@@ -42,7 +40,7 @@ export const TempContainer=({
                   border={uCMV("1.5px solid #822320","1.5px solid #00E2CB")}
                   borderRadius={'9999px'}
                   position={"relative"}
-                  top={"-16px"}
+                  top={"-10px"}
                   left={"-17px"}/>
 
                 <Box 
@@ -117,57 +115,5 @@ export const TempContainer=({
                     
                 </Stack>
           </Stack>
-            
-            {/*   BOTTOM CIRCUIT LINES     */}
-          <HStack width={'100%'} >
-            <Box 
-              animation={loaded ? growRightFourth: erase}
-              borderRadius={"50px"}
-              borderBottom={uCMV("1px solid #822320", "1px solid #00E2CB")}
-              borderRight={uCMV("1px solid #822320", "1px solid #00E2CB")}
-              height={"1px"}
-              opacity={0}
-              position={"relative"}
-              bottom={"-9px"}
-              right={"-13px"}
-              width={0}
-              _before={{
-                borderTop: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                borderRadius: "0px 5px 0px",
-                content: `""`,
-                position: "absolute",
-                right: -1,
-                width: 1 }}
-              _after={{
-                borderTop: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                borderLeft: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                content: `""`,
-                borderRadius: "50px 0px 0px",
-                position: "absolute",
-                left: -3,
-                width: 4}} />
-
-            <Box 
-              animation={loaded ? growRightThird : erase } 
-              borderTop={uCMV("1px solid #822320", "1px solid #00E2CB")}
-              borderLeft={uCMV("1px solid #822320", "1px solid #00E2CB")} 
-              borderRadius={"50px 0px 50px"}
-              height={"6px"}
-              opacity={0}
-              position={"relative"}
-              top={"-2.5px"}
-              right={"-15px"}
-              width={0}
-              _before={{
-                  borderRadius: "5px 0px 5px",
-                  padding:"4px",
-                  borderRight: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                  borderBottom: uCMV("1px solid #822320", "1px solid #00E2CB"),
-                  content: `""`,
-                  position: "absolute",
-                  left: "-9px",
-                  bottom: "-9px",
-                  width: 1}} />
-          </HStack>
     </VStack>
   )}

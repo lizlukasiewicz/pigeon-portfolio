@@ -8,7 +8,7 @@ import {
     HStack,
     useColorModeValue as uCMV
 } from '@chakra-ui/react'
-import { fadeDown, fadeRight, upDown } from "./helpers/animation";
+import { fadeDown } from "./helpers/animation";
 export const SiChakraui = require('react-icons/si').SiChakraui;
 export const SiCss3 = require('react-icons/si').SiCss3;
 export const SiExpress = require('react-icons/si').SiExpress;
