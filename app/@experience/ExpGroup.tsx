@@ -8,8 +8,7 @@ import {
           useColorModeValue as uCMV,
           Box
          } from '@chakra-ui/react'
-import { getExpArray } from 'lib/experience';
-import { SkillIcon } from "lib/Icons";
+import { getExpArray, SkillIcon } from 'lib/experience';
 
 interface ExperienceWidgetProps {
   idx: number,

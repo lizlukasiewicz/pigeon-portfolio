@@ -1,5 +1,4 @@
-import { SkillIcon } from 'lib/Icons';
-import { projectArray } from 'lib/routes';
+import { projectArray, SkillIcon } from 'lib/experience';
 import { fadeDown } from 'lib/helpers/animation';
 import { Icon, 
         Button, 

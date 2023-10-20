@@ -7,7 +7,7 @@ import {
     Text,
     useColorModeValue as uCMV
 } from "@chakra-ui/react"
-import { SkillTable } from "lib/Icons"
+import { SkillTable } from "lib/experience"
 import { fadeDown, growRight, dissolve } from 'lib/helpers/animation'
 import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
