@@ -1,4 +1,4 @@
-
+'use client';
 import React from "react";
 import { TempContainer } from "ui/TempContainer";
 import { 
@@ -9,10 +9,11 @@ import {
         Flex
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
-import { PageProps } from "lib/helpers/interfaces";
+import { useVisible } from "lib/helpers/Loading";
 
 
-export default function Contact({ visRef, visible }: PageProps) {
+export default function Contact() {
+  const [visRef, visible] = useVisible();
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)

@@ -1,18 +1,19 @@
-
+'use client';
 import { fadeDown } from 'lib/helpers/animation';
 import { Text, Box, useColorModeValue as uCMV, Flex} from '@chakra-ui/react'
 import { useState, useEffect } from 'react';
-import { PageProps } from 'lib/helpers/interfaces';
+import { useVisible } from "lib/helpers/Loading";
 
 
-export default function Splash({ visRef, visible }: PageProps) {
+export default function Splash() {
+  const [visRef, visible] = useVisible();
     const [name, setName] = useState<boolean>(false);
-    const fadeDownAnim: string = `${fadeDown} 1000ms`;
     const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
-        visible && setLoaded(true)
+      visible && setLoaded(true)
     }, [visible]);
-
+    
+    const fadeDownAnim: string = `${fadeDown} 1000ms`;
     return(
           <Flex
             id="home"

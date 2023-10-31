@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-
+// TODO: Asynchronous?
 export const useNavigation = (): [number, string] => {
   const [y, setY] = useState<number>(0);
   const [scrollDir, setScrollDir] = useState<string>("");

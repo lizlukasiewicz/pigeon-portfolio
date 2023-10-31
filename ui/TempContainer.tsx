@@ -7,7 +7,6 @@ import {
   HStack,
   VStack,
   Stack,
-  Container,
   useColorModeValue as uCMV
 } from '@chakra-ui/react';
 import { growRight, growRightLong, dissolve } from '../lib/helpers/animation';
@@ -29,8 +28,7 @@ export const TempContainer=({
   return (
       <VStack 
         width={"100%"} 
-        paddingY={"8px"}//border={"1px solid #00C484"}
-        >
+        paddingY={"8px"}>
           <HStack width={'100%'} >
             {/* CIRCUIT START */}
               <Box 
@@ -92,12 +90,12 @@ export const TempContainer=({
           </HStack>
           <Stack
             align={'center'} 
-            direction={'column'}//{ base: 'column', md: 'row' } //paddingTop={"7%"}//border={"1px solid #ECD9EA"}//PINK BORDERLEFT//spacing={{ base: 8, md: 10 }}
+            direction={'column'}
             paddingY={"8%"}>
                   
-                <Stack //border={"1px solid #FFD316"}//YELLOW  paddingRight={2} spacing={{ base: 4, md: 10 }} position={"relative"}
+                <Stack 
                   paddingBottom={2}>
-                    <Stack //position={"relative"}
+                    <Stack 
                     >
                         <Heading
                             fontFamily={"var(--chakra-fonts-mono)"}
@@ -107,7 +105,7 @@ export const TempContainer=({
                             {title}
                         </Heading>
                     </Stack>
-                    <Flex //border={"1px solid #AC23F4"}//MAGENTA//bottom={3}//flex={1}// position={'relative'}// width={'100%'}
+                    <Flex
                         align={'center'}
                         justify={'center'}>
                         {children}

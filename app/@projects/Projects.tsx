@@ -1,11 +1,12 @@
-
+'use client';
 import {useState, useEffect} from 'react';
 import { TempContainer } from 'ui/TempContainer';
 import ProjectGroup from './ProjectGroup';
-import { Container, useColorModeValue as uCMV } from "@chakra-ui/react";
-import { PageProps } from 'lib/helpers/interfaces';
+import { Container } from "@chakra-ui/react";
+import { useVisible } from "lib/helpers/Loading";
 
-export default function Projects({ visRef, visible }: PageProps) {
+export default function Projects() {
+  const [visRef, visible] = useVisible();
   const [loaded, setLoaded] = useState<boolean>(false);
     
     useEffect(() => {

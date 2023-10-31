@@ -1,4 +1,4 @@
-
+'use client';
 import {useState, useEffect} from "react";
 import {
     Container,
@@ -11,9 +11,11 @@ import { SkillTable } from "lib/experience"
 import { fadeDown, growRight, dissolve } from 'lib/helpers/animation'
 import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
-import { PageProps } from 'lib/helpers/interfaces';
+import { useVisible } from "lib/helpers/Loading";
 
-export default function About({ visRef, visible }: PageProps) {
+
+export default function About() { 
+  const [visRef, visible] = useVisible();
     const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
         visible && setLoaded(true)
@@ -37,7 +39,7 @@ export default function About({ visRef, visible }: PageProps) {
               <Stack
                 width={{ base: "80vw", lg: "60vw" }}
                 direction={"column"}
-                opacity={loaded ? 1 : 0.1}
+                opacity={visible ? 1 : 0.1}
                 //minHeight={"70vh"}
                 justify={"space-around"}
                 spacing={{base: 14, md:20}}>
