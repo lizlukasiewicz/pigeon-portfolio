@@ -9,11 +9,11 @@ import {
         Flex
       } from "@chakra-ui/react"
 import { fadeOut, shake, slideUp, openLetter } from "lib/helpers/animation";
-import { useVisible } from "lib/helpers/Loading";
+import { contactVisible } from "lib/helpers/Loading";
 
 
 export default function Contact() {
-  const [visRef, visible] = useVisible();
+  const [visRef, visible] = contactVisible();
   const [loaded, setLoaded] = React.useState<boolean>(false);
     React.useEffect(() => {
         visible && setLoaded(true)

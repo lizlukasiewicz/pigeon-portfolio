@@ -3,11 +3,11 @@ import {useState, useEffect} from 'react';
 import { ExpGroup } from "./ExpGroup";
 import { TempContainer } from 'ui/TempContainer';
 import { Container } from "@chakra-ui/react";
-import { useVisible } from "lib/helpers/Loading";
+import { experienceVisible } from "lib/helpers/Loading";
 
 export default function Experience() {
-  const [visRef, visible] = useVisible();
-  const [loaded, setLoaded] = useState<boolean>(false);//useVisible();
+  const [visRef, visible] = experienceVisible();
+  const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
         visible && setLoaded(true)
     }, [visible]);

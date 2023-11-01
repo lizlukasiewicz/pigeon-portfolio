@@ -11,11 +11,11 @@ import { SkillTable } from "lib/experience"
 import { fadeDown, growRight, dissolve } from 'lib/helpers/animation'
 import { TempContainer } from 'ui/TempContainer';
 import GitCalendar from "../components/GitCalendar";
-import { useVisible } from "lib/helpers/Loading";
+import { aboutVisible } from "lib/helpers/Loading";
 
 
 export default function About() { 
-  const [visRef, visible] = useVisible();
+  const [visRef, visible] = aboutVisible();
     const [loaded, setLoaded] = useState<boolean>(false);
     useEffect(() => {
         visible && setLoaded(true)

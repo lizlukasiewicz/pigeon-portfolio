@@ -132,18 +132,6 @@ export const getExpArray: expArrayProps[] = [
           //     label: "MySQL",
           //     delay: "180ms"
           // },
-          // {
-          //     icon: RiCodeBoxLine,
-          //     color: "rgb(89,188,125)",
-          //     label: "Legacy Code",
-          //     delay: "420ms"
-          // },
-          // {
-          //     icon: SiFilezilla,
-          //     color: "rgb(184,0,0)",
-          //     label: "FTP/FTPS",
-          //     delay: "420ms"
-          // },
       ],
       company: "BuySupply",
       companyFull: "Buy-Supply Corp",

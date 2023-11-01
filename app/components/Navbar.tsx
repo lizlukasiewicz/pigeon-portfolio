@@ -48,7 +48,7 @@ export default function Navbar({scrollDir, y }: PageProps) {
         align={"center"}
         backdropFilter='auto' 
         backdropBlur='24px'
-        height={y !== 0 && scrollDir === "up" ? 65 //[mobile, desktop]
+        height={y !== 0 && scrollDir === "up" ? 65
                                               : 75}
         justify={"center"}
         position={"fixed"}
@@ -223,7 +223,7 @@ export const ResumeButton = () => {
       as={"a"}
       color={uCMV("#020405", "#00C484")}
       cursor={"pointer"}
-      href={"https://s3.amazonaws.com/nyc-pigeon.com/e_lukasiewicz_resume.pdf"}
+      href={"https://s3.amazonaws.com/nyc-pigeon.com/Elizabeth_Lukasiewicz.pdf"}
       target={"_blank"}           
       fontFamily={"var(--chakra-fonts-mono)"}
       fontSize={'1.1rem'}

@@ -1,11 +1,12 @@
 'use client';
-import { useEffect, useState } from 'react';
-// TODO: Asynchronous?
-export const useNavigation = (): [number, string] => {
-  const [y, setY] = useState<number>(0);
-  const [scrollDir, setScrollDir] = useState<string>("");
+import Link, { LinkProps } from "next/link";
+import React, { PropsWithChildren } from "react";
 
-  useEffect(() => {
+export const useNavigation = (): [number, string] => {
+  const [y, setY] = React.useState<number>(0);
+  const [scrollDir, setScrollDir] = React.useState<string>("");
+
+  React.useEffect(() => {
     const handleNavigation = () => {
       if (typeof window !== 'undefined') {
         const windowScrollY = window.scrollY;
@@ -30,8 +31,7 @@ export const useNavigation = (): [number, string] => {
   return [y, scrollDir];
 }
 
-import Link, { LinkProps } from "next/link";
-import React, { PropsWithChildren } from "react";
+
 
 type AnchorProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
